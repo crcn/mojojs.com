@@ -1,4 +1,3 @@
-mojojs.com
-==========
+## Mojojs.com
 
-mojo.js site
+This is the entire site for Mojo.js. 

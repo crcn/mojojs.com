@@ -36,7 +36,7 @@ you want it to be.
   <div class="col-md-4">
     <h3>JavaScript all the way down</h3>
     <p>
-      Mojo.js was built to solve the shortcommings of DOM manipulation in browsers, especially in older browsers. Mojo.js applications are entirely javascript. This includes templates, which are translated into javascript before actually being used. 
+      Mojo.js was built to solve the shortcommings of DOM manipulation in browsers, especially in older browsers. Mojo.js applications are entirely javascript - <a href="https://github.com/classdojo/mojojs.com">this website</a> was even statically generated using Mojo. This includes templates, which are translated into javascript before actually being used. 
     </p>
   </div>
 </div>
