@@ -6,8 +6,9 @@
     <!--div class="center">
       <h1>Caption here</h1>
     </div-->
-    <div class="center">
-      <a href="{{downloadLink}}" class="btn btn-default">Download Starter Kit</a>
+    <div class="center" style="padding-top:20px">
+      <a href="{{links.starter}}" class="btn btn-default">Download Starter Kit</a>
+      <a href="{{links.source}}" class="btn btn-default">Download Source</a>
     </div>
   </div>
 </div>
@@ -36,7 +37,7 @@ you want it to be.
   <div class="col-md-4">
     <h3>JavaScript all the way down</h3>
     <p>
-      Mojo.js was built to solve the shortcommings of DOM manipulation in browsers, especially in older browsers. Mojo.js applications are entirely javascript - <a href="https://github.com/classdojo/mojojs.com">this website</a> was even statically generated using Mojo. This includes templates, which are translated into javascript before actually being used. 
+      Mojo.js was built to solve the shortcommings of DOM manipulation in browsers, especially in older browsers. Mojo.js applications are entirely JavaScript - <a href="{{links.siteSource}}">this website</a> was even statically generated using Mojo. This includes templates, which are translated into JavaScript before actually being used. 
     </p>
   </div>
 </div>
