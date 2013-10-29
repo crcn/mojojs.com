@@ -1,6 +1,7 @@
 module.exports = function(fragment, block, element, text, parse, modifiers) {
     return fragment([ element("div", {
-        "class": [ "row" ]
+        "class": [ "row" ],
+        style: [ "padding-top:80px;" ]
     }, [ text(" "), element("div", {
         "class": [ "col-md-12 text-center" ]
     }, [ text(" "), element("div", {
@@ -20,7 +21,8 @@ module.exports = function(fragment, block, element, text, parse, modifiers) {
         } ],
         "class": [ "btn btn-default" ]
     }, [ text("Download Starter Kit") ]), text(" ") ]), text(" ") ]), text(" ") ]), text(" "), element("div", {
-        "class": [ "row" ]
+        "class": [ "row" ],
+        style: [ "padding-top:80px;" ]
     }, [ text(" "), element("div", {
         "class": [ "col-md-4" ]
     }, [ text(" "), element("h3", {}, [ text("Mojo phases out the old") ]), text(" "), element("p", {}, [ text(" Mojo was built to allow you to build on top of your existing code base, so you don’t have to do a risky, and expensive re-write of your application. ") ]), text(" ") ]), text(" "), element("div", {
