@@ -1,1 +1,3 @@
-{{ html: sections.pages }}
+<div class="container" role="main">
+  {{ html: sections.pages }}
+</div>

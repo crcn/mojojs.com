@@ -1,19 +1,53 @@
 <div class="row">
-  <div class="col-md-4">
-  </div>
-  <div class="col-md-6 text-center">  
-    <img src="/img/mojo-js.png" />
-  </div>
-  <div class="col-md-4">
+  <div class="col-md-12 text-center">  
+    <div class="center">
+      <img src="/img/mojo-js.png" />
+    </div>
+    <div class="center">
+      <h1>Caption here</h1>
+    </div>
+    <div class="center">
+      <a href="{{downloadLink}}" class="btn btn-default">Download Starter Kit</a>
+    </div>
   </div>
 </div>
 
 <div class="row">
+
   <div class="col-md-4">
-    
+    <h3>Mojo phases out the old</h3>
+    <p>
+      Mojo was built to allow you to build on top of your existing code base, so you
+don’t have to do a risky, and expensive re-write of
+your application.  
+    </p>
   </div>
+
   <div class="col-md-4">
+    <h3>Mojo is modular</h3>
+    <p>
+      Don’t want to use the router? Want to use your
+own template engine? No problem! Mojo allows you to 
+choose what libraries you like most.  Truly make it into the framework 
+you want it to be.  
+    </p>
   </div>
+
   <div class="col-md-4">
+    <h3>JavaScript all the way down</h3>
+    <p>
+      Mojo.js was built to solve the shortcommings of DOM manipulation in browsers, especially in older browsers. Mojo.js applications are entirely javascript. This includes templates, which are translated into javascript before actually being used. 
+    </p>
   </div>
+</div>
+
+<div class="row">
+
+  <div class="col-md-4">
+    <h3>Broad platform support, IE too!</h3>
+    <p>
+      Mojo.js was built to support all JavaScript platforms including IE 7+, and node.js. No need to modify your style to support a specific runtime. Write your application one way, and mojo will handle the rest. 
+    </p>
+  </div>
+
 </div>
