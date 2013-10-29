@@ -9,8 +9,8 @@ class NPMSearch
 
   constructor: () ->
     @_callstack = flatstack()
-    @load()
-    setInterval @load, 1000 * 60 * 10
+    #@load()
+    #setInterval @load, 1000 * 60 * 10
 
 
   ###

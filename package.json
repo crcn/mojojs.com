@@ -29,7 +29,8 @@
     "step": "0.0.5",
     "outcome": "0.0.18",
     "vine": "~0.1.1",
-    "stepc": "0.0.3"
+    "stepc": "0.0.3",
+    "sift": "0.0.12"
   },
   "devDependencies": {
     "coffee-script": "~1.6.3",
