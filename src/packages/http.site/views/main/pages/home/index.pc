@@ -53,6 +53,20 @@ you want it to be.
 
 </div>
 
+<div class="row" style="padding-top:40px;">
+  <div class="col-md-12">
+    <h1>Basic Example</h1>
+    <iframe width="100%" height="300" src="http://jsfiddle.net/BZA8K/17/embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+  </div>
+</div>
+
+<div class="row" style="padding-top:40px;">
+  <div class="col-md-12">
+    <h1>Advanced Example</h1>
+    <iframe width="100%" height="300" src="http://jsfiddle.net/BZA8K/18/embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+  </div>
+</div>
+
 <!--div class="row">
   <div class="col-md-12">
     <pre data-lang="html" data-example="/js/examples/hello/index.pc.txt">
