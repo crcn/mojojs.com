@@ -3,9 +3,9 @@
     <div class="center">
       <img src="/img/mojo-js.png" />
     </div>
-    <div class="center">
+    <!--div class="center">
       <h1>Caption here</h1>
-    </div>
+    </div-->
     <div class="center">
       <a href="{{downloadLink}}" class="btn btn-default">Download Starter Kit</a>
     </div>
