@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/vendor/bootstrap/js/bootstrap.min.js" />
+    <link rel="stylesheet" href="/vendor/js/jquery-1.10.2.js" />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img src="/img/mojo-js-white.png" class="mojo-logo" />
+        </a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/plugins">Plugins</a></li>
+      </ul>
+    </nav>
+
+    {{ html: sections.content }}
+  </body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "name": "mojojs.com",
+  "version": "0.0.0",
+  "description": "mojojs.com ==========",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/classdojo/mojojs.com.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "174fe803ff9a5c0cab50fcd92b97b8b4bed0b2ed",
+  "dependencies": {
+    "packages": "0.0.4",
+    "bindable": "~0.4.8",
+    "bindable-model": "0.0.15",
+    "mojojs": "~0.6.52",
+    "express": "~3.4.3",
+    "paperclip": "~0.2.22",
+    "browserify-middleware": "~1.19.0",
+    "mesh": "~0.2.5",
+    "less": "~1.5.0"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "jsdev": "~0.1.3",
+    "colors": "~0.6.2",
+    "underscore": "~1.5.2",
+    "outcome": "0.0.18",
+    "mkdirp": "~0.3.5",
+    "glob": "~3.2.6",
+    "handlebars": "~1.0.12",
+    "request": "~2.27.0",
+    "node-osx-notifier": "~0.1.0",
+    "async": "~0.2.9"
+  }
+}
