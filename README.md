@@ -14,3 +14,4 @@ This is the entire site for Mojo.js.
 ## Extensibe
 
 - talk about other plugins
+- talk about node.js philosophy
