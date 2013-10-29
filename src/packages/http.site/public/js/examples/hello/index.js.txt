@@ -1,0 +1,9 @@
+var mojo = require("mojojs");
+
+var HelloView = mojo.View.extend({
+  paper: require("./hello.pc")
+});
+
+//create the view and attach to the DOM
+var helloView = new HelloView();
+helloView.attach($("#hello-application"));

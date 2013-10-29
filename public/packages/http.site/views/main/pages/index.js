@@ -15,13 +15,20 @@ PagesView = (function(_super) {
 
   PagesView.prototype.paper = require("./index.pc");
 
+  PagesView.prototype.bindings = {
+    "routes.pages": "sections.pages.currentName"
+  };
+
   PagesView.prototype.sections = {
     pages: {
       type: "states",
-      index: 0,
       views: [
         {
-          "class": require("./home")
+          "class": require("./home"),
+          name: "home"
+        }, {
+          "class": require("./plugins"),
+          name: "plugins"
         }
       ]
     }

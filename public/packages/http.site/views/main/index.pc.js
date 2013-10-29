@@ -6,10 +6,13 @@ module.exports = function(fragment, block, element, text, parse, modifiers) {
         href: [ "/vendor/bootstrap/css/bootstrap.min.css" ]
     }), text(" "), element("link", {
         rel: [ "stylesheet" ],
-        href: [ "/vendor/bootstrap/js/bootstrap.min.js" ]
-    }), text(" "), element("link", {
-        rel: [ "stylesheet" ],
-        href: [ "/vendor/js/jquery-1.10.2.js" ]
+        href: [ "/vendor/rainbow/themes/github.css" ]
+    }), text(" "), element("script", {
+        type: [ "text/javascript" ],
+        src: [ "/vendor/js/jquery-1.10.2.js" ]
+    }), text(" "), element("script", {
+        type: [ "text/javascript" ],
+        src: [ "/vendor/bootstrap/js/bootstrap.min.js" ]
     }), text(" "), element("link", {
         rel: [ "stylesheet" ],
         href: [ "/css/main.css" ]
@@ -39,5 +42,11 @@ module.exports = function(fragment, block, element, text, parse, modifiers) {
             },
             refs: [ "sections.pages" ]
         }
+    }), text(" "), element("script", {
+        type: [ "text/javascript" ],
+        src: [ "/vendor/js/rainbow-custom.min.js" ]
+    }), text(" "), element("script", {
+        type: [ "text/javascript" ],
+        src: [ "/js/load-examples.js" ]
     }), text(" ") ]), text(" ") ]), text(" ") ]);
 };

@@ -1,0 +1,27 @@
+<div class="row" style="padding-top: 30px;">
+  <div class="col-md-4">
+    <form data-bind="{{ onSubmit: search(keyword) }}">
+      <input type="text" class="form-control" name="keyword"  style="margin-top:20px; margin-bottom: 20px;" placeholder="Search in {{ stats.total }} plugins..." data-bind="{{ model: this }}"></input>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Owner</th>
+          <th>Created</th>
+          <th>Updated</th>
+          <th>Forks</th>
+          <th>Stars</th>
+        </tr>
+      </thead>
+    </table>
+
+  </div>
+</div>
