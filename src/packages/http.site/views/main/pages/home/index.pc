@@ -20,7 +20,7 @@
     <p>
       Mojo was built to allow you to build on top of your existing code base, so you
 don’t have to do a risky, and expensive re-write of
-your application. 
+your application. Start using Mojo in your existing application on day one. 
     </p>
   </div>
 
