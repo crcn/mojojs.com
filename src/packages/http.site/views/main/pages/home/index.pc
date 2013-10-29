@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-6 text-center">  
+    <img src="/img/mojo-js.png" />
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    
+  </div>
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>

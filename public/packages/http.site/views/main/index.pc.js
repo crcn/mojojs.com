@@ -13,29 +13,12 @@ module.exports = function(fragment, block, element, text, parse, modifiers) {
     }), text(" "), element("link", {
         rel: [ "stylesheet" ],
         href: [ "/css/main.css" ]
-    }), text(" ") ]), text(" "), element("body", {}, [ text(" "), element("nav", {
-        "class": [ "navbar navbar-inverse" ],
-        role: [ "navigation" ]
-    }, [ text(" "), element("div", {
-        "class": [ "navbar-header" ]
-    }, [ text(" "), element("a", {
-        "class": [ "navbar-brand" ],
-        href: [ "#" ]
-    }, [ text(" "), element("img", {
-        src: [ "/img/mojo-js-white.png" ],
-        "class": [ "mojo-logo" ]
-    }), text(" ") ]), text(" ") ]), text(" "), element("ul", {
-        "class": [ "nav navbar-nav" ]
-    }, [ text(" "), element("li", {}, [ element("a", {
-        href: [ "/docs" ]
-    }, [ text("Documentation") ]) ]), text(" "), element("li", {}, [ element("a", {
-        href: [ "/plugins" ]
-    }, [ text("Plugins") ]) ]), text(" ") ]), text(" ") ]), text(" "), block({
+    }), text(" ") ]), text(" "), element("body", {}, [ text("  "), block({
         html: {
             fn: function() {
-                return this.ref("sections.content").value();
+                return this.ref("sections.pages").value();
             },
-            refs: [ "sections.content" ]
+            refs: [ "sections.pages" ]
         }
-    }), text(" ") ]), text(" ") ]) ]);
+    }), text(" ") ]), text(" ") ]), text(" ") ]);
 };
