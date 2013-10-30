@@ -3,9 +3,9 @@
     <div class="center">
       <img src="/img/mojo-js.png" />
     </div>
-    <!--div class="center">
-      <h1>Small framework with a big voice</h1>
-    </div-->
+    <div class="center">
+      <h1>Modular JavaScript MV+ Framework</h1>
+    </div>
     <div class="center" style="padding-top:20px">
       <a href="{{links.starter}}" class="btn btn-default">Download Starter Kit</a>
       <a href="{{links.source}}" class="btn btn-default">Download Source</a>
