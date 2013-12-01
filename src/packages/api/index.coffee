@@ -15,10 +15,13 @@ exports.load = (httpServer, npmSearch) ->
 
     # q=keywords:aba
 
-    kw = new RegExp req.query.q
+    q     = req.query.q
+    page  = Number(req.query.page   || 0)
+    count = Number(req.query.count || 100)
+
+    kw = new RegExp q
 
     q = {
-      keywords: {$in: ["mojo-plugin"] },
       $or: [
         {
           keywords: kw
@@ -29,15 +32,15 @@ exports.load = (httpServer, npmSearch) ->
       ]
     }
 
-    console.log JSON.stringify q, null, 2
-
     o = outcome.e (err) -> res.send vine.error(err)
 
     stepc.async () ->
       npmSearch.search q, @
     , 
     o.s((items) ->
-      res.send vine.result(items)
+      start = page * count
+      end   = start + count
+      res.send vine.result(items.slice(start, end))
     )
 
 

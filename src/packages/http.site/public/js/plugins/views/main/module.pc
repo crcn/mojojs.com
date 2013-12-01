@@ -1,0 +1,7 @@
+<tr>
+  <td> {{ model.name                }} </td>
+  <td> {{ model.description         }} </td>
+  <td> {{ model.author.name         }} </td>
+  <td> {{ model.author.forks || "?" }} </td>
+  <td> {{ model.author.stars || "?" }} </td>
+</tr>

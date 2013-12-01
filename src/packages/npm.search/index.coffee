@@ -1,6 +1,7 @@
 flatstack = require "flatstack"
 request   = require "request"
 sift      = require "sift"
+type      = require "type-component"
 
 class NPMSearch
     
@@ -9,41 +10,41 @@ class NPMSearch
 
   constructor: () ->
     @_callstack = flatstack()
-    #@load()
-    #setInterval @load, 1000 * 60 * 10
+    @_modules = []
+    @load()
+    setInterval @load, 1000 * 60 * 10
 
 
   ###
   ###
 
   load: () =>
-    @_callstack.push (next) =>
-      console.log "loading Mojo modules"
-      req = request.get { url: "http://registry.npmjs.org/-/all", json: true }, (err, response, body) ->
+    console.log "loading mojo modules"
+    req = request.get { url: "http://registry.npmjs.org/-/all", json: true }, (err, response, body) =>
 
-        modules = []
+      modules = []
 
-        for moduleName of body
-          module = body[moduleName]
-          continue unless typeof module is "object"
+      for moduleName of body
+        module = body[moduleName]
+        continue unless typeof module is "object"
 
-          modules.push body[moduleName]
+        modules.push body[moduleName]
 
-        # only mojo plugins
-        @_modules = modules.filter (module) -> 
-          ~module.indexOf? "mojo-plugin"
+      # only mojo plugins
 
-        console.log "loaded %d mojo modules", @_modules
 
-        next()
+      @_modules = modules.filter (module) -> 
+        return false if not module.keywords or type(module.keywords) isnt "array"
+        ~module.keywords.indexOf "mojo-plugin"
+
+      console.log "loaded %d mojo modules", @_modules.length
 
 
   ###
   ###
 
   search: (query, next) ->
-    @_callstack.push () =>  
-      next null, sift query, @_modules
+    next null, sift(query)(@_modules || [])
 
   ###
   ###
