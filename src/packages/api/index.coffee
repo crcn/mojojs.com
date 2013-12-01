@@ -44,6 +44,21 @@ exports.load = (httpServer, npmSearch) ->
     )
 
 
+  ###
+  ###
+
+  httpServer.get "/api/keywords.json", (req, res) ->
+
+    page  = Number(req.query.page   || 0)
+    count = Number(req.query.count || 100)
+
+    npmSearch.keywords (err, keywords) ->
+      start = page * count
+      end   = start + count
+      res.send vine.result(keywords.slice(start, end))
+
+
+
 
 
 

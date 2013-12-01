@@ -10,7 +10,8 @@ class NPMSearch
 
   constructor: () ->
     @_callstack = flatstack()
-    @_modules = []
+    @_modules  = []
+    @_keywords = []
     @load()
     setInterval @load, 1000 * 60 * 10
 
@@ -23,6 +24,8 @@ class NPMSearch
     req = request.get { url: "http://registry.npmjs.org/-/all", json: true }, (err, response, body) =>
 
       modules = []
+      keywords = {}
+      @_keywords = []
 
       for moduleName of body
         module = body[moduleName]
@@ -37,7 +40,32 @@ class NPMSearch
         return false if not module.keywords or type(module.keywords) isnt "array"
         ~module.keywords.indexOf "mojo-plugin"
 
+      @_modules.forEach (module) ->
+        for keyword in module.keywords
+          continue if keyword is "mojo-plugin"
+          unless keywords[keywords] 
+            keywords[keywords] = 0
+
+          keywords[keywords]++
+
+      for key of keywords
+        @_keywords.push {
+          name: key,
+          count: keywords[key]
+        }
+
+      @_keywords = @_keywords.sort (a, b) ->
+        return if a.count > b.count then -1 else 1
+
       console.log "loaded %d mojo modules", @_modules.length
+      console.log "keywords", @_keywords.length
+
+
+  ###
+  ###
+
+  keywords: (next) ->
+    next null, @_keywords
 
 
   ###
