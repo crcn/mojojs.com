@@ -38,8 +38,18 @@ class MainView extends mojo.View
   ###
 
   search: (keyword) ->
+    @set "keyword", keyword
+    clearTimeout @_searchTimeout
+    @_searchTimeout = setTimeout(@_debounceSearch, 200)
+
+
+  ###
+  ###
+
+  _debounceSearch: (keyword) =>
     @set "findNpmModulesRequest", bindableCall (next) => 
-      @modules.search(keyword, next)
+      @modules.search(@get("keyword"), next)
+
 
 
   ###
