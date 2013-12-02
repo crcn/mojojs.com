@@ -64,10 +64,10 @@ NPMSearch = (function() {
           if (keyword === "mojo-plugin") {
             continue;
           }
-          if (!keywords[keywords]) {
-            keywords[keywords] = 0;
+          if (!keywords[keyword]) {
+            keywords[keyword] = 0;
           }
-          _results.push(keywords[keywords]++);
+          _results.push(keywords[keyword]++);
         }
         return _results;
       });

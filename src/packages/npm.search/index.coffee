@@ -44,10 +44,10 @@ class NPMSearch
       @_modules.forEach (module) ->
         for keyword in module.keywords
           continue if keyword is "mojo-plugin"
-          unless keywords[keywords] 
-            keywords[keywords] = 0
+          unless keywords[keyword] 
+            keywords[keyword] = 0
 
-          keywords[keywords]++
+          keywords[keyword]++
 
       for key of keywords
         @_keywords.push {

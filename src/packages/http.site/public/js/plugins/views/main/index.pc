@@ -1,7 +1,7 @@
 <div class="row" style="padding-top: 30px;">
   <div class="col-md-4">
 
-    <input type="text"class="form-control" name="keyword"  style="margin-top:20px; margin-bottom: 20px;" placeholder="Search in {{ stats.total }} plugins..." data-bind="{{ model: this, disable: loading, onKeyUp: search(keyword) }}"></input>
+    <input type="text"class="form-control" name="keyword"  style="margin-top:20px; margin-bottom: 20px;" placeholder="Search in {{ stats.total }} plugins..." data-bind="{{ model: this, disable: loading, onChange: search(keyword) }}"></input>
     
 
   </div>
