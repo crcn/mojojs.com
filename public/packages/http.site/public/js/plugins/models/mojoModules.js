@@ -17,7 +17,9 @@ MojoModule = (function(_super) {
   }
 
   MojoModule.prototype.map = function(item) {
+    var _ref1;
     item._id = item.name;
+    item.author = item.author || ((_ref1 = item.maintainers) != null ? _ref1[0] : void 0);
     return item;
   };
 

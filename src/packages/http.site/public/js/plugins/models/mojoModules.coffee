@@ -5,6 +5,7 @@ mojo = require "mojojs"
 class MojoModule extends model.Model
   map: (item) ->
     item._id = item.name
+    item.author = item.author || item.maintainers?[0]
     return item
 
 
