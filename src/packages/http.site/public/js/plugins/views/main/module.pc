@@ -2,6 +2,6 @@
   <td> {{ model.name                }} </td>
   <td> {{ model.description         }} </td>
   <td> {{ model.author.name         }} </td>
-  <td> {{ model.author.forks || "?" }} </td>
-  <td> {{ model.author.watchers || "?" }} </td>
+  <td> {{ model.forks || 0          }} </td>
+  <td> {{ model.watchers || 0       }} </td>
 </tr>
