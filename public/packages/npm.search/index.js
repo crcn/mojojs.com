@@ -130,7 +130,6 @@ NPMSearch = (function() {
       }
       urlParts = module.repository.url.match(/com\/([^\/]+)\/(.*)/);
       url = "https://api.github.com/repos/" + urlParts[1] + "/" + urlParts[2].replace(".git", "");
-      console.log(urlParts, url);
       headers = {
         "user-agent": "node.js"
       };
@@ -141,7 +140,6 @@ NPMSearch = (function() {
       }, function(err, response, body) {
         module.forks = body.forks_count;
         module.watchers = body.stargazers_count;
-        console.log(body, url);
         return next();
       });
     }), function() {});

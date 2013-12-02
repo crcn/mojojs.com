@@ -93,14 +93,14 @@ class NPMSearch
       return next() unless module.repository?.url
       urlParts = module.repository.url.match(/com\/([^\/]+)\/(.*)/)
       url = "https://api.github.com/repos/"+urlParts[1]+"/" + urlParts[2].replace(".git", "")
-      console.log urlParts, url
+
       headers = {
         "user-agent": "node.js"
       }
       request.get { url: url, json: true, headers: headers }, (err, response, body) =>
         module.forks = body.forks_count
         module.watchers = body.stargazers_count
-        console.log body, url
+
         next()
 
     ), () ->
