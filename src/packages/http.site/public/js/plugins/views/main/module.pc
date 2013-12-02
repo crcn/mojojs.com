@@ -3,5 +3,5 @@
   <td> {{ model.description         }} </td>
   <td> {{ model.author.name         }} </td>
   <td> {{ model.author.forks || "?" }} </td>
-  <td> {{ model.author.stars || "?" }} </td>
+  <td> {{ model.author.watchers || "?" }} </td>
 </tr>
