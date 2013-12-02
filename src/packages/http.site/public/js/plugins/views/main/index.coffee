@@ -67,5 +67,7 @@ class MainView extends mojo.View
       type           : "list"
       source         : "modules"
       modelViewClass : ModuleView
+      sort: (a, b) ->
+        return if a.get("model.watchers") > b.get("model.watchers") then -1 else 1
 
 module.exports = MainView

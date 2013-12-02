@@ -6,6 +6,8 @@ class MojoModule extends model.Model
   map: (item) ->
     item._id = item.name
     item.author = item.author || item.maintainers?[0]
+    item.watchers = item.watchers || 0
+    item.forks = item.forks || 0
     return item
 
 

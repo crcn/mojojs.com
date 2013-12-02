@@ -108,7 +108,14 @@ MainView = (function(_super) {
     modules: {
       type: "list",
       source: "modules",
-      modelViewClass: ModuleView
+      modelViewClass: ModuleView,
+      sort: function(a, b) {
+        if (a.get("model.watchers") > b.get("model.watchers")) {
+          return -1;
+        } else {
+          return 1;
+        }
+      }
     }
   };
 
