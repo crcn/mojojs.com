@@ -6,23 +6,30 @@
     <script type="text/javascript" src="/vendor/js/jquery-1.10.2.js" />
     <script type="text/javascript" src="/vendor/bootstrap/js/bootstrap.min.js" />
     <link rel="stylesheet" href="/css/main.css" />
+    <title>Mojo.js Modular JavaScript MV+ Framework</title>
   </head>
   <body>
 
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 
-      <div class="navbar-header">
+      <div class="container">
+
+        <div class="navbar-header">
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+          <!--li><a href="/about">About</a></li-->
+          <li><a href="https://github.com/classdojo/mojo.js">Documentation</a></li>
+          <li><a href="/plugins">Plugins</a></li>
+          <!--li><a href="/tutorials">Tutorials</a></li-->
+        </ul>
+
+        <a href="https://github.com/classdojo/mojo.js">
+          <img src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" class="forkme" alt="Fork me on GitHub" />
+        </a>
+      
       </div>
-
-      <ul class="nav navbar-nav">
-        <li><a href="/">Home</a></li>
-        <!--li><a href="/about">About</a></li-->
-        <li><a href="https://github.com/classdojo/mojo.js">Documentation</a></li>
-        <li><a href="/plugins">Plugins</a></li>
-        <!--li><a href="/tutorials">Tutorials</a></li-->
-      </ul>
-
-      <a href="https://github.com/classdojo/mojo.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
 
     </nav>
 
