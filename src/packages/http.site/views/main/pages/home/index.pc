@@ -15,8 +15,8 @@
 
 <div class="row"  style="padding-top:80px;">
 
-  <div class="col-md-5 col-md-offset-1">
-    <h3><span class="glyphicon glyphicon-indent-left"></span>Mojo phases out the old</h3>
+  <div class="col-md-5">
+    <h3><span class="glyphicon glyphicon-indent-left"></span>&nbsp;Mojo phases out the old</h3>
     <p>
       Mojo was built to allow you to build on top of your existing code base, so you
 don’t have to do a risky, and expensive re-write of
@@ -25,7 +25,7 @@ your application. Start using Mojo in your existing application on day one.
   </div>
 
   <div class="col-md-5 col-md-offset-1">
-    <h3><span class="glyphicon glyphicon-wrench"></span>Mojo is modular</h3>
+    <h3><span class="glyphicon glyphicon-wrench"></span>&nbsp;Mojo is modular</h3>
     <p>
       Don’t want to use the router? Want to use your
 own template engine? No problem! Mojo allows you to 
@@ -34,22 +34,23 @@ you want it to be.
     </p>
   </div>
 
-  <div class="col-md-5 col-md-offset-1">
-    <h3><span class="glyphicon glyphicon-flash"></span>JavaScript all the way down</h3>
+  <div class="col-md-5">
+    <h3><span class="glyphicon glyphicon-flash"></span>&nbsp;JavaScript all the way down</h3>
     <p>
       Mojo.js was built to solve the shortcommings of DOM manipulation in browsers, especially in older browsers. Mojo.js applications are entirely JavaScript. This includes templates, which are translated into JavaScript before actually being used. 
+    </p>
+  </div>
+  
+  <div class="col-md-5 col-md-offset-1">
+    <h3><span class="glyphicon glyphicon-link"></span>&nbsp;Broad platform support, IE too!</h3>
+    <p>
+      Mojo.js was built to support all JavaScript platforms including IE 7+, and node.js - <a href="{{links.siteSource}}">this website</a> was even statically generated using Mojo. No need to modify your style to support a specific runtime. Write your application one way, and mojo will handle the rest. 
     </p>
   </div>
 </div>
 
 <div class="row">
 
-  <div class="col-md-5 col-md-offset-1">
-    <h3><span class="glyphicon glyphicon-link"></span>Broad platform support, IE too!</h3>
-    <p>
-      Mojo.js was built to support all JavaScript platforms including IE 7+, and node.js - <a href="{{links.siteSource}}">this website</a> was even statically generated using Mojo. No need to modify your style to support a specific runtime. Write your application one way, and mojo will handle the rest. 
-    </p>
-  </div>
 
   <!--div class="col-md-4">
     <h3>Perfect Node.js Companion</h3>

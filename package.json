@@ -40,7 +40,6 @@
     "mojo-model": "0.0.x",
     "type-component": "0.0.1",
     "paperclip-component": "0.2.x",
-    "yuidocjs": "~0.3.48",
     "mojo-docs": "*"
   },
   "devDependencies": {
