@@ -72,7 +72,7 @@ you want it to be.
 <div class="row" style="padding-top: 40px">
   <div class="col-md-12">
     <h1>Advanced Example</h1>
-    <iframe width="100%" height="300" src="http://jsfiddle.net/BZA8K/55//embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    <iframe width="100%" height="300" src="http://jsfiddle.net/BZA8K/55/embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
   </div>
 </div>
 
