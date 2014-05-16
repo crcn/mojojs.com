@@ -28,14 +28,14 @@
         <a href="https://github.com/classdojo/mojo.js">
           <img src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" class="forkme" alt="Fork me on GitHub" />
         </a>
-      
+
       </div>
 
     </nav>
 
-    {{ html: sections.pages }}
+    {{ html: ~sections.pages }}
 
     <script type="text/javascript" src="/vendor/js/rainbow-custom.min.js"></script>
     <script type="text/javascript" src="/js/load-examples.js"></script>
   </body>
-</html> 
+</html>

@@ -4,7 +4,7 @@
   "description": "mojojs.com ==========",
   "main": "./index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "packages": "0.0.x",
     "bindable": "0.5.x",
     "bindable-model": "0.0.x",
-    "mojojs": "0.7.x",
+    "mojojs": "0.8.x",
     "express": "~3.4.3",
     "paperclip": "0.3.x",
     "browserify-middleware": "~1.19.0",
