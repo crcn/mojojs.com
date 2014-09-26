@@ -5,6 +5,7 @@
     "https://github.com/mojo-js/mojo-paperclip.git",
     "https://github.com/mojo-js/mojo-models.git",
     "https://github.com/mojo-js/mojo-router.git",
+    "https://github.com/mojo-js/paperclip.js.git",
     "https://github.com/mojo-js/crowbar.js.git",
     "https://github.com/mojo-js/bindable.js.git"
   ],
