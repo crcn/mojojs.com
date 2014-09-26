@@ -11,7 +11,8 @@ class PagesView extends mojo.View
       type: "states"
       views: [
         { class: require("./home"), name: "home" },
-        { class: require("./plugins"), name: "plugins" } 
+        { class: require("./plugins"), name: "plugins" },
+        { class: require("./docs"), name: "docs" }
       ]
 
 module.exports = PagesView

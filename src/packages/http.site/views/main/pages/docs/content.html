@@ -1,0 +1,704 @@
+<div id="docs"><div class="row"><div class="col-sm-3"><div id="sidebar-inner"><strong>mojo-models</strong> <ul id="article-headlines"><li class="article-headline-h2"><a href="#mojo-modelsmojomodels">Mojo Models </a></li><li class="article-headline-h3"><a href="#mojo-modelsinstallation">Installation</a></li><li class="article-headline-h3"><a href="#mojo-modelsfeatures">Features</a></li><li class="article-headline-h3"><a href="#mojo-modelsexamples">Examples</a></li><li class="article-headline-h3"><a href="#mojo-modelsseealso">See Also</a></li><li class="article-headline-h2"><a href="#mojo-modelsapi">API</a></li><li class="article-headline-h3"><a href="#mojo-modelsbasepropertiesapplication">Base(properties[, application])</a></li><li class="article-headline-h4"><a href="#mojo-modelsbasedata">base.data</a></li><li class="article-headline-h4"><a href="#mojo-modelsbasedeserializedata">base.deserialize(data)</a></li><li class="article-headline-h4"><a href="#mojo-modelsbaseserialize">base.serialize()</a></li><li class="article-headline-h3"><a href="#mojo-modelscollectionpropertiesapplication">Collection(properties[, application])</a></li><li class="article-headline-h4"><a href="#mojo-modelscollectiondata">collection.data</a></li><li class="article-headline-h4"><a href="#mojo-modelsmodelcollectioncreatemodeloptions">model collection.createModel(options)</a></li><li class="article-headline-h4"><a href="#mojo-modelsmodelcollectioncreateproperties">model collection.create(properties)</a></li><li class="article-headline-h2"><a href="#mojo-modelsbuiltinplugins">Built-in plugins</a></li><li class="article-headline-h3"><a href="#mojo-modelspersist">persist</a></li><li class="article-headline-h4"><a href="#mojo-modelspersistableloadonload">persistable.load(onLoad)</a></li><li class="article-headline-h4"><a href="#mojo-modelspersistablereloadonreload">persistable.reload(onReload)</a></li><li class="article-headline-h4"><a href="#mojo-modelspersistablesaveonsave">persistable.save(onSave)</a></li><li class="article-headline-h4"><a href="#mojo-modelspersistableremoveonremove">persistable.remove(onRemove)</a></li><li class="article-headline-h4"><a href="#mojo-modelspersistableevents">persistable events</a></li><li class="article-headline-h3"><a href="#mojo-modelsvirtuals">virtuals</a></li><li class="article-headline-h3"><a href="#mojo-modelsbindings">bindings</a></li><li class="article-headline-h2"><a href="#mojo-modelsapplicationapi">Application API</a></li><li class="article-headline-h4"><a href="#mojo-modelsviewsapplication">views(application)</a></li><li class="article-headline-h4"><a href="#mojo-modelsapplicationmodelsregistermodelnameorclassesclass">application.models.register(modelNameOrClasses[, class])</a></li><li class="article-headline-h4"><a href="#mojo-modelsapplicationmodelscreatemodelnameproperties">application.models.create(modelName, properties)</a></li><li class="article-headline-h4"><a href="#mojo-modelsapplicationmodelsdecoratordecorator">application.models.decorator(decorator)</a></li><li class="article-headline-h2"><a href="#mojo-modelsunittesting">Unit Testing</a></li></ul><strong>mojo-paperclip</strong> <ul id="article-headlines"><li class="article-headline-h3"><a href="#mojo-paperclipinstallation">Installation</a></li></ul><strong>mojo-router</strong> <ul id="article-headlines"><li class="article-headline-h3"><a href="#mojo-routermojorouter">Mojo Router</a></li><li class="article-headline-h3"><a href="#mojo-routerexamples">Examples</a></li><li class="article-headline-h3"><a href="#mojo-routerseealso">See Also</a></li><li class="article-headline-h2"><a href="#mojo-routerapi">API</a></li><li class="article-headline-h2"><a href="#mojo-routerpaperclipapi">Paperclip API</a></li><li class="article-headline-h2"><a href="#mojo-routerapplicationapi">Application API</a></li><li class="article-headline-h4"><a href="#mojo-routerrouterapplication">router(application)</a></li><li class="article-headline-h4"><a href="#mojo-routerapplicationrouter">application.router</a></li><li class="article-headline-h4"><a href="#mojo-routerapplicationlocation">application.location</a></li><li class="article-headline-h2"><a href="#mojo-routerunittesting">Unit Testing</a></li></ul><strong>mojo-views</strong> <ul id="article-headlines"><li class="article-headline-h3"><a href="#mojo-viewsmojoviews">Mojo Views </a></li><li class="article-headline-h3"><a href="#mojo-viewsinstallation">Installation</a></li><li class="article-headline-h3"><a href="#mojo-viewsfeatures">Features</a></li><li class="article-headline-h3"><a href="#mojo-viewsexamples">Examples</a></li><li class="article-headline-h3"><a href="#mojo-viewsseealso">See also</a></li><li class="article-headline-h2"><a href="#mojo-viewsapi">API</a></li><li class="article-headline-h3"><a href="#mojo-viewsviewsbasepropertiesapplication">views.Base(properties[, application])</a></li><li class="article-headline-h4"><a href="#mojo-viewsdocumentfragmentbaserender">DocumentFragment base.render()</a></li><li class="article-headline-h4"><a href="#mojo-viewsbasewillrender">base.willRender()</a></li><li class="article-headline-h4"><a href="#mojo-viewsbasedidrender">base.didRender()</a></li><li class="article-headline-h4"><a href="#mojo-viewsbasedidcreatesection">base.didCreateSection()</a></li><li class="article-headline-h4"><a href="#mojo-viewsbasesection">base.section</a></li><li class="article-headline-h4"><a href="#mojo-viewsbase">base.$</a></li><li class="article-headline-h4"><a href="#mojo-viewsbaseapplication">base.application</a></li><li class="article-headline-h4"><a href="#mojo-viewsbaseremove">base.remove()</a></li><li class="article-headline-h4"><a href="#mojo-viewsbasewillremove">base.willRemove()</a></li><li class="article-headline-h4"><a href="#mojo-viewsbasedidremove">base.didRemove()</a></li><li class="article-headline-h4"><a href="#mojo-viewsbasevisible">base.visible</a></li><li class="article-headline-h4"><a href="#mojo-viewsbaseparent">base.parent</a></li><li class="article-headline-h4"><a href="#mojo-viewsevents">events</a></li><li class="article-headline-h3"><a href="#mojo-viewsviewsstackpropertiesapplication">views.Stack(properties[, application])</a></li><li class="article-headline-h4"><a href="#mojo-viewsstackstate">stack.state</a></li><li class="article-headline-h4"><a href="#mojo-viewsstackstates">stack.states</a></li><li class="article-headline-h3"><a href="#mojo-viewsviewslistpropertiesapplication">views.List(properties[, application])</a></li><li class="article-headline-h4"><a href="#mojo-viewslistsource">list.source</a></li><li class="article-headline-h4"><a href="#mojo-viewslistmodelviewclass">list.modelViewClass</a></li><li class="article-headline-h4"><a href="#mojo-viewslistsortmodelamodelb">list.sort(modelA, modelB)</a></li><li class="article-headline-h4"><a href="#mojo-viewslistfiltermodel">list.filter(model)</a></li><li class="article-headline-h2"><a href="#mojo-viewsbuiltinplugins">Built-in Plugins</a></li><li class="article-headline-h4"><a href="#mojo-viewsbindings">bindings</a></li><li class="article-headline-h4"><a href="#mojo-viewschildren">children</a></li><li class="article-headline-h2"><a href="#mojo-viewspropertyscope">Property Scope</a></li><li class="article-headline-h3"><a href="#mojo-viewsbreakingscope">Breaking Scope</a></li><li class="article-headline-h2"><a href="#mojo-viewsapplicationapi">Application API</a></li><li class="article-headline-h4"><a href="#mojo-viewsviewsapplication">views(application)</a></li><li class="article-headline-h4"><a href="#mojo-viewsapplicationviewsregisterviewnameorclassesclass">application.views.register(viewNameOrClasses[, class])</a></li><li class="article-headline-h4"><a href="#mojo-viewsapplicationviewscreateviewnameproperties">application.views.create(viewName, properties)</a></li><li class="article-headline-h4"><a href="#mojo-viewsapplicationviewsdecoratordecorator">application.views.decorator(decorator)</a></li><li class="article-headline-h2"><a href="#mojo-viewsunittesting">Unit Testing</a></li></ul></div></div> <div id="articles" class="col-sm-9"><div class="article-header"><h1>mojo-models</h1> <i>latest v0.1.42</i> <p>mojo-models ===========</p> <div class="links"><a href="https://github.com/classdojo/mojo-models">Github</a><a href="https://www.npmjs.org/package/mojo-models">npm</a></div></div> <div class="article-content"><h2 class='headline' id='mojo-modelsmojomodels'><a href='#mojo-modelsmojomodels' class='link'><span class='glyphicon glyphicon-link'></span></a>Mojo Models <a href="https://travis-ci.org/classdojo/mojo-models"><img src="https://travis-ci.org/classdojo/mojo-models.svg" alt="Build Status"></a></h2><h3 class='headline' id='mojo-modelsinstallation'><a href='#mojo-modelsinstallation' class='link'><span class='glyphicon glyphicon-link'></span></a>Installation</h3><pre><code>npm install mojo-models
+</code></pre><h3 class='headline' id='mojo-modelsfeatures'><a href='#mojo-modelsfeatures' class='link'><span class='glyphicon glyphicon-link'></span></a>Features</h3><ul>
+<li>easy to extend. register your own custom plugins to extend the functionality of models.</li>
+</ul>
+<h3 class='headline' id='mojo-modelsexamples'><a href='#mojo-modelsexamples' class='link'><span class='glyphicon glyphicon-link'></span></a>Examples</h3><ul>
+<li><a href="https://github.com/mojo-js/mojo-todomvc-example">https://github.com/mojo-js/mojo-todomvc-example</a></li>
+<li><a href="http://requirebin.com/?gist=d174776852d4f1a13bc4">deserializing data</a></li>
+<li><a href="http://requirebin.com/?gist=ef4c57b8004501d15447">loading models</a></li>
+<li><a href="http://requirebin.com/?gist=516f703d3eeb719940a1">collections</a></li>
+</ul>
+<h3 class='headline' id='mojo-modelsseealso'><a href='#mojo-modelsseealso' class='link'><span class='glyphicon glyphicon-link'></span></a>See Also</h3><ul>
+<li><a href="https://github.com/classdojo/bindable.js">bindable.js</a> - base class for models &amp; collections</li>
+<li><a href="https://github.com/mojo-js/mojo-application">mojo-application</a> - entry point to application</li>
+</ul>
+<h2 class='headline' id='mojo-modelsapi'><a href='#mojo-modelsapi' class='link'><span class='glyphicon glyphicon-link'></span></a>API</h2><h3 class='headline' id='mojo-modelsbasepropertiesapplication'><a href='#mojo-modelsbasepropertiesapplication' class='link'><span class='glyphicon glyphicon-link'></span></a>Base(properties[, <a href="https://github.com/mojo-js/mojo-application">application</a>])</h3><p>Extends <a href="https://github.com/mojo-js/bindable.js">bindable.Object</a></p>
+<p>base model constructor</p>
+<ul>
+<li><code>properties</code> - properties to set on the model</li>
+<li><code>application</code> - (optional) mojo application</li>
+</ul>
+<pre><code class="lang-javascript">var models = require(&quot;mojo-models&quot;);
+var model = new models.Base({ message: &quot;Hello world!&quot; });
+console.log(model.message);
+</code></pre>
+<h4 class='headline' id='mojo-modelsbasedata'><a href='#mojo-modelsbasedata' class='link'><span class='glyphicon glyphicon-link'></span></a>base.data</h4><p>The raw data set on the model - this is usually transformed into something the model can 
+use via <code>deserialize</code>. </p>
+<pre><code class="lang-javascript">var model = new models.Base({ data: { message: &quot;Hello world!&quot; }});
+consol.log(model.message); // Hello world!
+console.log(model.data); // { message: &quot;Hello world!&quot; }
+</code></pre>
+<h4 class='headline' id='mojo-modelsbasedeserializedata'><a href='#mojo-modelsbasedeserializedata' class='link'><span class='glyphicon glyphicon-link'></span></a>base.deserialize(data)</h4><p>deserializes data once <code>data</code> is set on the model</p>
+<p>Example: <a href="http://requirebin.com/?gist=d174776852d4f1a13bc4">http://requirebin.com/?gist=d174776852d4f1a13bc4</a></p>
+<pre><code class="lang-javascript">
+
+var Person = models.Base.extend({
+  deserialize: (data) {
+    return {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      fullName: data.firstName + &quot; &quot; + data.lastName
+    };
+  }
+});
+
+var person = new Person({
+  data: {
+    firstName: &quot;Craig&quot;,
+    lastName: &quot;Condon&quot;
+  }
+});
+
+console.log(person.fullName); // Craig Condon
+
+person.set(&quot;data&quot;, { 
+  firstName: &quot;A&quot;,
+  lastName: &quot;B&quot;
+});
+
+console.log(person.fullName); // A B
+</code></pre>
+<h4 class='headline' id='mojo-modelsbaseserialize'><a href='#mojo-modelsbaseserialize' class='link'><span class='glyphicon glyphicon-link'></span></a>base.serialize()</h4><p>serializes data. This is an alias to <code>toJSON</code></p>
+<h3 class='headline' id='mojo-modelscollectionpropertiesapplication'><a href='#mojo-modelscollectionpropertiesapplication' class='link'><span class='glyphicon glyphicon-link'></span></a>Collection(properties[, <a href="https://github.com/mojo-js/mojo-application">application</a>])</h3><p>Extends <a href="https://github.com/mojo-js/bindable.js">bindable.Collection</a></p>
+<h4 class='headline' id='mojo-modelscollectiondata'><a href='#mojo-modelscollectiondata' class='link'><span class='glyphicon glyphicon-link'></span></a>collection.data</h4><p>the raw source for the collection. Should be an array.</p>
+<pre><code class="lang-javascript">var Models = Collection.extend({
+  createModel: function (properties) {
+    return new models.Base(properties, this.application);
+  }
+});
+
+var models = new Models();
+
+models.set(&quot;data&quot;, [{ name: &quot;a&quot; }, { name: &quot;b&quot; }]);
+
+console.log(models.length); // 2
+</code></pre>
+<h4 class='headline' id='mojo-modelsmodelcollectioncreatemodeloptions'><a href='#mojo-modelsmodelcollectioncreatemodeloptions' class='link'><span class='glyphicon glyphicon-link'></span></a>model collection.createModel(options)</h4><p>Creates a model. This method is usually defined when extending the base collection. It&#39;s also 
+called when deserializing each item in <code>data</code>.</p>
+<pre><code class="lang-javascript">var Friend = models.Base.extend({
+});
+
+var Friends = models.Collection.extend({
+  createModel: function (properties) {
+    return new Friend(properties, this.application);
+  }
+});
+
+var friends = new Friends();
+var friend = friends.create({ firstName: &quot;John&quot; });
+
+console.log(friend.firstName); // John
+console.log(friends.length); // 1
+</code></pre>
+<h4 class='headline' id='mojo-modelsmodelcollectioncreateproperties'><a href='#mojo-modelsmodelcollectioncreateproperties' class='link'><span class='glyphicon glyphicon-link'></span></a>model collection.create(properties)</h4><p>creates a new model, and adds to the collection immediately. See example above.</p>
+<h2 class='headline' id='mojo-modelsbuiltinplugins'><a href='#mojo-modelsbuiltinplugins' class='link'><span class='glyphicon glyphicon-link'></span></a>Built-in plugins</h2><h3 class='headline' id='mojo-modelspersist'><a href='#mojo-modelspersist' class='link'><span class='glyphicon glyphicon-link'></span></a>persist</h3><p>Persistence layer for models / collections. Also adds the methods <code>load</code>, <code>save</code>, and <code>remove</code>.</p>
+<pre><code class="lang-javascript">var superagent = require(&quot;superagent&quot;);
+
+var Person = models.Base.extend({
+  persist: {
+    load: function (onLoad) {
+      superagent.get(&quot;/people/&quot; + this._id).end(onLoad);
+    },
+    remove: function (onRemove) {
+      superagent.del(&quot;/people/&quot; + this._id).end(onRemove);
+    },
+    save: function (onSave) {
+      if (this._id) {
+        superagent.put(&quot;/people/&quot; + this._id).body(this.serialize()).end(onSave);
+      } else {
+        superagent.post(&quot;/people&quot;).body(this.serialize()).end(onSave);
+      }
+    }
+  },
+  serialize: function () {
+    return {
+      firstName: this.firstName,
+      lastName: this.lastName
+    };
+  }
+});
+
+var person = new Person({ _id: &quot;person1&quot; });
+
+person.set(&quot;firstName&quot;, &quot;Craig&quot;);
+
+person.save(); // POST /people/person1 { firstName: &quot;Craig&quot; }
+person.load(); // loads the s 
+person.remove(); // removes the model
+</code></pre>
+<h4 class='headline' id='mojo-modelspersistableloadonload'><a href='#mojo-modelspersistableloadonload' class='link'><span class='glyphicon glyphicon-link'></span></a>persistable.load(onLoad)</h4><p>calls the <code>persist.load</code> function, and sets result to <code>data</code> to be deserialized on the model. Note that
+load can be called only once. Use <code>reload</code> to reload the model</p>
+<h4 class='headline' id='mojo-modelspersistablereloadonreload'><a href='#mojo-modelspersistablereloadonreload' class='link'><span class='glyphicon glyphicon-link'></span></a>persistable.reload(onReload)</h4><p>reloads the model</p>
+<h4 class='headline' id='mojo-modelspersistablesaveonsave'><a href='#mojo-modelspersistablesaveonsave' class='link'><span class='glyphicon glyphicon-link'></span></a>persistable.save(onSave)</h4><p>calls the <code>persist.save</code> function, and sets result to <code>data</code> to be deserialized on the model.</p>
+<h4 class='headline' id='mojo-modelspersistableremoveonremove'><a href='#mojo-modelspersistableremoveonremove' class='link'><span class='glyphicon glyphicon-link'></span></a>persistable.remove(onRemove)</h4><p>removes the model</p>
+<h4 class='headline' id='mojo-modelspersistableevents'><a href='#mojo-modelspersistableevents' class='link'><span class='glyphicon glyphicon-link'></span></a>persistable events</h4><ul>
+<li><code>willSave</code> - emitted when the model is about to be saved</li>
+<li><code>didSave</code> - emitted when the model has been saved</li>
+<li><code>willRemove</code> - emitted when the model is about to be removed</li>
+<li><code>didRemove</code> - emitted when the model has been removed</li>
+</ul>
+<p>removes the model</p>
+<h3 class='headline' id='mojo-modelsvirtuals'><a href='#mojo-modelsvirtuals' class='link'><span class='glyphicon glyphicon-link'></span></a>virtuals</h3><p>Virtual properties all you to load external resources as they&#39;re needed. This is especially useful when
+data-binding models to views.</p>
+<pre><code class="lang-javascript">
+var superagent = require(&quot;superagent&quot;);
+
+var Friends = models.Collection.extend({
+
+  // creates a new person for each item in .data
+  createModel: function (options) {
+    return new Person(options, this.application);
+  },
+  persist: {
+
+    // executed when .load, or .reload is called
+    load: function (complete) {
+      superagent.get(&quot;/person/&quot; + this.friendee._id + &quot;/friends&quot;).end(function (err, result) {
+        complete(null, result);
+      });  
+    }
+  }
+});
+
+var Person = models.Base.extend({
+  virtuals: {
+
+    // triggered on bind()
+    friends: function (onLoad) {
+      new Friends({ friendee: this }).load(onLoad);
+    }
+  }
+});
+
+var person = new Person({ _id: &quot;person1&quot; });
+
+console.log(person.get(&quot;friends&quot;)); // should be undefined
+
+// activates virtual property, and calls /person/person1/friends API
+person.bind(&quot;friends&quot;, function (friends) {
+  this.dispose(); // dispose the binding immediately
+
+});
+</code></pre>
+<h3 class='headline' id='mojo-modelsbindings'><a href='#mojo-modelsbindings' class='link'><span class='glyphicon glyphicon-link'></span></a>bindings</h3><p>Bindings allow you to compute properties on models.</p>
+<pre><code class="lang-javascript">
+var bindable = require(&quot;bindable&quot;);
+
+var Person = models.Base.extend({
+  bindings: {
+    &quot;firstName, lastName&quot;: function (firstName, lastName) {
+      this.set(&quot;fullName&quot;, firstName + &quot; &quot;+ lastName);
+    }
+  }
+
+var person = new Person({ firstName: &quot;A&quot;, lastName: &quot;B&quot; });
+console.log(person.fullName); // 
+document.body.appendChild(person.render());
+</code></pre>
+<h2 class='headline' id='mojo-modelsapplicationapi'><a href='#mojo-modelsapplicationapi' class='link'><span class='glyphicon glyphicon-link'></span></a>Application API</h2><h4 class='headline' id='mojo-modelsviewsapplication'><a href='#mojo-modelsviewsapplication' class='link'><span class='glyphicon glyphicon-link'></span></a>views(application)</h4><p>registers <code>mojo-models</code> to the <a href="https://github.com/mojo-js/mojo-application">mojo-application</a>, which will add a few properties
+/ methods onto the application.</p>
+<pre><code class="lang-javascript">var Application = require(&quot;mojo-application&quot;),
+models         = require(&quot;mojo-models&quot;);
+
+var app = new Application();
+app.use(models);
+</code></pre>
+<h4 class='headline' id='mojo-modelsapplicationmodelsregistermodelnameorclassesclass'><a href='#mojo-modelsapplicationmodelsregistermodelnameorclassesclass' class='link'><span class='glyphicon glyphicon-link'></span></a>application.models.register(modelNameOrClasses[, class])</h4><p>Registers a model class that&#39;s accessible anywhere in the application. </p>
+<p><code>modelNameOrClasses</code> - view name to register, or an object of classses to register
+<code>class</code> - the class to register</p>
+<pre><code class="lang-javascript">
+var app = new Application();
+
+app.use(require(&quot;mojo-models&quot;));
+
+// register views one at a time
+app.models.register(&quot;person&quot;, Person);
+
+// or register multiple views at a time
+app.models.register({
+  person: Person,
+  friends: Friends
+});
+
+var person = app.models.create(&quot;person&quot;);
+</code></pre>
+<h4 class='headline' id='mojo-modelsapplicationmodelscreatemodelnameproperties'><a href='#mojo-modelsapplicationmodelscreatemodelnameproperties' class='link'><span class='glyphicon glyphicon-link'></span></a>application.models.create(modelName, properties)</h4><p>Creates a new, registered component</p>
+<ul>
+<li><code>modelName</code> - the registered model component name</li>
+<li><code>properties</code> - the properties to assign to the created model. </li>
+</ul>
+<pre><code class="lang-javascript">var Person = views.Base.extend({
+
+});
+
+application.models.register(&quot;person&quot;, Person);
+
+var hello = application.views.create(&quot;person&quot;, { name: &quot;Craig&quot; });
+
+console.log(hello.name); // Craig
+</code></pre>
+<h4 class='headline' id='mojo-modelsapplicationmodelsdecoratordecorator'><a href='#mojo-modelsapplicationmodelsdecoratordecorator' class='link'><span class='glyphicon glyphicon-link'></span></a>application.models.decorator(decorator)</h4><p>Registers a model plugin. This is useful if you want to extend the functionality for each model. The implementation
+is idential to <a href="https://github.com/mojo-js/mojo-views#applicationviewsdecoratordecorator">mojo view decorators</a>.</p>
+<h2 class='headline' id='mojo-modelsunittesting'><a href='#mojo-modelsunittesting' class='link'><span class='glyphicon glyphicon-link'></span></a>Unit Testing</h2><p>Unit tests are very easy to write for mojo-models. Here&#39;s a basic example using <code>mocha</code>, and <code>expect.js</code>:</p>
+<p>View:</p>
+<pre><code class="lang-javascript">var models = require(&quot;mojo-models&quot;);
+module.exports = models.Base.extend({
+    bindings: {
+        &quot;firstName, lastName&quot;: function (firstName, lastName) {
+            this.set(&quot;fullName&quot;, firstName + &quot; &quot; + lastName);
+        }
+    }
+});
+</code></pre>
+<p>Unit Test:</p>
+<pre><code class="lang-javascript">var Person = require(&quot;./person&quot;),
+expect = require(&quot;expect.js&quot;);
+
+describe(__filename + &quot;#&quot;, function() {
+
+    var model;
+
+    beforeEach(function() {
+        model = new Person();
+    });
+
+    it(&quot;properly computes first / last name when changed&quot;, function () {
+        model.setProperties({
+          firstName: &quot;A&quot;,
+          lastName: &quot;B&quot;
+        });
+        expect(model.get(&quot;fullName&quot;)).to.be(&quot;A B&quot;);
+    });
+});
+</code></pre>
+</div> <br><div class="article-header"><h1>mojo-paperclip</h1> <i>latest v0.5.4</i> <p>paperclip template engine for mojo.js</p> <div class="links"><a href="git://github.com/classdojo/mojo-paperclip.git">Github</a><a href="https://www.npmjs.org/package/mojo-paperclip">npm</a></div></div> <div class="article-content"><h3 class='headline' id='mojo-paperclipinstallation'><a href='#mojo-paperclipinstallation' class='link'><span class='glyphicon glyphicon-link'></span></a>Installation</h3><pre><code class="lang-javascript">require(&quot;mojojs&quot;).use(require(&quot;mojo-paperclip&quot;));
+</code></pre>
+</div> <br><div class="article-header"><h1>mojo-router</h1> <i>latest v0.5.2</i> <p></p> <div class="links"><a href="https://www.npmjs.org/package/mojo-router">npm</a></div></div> <div class="article-content"><h3 class='headline' id='mojo-routermojorouter'><a href='#mojo-routermojorouter' class='link'><span class='glyphicon glyphicon-link'></span></a>Mojo Router</h3><p>HTTP router which helps maintain application state.</p>
+<h3 class='headline' id='mojo-routerexamples'><a href='#mojo-routerexamples' class='link'><span class='glyphicon glyphicon-link'></span></a>Examples</h3><ul>
+<li><a href="https://github.com/mojo-js/mojo-todomvc-example">https://github.com/mojo-js/mojo-todomvc-example</a></li>
+</ul>
+<h3 class='headline' id='mojo-routerseealso'><a href='#mojo-routerseealso' class='link'><span class='glyphicon glyphicon-link'></span></a>See Also</h3><ul>
+<li><a href="https://github.com/mojo-js/crowbar.js">crowbar</a> - routing engine used</li>
+<li><a href="https://github.com/mojo-js/paperclip.js">paperclip</a> - template engine for links</li>
+<li><a href="https://github.com/mojo-js/mojo-views">mojo-views</a></li>
+</ul>
+<h2 class='headline' id='mojo-routerapi'><a href='#mojo-routerapi' class='link'><span class='glyphicon glyphicon-link'></span></a>API</h2><p><strong>See <a href="https://github.com/mojo-js/crowbar.js">crowbar</a> for extended documentation</strong></p>
+<h2 class='headline' id='mojo-routerpaperclipapi'><a href='#mojo-routerpaperclipapi' class='link'><span class='glyphicon glyphicon-link'></span></a>Paperclip API</h2><p>TODO</p>
+<h2 class='headline' id='mojo-routerapplicationapi'><a href='#mojo-routerapplicationapi' class='link'><span class='glyphicon glyphicon-link'></span></a>Application API</h2><h4 class='headline' id='mojo-routerrouterapplication'><a href='#mojo-routerrouterapplication' class='link'><span class='glyphicon glyphicon-link'></span></a>router(application)</h4><p>registers <code>mojo-router</code> to the <a href="https://github.com/mojo-js/mojo-application">mojo-application</a>, which will add a few properties
+/ methods onto the application.</p>
+<pre><code class="lang-javascript">var Application = require(&quot;mojo-application&quot;),
+router         = require(&quot;mojo-router&quot;);
+
+var app = new Application();
+app.use(router);
+</code></pre>
+<h4 class='headline' id='mojo-routerapplicationrouter'><a href='#mojo-routerapplicationrouter' class='link'><span class='glyphicon glyphicon-link'></span></a>application.router</h4><p>The <a href="https://github.com/mojo-js/crowbar.js">crowbar</a> router instance</p>
+<pre><code class="lang-javascript">application.router.add({
+  &quot;/home&quot;: {
+    states: {
+      main: &quot;home&quot;,
+      home: &quot;contact&quot;
+    }
+  }
+});
+</code></pre>
+<h4 class='headline' id='mojo-routerapplicationlocation'><a href='#mojo-routerapplicationlocation' class='link'><span class='glyphicon glyphicon-link'></span></a>application.location</h4><p>the current location of the router</p>
+<h2 class='headline' id='mojo-routerunittesting'><a href='#mojo-routerunittesting' class='link'><span class='glyphicon glyphicon-link'></span></a>Unit Testing</h2><p>TODO</p>
+</div> <br><div class="article-header"><h1>mojo-views</h1> <i>latest v0.1.26</i> <p>modular mv+ JavaScript framework for node, and the web</p> <div class="links"><a href="git://github.com/classdojo/mojo.js.git">Github</a><a href="https://www.npmjs.org/package/mojo-views">npm</a></div></div> <div class="article-content"><h3 class='headline' id='mojo-viewsmojoviews'><a href='#mojo-viewsmojoviews' class='link'><span class='glyphicon glyphicon-link'></span></a>Mojo Views <a href="https://travis-ci.org/classdojo/mojo-views"><img src="https://travis-ci.org/classdojo/mojo-views.svg" alt="Build Status"></a></h3><p>Controls exactly what the user sees and does. View controllers are plugin-based - they don&#39;t come with any special features out of the box, such as template engines. This allows you to fully customize exactly how view controllers behave. See <a href="#applicationviewsdecoratordecorator">Decorators</a> to understand how to add / create plugins to views.</p>
+<h3 class='headline' id='mojo-viewsinstallation'><a href='#mojo-viewsinstallation' class='link'><span class='glyphicon glyphicon-link'></span></a>Installation</h3><pre><code class="lang-javascript">npm i mojo-views
+</code></pre>
+<h3 class='headline' id='mojo-viewsfeatures'><a href='#mojo-viewsfeatures' class='link'><span class='glyphicon glyphicon-link'></span></a>Features</h3><ul>
+<li>Easy interpolation between other libraries such as Backbone, React, Angular, etc. (no lock-in)</li>
+<li>Mojo views can run in the browser, along with Node.js.</li>
+</ul>
+<h3 class='headline' id='mojo-viewsexamples'><a href='#mojo-viewsexamples' class='link'><span class='glyphicon glyphicon-link'></span></a>Examples</h3><ul>
+<li><a href="https://github.com/mojo-js/mojo-todomvc-example">https://github.com/mojo-js/mojo-todomvc-example</a></li>
+<li><a href="http://requirebin.com/?gist=a4af5f1b896589825799">Hello World</a></li>
+<li><a href="http://requirebin.com/?gist=7ccce61d8a95bf2cb5a5">Sorted List view</a></li>
+<li><a href="http://requirebin.com/?gist=7ccce61d8a95bf2cb5a5">Stack View</a></li>
+<li><a href="http://requirebin.com/?gist=0413cdddfb3097e696eb">Handlebars template engine</a></li>
+<li><a href="http://requirebin.com/?gist=add1e20b9071e37fd9d1">Paperclip template engine</a></li>
+<li><a href="http://requirebin.com/?gist=cafd6df55bb711c88a1d">Computed properties</a></li>
+</ul>
+<h3 class='headline' id='mojo-viewsseealso'><a href='#mojo-viewsseealso' class='link'><span class='glyphicon glyphicon-link'></span></a>See also</h3><ul>
+<li><a href="https://github.com/classdojo/bindable.js">bindable.js</a> - base class for each view</li>
+<li><a href="/mojo-js/mojo-paperclip">mojo-paperclip</a> - template engine</li>
+</ul>
+<h2 class='headline' id='mojo-viewsapi'><a href='#mojo-viewsapi' class='link'><span class='glyphicon glyphicon-link'></span></a>API</h2><h3 class='headline' id='mojo-viewsviewsbasepropertiesapplication'><a href='#mojo-viewsviewsbasepropertiesapplication' class='link'><span class='glyphicon glyphicon-link'></span></a>views.Base(properties[, <a href="https://github.com/mojo-js/mojo-application">application</a>])</h3><p>Extends <a href="https://github.com/classdojo/bindable.js">bindable.Object</a></p>
+<p>The base view that controls what the user sees and does</p>
+<ul>
+<li><code>properties</code> - the properties that get set on the view controller</li>
+<li><code>application</code> - (optional) the mojo application. If this is omitted, then the <code>global application</code> will be used.</li>
+</ul>
+<p><a href="http://requirebin.com/?gist=a4af5f1b896589825799">Example</a>: </p>
+<pre><code class="lang-javascript">var views = require(&quot;mojo-views&quot;);
+
+var HelloView = views.Base.extend({
+    didCreateSection: function () {
+      this.section.appendChild(this.application.nodeFactory.createTextNode(&quot;Hello &quot; + this.get(&quot;message&quot;) + &quot;!&quot;));
+    }
+});
+
+var helloView = new HelloView({ message: &quot;World&quot; });
+document.body.appendChild(helloView.render());
+</code></pre>
+<h4 class='headline' id='mojo-viewsdocumentfragmentbaserender'><a href='#mojo-viewsdocumentfragmentbaserender' class='link'><span class='glyphicon glyphicon-link'></span></a>DocumentFragment base.render()</h4><p>Renders the view, and returns a document fragment</p>
+<h4 class='headline' id='mojo-viewsbasewillrender'><a href='#mojo-viewsbasewillrender' class='link'><span class='glyphicon glyphicon-link'></span></a>base.willRender()</h4><p>Called right before the view is rendered</p>
+<h4 class='headline' id='mojo-viewsbasedidrender'><a href='#mojo-viewsbasedidrender' class='link'><span class='glyphicon glyphicon-link'></span></a>base.didRender()</h4><p>Called right after the view is rendered</p>
+<h4 class='headline' id='mojo-viewsbasedidcreatesection'><a href='#mojo-viewsbasedidcreatesection' class='link'><span class='glyphicon glyphicon-link'></span></a>base.didCreateSection()</h4><p>Called once the <code>section</code> is created. This is usually where you might add elements to your view controller.</p>
+<h4 class='headline' id='mojo-viewsbasesection'><a href='#mojo-viewsbasesection' class='link'><span class='glyphicon glyphicon-link'></span></a>base.section</h4><p>The section, or virtual document fragment which contains all the elements. See <a href="https://github.com/mojo-js/loaf.js">loaf.js</a> for further documentation.</p>
+<h4 class='headline' id='mojo-viewsbase'><a href='#mojo-viewsbase' class='link'><span class='glyphicon glyphicon-link'></span></a>base.$</h4><p>node.js-safe query selector for document elements. Useful especially for unit testing.</p>
+<h4 class='headline' id='mojo-viewsbaseapplication'><a href='#mojo-viewsbaseapplication' class='link'><span class='glyphicon glyphicon-link'></span></a>base.application</h4><p>The <a href="https://github.com/mojo-js/mojo-application">application</a>.</p>
+<h4 class='headline' id='mojo-viewsbaseremove'><a href='#mojo-viewsbaseremove' class='link'><span class='glyphicon glyphicon-link'></span></a>base.remove()</h4><p>Removes the view&#39;s elements from the DOM.</p>
+<h4 class='headline' id='mojo-viewsbasewillremove'><a href='#mojo-viewsbasewillremove' class='link'><span class='glyphicon glyphicon-link'></span></a>base.willRemove()</h4><p>Called right before the view is removed</p>
+<h4 class='headline' id='mojo-viewsbasedidremove'><a href='#mojo-viewsbasedidremove' class='link'><span class='glyphicon glyphicon-link'></span></a>base.didRemove()</h4><p>Called right after the view is removed</p>
+<h4 class='headline' id='mojo-viewsbasevisible'><a href='#mojo-viewsbasevisible' class='link'><span class='glyphicon glyphicon-link'></span></a>base.visible</h4><p>true / false if the view is currently visible to the user</p>
+<h4 class='headline' id='mojo-viewsbaseparent'><a href='#mojo-viewsbaseparent' class='link'><span class='glyphicon glyphicon-link'></span></a>base.parent</h4><p>reference to the parent view</p>
+<h4 class='headline' id='mojo-viewsevents'><a href='#mojo-viewsevents' class='link'><span class='glyphicon glyphicon-link'></span></a>events</h4><ul>
+<li><code>remove</code> - emitted when the view is removed</li>
+<li><code>render</code> - emitted when the view is rendered</li>
+<li><code>dispose</code> - emitted when the view is disposed</li>
+</ul>
+<h3 class='headline' id='mojo-viewsviewsstackpropertiesapplication'><a href='#mojo-viewsviewsstackpropertiesapplication' class='link'><span class='glyphicon glyphicon-link'></span></a>views.Stack(properties[, <a href="https://github.com/mojo-js/mojo-application">application</a>])</h3><p>Extends <a href="#viewsbaseproperties-application">views.Base</a></p>
+<p>The stack view is a container with many children where only one is displayed at a time. Stack views are very useful when building Single Page Applications with navigation, and often times with an HTTP router, such as <a href="https://github.com/mojo-js/mojo-router">mojo-router</a>.</p>
+<pre><code class="lang-javascript">var Pages = views.Stack.extend({
+  children: {
+    home: require(&quot;./home&quot;),
+    account: require(&quot;./account&quot;)
+  }
+});
+
+var pages = new Pages();
+pages.set(&quot;state&quot;, &quot;home&quot;); // move to the home page
+</code></pre>
+<h4 class='headline' id='mojo-viewsstackstate'><a href='#mojo-viewsstackstate' class='link'><span class='glyphicon glyphicon-link'></span></a>stack.state</h4><p>the current state of the stack view. See example above.</p>
+<h4 class='headline' id='mojo-viewsstackstates'><a href='#mojo-viewsstackstates' class='link'><span class='glyphicon glyphicon-link'></span></a>stack.states</h4><p>Allows you to control the state of multiple nested stack.</p>
+<pre><code class="lang-javascript">
+var AccountPages = views.Stack.extend({
+  children: {
+    billing: require(&quot;./billing&quot;),
+    profile: require(&quot;./profile&quot;)
+  }
+});
+
+var Pages = views.Stack.extend({
+  name: &quot;main&quot;,
+  children: {
+    home: require(&quot;./home&quot;),
+    account: AccountPages
+  }
+});
+
+var pages = new Pages();
+
+pages.set(&quot;states&quot;, {
+  main: &quot;account&quot;,
+  account: &quot;profile&quot;
+});
+</code></pre>
+<h3 class='headline' id='mojo-viewsviewslistpropertiesapplication'><a href='#mojo-viewsviewslistpropertiesapplication' class='link'><span class='glyphicon glyphicon-link'></span></a>views.List(properties[, <a href="https://github.com/mojo-js/mojo-application">application</a>])</h3><p>Extends <a href="#viewsbaseproperties-application">views.Base</a></p>
+<p>Creates a list of views which is represented by a bindable collection. Note that each model is set as model property for each list item view created. See the example below.</p>
+<pre><code class="lang-javascript">var bindable = require(&quot;bindable&quot;);
+
+var items = new bindable.Collection([
+  new bindable.Object({ text: &quot;hello 1&quot; }),
+  new bindable.Object({ text: &quot;hello 2&quot; }),
+  new bindable.Object({ text: &quot;hello 3&quot; })
+]);
+
+var ItemView = views.Base.extend({
+  didCreateSection: function () {
+    this.section.appendChild(this.nodeFactory.createTextNode(this.get(&quot;model.text&quot;)));
+  }
+});
+
+var ItemsView = new views.List.extend({
+  modelViewClass: ItemView
+});
+
+var items = new ItemsView({ source: items });
+document.body.appendChild(items.render());
+</code></pre>
+<h4 class='headline' id='mojo-viewslistsource'><a href='#mojo-viewslistsource' class='link'><span class='glyphicon glyphicon-link'></span></a>list.source</h4><p>The source of the list. This should be a <a href="https://github.com/classdojo/bindable.js">bindable.Collection</a>.
+Note that this can also be a reference to another property in the list. This is especially useful when inheriting properties from a parent view. See <a href="#property-scope">property scope</a> for more info.</p>
+<h4 class='headline' id='mojo-viewslistmodelviewclass'><a href='#mojo-viewslistmodelviewclass' class='link'><span class='glyphicon glyphicon-link'></span></a>list.modelViewClass</h4><p>The view class that&#39;s created for each <code>model</code> in <code>source</code>. Note
+that the property <code>model</code> is set to each listed view, as shown in the example above.</p>
+<h4 class='headline' id='mojo-viewslistsortmodelamodelb'><a href='#mojo-viewslistsortmodelamodelb' class='link'><span class='glyphicon glyphicon-link'></span></a>list.sort(modelA, modelB)</h4><p>The sorting function for the list</p>
+<pre><code class="lang-javascript">var bindable = require(&quot;bindable&quot;);
+
+var people = new bindable.Collection([
+  new bindable.Object({ name: &quot;John&quot;, age: 29 }),
+  new bindable.Object({ name: &quot;Jeff&quot;, age: 21  }),
+  new bindable.Object({ name: &quot;Ben&quot;, age: 23  })
+]);
+
+var PeopleView = new views.List.extend({
+  modelViewClass: PersionView, // not defined in this example
+  sort: function (a, b) {
+    return a.get(&quot;age&quot;) &gt; b.get(&quot;age&quot;) ? -1 : 1;
+  }
+});
+
+document.body.append(new PeopleView({ source: people }).render());
+</code></pre>
+<h4 class='headline' id='mojo-viewslistfiltermodel'><a href='#mojo-viewslistfiltermodel' class='link'><span class='glyphicon glyphicon-link'></span></a>list.filter(model)</h4><p>Filters models from the list</p>
+<h2 class='headline' id='mojo-viewsbuiltinplugins'><a href='#mojo-viewsbuiltinplugins' class='link'><span class='glyphicon glyphicon-link'></span></a>Built-in Plugins</h2><h4 class='headline' id='mojo-viewsbindings'><a href='#mojo-viewsbindings' class='link'><span class='glyphicon glyphicon-link'></span></a>bindings</h4><p>Bindings allow you to compute properties on each view.</p>
+<p><a href="http://requirebin.com/?gist=cafd6df55bb711c88a1d">Example</a>:</p>
+<pre><code class="lang-javascript">var views       = require(&quot;mojo-views&quot;),
+    bindable    = require(&quot;bindable&quot;);
+
+var PersonView = views.Base.extend({
+  bindings: {
+    &quot;model.firstName, model.lastName&quot;: function (firstName, lastName) {
+      this.textNode.nodeValue = &quot;Hello &quot; + firstName + &quot; &quot; + lastName;
+    }
+  },
+  didCreateSection: function () {
+    this.textNode = this.application.nodeFactory.createTextNode(&quot;&quot;);
+    this.section.appendChild(this.textNode);
+  }
+});
+
+var person = new PersonView({
+  model: new bindable.Object({
+    firstName: &quot;John&quot;,
+     lastName: &quot;Gordon&quot;
+  })
+});
+
+document.body.appendChild(person.render());
+</code></pre>
+<h4 class='headline' id='mojo-viewschildren'><a href='#mojo-viewschildren' class='link'><span class='glyphicon glyphicon-link'></span></a>children</h4><p>Children allow you to define child view controller which get added to the view controller. This allows a greater level of
+organization in your codebase. Here&#39;s an example of a basic view structure:</p>
+<pre><code class="lang-javascript">
+// this view never actually gets removed - it&#39;s always stuck at the top
+var HeaderView = views.Base.extend({
+  didCreateSection: function () {
+    // render elements here
+  }
+});
+
+// the main home page
+var HomeView = views.Stack.extend({
+  didCreateSection: function () {
+    // render home elements here
+  }
+});
+
+var ContactView = views.Stack.extend({
+  didCreateSection: function () {
+    // render elements here
+  }
+});
+
+
+// toggles between home, and contact states
+var PagesView = views.Stack.extend({
+  children: {
+    home: HomeView,
+    contact: ContactView
+  }
+});
+
+// the main entry point into the views
+var MainView = views.Base.extend({
+  didCreateSection: function () {
+    this.section.appendChild(this.children.header.render());
+    this.section.appendChild(this.children.pages.render());
+  },
+  children: {
+    header: HeaderView,
+    pages: PagesView
+  }
+});
+
+var mainView = new MainView();
+document.body.appendChild(mainView.render());
+</code></pre>
+<h2 class='headline' id='mojo-viewspropertyscope'><a href='#mojo-viewspropertyscope' class='link'><span class='glyphicon glyphicon-link'></span></a>Property Scope</h2><p>Views, just like variable scope, have the ability to inherit properties from their parent view. For example:</p>
+<pre><code class="lang-javascript">var TodoView = views.List.extend({
+  didCreateSection: function () {
+    this.section.appendChild(this.nodeFactory.createTextNode(this.get(&quot;model.text&quot;)));
+  }
+});
+
+var TodosListView = views.List.extend({
+  modelViewClass: TodoView, 
+
+  // this is inherited from mainView when set in the constructor
+  source: &quot;todoItems&quot;
+});
+
+var MainView = views.Base.extend({
+  children: {
+    todosList: TodosListView
+  },
+  didCreateSection: function () {
+    this.section.appendChild(this.nodeFactory.createTextNode(&quot;Todos: &quot;));
+    this.section.appendChild(this.get(&quot;children.todosList&quot;).render());
+  }
+});
+
+var todos = new bindable.Collection([
+  new bindable.Object({ text: &quot;clean car&quot; }),
+  new bindable.Object({ text: &quot;walk dog&quot; })
+]);
+
+/*
+will output:
+
+
+Todos: clean car walk dog
+*/
+
+document.body.appendChild(new MainView({ todoItems: todos }).render());
+</code></pre>
+<h3 class='headline' id='mojo-viewsbreakingscope'><a href='#mojo-viewsbreakingscope' class='link'><span class='glyphicon glyphicon-link'></span></a>Breaking Scope</h3><p>You can also be explicit about what properties are inherited from the parent view by setting
+<code>define</code> in the view. For example:</p>
+<pre><code class="lang-javascript">
+var ChildView = views.Base.extend({
+  define: [&quot;message&quot;],
+  message: &quot;Hello World!&quot;,
+  willRender: function () {
+    this.section.appendChild(this.nodeFactory.createTextNode(this.get(&quot;message&quot;)));
+  }
+})
+
+var ParentView = views.Base.extend({
+  children: {
+    child: ChildView
+  }
+  willRender: function () {
+    this.section.appendChild(this.get(&quot;children.child&quot;).render());
+  }
+});
+
+// outputs: &quot;Hello World!&quot; instead of &quot;Blarg!&quot;
+document.body.appendChild(new ParentView({ message: &quot;Blarg!&quot; }).render());
+</code></pre>
+<h2 class='headline' id='mojo-viewsapplicationapi'><a href='#mojo-viewsapplicationapi' class='link'><span class='glyphicon glyphicon-link'></span></a>Application API</h2><h4 class='headline' id='mojo-viewsviewsapplication'><a href='#mojo-viewsviewsapplication' class='link'><span class='glyphicon glyphicon-link'></span></a>views(application)</h4><p>registers <code>mojo-views</code> to the <a href="https://github.com/mojo-js/mojo-application">mojo-application</a>, which will add a few properties
+/ methods onto the application.</p>
+<pre><code class="lang-javascript">var Application = require(&quot;mojo-application&quot;),
+views           = require(&quot;mojo-views&quot;);
+
+var app = new Application();
+app.use(views);
+</code></pre>
+<h4 class='headline' id='mojo-viewsapplicationviewsregisterviewnameorclassesclass'><a href='#mojo-viewsapplicationviewsregisterviewnameorclassesclass' class='link'><span class='glyphicon glyphicon-link'></span></a>application.views.register(viewNameOrClasses[, class])</h4><p>Registers a view class that&#39;s accessible anywhere in the application. This is especially useful when registering reusable components
+you might want to use in something like <a href="https://github.com/mojo-js/paperclip-component">paperclip-component</a>.</p>
+<p><code>viewNameOrClasses</code> - view name to register, or an object of classses to register
+<code>class</code> - the class to register</p>
+<pre><code class="lang-javascript">
+var app = new Application();
+
+// register views one at a time
+app.views.register(&quot;main&quot;, MainView);
+
+// or register multiple views at a time
+app.views.register({
+  main: MainView,
+  select: SelectView,        // re-usable select component
+  loadingBar: LoadingBarView // re-usable loading bar component
+  datePicker: DatePickerView // re-usable date picker view
+});
+
+
+var SomeView = views.Base.extend({
+  didCreateSection: function () {
+
+    // create the component, and append to this view
+    this.section.appendChild(this.application.views.create(&quot;datePicker&quot;).render());
+  }
+});
+
+
+// create some view, but use the application that 
+// has all the registered components
+var view = new SomeView(void 0, app);
+
+
+document.body.appendChild(view.render());
+</code></pre>
+<h4 class='headline' id='mojo-viewsapplicationviewscreateviewnameproperties'><a href='#mojo-viewsapplicationviewscreateviewnameproperties' class='link'><span class='glyphicon glyphicon-link'></span></a>application.views.create(viewName, properties)</h4><p>Creates a new, registered component</p>
+<ul>
+<li><code>viewName</code> - the registered view component name</li>
+<li><code>properties</code> - the properties to assign to the created view. </li>
+</ul>
+<pre><code class="lang-javascript">var HelloView = views.Base.extend({
+
+});
+
+application.views.register(&quot;hello&quot;, HelloView);
+
+var hello = application.views.create(&quot;hello&quot;, { name: &quot;Craig&quot; });
+
+console.log(hello.name); // Craig
+</code></pre>
+<h4 class='headline' id='mojo-viewsapplicationviewsdecoratordecorator'><a href='#mojo-viewsapplicationviewsdecoratordecorator' class='link'><span class='glyphicon glyphicon-link'></span></a>application.views.decorator(decorator)</h4><p>Registers a view plugin. This is useful if you want to extend the functionality for each view. Super useful for 
+interpolation between different libraries. Here&#39;s an <a href="http://requirebin.com/?gist=0413cdddfb3097e696eb">example</a> of using a handlebars template engine:</p>
+<pre><code class="lang-javascript">
+var handlebars = require(&quot;handlebars&quot;);
+
+var HelloView = views.Base.extend({
+  handlebars: &quot;&lt;div&gt; hello {{name}}!&lt;/div&gt;&quot;
+});
+
+application.views.register(&quot;hello&quot;, HelloView);
+
+application.views.decorator({
+  getOptions: function (view) {
+    return view.handlebars;
+  },  
+  decorate: function (view, templateSource) {
+    var template = handlebars.compile(templateSource);
+
+    function render () {
+      view.section.replaceChildNodes(template(view));
+    }
+
+    render();
+
+    // render whenever the view changes
+    view.on(&quot;change&quot;, render);
+  }
+})
+</code></pre>
+<h2 class='headline' id='mojo-viewsunittesting'><a href='#mojo-viewsunittesting' class='link'><span class='glyphicon glyphicon-link'></span></a>Unit Testing</h2><p>Unit tests are very easy to write for mojo-views. Here&#39;s a basic example using <code>mocha</code>, and <code>expect.js</code>:</p>
+<p>View:</p>
+<pre><code class="lang-javascript">var views = require(&quot;mojo-views&quot;);
+module.exports = views.Base.extend({
+    : {
+        &quot;firstName, lastName&quot;: function (firstName, lastName) {
+            this.$(this.textNode).val(firstName + &quot; &quot; + lastName);
+        }
+    },
+    didCreateSection: function () {
+        this.textNode = this.application.nodeFactory.createTextNode(&quot;&quot;);
+        this.section.appendChild(this.textNode);
+
+    }
+});
+</code></pre>
+<p>Unit Test:</p>
+<pre><code class="lang-javascript">var PersonView = require(&quot;./person&quot;),
+expect = require(&quot;expect.js&quot;);
+
+describe(__filename + &quot;#&quot;, function() {
+
+    var view;
+
+    beforeEach(function() {
+        view = new PersonView();
+    });
+
+    it(&quot;displays the information properly&quot;, function () {
+        var fragment = view.render();
+        view.setProperties({
+            firstName: &quot;Liam&quot;,
+            lastName: &quot;Don&quot;
+        });
+        expect(fragment.childNodes[0].nodeValue).to.be(&quot;Liam Don&quot;);
+    });
+});
+</code></pre>
+</div> <br></div></div></div> <script type="text/javascript">var onHashChange = window.onhashchange = function () { var headline = $("#articles").find('*[id="'+location.hash.substr(1)+'"]'); if (!headline.length) return; headline[0].scrollIntoView(true); return; $('html, body').animate({ scrollTop: headline.offset().top - 200 }, 100); }; onHashChange(); </script>

@@ -1,3 +1,1 @@
-<div class="container" style="max-width:900px; padding-bottom: 80px;" role="main">
-  {{ html: sections.pages }}
-</div>
+{{ html: sections.pages }}

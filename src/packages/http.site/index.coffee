@@ -32,6 +32,16 @@ exports.load = (httpServer, pc, express, browserify) ->
 
     res.send view.render().toString()
 
+  httpServer.get "/docs", (req, res) ->
+
+    view = new MainView {
+      routes: {
+        pages: "docs"
+      }
+    }, app
+
+    res.send view.render().toString()
+
   httpServer.get "/js/plugins.bundle.js", browserify(__dirname + "/public/js/plugins/index.js")
   httpServer.get "/js/home.bundle.js", browserify(__dirname + "/public/js/home/index.js")
   httpServer.use express.static __dirname + "/public"

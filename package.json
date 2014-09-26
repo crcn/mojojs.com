@@ -43,12 +43,13 @@
     "mojo-docs": "*"
   },
   "devDependencies": {
-    "jsdev": "~0.1.3",
     "colors": "~0.6.2",
-    "outcome": "0.0.18",
-    "mkdirp": "~0.3.5",
     "glob": "~3.2.6",
     "handlebars": "~1.0.12",
-    "node-osx-notifier": "~0.1.0"
+    "jsdev": "~0.1.3",
+    "md-doc-generator": "^1.0.1",
+    "mkdirp": "~0.3.5",
+    "node-osx-notifier": "~0.1.0",
+    "outcome": "0.0.18"
   }
 }

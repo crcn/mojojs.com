@@ -1,92 +1,93 @@
-<div class="row" style="padding-top: 80px">
-  <div class="col-md-12 text-center">
-    <div class="center">
-      <img src="/img/mojo-js.png" />
+<div class="container" style="max-width:900px; padding-bottom: 80px;" role="main">
+
+  <div class="row" style="padding-top: 80px">
+    <div class="col-md-12 text-center">
+      <div class="center">
+        <img src="/img/mojo-js.png" />
+      </div>
+      <div class="center">
+        <h1>Build a JavaScript UI Framework!</h1>
+      </div>
+      <div class="center" style="padding-top: 20px">
+        <a href="{{links.starter}}" class="btn btn-default">Download Starter Kit</a>
+        <a href="{{links.source}}" class="btn btn-default">Download Source</a>
+      </div>
     </div>
-    <div class="center">
-      <h1>Build a JavaScript UI Framework!</h1>
+  </div>
+
+  <div class="row" style="padding-top: 80px">
+
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-indent-left"></span>&nbsp;Mojo phases out the old</h3>
+      <p>
+        Mojo was built to allow you to build on top of your existing code base, so you
+  don’t have to do a risky, and expensive re-write of
+  your application. Start using Mojo in your existing application on day one.
+      </p>
     </div>
-    <div class="center" style="padding-top: 20px">
-      <a href="{{links.starter}}" class="btn btn-default">Download Starter Kit</a>
-      <a href="{{links.source}}" class="btn btn-default">Download Source</a>
+
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-wrench"></span>&nbsp;Mojo is modular</h3>
+      <p>
+        Don’t want to use the router? Want to use your
+  own template engine? No problem! Mojo allows you to
+  choose what libraries you like most.  Truly make it into the JavaScript MV* framework
+  you want it to be.
+      </p>
+    </div>
+
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-flash"></span>&nbsp;JavaScript all the way down</h3>
+      <p>
+        Mojo.js was built to solve the shortcommings of DOM manipulation in browsers, especially in older browsers. Mojo.js applications are entirely JavaScript. This includes templates, which are translated into JavaScript before actually being used.
+      </p>
+    </div>
+
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-link"></span>&nbsp;Broad platform support, IE too!</h3>
+      <p>
+        Mojo.js was built to support all JavaScript platforms including IE 7+, and node.js - <a href="{{links.siteSource}}">this website</a> was even statically generated using Mojo. No need to modify your style to support a specific runtime. Write your application one way, and mojo will handle the rest.
+      </p>
     </div>
   </div>
-</div>
 
-<div class="row" style="padding-top: 80px">
+  <div class="row">
 
-  <div class="col-md-6">
-    <h3><span class="glyphicon glyphicon-indent-left"></span>&nbsp;Mojo phases out the old</h3>
-    <p>
-      Mojo was built to allow you to build on top of your existing code base, so you
-don’t have to do a risky, and expensive re-write of
-your application. Start using Mojo in your existing application on day one.
-    </p>
+
+    <!--div class="col-md-4">
+      <h3>Perfect Node.js Companion</h3>
+      <p>
+        Mojo was designed to be modular, so all the bits that makeup the core can actually run
+        within node.js without any special monkey patches to the framework itself. It's the
+      </p>
+    </div-->
+
   </div>
 
-  <div class="col-md-6">
-    <h3><span class="glyphicon glyphicon-wrench"></span>&nbsp;Mojo is modular</h3>
-    <p>
-      Don’t want to use the router? Want to use your
-own template engine? No problem! Mojo allows you to
-choose what libraries you like most.  Truly make it into the JavaScript MV* framework
-you want it to be.
-    </p>
+  <div class="row" style="padding-top: 40px">
+    <div class="col-md-12">
+      <h1>Mojo + Jade + Backbone router</h1>
+      <iframe width="100%" height="300" src="http://jsfiddle.net/BZA8K/50/embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </div>
   </div>
 
-  <div class="col-md-6">
-    <h3><span class="glyphicon glyphicon-flash"></span>&nbsp;JavaScript all the way down</h3>
-    <p>
-      Mojo.js was built to solve the shortcommings of DOM manipulation in browsers, especially in older browsers. Mojo.js applications are entirely JavaScript. This includes templates, which are translated into JavaScript before actually being used.
-    </p>
+  <div class="row" style="padding-top: 40px">
+    <div class="col-md-12">
+      <h1>Mojo</h1>
+      <iframe width="100%" height="300" src="http://jsfiddle.net/BZA8K/55/embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </div>
   </div>
 
-  <div class="col-md-6">
-    <h3><span class="glyphicon glyphicon-link"></span>&nbsp;Broad platform support, IE too!</h3>
-    <p>
-      Mojo.js was built to support all JavaScript platforms including IE 7+, and node.js - <a href="{{links.siteSource}}">this website</a> was even statically generated using Mojo. No need to modify your style to support a specific runtime. Write your application one way, and mojo will handle the rest.
-    </p>
+  <!--div class="row">
+    <div class="col-md-12">
+      <pre data-lang="html" data-example="/js/examples/hello/index.pc.txt">
+      </pre>
+    </div>
   </div>
-</div>
 
-<div class="row">
-
-
-  <!--div class="col-md-4">
-    <h3>Perfect Node.js Companion</h3>
-    <p>
-      Mojo was designed to be modular, so all the bits that makeup the core can actually run
-      within node.js without any special monkey patches to the framework itself. It's the
-    </p>
+  <div class="row">
+    <div class="col-md-6" id="hello-application">
+    </div>
   </div-->
 
 </div>
-
-<div class="row" style="padding-top: 40px">
-  <div class="col-md-12">
-    <h1>Mojo + Jade + Backbone router</h1>
-    <iframe width="100%" height="300" src="http://jsfiddle.net/BZA8K/50/embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </div>
-</div>
-
-<div class="row" style="padding-top: 40px">
-  <div class="col-md-12">
-    <h1>Mojo</h1>
-    <iframe width="100%" height="300" src="http://jsfiddle.net/BZA8K/55/embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </div>
-</div>
-
-<!--div class="row">
-  <div class="col-md-12">
-    <pre data-lang="html" data-example="/js/examples/hello/index.pc.txt">
-    </pre>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6" id="hello-application">
-  </div>
-</div-->
-
-
-<!--script type="text/javascript" src="/js/home.bundle.js"></script-->

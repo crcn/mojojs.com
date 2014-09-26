@@ -1,0 +1,11 @@
+{
+  "repositories": [
+    "https://github.com/mojo-js/mojo-views.git",
+    "https://github.com/mojo-js/mojo-router.git",
+    "https://github.com/mojo-js/mojo-paperclip.git",
+    "https://github.com/mojo-js/mojo-models.git"
+  ],
+  "cache": false,
+  "bare": true,
+  "output": "./src/packages/http.site/views/main/pages/docs/content.html"
+}
