@@ -1,6 +1,5 @@
 {
   "repositories": [
-    "https://github.com/mojo-js/mojo-cli.git",
     "https://github.com/mojo-js/mojo-application.git",
     "https://github.com/mojo-js/mojo-views.git",
     "https://github.com/mojo-js/mojo-paperclip.git",
