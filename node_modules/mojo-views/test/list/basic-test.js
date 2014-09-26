@@ -16,7 +16,7 @@ describe("list/basic#", function () {
 
   var ItemView = views.Base.extend({
     didCreateSection: function () {
-      this.section.append(this.application.nodeFactory.createTextNode(this.model.get("name") + ","));
+      this.section.append(this.application.nodeFactory.createTextNode(this.get("model.name") + ","));
     }
   });
 
@@ -140,6 +140,17 @@ describe("list/basic#", function () {
 
     expect(list.render().toString()).to.be("a,b,");
     list.remove();
+    expect(list.render().toString()).to.be("a,b,");
+  });
+
+  it("doesn't require bindable collection for the source", function () {
+
+    var list = new views.List({
+      src: [{name:"a"},{name:"b"}],
+      source: "src",
+      modelViewClass: ItemView
+    });
+
     expect(list.render().toString()).to.be("a,b,");
   });
 

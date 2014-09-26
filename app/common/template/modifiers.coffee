@@ -17,6 +17,11 @@ module.exports = (app) ->
     ###
     ###
 
+    "round": Math.round
+    
+    ###
+    ###
+
     "t": (text, params = {}) ->
 
       return text unless app.i18n

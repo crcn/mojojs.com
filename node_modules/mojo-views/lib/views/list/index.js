@@ -107,6 +107,10 @@ BaseView.extend(ListView, {
     this._sourceListeners.dispose();
     this._modelListeners.dispose();
 
+    if (newSource && !newSource.__isBindableCollection) {
+      newSource = new bindable.Collection(newSource);
+    }
+
     this._source = newSource;
     if (newSource) {
       this._sourceListeners.add(newSource.on("update", wrapInAnimation.call(this, this._onSourceUpdate)));
@@ -135,7 +139,10 @@ BaseView.extend(ListView, {
 
 
     for (var i = models.length; i--;) {
-      this._modelListeners.add(models[i].on("change", onModelChange));
+      var model = models[i];
+      if (model.on) {
+        this._modelListeners.add(model.on("change", onModelChange));
+      }
     }
   },
 

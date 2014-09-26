@@ -22,7 +22,6 @@ var Application = module.exports.Application = require("mojo-application");
 
 module.exports.Base        = views.Base;
 module.exports.List        = views.List;
-module.exports.Container   = views.Container;
 module.exports.Stack       = views.Stack;
 
 var mainApplication = Application.main;

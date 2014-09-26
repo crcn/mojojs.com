@@ -1,0 +1,15 @@
+<li class="benchmark-item {{model.highlight ? 'highlight' : ''}}"> 
+
+  <span class="name">
+    {{ model.name }} 
+  </span>
+  <span class="speed">
+    {{ model.speed | round }}ms 
+  </span>
+  
+  <div class="bar {{model.highlight ? 'highlight' : ''}}" data-bind={{
+    style: {
+      width: ((model.speed / 2000) * 50) + "%"
+    }
+  }}></div>
+</li>

@@ -12,7 +12,6 @@ class ClassDojoApplication extends Application
 
   browser: process.browser
 
-
   ###
   ###
 
