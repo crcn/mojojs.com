@@ -1,0 +1,8 @@
+project_identifier: classdojo-global
+api_key: d0400187004118889384cdacdc47675e
+base_path: .
+
+files:
+  -
+    source: 'language/en/website2.*.json'                           #source files filter
+    translation: 'language/%locale%/%original_file_name%'           #where translations live

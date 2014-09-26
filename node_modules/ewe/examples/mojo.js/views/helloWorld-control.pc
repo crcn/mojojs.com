@@ -1,0 +1,3 @@
+Hello World! 
+
+<a href="#" data-bind="{{onClick: _select() }}">say hello</a>

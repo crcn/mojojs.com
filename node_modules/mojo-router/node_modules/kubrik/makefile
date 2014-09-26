@@ -1,0 +1,3 @@
+test-cov:
+	./node_modules/.bin/istanbul cover \
+	./node_modules/.bin/_mocha ./test/**-test.js --ignore-leaks --timeout 100

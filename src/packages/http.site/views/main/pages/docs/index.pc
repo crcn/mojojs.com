@@ -1,3 +1,0 @@
-<div class="row" style="padding-top: 80px; padding-left: 15px; padding-right: 15px;">
-  {{ html: sections.content }}
-</div>

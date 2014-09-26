@@ -1,3 +1,2 @@
 require("coffee-script");
-require("paperclip");
-require("./src");
+require("./app/server");

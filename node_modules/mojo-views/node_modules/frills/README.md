@@ -1,0 +1,4 @@
+frills.js
+=========
+
+object decorator
