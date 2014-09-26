@@ -227,13 +227,13 @@ var person = app.models.create(&quot;person&quot;);
 <li><code>modelName</code> - the registered model component name</li>
 <li><code>properties</code> - the properties to assign to the created model. </li>
 </ul>
-<pre><code class="lang-javascript">var Person = views.Base.extend({
+<pre><code class="lang-javascript">var Person = models.Base.extend({
 
 });
 
 application.models.register(&quot;person&quot;, Person);
 
-var hello = application.views.create(&quot;person&quot;, { name: &quot;Craig&quot; });
+var hello = application.models.create(&quot;person&quot;, { name: &quot;Craig&quot; });
 
 console.log(hello.name); // Craig
 </code></pre>
