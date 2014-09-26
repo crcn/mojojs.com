@@ -10,8 +10,8 @@
         <h1>Build a JavaScript UI Framework!</h1>
       </div>
       <div class="center" style="padding-top: 20px">
-        <a href="{{links.starter}}" class="btn btn-default">Download Starter Kit</a>
-        <a href="{{links.source}}" class="btn btn-default">Download Source</a>
+        <a href="https://github.com/mojo-js/mojo-starter/archive/master.zip" class="btn btn-default">Download Starter Kit</a>
+        <a href="https://github.com/mojo-js/mojo.js" class="btn btn-default">Download Source</a>
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@
     <div class="col-md-6">
       <h3><span class="glyphicon glyphicon-link"></span>&nbsp;Broad platform support, IE too!</h3>
       <p>
-        Mojo.js was built to support all JavaScript platforms including IE 7+, and node.js - <a href="{{links.siteSource}}">this website</a> was even statically generated using Mojo. No need to modify your style to support a specific runtime. Write your application one way, and mojo will handle the rest.
+        Mojo.js was built to support all JavaScript platforms including IE 7+, and node.js - <a href="https://github.com/mojo-js/mojojs.com">this website</a> was even statically generated using Mojo. No need to modify your style to support a specific runtime. Write your application one way, and mojo will handle the rest.
       </p>
     </div>
   </div>
