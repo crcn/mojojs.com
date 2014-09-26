@@ -701,4 +701,4 @@ describe(__filename + &quot;#&quot;, function() {
     });
 });
 </code></pre>
-</div> <br></div></div></div> <script type="text/javascript">var onHashChange = window.onhashchange = function () { var headline = $("#articles").find('*[id="'+location.hash.substr(1)+'"]'); if (!headline.length) return; headline[0].scrollIntoView(true); return; $('html, body').animate({ scrollTop: headline.offset().top - 200 }, 100); }; onHashChange(); </script>
+</div> <br></div></div></div> <script type="text/javascript">var onHashChange = window.onhashchange = function () { var headline = $("#articles").find('*[id="'+location.hash.substr(1)+'"]'); if (!headline.length) return; var offset = 80; console.log("FF"); console.log(headline.offset().top); if (headline.offset().top == offset) { return; } $('html, body').animate({ scrollTop: headline.offset().top - offset }, 100); }; onHashChange(); </script>

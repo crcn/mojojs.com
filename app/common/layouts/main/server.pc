@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/vendor/rainbow/themes/github.css" />
     <script type="text/javascript" src="/vendor/js/jquery-1.10.2.js" />
-    <script type="text/javascript" src="/vendor/bootstrap/js/bootstrap.min.js" />
+    <!--script type="text/javascript" src="/vendor/bootstrap/js/bootstrap.min.js" /-->
     <link rel="stylesheet" href="/css/app.css" />
     <title>Mojo.js Modular JavaScript MV+ Framework</title>
   </head>
