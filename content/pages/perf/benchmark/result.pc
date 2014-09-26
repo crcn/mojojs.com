@@ -9,7 +9,7 @@
   
   <div class="bar {{model.highlight ? 'highlight' : ''}}" data-bind={{
     style: {
-      width: ((model.speed / 2000) * 50) + "%"
+      width: ((model.speed / 2000) * 80) + "%"
     }
   }}></div>
 </li>
