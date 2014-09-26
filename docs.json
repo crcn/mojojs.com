@@ -1,11 +1,12 @@
 {
   "repositories": [
-    "https://github.com/mojo-js/mojo-views.git",
     "https://github.com/mojo-js/mojo-router.git",
     "https://github.com/mojo-js/mojo-paperclip.git",
-    "https://github.com/mojo-js/mojo-models.git"
+    "https://github.com/mojo-js/mojo-models.git",
+    "https://github.com/mojo-js/mojo-views.git",
+    "https://github.com/mojo-js/mojo-application.git"
   ],
-  "cache": true,
+  "cache": false,
   "bare": true,
   "output": "./content/pages/docs/content.html"
 }
