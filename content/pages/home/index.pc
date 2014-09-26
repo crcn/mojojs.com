@@ -47,7 +47,7 @@
     <div class="col-md-6">
       <h3><span class="glyphicon glyphicon-link"></span>&nbsp;Broad platform support, IE too!</h3>
       <p>
-        Mojo.js was built to support all JavaScript platforms including IE 7+, and node.js - <a href="https://github.com/mojo-js/mojojs.com">this website</a> was even statically generated using Mojo. No need to modify your style to support a specific runtime. Write your application one way, and mojo will handle the rest.
+        Mojo.js was built to support all JavaScript platforms including IE 7+, and <strong>Node.js</strong> - <a href="https://github.com/mojo-js/mojojs.com">this website</a> was even statically generated using Mojo. No need to modify your style to support a specific runtime. Write your application one way, and mojo will handle the rest.
       </p>
     </div>
   </div>
