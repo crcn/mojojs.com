@@ -51,6 +51,5 @@ want really. [See available mojo-js plugins] Customize how DOM works, compatible
   - native web component support for paperclip
   - RPC plugin for models (similar to dnode)
 - blog
-- perf - http://vuejs.org/perf/
 
 Mojo.js was developed at ClassDojo
