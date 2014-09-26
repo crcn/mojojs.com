@@ -7,7 +7,7 @@
         <img src="/img/mojo-js.png" />
       </div>
       <div class="center">
-        <h1>Build a JavaScript UI Framework!</h1>
+        <h1>Customizable isomorphic JavaScript UI Framework</h1>
       </div>
       <div class="center" style="padding-top: 20px">
         <a href="https://github.com/mojo-js/mojo-starter/archive/master.zip" class="btn btn-default">Download Starter Kit</a>
