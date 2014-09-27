@@ -109,7 +109,7 @@ whatever you want. Check out the available <a href="#">cross-framework plugins</
     <div class="col-md-12">
       <h3>Compatible with just about any library</h3>
 
-      <p class="subheader">Mojo tries to work with your existing framework and libraries, not replace them. Easily incorporate Mojo, or vice-versa, without sacrificing your application architecture. Use the cross-framework libraries you've always wanted to use.</p>
+      <p class="subheader">Mojo tries to work with your existing framework and libraries, not replace them. Easily incorporate Mojo into your application, and vice versa, without sacrificing your pre-existing architecture. Use the cross-framework libraries you've always wanted to use.</p>
       <hr />
     </div>
   </div>
