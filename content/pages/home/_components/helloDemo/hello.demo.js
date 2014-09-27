@@ -1,5 +1,5 @@
 var HelloView = mojo.views.Base.extend({
-  paper: require("./hello.pc")
+  paper: require("text!hello.pc")
 });
 
 var helloView = new HelloView({
