@@ -7,7 +7,11 @@
         <img src="/img/mojo-js.png" />
       </div>
       <div class="center">
-        <h3>Customizable isomorphic JavaScript UI Framework</h3>
+        {{
+          browserify: {
+            component: "worksWith"
+          }
+        }}
       </div>
       <div class="center" style="padding-top: 20px">
         <a href="https://github.com/mojo-js/mojo-starter/archive/master.zip" class="btn btn-default">Download Starter Kit</a>
@@ -16,13 +20,6 @@
     </div>
   </div>
 
-  <!--
-  {{
-    browserify: {
-      component: "worksWith"
-    }
-  }}
-  -->
 
   <div class="row" style="padding-top: 80px">
 

@@ -1,5 +1,3 @@
-<div class="row" style="padding-top: 80px">
-  <div class="col-md-12 text-center">
-    <h3>Mojo is a framework that works with <a href="#">Backbone</a></h3>
-  </div>
-</div>
+<h4>
+  A modular, isomorphic framework for developing advanced web applictions
+</h4>
