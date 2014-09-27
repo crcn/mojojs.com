@@ -15,6 +15,11 @@ to build your application
 
 ### Key benefits
 
+- No lock-in
+- modeled after backbone
+- very fast
+- modular
+
 - Simple - Love Backbone.js? You'll appreciate mojo's straight-forward API. Nothing fancy about it. 
 
 - Interoperable - Mojo was engineered to work with other libraries. Work with angular, react, backbone, 
@@ -26,7 +31,7 @@ whatever you want. Check out the available [cross-framework plugins](LINK)
 
 - Isomorphic - Run code on the server, and in the browser. 
 
-- Extensible - Mojo is plugin-based at its core. 
+- Extensible - Mojo is plugin-based at its core. Easily use whatever library 
 
 - Testable - very fast, and very easy. You can even run tests in Node.js.
 

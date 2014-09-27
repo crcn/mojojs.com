@@ -36,7 +36,7 @@
     <div class="col-md-6">
       <h3><span class="glyphicon glyphicon-retweet"></span>&nbsp;Interoperable</h3>
       <p> 
-        Mojo was engineered to work with other libraries. Work with angular, react, backbone, 
+        Mojo was engineered to work with other libraries. Work with Angular, React, Backbone, 
 whatever you want. Check out the available <a href="#">cross-framework plugins</a>.
       </p>
     </div>
@@ -63,7 +63,7 @@ whatever you want. Check out the available <a href="#">cross-framework plugins</
     </div>
 
     <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-lock"></span>&nbsp;Testable</h3>
+      <h3><span class="glyphicon glyphicon-ok"></span>&nbsp;Testable</h3>
       <p>
         Writing unit tests is a breeze. You can even run them in Node.js!
       </p>
