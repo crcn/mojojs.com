@@ -5017,7 +5017,7 @@ a.thumbnail:focus {
   padding-right: 35px;
 }
 
-.alert-dismissable .close {
+.alert-dismissable .close2 {
   position: relative;
   top: -2px;
   right: -21px;
@@ -5561,7 +5561,7 @@ a.list-group-item:focus {
   border-radius: 3px;
 }
 
-.close {
+.close2 {
   float: right;
   font-size: 21px;
   font-weight: bold;
@@ -5572,8 +5572,8 @@ a.list-group-item:focus {
   filter: alpha(opacity=20);
 }
 
-.close:hover,
-.close:focus {
+.close2:hover,
+.close2:focus {
   color: #000000;
   text-decoration: none;
   cursor: pointer;
@@ -5581,7 +5581,7 @@ a.list-group-item:focus {
   filter: alpha(opacity=50);
 }
 
-button.close {
+button.close2 {
   padding: 0;
   cursor: pointer;
   background: transparent;
@@ -5673,7 +5673,7 @@ body.modal-open,
   border-bottom: 1px solid #e5e5e5;
 }
 
-.modal-header .close {
+.modal-header .close2 {
   margin-top: -2px;
 }
 

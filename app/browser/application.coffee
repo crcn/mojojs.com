@@ -16,4 +16,4 @@ class BrowserApplication extends CommonApplication
     require("./_commonModules")
   ]
 
-module.exports = CommonApplication
+module.exports = BrowserApplication

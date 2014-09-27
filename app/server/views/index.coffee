@@ -16,6 +16,7 @@ module.exports = (app) ->
   app.views.register require("./components")
 
   utils.bridgeCommonComponents app, "_components", "views"
+  utils.bridgeCommonComponents app, "_serverComponents", "views", true
 
 
 scanViews = (directory) ->

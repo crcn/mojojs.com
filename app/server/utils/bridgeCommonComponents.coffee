@@ -3,7 +3,7 @@ glob = require "glob"
 fs = require "fs"
 path = require "path"
 
-module.exports = (app, name, type) ->
+module.exports = (app, name, type, serverOnly) ->
   
   buffer = ["module.exports = {"]
   modules = []
@@ -19,4 +19,5 @@ module.exports = (app, name, type) ->
 
   buffer.push modules.join(","), "}"
 
-  fs.writeFile("/tmp/"+name+".coffee", buffer.join(""))
+  unless serverOnly
+    fs.writeFile("/tmp/"+name+".coffee", buffer.join(""))
