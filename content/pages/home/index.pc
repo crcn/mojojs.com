@@ -100,20 +100,43 @@ whatever you want. Check out the available <a href="#">cross-framework plugins</
 
   <div class="row" style="padding-top:40px;">
     <div class="col-md-12">
-      <h3>Use any template engine</h3>
+      <h3>Compatible with just about any library</h3>
       <p class="subheader">Mojo doesn't lock you into using any of its components - mix and match any third-party
       module you want. Use your own own template engine, router, or views.</p>
       <hr />
     </div>
   </div>
 
-  <div class="row" style="padding-top:40px;">
+  <div class="row">
+
+    <!-- interop example here with react, and angular -->
+    
+    <div class="col-md-8 demo-files">
+      {{
+        demoFiles: {
+          source: helloDemoSourceDir
+        }
+      }}
+    </div>
+
+    <div class="col-md-4">
+      <div class="well demo">
+        {{
+          browserify: {
+            component: "helloDemo"
+          }
+        }}
+      </div>
+    </div>
+  </div>
+
+  <!--div class="row" style="padding-top:40px;">
     <div class="col-md-12">
       <h3>Build powerfuly sophisticated, yet simple applications</h3>
       <p class="subheader">Mojo was built with scalability in mind. The design patterns used in Mojo are inspired by many other already proven ideas that span far beyond the JavaScript realm.</p>
       <hr />
     </div>
-  </div>
+  </div-->
 
 
 </div>
