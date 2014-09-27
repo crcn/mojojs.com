@@ -26,6 +26,10 @@
 
 
           <iframe src="//www.slideshare.net/slideshow/embed_code/27724810" width="100%" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+          <p>
+            2 years in, we're happy to say that our Mojo-based application is a maintable ~30k loc application, and served to more than 35 million users around the world. 
+          </p>
         </div>
       </div>
       <div class="col-sm-2">
