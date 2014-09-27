@@ -19,7 +19,7 @@
           <h3>TodoMVC Benchmark</h3>
 
           <p>
-            A simple benchmark based on the popular <a href="http://todomvc.com/">TodoMVC</a> project. This benchmark includes adding 100 items, toggling completion, then removing 100 items. All tests were run on a late 2013 13" macbook pro with a 2.6 GHz Intel Core i5 processor.
+            A <a href="/todomvc-benchmark/">simple benchmark</a> based on the popular <a href="http://todomvc.com/">TodoMVC</a> project. This benchmark includes adding 100 items, toggling completion, then removing 100 items. All tests were run on a late 2013 13" macbook pro with a 2.6 GHz Intel Core i5 processor.
           </p>
           <hr />
         </div>
