@@ -114,6 +114,11 @@ whatever you want. Check out the available <a href="#">cross-framework plugins</
     </div>
   </div>
 
+
+  <div class="row">
+    Angular <-> Ember <-> Backbone <-> React demo here
+  </div>
+
   <div class="row">
 
     <!-- interop example here with react, and angular -->
