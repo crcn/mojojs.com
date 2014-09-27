@@ -37,6 +37,8 @@ whatever you want. Check out the available [cross-framework plugins](LINK)
 
 - Scalable - The design patterns in Mojo 
 
+- Explicit - 
+
 built with the Node.js 
 - scalable - architecture
 - simple - straight forward, do-less API. 

@@ -67,6 +67,13 @@ whatever you want. Check out the available <a href="#">cross-framework plugins</
   
 
   <div class="row" style="padding-top:40px;">
+    <div class="col-md-12">
+      <h3>CommonJS & AMD Support</h3>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row">
     
     <div class="col-md-8 demo-files">
       {{

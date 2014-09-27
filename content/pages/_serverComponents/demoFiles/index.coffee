@@ -9,7 +9,8 @@ crypto = require "crypto"
 types = {
   default: "text",
   js: "javascript",
-  pc: "html"
+  pc: "html",
+  html: "html"
 }
 
 class DemoFilesView extends views.Base
@@ -17,13 +18,13 @@ class DemoFilesView extends views.Base
   bindings:
     "source": (source) ->
       @set "files", glob.sync(@source + "/**").filter((file) -> 
-        not fs.lstatSync(file).isDirectory()
+        not fs.lstatSync(file).isDirectory() && ~file.indexOf("demo")
       ).map (file) ->
         {
           _id: crypto.createHash('md5').update(file).digest('hex'),
           source: file,
           language: types[file.split(".").pop()] || types.default
-          relpath: file.replace(source + "/", ""),
+          relpath: file.replace(source + "/", "").replace(/^\d+\-/,"").replace(".demo", ""),
           content: fs.readFileSync(file, "utf8")
         }
   sections:
