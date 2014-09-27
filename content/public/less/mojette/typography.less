@@ -1,0 +1,48 @@
+// 
+// Typography
+// -------------------------
+
+
+
+p {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+a { 
+  color: @mojette-blue-dark; 
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  // 
+
+  small,
+  .small {
+    color: inherit;
+  }
+}
+
+
+.small    { font-size: 85%; }
+.smaller  { font-size: 75%; }
+.smallest { font-size: 65%; }
+
+
+// Requires inline-block or block for proper styling
+.text-overflow(@wrap: nowrap) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: @wrap;
+}
+
+.text-overflow {
+  .text-overflow();
+}
+

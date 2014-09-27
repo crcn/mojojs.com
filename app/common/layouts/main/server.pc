@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css" />
+    <!--link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css" /-->
     <link rel="stylesheet" href="/vendor/rainbow/themes/github.css" />
     <script type="text/javascript" src="/vendor/js/jquery-1.10.2.js" />
     <script type="text/javascript" src="/app/index.built.js" />

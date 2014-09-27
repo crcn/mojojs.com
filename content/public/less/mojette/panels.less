@@ -1,0 +1,42 @@
+//
+// Panels
+// --------------------------------------------------
+
+// Common styles
+.panel {
+  .box-shadow(0 1px 2px rgba(0,0,0,.05));
+}
+
+// Mixin for generating new styles
+.panel-heading-styles(@color) {
+  #gradient > .vertical(@start-color: @color; @end-color: darken(@color, 5%));
+}
+
+// Apply the mixin to the panel headings only
+.panel-default > .panel-heading   { .panel-heading-styles(@panel-default-heading-bg); }
+.panel-primary > .panel-heading   { .panel-heading-styles(@panel-primary-heading-bg); }
+.panel-success > .panel-heading   { .panel-heading-styles(@panel-success-heading-bg); }
+.panel-info > .panel-heading      { .panel-heading-styles(@panel-info-heading-bg); }
+.panel-warning > .panel-heading   { .panel-heading-styles(@panel-warning-heading-bg); }
+.panel-danger > .panel-heading    { .panel-heading-styles(@panel-danger-heading-bg); }
+
+
+
+// Extending Panel Sizes
+
+.panel-lg {
+  // @panel-border-radius
+  // 
+  // This is tricky… need to define border-radius-top for header, border-radius-buttom for footer
+  // border-radius for body can clip footer and header, but may not be a problem if they share the same radius. 
+  // check how this is done in panels.less and implement
+
+  // border-radius: @border-radius-large;
+  .panel-body, .panel-header, .panel-footer { padding: 24px; }
+}
+.panel-sm {
+
+  // border-radius: @border-radius-small;
+  .panel-body, .panel-header, .panel-footer { padding: 9px; }
+}
+

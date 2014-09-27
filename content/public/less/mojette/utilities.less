@@ -1,0 +1,75 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+
+// Expiremental stuff
+
+.no-padding { padding: 0 !important; }
+.no-margin  { margin: 0 !important; }
+
+
+// Column centering
+// ------------------------- 
+// Center a column by removing it's float and adding auto margins
+// center-block won't work for columns as it leaves the float
+// Create optional classes to center a column only in certain breakpoints… 
+
+.col-center {
+  float: none !important; // remove the left float from the column
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+// Margin helper classes
+// -------------------------
+// Helper class to create margins of of * pixels as defined by the class name
+// eg. margin-top-5, margin-top-20, margin-top-100, margin-top-215… in increments of 5px
+
+.margin-looper (@index) when (@index > 0) {
+
+	// generates the actual classes
+  .margin-top-@{index}    { margin-top:    ~"@{index}px" !important; }
+  .margin-bottom-@{index} { margin-bottom: ~"@{index}px" !important; }
+  .margin-right-@{index}  { margin-right:  ~"@{index}px" !important; }
+  .margin-left-@{index}   { margin-left:   ~"@{index}px" !important; }
+
+  // reduce the index by 5 and call margin-looper to do it again
+  .margin-looper(@index - 5);
+}
+
+// Start the looper from this highest pixel value
+.margin-looper(100);
+
+// 
+
+
+
+// Vertical center
+// ------------------------- 
+// Expiremental
+// Vertically center just about anything
+
+.text-vertical-center(@px) {
+  line-height: @px;
+}
+
+.vertical-center(@parent, @self) {
+  vertical-align: middle;
+  margin-top:    (@parent / 2) - (@self / 2);
+  margin-bottom: (@parent / 2) - (@self / 2);
+}
+
+
+
+// Breakpoint specific styling
+// -------------------------
+// These mixins shoulds be used with '@media', eg. '@media @style-xs' to create styles specific to that breakpoint
+
+@style-xs: ~"(max-width: @{screen-xs-max})";
+@style-sm: ~"(min-width: @{screen-sm-min}) and (max-width: @{screen-sm-max})";
+@style-md: ~"(min-width: @{screen-md-min}) and (max-width: @{screen-md-max})";
+@style-lg: ~"(min-width: @{screen-lg-min})";
+

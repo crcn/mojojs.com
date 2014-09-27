@@ -1,0 +1,45 @@
+//
+// Callouts
+// --------------------------------------------------
+
+.callout(@color, @bgcolor: lighten(@color, 35%)) {
+
+  display: block;
+  margin: 20px 0;
+  padding: 15px 30px 15px 15px;
+  border: 1px solid #ddf2fe;
+  border-radius: 10px;
+  background-color: @bgcolor;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    color: @color;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  code, .highlight {
+    background-color: #fff;
+  }
+}
+
+.callout {
+  .callout(@gray-light);
+
+  &.callout-primary { .callout(@brand-primary); }
+  &.callout-danger  { .callout(@brand-danger); }
+  &.callout-warning { .callout(@brand-warning); }
+  &.callout-info    { .callout(@brand-info); }
+  &.callout-success { .callout(@brand-success); }
+
+  &.callout-gray    { .callout(@mojette-gray-border, @mojette-gray); }
+  &.callout-black   { .callout(@mojette-black-border, @mojette-black); }
+  &.callout-blue    { .callout(@mojette-blue-border, @mojette-blue); }
+  &.callout-green   { .callout(@mojette-green-border, @mojette-green); }
+  &.callout-teal    { .callout(@mojette-teal-border, @mojette-teal); }
+  &.callout-orange  { .callout(@mojette-orange-border, @mojette-orange); }
+  &.callout-pink    { .callout(@mojette-pink-border, @mojette-pink); }
+  &.callout-red     { .callout(@mojette-red-border, @mojette-red); }
+}

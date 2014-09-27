@@ -1,0 +1,97 @@
+//
+// Mojette modal
+// --------------------------------------------------
+
+.modal-dialog {
+	margin-top: 5% !important;
+}
+.mojette-modal {
+	&-backdrop {
+		z-index: @zindex-modal;
+		// keep the backdrop at the same z-index as the modal to allow modal stacking ability
+	}
+
+	&.fixed {
+		position: fixed;
+		// BS3 native
+	}
+
+	&.absolute {
+		position: fixed;
+		// custom modal
+
+		overflow: visible;
+		overflow-y: visible;
+	}
+
+
+	// Close icon
+	.close {
+		// upper right corner
+	  display: block;
+	  position: absolute;
+	  right: 0px;
+	  top:   0px;
+	  margin-top: 0;
+
+	  // make a white square with a border
+	  background: @white;
+	  .square(@modal-close-size);
+	  .opacity(1);
+
+	  // do border stuff
+	  border: 1px solid @modal-header-border-color;
+	  border-top:   0;
+	  border-right: 0;
+	  border-top-right-radius: @border-radius-large;
+
+	  // x close, vert and horiz center
+	  text-align: center;
+	  line-height: @modal-close-size;
+	  font-size: 24px;
+
+	  &:hover {
+	  	background-color: @gray-lighter;
+	  }
+	}
+
+	.close-without-border {
+		border: none;
+	}
+
+
+	// Modal header
+	// -------------------------
+	// Top section of the modal w/ title and dismiss
+
+	@modal-close-size: 65px;
+
+
+	.modal-content {
+		border-radius: @border-radius-small;
+	}
+
+	.modal-header {
+		// height: @modal-close-size;
+		// don't declare explicit height to allows the header to break to 2 lines for long languages
+		padding-right: (@modal-close-size + @modal-title-padding);
+
+	}
+
+
+	.modal-hero-header {
+		text-align: center;
+	}
+
+
+
+	.auth-form-body {
+		padding: 0px 80px;
+	}
+
+	@media (max-width: @screen-phone) {
+		.auth-form-body {
+			padding: 0 10px;
+		}
+	}
+}

@@ -1,0 +1,229 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Brand colors for use across Mojette
+
+@mojette-gray:          #eaeded;
+@mojette-gray-dark:     #949494;
+@mojette-gray-light:    #cccccc;
+@mojette-gray-border:   #a7a8ab;
+@mojette-gray-light-border: #dddddd;
+
+@mojette-black:         #aaaaaa;
+@mojette-black-dark:    #464646;
+@mojette-black-light:   #333333;
+@mojette-black-border:  #525356;
+
+
+@mojette-blue:          #29c7ff;
+@mojette-blue-dark:     #0099db;
+@mojette-blue-light:    #33c6f4;
+@mojette-blue-border:   #287faf;
+
+@mojette-green:         #98ce1c;
+@mojette-green-dark:    #2d9b00;
+@mojette-green-light:   #7cce00;
+@mojette-green-border:  #4a9a2d;
+
+@mojette-teal:          #02b99c;
+@mojette-teal-dark:     #039d84;
+@mojette-teal-light:    #00d5b3;
+@mojette-teal-border:   #1a8166;
+
+@mojette-orange:        #ffd200;
+@mojette-orange-dark:   #ec8500;
+@mojette-orange-light:  #ffbc67;
+@mojette-orange-border: #e2a225;
+
+@mojette-pink:          #ff6398;
+@mojette-pink-dark:     #ce245e;
+@mojette-pink-light:    #ff8499;
+@mojette-pink-border:   #af3229;
+
+@mojette-red:           #ed6961;
+@mojette-red-dark:      #db2b25;
+@mojette-red-light:     #c66c66;
+@mojette-red-border:    #ac2820;
+
+
+// Vanity colors
+
+@mojo-red:         "classdojored";    // #c00d00
+@mojo-violet:      "dojoviolet";      // #d000e0
+@mojo-blue:        "mojobluefont";    // #00b0f0
+@mojo-aqua:        "mojodojoaqua";    // #00d0a0
+@mojo-darkblue:    "mojodojoazure";   // #000ae0
+@mojo-azure:       "mojoloveazure";   // #00eae0
+@mojo-chartreuse:  "classdojospring"; // #c0d000
+
+
+// The following Cool, Warm, Gray Scale colors have been adapted from:
+// colors.css v0.2.0
+// http://clrs.cc
+// http://mrmrs.cc
+// MIT License
+
+// Cool
+
+@aqua:  #7FDBFF;
+@blue:  #0074D9;
+@navy:  #001F3F;
+@teal:  #39CCCC;
+@green: #2ECC40;
+@olive: #3D9970;
+@lime:  #01FF70;
+
+// Warm
+
+@yellow:  #FFDC00;
+@orange:  #FF851B;
+@red:     #FF4136;
+@fuchsia: #F012BE;
+@purple:  #B10DC9;
+@maroon:  #85144B;
+
+// Gray Scale
+
+@white:  #fff;
+@silver: #ddd;
+@grey:   #aaa;
+@black:  #111;
+
+
+// Contextual colors
+.text-navy                    { .text-emphasis-variant(@navy); }
+.text-blue                    { .text-emphasis-variant(@blue); }
+.text-aqua                    { .text-emphasis-variant(@aqua); }
+.text-teal                    { .text-emphasis-variant(@teal); }
+.text-olive                   { .text-emphasis-variant(@olive); }
+.text-green                   { .text-emphasis-variant(@green); }
+.text-lime                    { .text-emphasis-variant(@lime); }
+.text-yellow                  { .text-emphasis-variant(@yellow); }
+.text-orange                  { .text-emphasis-variant(@orange); }
+.text-red                     { .text-emphasis-variant(@red); }
+.text-fuschia                 { .text-emphasis-variant(@fuchsia); }
+.text-purple                  { .text-emphasis-variant(@purple); }
+.text-maroon                  { .text-emphasis-variant(@maroon); }
+.text-white                   { .text-emphasis-variant(@white); }
+.text-silver                  { .text-emphasis-variant(@silver); }
+.text-grey                    { .text-emphasis-variant(@grey); }
+.text-black                   { .text-emphasis-variant(@black); }
+.text-gray-darker             { .text-emphasis-variant(@gray-darker); }
+.text-gray-dark               { .text-emphasis-variant(@gray-dark); }
+.text-gray                    { .text-emphasis-variant(@gray); }
+.text-gray-light              { .text-emphasis-variant(@gray-light); }
+.text-gray-lighter            { .text-emphasis-variant(@gray-lighter); }
+
+
+// Contextual backgrounds
+.bg-navy                      { .bg-variant(@navy); }
+.bg-blue                      { .bg-variant(@blue); }
+.bg-aqua                      { .bg-variant(@aqua); }
+.bg-teal                      { .bg-variant(@teal); }
+.bg-olive                     { .bg-variant(@olive); }
+.bg-green                     { .bg-variant(@green); }
+.bg-lime                      { .bg-variant(@lime); }
+.bg-yellow                    { .bg-variant(@yellow); }
+.bg-orange                    { .bg-variant(@orange); }
+.bg-red                       { .bg-variant(@red); }
+.bg-fuchsia                   { .bg-variant(@fuchsia); }
+.bg-purple                    { .bg-variant(@purple); }
+.bg-maroon                    { .bg-variant(@maroon); }
+.bg-white                     { .bg-variant(@white); }
+.bg-grey                      { .bg-variant(@grey); }
+.bg-silver                    { .bg-variant(@silver); }
+.bg-black                     { .bg-variant(@black); }
+.bg-gray-darker               { .bg-variant(@gray-darker); }
+.bg-gray-dark                 { .bg-variant(@gray-dark); }
+.bg-gray                      { .bg-variant(@gray); }
+.bg-gray-light                { .bg-variant(@gray-light); }
+.bg-gray-lighter              { .bg-variant(@gray-lighter); }
+
+
+// Contextual Mojette colors
+.text-mojette-gray            { .text-emphasis-variant(@mojette-gray); }
+.text-mojette-gray-dark       { .text-emphasis-variant(@mojette-gray-dark); }
+.text-mojette-gray-light      { .text-emphasis-variant(@mojette-gray-light); }
+.text-mojette-gray-border     { .text-emphasis-variant(@mojette-gray-border); }
+
+.text-mojette-black           { .text-emphasis-variant(@mojette-black); }
+.text-mojette-black-dark      { .text-emphasis-variant(@mojette-black-dark); }
+.text-mojette-black-light     { .text-emphasis-variant(@mojette-black-light); }
+.text-mojette-black-border    { .text-emphasis-variant(@mojette-black-border); }
+
+.text-mojette-blue            { .text-emphasis-variant(@mojette-blue); }
+.text-mojette-blue-dark       { .text-emphasis-variant(@mojette-blue-dark); }
+.text-mojette-blue-light      { .text-emphasis-variant(@mojette-blue-light); }
+.text-mojette-blue-border     { .text-emphasis-variant(@mojette-blue-border); }
+
+.text-mojette-green           { .text-emphasis-variant(@mojette-green); }
+.text-mojette-green-dark      { .text-emphasis-variant(@mojette-green-dark); }
+.text-mojette-green-light     { .text-emphasis-variant(@mojette-green-light); }
+.text-mojette-green-border    { .text-emphasis-variant(@mojette-green-border); }
+
+.text-mojette-teal            { .text-emphasis-variant(@mojette-teal); }
+.text-mojette-teal-dark       { .text-emphasis-variant(@mojette-teal-dark); }
+.text-mojette-teal-light      { .text-emphasis-variant(@mojette-teal-light); }
+.text-mojette-teal-border     { .text-emphasis-variant(@mojette-teal-border); }
+
+.text-mojette-orange          { .text-emphasis-variant(@mojette-orange); }
+.text-mojette-orange-dark     { .text-emphasis-variant(@mojette-orange-dark); }
+.text-mojette-orange-light    { .text-emphasis-variant(@mojette-orange-light); }
+.text-mojette-orange-border   { .text-emphasis-variant(@mojette-orange-border); }
+
+.text-mojette-pink            { .text-emphasis-variant(@mojette-pink); }
+.text-mojette-pink-dark       { .text-emphasis-variant(@mojette-pink-dark); }
+.text-mojette-pink-light      { .text-emphasis-variant(@mojette-pink-light); }
+.text-mojette-pink-border     { .text-emphasis-variant(@mojette-pink-border); }
+
+.text-mojette-red             { .text-emphasis-variant(@mojette-red); }
+.text-mojette-red-dark        { .text-emphasis-variant(@mojette-red-dark); }
+.text-mojette-red-light       { .text-emphasis-variant(@mojette-red-light); }
+.text-mojette-red-border      { .text-emphasis-variant(@mojette-red-border); }
+
+
+// Contextual Mojette backgrounds
+.bg-mojette-gray              { .bg-variant(@mojette-gray); }
+.bg-mojette-gray-dark         { .bg-variant(@mojette-gray-dark); }
+.bg-mojette-gray-light        { .bg-variant(@mojette-gray-light); }
+.bg-mojette-gray-border       { .bg-variant(@mojette-gray-border); }
+
+.bg-mojette-black             { .bg-variant(@mojette-black); }
+.bg-mojette-black-dark        { .bg-variant(@mojette-black-dark); }
+.bg-mojette-black-light       { .bg-variant(@mojette-black-light); }
+.bg-mojette-black-border      { .bg-variant(@mojette-black-border); }
+
+.bg-mojette-blue              { .bg-variant(@mojette-blue); }
+.bg-mojette-blue-dark         { .bg-variant(@mojette-blue-dark); }
+.bg-mojette-blue-light        { .bg-variant(@mojette-blue-light); }
+.bg-mojette-blue-border       { .bg-variant(@mojette-blue-border); }
+
+.bg-mojette-green             { .bg-variant(@mojette-green); }
+.bg-mojette-green-dark        { .bg-variant(@mojette-green-dark); }
+.bg-mojette-green-light       { .bg-variant(@mojette-green-light); }
+.bg-mojette-green-border      { .bg-variant(@mojette-green-border); }
+
+.bg-mojette-teal              { .bg-variant(@mojette-teal); }
+.bg-mojette-teal-dark         { .bg-variant(@mojette-teal-dark); }
+.bg-mojette-teal-light        { .bg-variant(@mojette-teal-light); }
+.bg-mojette-teal-border       { .bg-variant(@mojette-teal-border); }
+
+.bg-mojette-orange            { .bg-variant(@mojette-orange); }
+.bg-mojette-orange-dark       { .bg-variant(@mojette-orange-dark); }
+.bg-mojette-orange-light      { .bg-variant(@mojette-orange-light); }
+.bg-mojette-orange-border     { .bg-variant(@mojette-orange-border); }
+
+.bg-mojette-pink              { .bg-variant(@mojette-pink); }
+.bg-mojette-pink-dark         { .bg-variant(@mojette-pink-dark); }
+.bg-mojette-pink-light        { .bg-variant(@mojette-pink-light); }
+.bg-mojette-pink-border       { .bg-variant(@mojette-pink-border); }
+
+.bg-mojette-red               { .bg-variant(@mojette-red); }
+.bg-mojette-red-dark          { .bg-variant(@mojette-red-dark); }
+.bg-mojette-red-light         { .bg-variant(@mojette-red-light); }
+.bg-mojette-red-border        { .bg-variant(@mojette-red-border); }
+
