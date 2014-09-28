@@ -18,6 +18,14 @@
     </div>
   </div>
 
+  <div class="row" style="padding-top:40px;">
+    <div class="colm-md-12 text-center">
+      {{
+        socialButtons:
+      }}
+    </div>
+  </div>
+
 
   <div class="row" style="padding-top: 80px;"></div>
 
