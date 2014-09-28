@@ -96,8 +96,4 @@ class Logger
 
 
 logger = new Logger()
-
-if process.browser
-  logger.use require "./loggly"
-
 global.logger = logger
