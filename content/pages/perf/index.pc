@@ -9,6 +9,8 @@
             Mojo.js was originally created for academic environments (many schools are still stuck on the old stuff), so performance was absolutely 
             critical to ensure users would get the best experience possible on browsers ranging
             from IE 8+, Safari, Chrome, and Firefox.
+
+            <!-- explain speed / arch design -->
           </p>
           <p>
             Below are are a list of various benchmarks against other well-known JavaScript Frameworks.
