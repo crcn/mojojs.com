@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/css/app.css" />
     <title>Mojo.js Modular Web Framework</title>
 
+    <meta property="og:image" content="http://wwww.mojojs.com/img/square-logo.png" />
+
     <meta name="Description"
       content="Mojo.js is a Customizable JavaScript framework. Mojo is entirely modular - everything is broken out into smaller, more manageable libraries that allow you, the engineer to cherry-pick exactly what features you want to use for your application." />
   </head>
