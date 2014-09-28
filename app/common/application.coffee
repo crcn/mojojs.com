@@ -21,6 +21,7 @@ class ClassDojoApplication extends Application
     require("mojo-mediator"),
     require("mojo-bootstrap"),
     require("mojo-models"),
+    require("mojo-react"),
     # require("./plugins/errortracking"),
 
     require("./layouts"),

@@ -72,6 +72,7 @@
     "paperclip": "0.4.x",
     "paperclip-bootstrap": "0.0.x",
     "paperclip-component": "0.3.x",
+    "react": "^0.11.2",
     "sift": "0.0.18",
     "superagent": "0.18.0",
     "through": "^2.3.4",

@@ -1,0 +1,1 @@
+module.exports = require("mojo-react/lib/transform");

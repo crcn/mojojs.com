@@ -114,19 +114,12 @@ whatever you want. Check out the available <a href="#">cross-framework plugins</
     </div>
   </div>
 
-
   <div class="row">
-    Angular - Ember - Backbone - React demo here
-  </div>
-
-  <div class="row">
-
-    <!-- interop example here with react, and angular -->
     
-    <!--div class="col-md-8 demo-files">
+    <div class="col-md-8 demo-files">
       {{
         demoFiles: {
-          source: helloDemoSourceDir
+          source: interpDemoSource
         }
       }}
     </div>
@@ -135,11 +128,12 @@ whatever you want. Check out the available <a href="#">cross-framework plugins</
       <div class="well demo">
         {{
           browserify: {
-            component: "helloDemo"
+            component: "interpolationDemo",
+            name: "Craig"
           }
         }}
       </div>
-    </div-->
+    </div>
   </div>
 
   <!--div class="row" style="padding-top:40px;">
