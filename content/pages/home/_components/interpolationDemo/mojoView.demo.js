@@ -4,11 +4,16 @@ Application = require("mojo-application");
 
 var app = new Application();
 app.use(views);
-app.use(require("mojo-react")); // react adapter
+
+// react adapter
+app.use(require("mojo-react")); 
 
 
 var SomeView = views.Base.extend({
-  react: require("./reactView.demo.jsx")
+
+  // point to the react file. mojo-cli will automatically
+  // find the JSX transformer in the mojo-react repo
+  react: require("./reactView.jsx")
 });
 
 var view = new SomeView({ name: "Craig" }, app);
