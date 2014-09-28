@@ -39,7 +39,7 @@
 
     <div class="footer">
       <div class="container">
-        <p class="text-muted">Footer</p>
+        Copyright 2013 – ClassDojo. Released under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.
       </div>
     </div>
 
