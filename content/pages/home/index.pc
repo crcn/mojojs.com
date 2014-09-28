@@ -113,8 +113,6 @@ whatever you want. Check out the available <a href="#">cross-framework plugins</
       <p class="subheader">
         Mojo tries to work with your existing framework and libraries, not replace them. <i>Easily</i> incorporate Mojo into your application, and vice versa, without sacrificing your pre-existing architecture. Use the cross-framework libraries you've always wanted to use.
       </p>
-      <br />
-      <p>Here's is an example of mojo working with React.js:</p>
       <hr />
     </div>
   </div>
