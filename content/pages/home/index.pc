@@ -33,7 +33,7 @@
     <div class="col-md-6">
       <h3><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;Simple</h3>
       <p> 
-        Love Backbone.js? You'll appreciate mojo's straight-forward API. 
+        Love Backbone.js? You'll appreciate mojo's straight-forward, coherent API. 
         <!-- explicity -->
       </p>
     </div>
