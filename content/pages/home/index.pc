@@ -86,7 +86,7 @@ whatever you want. Check out the available <a href="#">cross-framework plugins</
     <div class="col-md-12">
       <h3>Organization out of the box</h3>
       <p class="subheader">
-        Mojo uses <a href="http://www.injectjs.com/">Inject.js</a> to support <strong>AMD</strong>, and <strong>CommonJS</strong> in the browser. You can also easily bundle your application into one file using Mojo's <a href="https://github.com/mojo-js/mojo-cli">command line utility</a>.
+        Mojo supports <strong>AMD</strong>, and <strong>CommonJS</strong> in the browser. You can also easily bundle your application into one file using Mojo's <a href="https://github.com/mojo-js/mojo-cli">command line utility</a>.
       </p>
       <hr />
     </div>
