@@ -14,7 +14,7 @@
     </div>
 
     <div class="controls col-sm-4">
-      {{#if: script}}
+      {{#if: error || script}}
         <a href="#" data-bind="{{ onClick: recompile() }}">recompile</a>
       {{/else}}
         <span>compiling...</span>

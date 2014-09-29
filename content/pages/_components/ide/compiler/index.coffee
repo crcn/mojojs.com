@@ -11,7 +11,10 @@ parser = window?.paperclip.template.compiler
 exports.compile = (files, complete) ->
   addLocalDeps files
   addRemoteFiles files, () ->
-    complete null, compile files
+    try 
+      complete null, compile files
+    catch e
+      complete e
 
 
 addLocalDeps = (files) ->

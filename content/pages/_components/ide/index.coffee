@@ -2,11 +2,15 @@ views = require "mojo-views"
 superagent = require "superagent"
 compiler = require "./compiler"
 bindableCall = require "bindable-call"
+bindable = require "bindable"
 
 class IdeView extends views.Base
   bindings:
     "file.files.first": "currentFile"
-    "currentFile": () -> @recompile()
+    "currentFile": () -> 
+      return if @_compiledInitially
+      @_compiledInitially = true
+      @recompile()
     "compileRequest.loading": "loading"
     "compileRequest.result": "script"
     "compileRequest.error": "error"
@@ -24,7 +28,6 @@ class IdeView extends views.Base
     @set "canRecompile", true
 
   recompile: () ->
-    console.log "RECOMPILE"
     return unless process.browser
     @set "canRecompile", false
     @set "compileRequest", bindableCall (complete) =>
@@ -35,6 +38,44 @@ class IdeView extends views.Base
     @set "expanded", not @get "expanded"
 
   collapse: () ->
+
+  addFile: () ->
+    fileName = String(prompt("file name:") || "").replace(/^\//, "")
+    return unless fileName.length
+    fileParts = fileName.split("/")
+    fileName = fileParts.pop()
+    folder = _findFolder @file, fileParts
+    folder.get("files").push currentFile = new bindable.Object {
+      name: fileName,
+      depth: folder.get("depth") + 1,
+      content: ""
+    }
+
+    @set "currentFile", currentFile
+
+
+
+_findFolder = (folder, path, depth = 1) ->
+  cpath = path.shift()
+  unless cpath
+    return folder
+
+  for file in folder.get("files").source()
+    if file.get("name") is cpath
+      foundFile = file
+      break
+
+  unless foundFile
+    folder.get("files").push foundFile = new bindable.Object {
+      name: cpath,
+      depth: depth,
+      files: new bindable.Collection()
+    }
+
+
+  _findFolder foundFile, path, depth + 1
+
+
 
 
 _flattenFiles = (file, dirname = "", files = []) ->
