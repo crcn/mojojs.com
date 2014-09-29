@@ -10,6 +10,6 @@ var HelloView = views.Base.extend({
 });
 
 exports.run = function (element) {
-  var view = new HelloView(void 0, app);
+  var view = new HelloView(null, app);
   element.appendChild(view.render());
 }
