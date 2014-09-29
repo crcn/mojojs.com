@@ -1,0 +1,19 @@
+<li data-bind={{ 
+  onClick: toggleVisibility(), 
+  css: {
+    selected: model === currentFile
+  },
+  style: {
+    'padding-left': ((model.depth + 1) * 10) + "px"
+  }
+}}> 
+  <span class="glyphicon glyphicon-{{ model.files ? isClosed ? 'folder-close' : 'folder-open' : 'file' }}"></span>
+  {{ model.name }} 
+</li>
+
+
+{{#if: !isClosed && model.files }}
+  <ul>
+    {{ html: children.files }}
+  </ul>
+{{/}}

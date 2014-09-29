@@ -86,8 +86,23 @@ scriptifyBindableObject = (bo) ->
   if bo.__isBindableCollection
     return "app.models.create('"+(bo.__name || "collection")+"', {_source: [" + bo.source().map(scriptifyObject).join(",") + "] })"
   else
-    return "app.models.create('"+(bo.__name || "object")+"', "+scriptifyObject(bo.toJSON())+")"
+    return "app.models.create('"+(bo.__name || "object")+"', "+scriptifyObject(props(bo))+")"
 
+
+props = (vo) ->
+  p = {}
+  if vo.__context isnt vo
+    vo = vo.__context
+    
+  for k of vo
+    v = vo[k]
+    if /string|number|object/.test typeof v
+      p[k] = v
+
+  if p.__isBindable
+    delete p.__isBindable
+
+  p
 
 
 

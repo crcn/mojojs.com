@@ -1,160 +1,119 @@
-{{#layout:"main"}}
-<div id="home" class="container" style="max-width:900px; padding-bottom: 80px;" role="main">
 
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <div class="center">
-        <img src="/img/mojo-js.png" />
+<!DOCTYPE html> 
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/vendor/rainbow/themes/github.css" />
+    <script type="text/javascript" src="/app/index.built.js"></script>
+    <link rel="stylesheet" href="/css/app.css" />
+  </head>
+  <body>
+
+    <div class="header">
+      <div class="container blurb">
+        <div class="row navbar">
+          <div class="col-md-12">
+            <img id="logo" src="/img/mojo-js-transparent.png"></img>
+
+            <div class="navlinks">
+              <a href="/docs">Documentation</a>
+              <a href="/guides">Guides</a>
+              <a href="https://groups.google.com/forum/#!forum/mojojs">Community</a>
+            </div>
+          </div>
+        </div>
+        <div class="row caption">
+          <div class="col-md-3"></div>
+          <div class="col-md-6 text-center">
+            <h2>A plugin-based framework for creating powerful web applications</h2>
+
+            <p>
+              Mojo.js is a modular, isomorphic web framework that allows you cherry-pick exactly what features you want to use for your application. 
+            </p>
+
+            <div class="download-buttons">
+              <a class="btn download-button" href="#">Download</a>
+              <a class="btn download-button get-started" href="#">Get Started</a>
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+
+        <div class="row caption">
+          
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            {{
+              idePrep: {
+                sourceDir: __dirname + "/_examples/todoList"
+              }
+            }}
+          </div>
+
+          <div class="col-md-1"></div>
+
+        </div>
+
       </div>
-      <div class="center">
-        <h4>
-          A modular framework for developing advanced web applictions
-        </h4>
-      </div>
-      <div class="center" style="padding-top: 20px">
-        <a href="https://github.com/mojo-js/mojo-starter/archive/master.zip" class="btn btn-default">Download Starter Kit</a>
-        <a href="https://github.com/mojo-js/mojo.js" class="btn btn-default">Download Source</a>
+      <div class="subheader">
       </div>
     </div>
-  </div>
 
-  <div class="row" style="padding-top:40px;">
-    <div class="colm-md-12 text-center">
-      {{
-        socialButtons:
-      }}
-    </div>
-  </div>
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-6">
+          <h3><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;Simple</h3>
+          <p> 
+            Love Backbone.js? You'll appreciate Mojo's straight-forward, coherent API. 
+            <!-- explicity -->
+          </p>
+        </div>
 
-
-  <div class="row" style="padding-top: 80px;"></div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;Simple</h3>
-      <p> 
-        Love Backbone.js? You'll appreciate Mojo's straight-forward, coherent API. 
-        <!-- explicity -->
-      </p>
-    </div>
-
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span>&nbsp;Compatible</h3>
-      <p> 
-        Mojo easily works with just about any library. Work with jQuery, Angular, React, Backbone, 
-whatever you want. Check out the available <a href="#">cross-framework plugins</a>.
-      </p>
-    </div>
-  </div>
-
-
-  <div class="row">
-
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-wrench"></span>&nbsp;Modular</h3>
-      <p>
-        Mojo is composed of many loosely coupled, and highly extendable libraries. Pick whatever you want to suite your application needs.
-      </p>
-    </div>
-
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-flash"></span>&nbsp;Fast</h3>
-      <p>
-        Mojo works very well with old browsers (IE 7+), along with newer browsers. <a href="/perf">Check out the benchmarks</a>.
-      </p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-random"></span>&nbsp;Isomorphic</h3>
-      <p>
-        Easily write JavaScript apps that run on the server, and the browser. Check out <a href="https://github.com/mojo-js/mojojs.com">this website</a>.
-      </p>
-    </div>
-
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-ok"></span>&nbsp;Testable</h3>
-      <p>
-        Writing unit tests is a breeze. You can even run them in Node.js! Check out <a href="#">writing unit tests with Mojo</a>.
-      </p>
-    </div>
-  </div>
-  
-
-  <div class="row" style="padding-top:40px;">
-    <div class="col-md-12">
-      <h3>Organization out of the box</h3>
-      <p class="subheader">
-        Mojo supports <strong>AMD</strong>, and <strong>CommonJS</strong> in the browser. You can also easily bundle your application into one file using Mojo's <a href="https://github.com/mojo-js/mojo-cli">command line utility</a>.
-      </p>
-      <hr />
-    </div>
-  </div>
-
-  <div class="row">
+        <div class="col-md-6">
+          <h3><span class="glyphicon glyphicon-link"></span>&nbsp;Compatible</h3>
+          <p> 
+            Mojo easily works with just about any library. Work with jQuery, Angular, React, Backbone, 
+    whatever you want. Check out the available <a href="#">cross-framework plugins</a>.
+          </p>
+        </div>
+      </div>
     
-    <div class="col-md-8 demo-files">
-      {{
-        demoFiles: {
-          source: helloDemoSourceDir
-        }
-      }}
-    </div>
+       <div class="row">
+        <div class="col-md-6">
+          <h3><span class="glyphicon glyphicon-wrench"></span>&nbsp;Modular</h3>
+          <p>
+            Mojo is composed of many loosely coupled, and highly extendable libraries. Pick whatever you want to suite your application needs.
+          </p>
+        </div>
 
-    <div class="col-md-4">
-      <div class="well demo">
-        {{
-          browserify: {
-            component: "helloDemo"
-          }
-        }}
+        <div class="col-md-6">
+          <h3><span class="glyphicon glyphicon-flash"></span>&nbsp;Fast</h3>
+          <p>
+            Mojo works very well with old browsers (IE 7+), along with newer browsers. <a href="/perf">Check out the benchmarks</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h3><span class="glyphicon glyphicon-random"></span>&nbsp;Isomorphic</h3>
+          <p>
+            Easily write JavaScript apps that run on the server, and the browser. Check out <a href="https://github.com/mojo-js/mojojs.com">this website</a>.
+          </p>
+        </div>
+
+        <div class="col-md-6">
+          <h3><span class="glyphicon glyphicon-ok"></span>&nbsp;Testable</h3>
+          <p>
+            Writing unit tests is a breeze. You can even run them in Node.js! Check out <a href="#">writing unit tests with Mojo</a>.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-
-  <div class="row" style="padding-top:40px;">
-    <div class="col-md-12">
-      <h3>Compatible with just about any library</h3>
-
-      <p class="subheader">
-        Mojo tries to work with your existing framework and libraries, not replace them. <i>Easily</i> incorporate Mojo into your application, and vice versa, without sacrificing your pre-existing architecture. Use the cross-framework libraries you've always wanted to use.
-      </p>
-      <hr />
-    </div>
-  </div>
-
-  <div class="row">
-    
-    <div class="col-md-8 demo-files">
-      {{
-        demoFiles: {
-          source: interpDemoSource
-        }
-      }}
+    <div class="content-footer">
     </div>
 
-    <div class="col-md-4">
-      <div class="well demo">
-        {{
-          browserify: {
-            component: "interpolationDemo",
-            name: "Craig"
-          }
-        }}
-      </div>
-    </div>
-  </div>
+  </body>
 
-  <!--div class="row" style="padding-top:40px;">
-    <div class="col-md-12">
-      <h3>Build powerfuly sophisticated, yet simple applications</h3>
-      <p class="subheader">Mojo was built with scalability in mind. The design patterns used in Mojo are inspired by many other already proven ideas that span far beyond the JavaScript realm.</p>
-      <hr />
-    </div>
-  </div-->
-
-
-</div>
-{{/}}
+  <script type="text/javascript" src="/vendor/js/rainbow-custom.min.js"></script>
+</html>

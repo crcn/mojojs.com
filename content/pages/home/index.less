@@ -1,36 +1,82 @@
-#home {
-  & .glyphicon {
-    font-size: 18px;
-    padding-right: 5px;
-  }
+@fontColor: rgba(255,255,255,0.9);
+@bgcolor: #66bd66;
+@bgcolor-darker: #57a257;
+@bgcolor-almostblack: #254425;
 
-  & .lightning {
-    font-size: 30px;
-    color: #333;
-  }
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: Avenir-light;
+  background-color: @fontColor;
+}
 
-  & .subheader {
-    font-size: 16px;
-  }
-
-  & .demo-files {
-    & .nav {
-      padding-left: 15px;
-      border-bottom: 0px;
-      & li.active a {
-        background-color: #f8f8f8 !important;
-      }
-    }
-    & pre, code {
-      min-height: 128px;
-      font-size: 12px;
-    }
-    & pre { 
-      border-color: #e3e3e3;
-    }
-  }
-
-  & .demo {
+.content-footer {
+  margin-top: 80px;
+  width: 100%;
+  min-height: 50px;
+}
+  
+.header {
+  .horizontal-gradient(@bgcolor, @bgcolor-darker);
+  width: 100%;
+  height: 100%;
+  color: rgba(255,255,255,0.9);
+  border-bottom: 1px solid @bgcolor-darker;
+  & .caption {
     margin-top: 40px;
   }
+
+  overflow: hidden;
+
+  & .navlinks {
+    float: right;
+    position: relative;
+    top: 15px;
+  }
+
+
+  & a {
+    color: @fontColor;
+    margin-right: 20px;
+    border-bottom: 1px solid @fontColor;
+  }
+
+  .download-buttons {
+    margin-top: 20px;
+  }
+
+  .download-button {
+    border: 3px solid @fontColor;
+    font-size: 20px !important;
+    padding-left: 30px;
+    padding-right: 30px;
+    .border-radius(5px);
+    &:hover {
+      color: #FFF;
+    }
+  }
+
+  .get-started {  
+    color: @bgcolor-darker;
+    background-color: @fontColor;
+  }
 }
+
+#logo {
+  max-height: 50px;
+  float:left;
+}
+
+.navbar {
+  padding-top:10px;
+  padding-bottom:15px;
+  width: 100%;
+}
+
+.content {
+  max-width: 900px;
+  padding-top: 80px;
+  color: @bgcolor-almostblack;
+}
+
+

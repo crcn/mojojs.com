@@ -1,0 +1,3 @@
+<input type="text/javascript" data-bind="{{ model: <~>name }}" />
+
+hello {{name}}!

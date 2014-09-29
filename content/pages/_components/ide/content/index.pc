@@ -1,0 +1,3 @@
+<div class="ide-body">
+  {{ html: children.editor }}
+</div>

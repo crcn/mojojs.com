@@ -1,0 +1,10 @@
+<div class="ide-nav">
+  <ul class="dots">
+    <li></li>
+    <li data-bind={{ onClick: collapse() }}></li>
+    <li data-bind={{ onClick: expand() }}></li>
+  </ul>
+  <span>
+    {{currentFile.name || "No File"}}
+  </span>
+</div>

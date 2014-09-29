@@ -41,6 +41,7 @@
     "async": "^0.9.0",
     "bindable": "0.5.x",
     "bindable-call": "^0.1.6",
+    "brace": "^0.4.0",
     "browserify-middleware": "^3.0.1",
     "comerr": "0.0.6",
     "compression": "1.0.10",

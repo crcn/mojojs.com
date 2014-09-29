@@ -1,0 +1,11 @@
+<div class="ide" data-bind="{{
+  css: {
+    expanded: expanded
+  }
+}}">
+  {{ html: sections.header }}
+  <div class="ide-content">
+    {{ html: sections.sidebar }}
+    {{ html: sections.body }}
+  </div>
+</div>
