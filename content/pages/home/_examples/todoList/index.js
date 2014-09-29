@@ -6,7 +6,7 @@ app.use(views);
 app.use(require("mojo-paperclip@0.5.6"));
 
 var HelloView = views.Base.extend({
-  paper: require("./entry.pc")
+  paper: require("./template.pc")
 });
 
 exports.run = function (element) {

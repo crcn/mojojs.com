@@ -1,5 +1,5 @@
 <input 
-  type="text/javascript" 
+  type="text" 
   class="form-control" 
   placeholder="Enter your name"
   data-bind="{{ model: <~>name }}" />
