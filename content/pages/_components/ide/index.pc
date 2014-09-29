@@ -4,8 +4,10 @@
   }
 }}">
   {{ html: sections.header }}
-  <div class="ide-content">
-    {{ html: sections.sidebar }}
-    {{ html: sections.body }}
+  <div class="container">
+    <div class="ide-content row">
+      {{ html: sections.sidebar }}
+      {{ html: sections.body }}
+    </div>
   </div>
 </div>

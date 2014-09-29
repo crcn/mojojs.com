@@ -1,10 +1,8 @@
-
-
 if process.browser  
   ace = require "brace"
   require("brace/mode/javascript")
   require("brace/mode/html")
-  require("brace/theme/tomorrow_night_eighties")
+  require("brace/theme/tomorrow")
 else
   ace = 
     edit: (element) ->
@@ -22,30 +20,34 @@ views = require "mojo-views"
 
 class EditorView extends views.Base.extend({
 
+  paper: require("./index.pc")
+
   bindings:
     "currentFile": (currentFile) ->
       src = currentFile.get("content")
       return unless @editor
       @editor.getSession().setMode("ace/mode/" + getMode(currentFile))
-      @editor.setValue decodeURIComponent src
+      @editor.setValue src = decodeURIComponent src
+      @editor.setValue(src, -1) 
+      @editor.setValue(src, 1) 
 
   didCreateSection: () ->
     return unless process.browser
     div = document.createElement "div"
-    div.setAttribute "class", "ide-editor"
     @editor = ace.edit div
-    @editor.setTheme("ace/theme/tomorrow_night_eighties")
+    @editor.setTheme("ace/theme/tomorrow")
     @editor.getSession().setUseWorker(false)
     @editor.renderer.setShowGutter(false)
+    @editor.getSession().setUseWrapMode(true)
     @editor.setOptions 
       maxLines: 32
-      minLines: 20
+      minLines: 1024
 
-    @section.appendChild div
+    @set "content", div
 
     @editor.on "input", () =>
       @set "currentFile.content", encodeURIComponent @editor.getValue()
-      @get("recompile")()
+      @get("prepForRecompile")()
 
 })
 

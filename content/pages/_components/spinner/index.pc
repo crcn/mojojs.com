@@ -1,0 +1,5 @@
+<div class="spinner">
+  <div class="spin-inner">
+    {{ html: content }}
+  </div>
+</div>

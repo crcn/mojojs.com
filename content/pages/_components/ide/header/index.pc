@@ -1,10 +1,24 @@
 <div class="ide-nav">
-  <ul class="dots">
-    <li></li>
-    <li data-bind={{ onClick: collapse() }}></li>
-    <li data-bind={{ onClick: expand() }}></li>
-  </ul>
-  <span>
-    {{currentFile.name || "No File"}}
-  </span>
+  <div class="row">
+    <div class="col-sm-4">
+      <ul class="dots">
+        <li></li>
+        <li data-bind={{ onClick: collapse() }}></li>
+        <li data-bind={{ onClick: expand() }}></li>
+      </ul>
+    </div>
+    <div class="col-sm-4 filename">
+      <span>
+        {{currentFile.name || "No File"}}
+      </span>
+    </div>
+
+    <div class="controls col-sm-4">
+      {{#if: script}}
+        <a href="#" data-bind="{{ onClick: recompile() }}">recompile</a>
+      {{/else}}
+        <span>compiling...</span>
+      {{/}}
+    </div>
+  </div>
 </div>

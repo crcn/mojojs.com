@@ -40,8 +40,7 @@
 
         <div class="row caption">
           
-          <div class="col-md-1"></div>
-          <div class="col-md-10">
+          <div class="col-md-12">
             {{
               idePrep: {
                 sourceDir: __dirname + "/_examples/todoList"
@@ -49,7 +48,6 @@
             }}
           </div>
 
-          <div class="col-md-1"></div>
 
         </div>
 

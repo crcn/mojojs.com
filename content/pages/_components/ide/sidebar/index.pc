@@ -1,4 +1,4 @@
-<div class="ide-sidebar">
+<div class="ide-sidebar col-sm-2">
   <ul>
     {{ html: sections.file }}
   </ul>

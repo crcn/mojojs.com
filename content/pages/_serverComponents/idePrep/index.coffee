@@ -3,17 +3,11 @@ glob = require "glob"
 fs = require "fs"
 bindable = require "bindable"
 path = require "path"
-resolver = require "./resolve"
 
 class IdePrepView extends views.Base
   bindings:
     "sourceDir": (sourceDir) ->
       files = glob.sync sourceDir + "/**/*.*"
-
-      resolver.resolve {
-        entry: require.resolve(sourceDir)
-      }, () ->
-        console.log arguments
 
 
       readFiles = (parentPath, filePath, depth = 0) ->
