@@ -12,6 +12,11 @@ var MessageView = views.Base.extend({
 module.exports = views.Base.extend({
 
   /**
+   */
+
+  displayName: "Anon",
+
+  /**
    * index template
    */
 
