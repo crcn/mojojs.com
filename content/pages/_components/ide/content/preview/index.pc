@@ -1,7 +1,9 @@
 <div class="ide-preview col-sm-4">
   <div class="row-fluid">
     <div class="col-sm-12">
-      {{#if:error}}
+      {{#if:loading}}
+        loading preview...
+      {{/elseif:error}}
         <div class="alert alert-danger">
           {{error.message}}
         </div>

@@ -9,7 +9,7 @@
     </div>
     <div class="col-sm-4 filename">
       <span>
-        {{currentFile.name || "No File"}}
+        {{projectName}} - {{currentFile.name || "No File"}}
       </span>
     </div>
 

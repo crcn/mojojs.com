@@ -1,6 +1,7 @@
 {{
   browserify: {
     component: "ide",
-    file: files
+    file: files,
+    projectName: projectName
   }
 }}

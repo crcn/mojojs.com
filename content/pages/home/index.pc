@@ -43,6 +43,7 @@
           <div class="col-md-12">
             {{
               idePrep: {
+                projectName: "Chatroom Example",
                 sourceDir: __dirname + "/_examples/chatroom"
               }
             }}
