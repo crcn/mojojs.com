@@ -37,14 +37,20 @@ html, body {
     float: right;
     position: relative;
     top: 15px;
-  }
 
+    & a {
+      color: @fontColor;
+      margin-right: 20px;
+      border-bottom: 1px solid @fontColor;
+    }
+  }
 
   & a {
     color: @fontColor;
-    margin-left: 20px;
     border-bottom: 1px solid @fontColor;
   }
+
+
 
 
   .download-button {
