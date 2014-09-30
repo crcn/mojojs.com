@@ -1,6 +1,5 @@
 <li>
 
-
   {{model.displayName || "Anonymous"}}: 
 
   {{#if:editMode}}
@@ -10,6 +9,5 @@
     <span class="glyphicon glyphicon-remove" data-bind="{{ onClick: model.dispose() }}"></span>
     <span class="glyphicon glyphicon-pencil" data-bind="{{ onClick: editMode = true }}"></span>
   {{/}}
-
 
 </li>

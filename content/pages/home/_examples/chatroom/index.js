@@ -1,5 +1,4 @@
-var Application = require("mojo-application"),
-uuid = require("uuid");
+var Application = require("mojo-application");
 
 var ChatroomApplication = Application.extend({
   config: {
@@ -22,9 +21,15 @@ var ChatroomApplication = Application.extend({
 exports.run = function (element) {
 
   var app = new ChatroomApplication();
-  app.eventBus.publish("/initializePubnub", uuid.v4());
+
+  // initialize pubnub here - important incase we wanna pass in a user ID 
+  // later on
+  app.eventBus.publish("/initializePubnub");
+
+  // join the chatroom channel for pubnub after initialization
   app.eventBus.publish("/joinChannel", "chatroom");
 
+  // create the main view, and add the todos models
   element.appendChild(app.views.create("main", {
     messages: app.models.create("messages")
   }).render());
