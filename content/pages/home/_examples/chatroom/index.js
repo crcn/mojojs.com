@@ -10,10 +10,10 @@ var ChatroomApplication = Application.extend({
   },
   plugins: [
     require("mojo-views"),
-    require("mojo-paperclip@0.5.6"),
+    require("mojo-paperclip"),
     require("mojo-models"),
     require("mojo-event-bus"),
-    require("mojo-pubnub@0.0.10"),
+    require("mojo-pubnub"),
     require("./views"),
     require("./models")
   ]

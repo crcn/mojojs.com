@@ -41,7 +41,7 @@ class EditorView extends views.Base.extend({
     @editor.getSession().setUseWrapMode(true)
     @editor.setOptions 
       maxLines: 32
-      minLines: 1024
+      minLines: 40
 
     @set "content", div
 

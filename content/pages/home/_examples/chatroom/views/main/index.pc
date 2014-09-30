@@ -1,5 +1,9 @@
-chatroom!
+<div class="chatroom-example">
 
-{{ html: children.messages }}
+  <ul>
+    <li>Chatroom</li>
+    {{ html: children.messages }}
+  </ul>
 
-<input type="text" data-bind="{{ model: <~>newMessage, onEnter: createMessage() }}"></input>
+  <input type="text" class="form-control" placeholder="Enter a message" data-bind="{{ model: <~>newMessage, onEnter: createMessage() }}"></input>
+</div>
