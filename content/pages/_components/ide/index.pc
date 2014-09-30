@@ -1,23 +1,24 @@
-<div class="ide row-fluid" data-bind="{{
+<div class="ide" data-bind="{{
   css: {
     expanded: expanded
   }
 }}">
   {{ html: sections.header }}
-  <div class="container ide-content-outer">
+  <div class="row-fluid ide-content-outer">
     <div class="ide-content row-fluid">
       {{ html: sections.sidebar }}
       {{ html: sections.edit }}
     </div>
   </div>
-</div>
 
-<div class="ide-arrow-down row-fluid">
-  <div class="col-sm-12">
-    <img src="/img/arrow-down.png"></img>
+  <div class="ide-arrow-down row-fluid">
+    <div class="col-sm-12">
+      <img src="/img/arrow-down.png"></img>
+    </div>
+  </div>
+
+  <div class="ide-preview-outer row-fluid">
+    {{ html: sections.preview }}
   </div>
 </div>
 
-<div class="ide-preview-outer row-fluid">
-  {{ html: sections.preview }}
-</div>
