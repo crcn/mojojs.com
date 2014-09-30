@@ -1,6 +1,6 @@
-<h3>Collaborative Todos (open a new browser)</h3>
+<strong>Collaborative Todos! (open a new browser)</strong>
 
-<input type="text" data-bind="{{ model: <~>newTodoText, onEnter: addNewTodo(newTodoText), focus: true }}"></input>
+<input type="text" class="form-control" data-bind="{{ model: <~>newTodoText, onEnter: addNewTodo(newTodoText), focus: true }}"></input>
 <ul>
   {{ html: sections.todos }}
 </ul>

@@ -37,7 +37,7 @@ addRemoteFiles = (files, complete) ->
     for dep in file.deps
       unless ~dep.indexOf("/")
         depParts = dep.split("@")
-        remoteDeps[depParts.shift()] = depParts.shift() || "*"
+        remoteDeps[depParts.shift()] = depParts.shift() || "latest"
 
   pkg = {
     "options": {
@@ -58,9 +58,10 @@ addRemoteFiles = (files, complete) ->
       return complete new Error response.text
     
 
+    console.log response.body
     for moduleName of response.body
       files.push {
-        path: if remoteDeps[moduleName] is "*" then moduleName else moduleName + "@" + remoteDeps[moduleName],
+        path: if remoteDeps[moduleName] is "latest" then moduleName else moduleName + "@" + remoteDeps[moduleName],
         content: "module.exports = " + response.body[moduleName].bundle + "('"+moduleName+"')"
       }
 

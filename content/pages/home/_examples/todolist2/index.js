@@ -11,7 +11,7 @@ var TodosApplication = Application.extend({
   },
   plugins: [
     require("mojo-views"),
-    require("mojo-paperclip@0.5.6"),
+    require("mojo-paperclip"),
     require("mojo-models"),
     require("mojo-event-bus"),
     require("mojo-pubnub"),
@@ -27,7 +27,7 @@ exports.run = function (element) {
   app.eventBus.publish("/initializePubnub", uuid.v4());
   app.eventBus.publish("/joinChannel", "todos");
 
-  document.body.appendChild(app.views.create("main", {
+  element.appendChild(app.views.create("main", {
     todos: app.models.create("todos")
   }).render());
 };
