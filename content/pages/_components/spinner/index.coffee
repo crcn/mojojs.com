@@ -14,8 +14,9 @@ class SpinnerView extends views.Base
 
         new Spinner({
           lines: 10,
-          length: 10,
-          width: 3,
+          length: 6,
+          width: 5,
+          radius: 20,
           color: "#57a257"
         }).spin(@_div)
 

@@ -1,12 +1,14 @@
 <div class="ide-preview col-sm-12">
-  {{#if:loading}}
-    loading preview...
-  {{/elseif:error}}
-    <div class="alert alert-danger">
-      {{error.message}}
-    </div>
-  {{/}}
-  {{#if:script}}
-    {{ html: content }}
-  {{/}}
+  <div class="ide-preview-inner">
+    {{#if:loading}}
+      {{spinner:{show:true}}}
+    {{/elseif:error}}
+      <div class="alert alert-danger">
+        {{error.message}}
+      </div>
+    {{/}}
+    {{#if:script}}
+      {{ html: content }}
+    {{/}}
+  </div>
 </div>
