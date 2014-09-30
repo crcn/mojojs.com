@@ -11,10 +11,10 @@ class IdePrepView extends views.Base
 
 
       readFiles = (parentPath, filePath, depth = 0) ->
-        name =  filePath.replace(parentPath, "")
+        name =  filePath.replace(parentPath, "").replace(/^\//, "")
         if fs.lstatSync(filePath).isDirectory()
           return new bindable.Object {
-            name: name
+            name: name + "/",
             depth: depth
             files: new bindable.Collection fs.readdirSync(filePath).filter((name) -> name.substr(0, 1) isnt ".").map((name) -> readFiles filePath, path.join(filePath, name), depth + 1)
           }

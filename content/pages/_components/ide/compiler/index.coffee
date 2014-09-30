@@ -45,6 +45,10 @@ addRemoteFiles = (files, complete) ->
     return complete()
 
   superagent.post("http://wzrd.in/multi").send(pkg).end (err, response) ->
+
+    console.log err
+    console.log response
+    
     for moduleName of response.body
       files.push {
         path: if remoteDeps[moduleName] is "*" then moduleName else moduleName + "@" + remoteDeps[moduleName],

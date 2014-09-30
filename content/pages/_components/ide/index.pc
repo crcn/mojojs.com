@@ -4,7 +4,7 @@
   }
 }}">
   {{ html: sections.header }}
-  <div class="container">
+  <div class="container ide-content-outer">
     <div class="ide-content row">
       {{ html: sections.sidebar }}
       {{ html: sections.body }}

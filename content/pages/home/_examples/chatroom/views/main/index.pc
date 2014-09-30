@@ -1,0 +1,3 @@
+chatroom!
+
+{{ html: children.messages }}
