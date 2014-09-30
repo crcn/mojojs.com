@@ -26,10 +26,13 @@ class EditorView extends views.Base.extend({
     "currentFile": (currentFile) ->
       src = currentFile.get("content")
       return unless @editor
+
       @editor.getSession().setMode("ace/mode/" + getMode(currentFile))
       @editor.setValue src = decodeURIComponent src
       @editor.setValue(src, -1) 
       @editor.setValue(src, 1) 
+
+      @$(".ide-editor").scrollTop(0)
 
   didCreateSection: () ->
     return unless process.browser
@@ -40,8 +43,7 @@ class EditorView extends views.Base.extend({
     @editor.renderer.setShowGutter(false)
     @editor.getSession().setUseWrapMode(true)
     @editor.setOptions 
-      maxLines: 32
-      minLines: 40
+      maxLines: Infinity
 
     @set "content", div
 
