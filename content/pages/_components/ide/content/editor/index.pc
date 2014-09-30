@@ -1,3 +1,0 @@
-<div class="ide-editor col-sm-6 no-padding">
-  {{ html: content }}
-</div>

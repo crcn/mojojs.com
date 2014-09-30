@@ -1,9 +1,22 @@
 
 
+.ide-preview-outer {
+  margin-top: 70px;
+}
+
+.ide-arrow-down {
+  text-align: center;
+  margin-top: 30px;
+  & img {
+    height: 20px;
+    opacity: 0.2;
+  }
+}
+
+
 .ide {
   background-color: #FFF;
   width: 100%;
-  height: 100%;
   height: 300px;
   overflow: hidden;
   position: relative;
@@ -17,6 +30,7 @@
     padding: 0px;
     height: 100%;
   }
+
 
   &.expanded {
     position: fixed;
@@ -44,8 +58,8 @@
     }
     height: 650px;
   }
-  & .ide-content {
-  }
+
+
 
   & input {
     color: #000;

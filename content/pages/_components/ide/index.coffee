@@ -19,7 +19,8 @@ class IdeView extends views.Base
   children:
     header: require("./header")
     sidebar: require("./sidebar")
-    body: require("./content")
+    edit: require("./editor")
+    preview: require("./preview")
 
   setCurrentFile: (file) ->
     @set "currentFile", file
