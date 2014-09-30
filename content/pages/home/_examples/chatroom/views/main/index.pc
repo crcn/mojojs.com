@@ -1,9 +1,15 @@
 <div class="chatroom-example">
 
-  <ul>
-    <li>Chatroom</li>
-    {{ html: children.messages }}
-  </ul>
+  {{#if:!displayName}}
+    <p>What's your name?</p>
+    <input type="text" class="form-control" placeholder="Pick a name, any name" data-bind="{{ model: <~>newName, onEnter: displayName = newName, focus: true }}"></input> 
+  {{/else}}
 
-  <input type="text" class="form-control" placeholder="Enter a message" data-bind="{{ model: <~>newMessage, onEnter: createMessage() }}"></input>
+    <ul>
+      <li>Hello <strong>{{displayName}}</strong>, say something!</li>
+      {{ html: children.messages }}
+    </ul>
+
+    <input type="text" class="form-control" placeholder="Enter a message" data-bind="{{ model: <~>newMessage, onEnter: createMessage(), focus: true }}"></input>
+  {{/}}
 </div>

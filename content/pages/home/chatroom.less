@@ -1,11 +1,20 @@
 .chatroom-example {
 
   font-size: 16px;
+  color: @bgcolor-almostblack;
 
   & .headline {
     border-bottom: 1px solid @bgcolor-darker;
     padding-bottom: 10px;
     margin-bottom: 10px;
+  }
+
+  & span {
+    display: none;
+    float: right;
+    font-size: 14px;
+    cursor: pointer;
+    padding-left: 10px;
   }
 
   & ul {
@@ -15,8 +24,17 @@
   }
 
   & li {
+
+    &:hover span {
+      display: inline-block;
+    }
     border-bottom: 1px solid @bgcolor-darker;
     padding-bottom: 10px;
     margin-bottom: 10px;
+
+    & input {
+      display: inline-block;
+      width: 100px;
+    }
   }
 }

@@ -1,3 +1,15 @@
 <li>
-  {{ model.text }}
+
+
+  {{model.displayName || "Anonymous"}}: 
+
+  {{#if:editMode}}
+    <input type="text" class="form-control" data-bind="{{ focus: true, model: <~>model.text, onEnter: editMode = false }}"></input>
+  {{/else}}
+    {{ model.text }} 
+    <span class="glyphicon glyphicon-remove" data-bind="{{ onClick: model.dispose() }}"></span>
+    <span class="glyphicon glyphicon-pencil" data-bind="{{ onClick: editMode = true }}"></span>
+  {{/}}
+
+
 </li>

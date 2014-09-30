@@ -16,7 +16,8 @@ module.exports = views.Base.extend({
   createMessage: function () {
     if (!this.newMessage) return;
     this.get("messages").create({
-      text: this.newMessage
+      text: this.newMessage,
+      displayName: this.displayName
     });
     this.set("newMessage", void 0);
   }
