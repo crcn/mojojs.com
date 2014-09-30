@@ -37,12 +37,19 @@ module.exports = views.Base.extend({
    */
 
   createMessage: function () {
+
+    // ignore any blank messages
     if (!this.newMessage) return;
+
+    // create a new message with the display name
+    // of the user, along with a timestamp
     this.get("messages").create({
       text: this.newMessage,
       displayName: this.displayName,
       createdAt: Date.now()
     });
+
+    // reset the form input
     this.set("newMessage", void 0);
   }
 });
