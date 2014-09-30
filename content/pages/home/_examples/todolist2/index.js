@@ -1,7 +1,8 @@
 var Application = require("mojo-application"),
 uuid = require("uuid");
 
-var ChatroomApplication = Application.extend({
+
+var TodosApplication = Application.extend({
   config: {
     pubnub: {
       subscribe_key: "sub-c-9535ac96-4823-11e4-aaa5-02ee2ddab7fe",
@@ -13,20 +14,20 @@ var ChatroomApplication = Application.extend({
     require("mojo-paperclip@0.5.6"),
     require("mojo-models"),
     require("mojo-event-bus"),
-    require("mojo-pubnub@0.0.10"),
-    require("./views"),
-    require("./models")
+    require("mojo-pubnub"),
+    require("./models"),
+    require("./views")
   ]
 });
 
+
 exports.run = function (element) {
+  var app = new TodosApplication();
 
-  var app = new ChatroomApplication();
   app.eventBus.publish("/initializePubnub", uuid.v4());
-  app.eventBus.publish("/joinChannel", "chatroom");
+  app.eventBus.publish("/joinChannel", "todos");
 
-  element.appendChild(app.views.create("main", {
-    messages: app.models.create("messages")
+  document.body.appendChild(app.views.create("main", {
+    todos: app.models.create("todos")
   }).render());
-
 };

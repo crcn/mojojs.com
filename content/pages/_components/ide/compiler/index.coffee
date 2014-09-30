@@ -27,6 +27,9 @@ addLocalDeps = (files) ->
 scanRemoteDeps = (files) ->
   remoteDeps = []
 
+cdn = "http://browserify-cdn.herokuapp.com"
+cdn = "http://wzrd.in"
+
 addRemoteFiles = (files, complete) ->
   remoteDeps = {}
 
@@ -46,7 +49,7 @@ addRemoteFiles = (files, complete) ->
   unless Object.keys(remoteDeps).length
     return complete()
 
-  superagent.post("http://wzrd.in/multi").send(pkg).end (err, response) ->
+  superagent.post(cdn + "/multi").send(pkg).end (err, response) ->
 
     if err
       return complete err
@@ -82,6 +85,7 @@ compile = (files) ->
     function resolve (path) {
       if (defined[path]) return path;
       if (defined[path + '/index.js']) return path + '/index.js';
+      if (defined[path + '.js']) return path + '.js';
     }
 
     function require (path) {

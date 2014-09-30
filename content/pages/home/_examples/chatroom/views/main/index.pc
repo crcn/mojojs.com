@@ -1,3 +1,5 @@
 chatroom!
 
 {{ html: children.messages }}
+
+<input type="text" data-bind="{{ model: <~>newMessage, onEnter: createMessage() }}"></input>
