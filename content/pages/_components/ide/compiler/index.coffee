@@ -10,7 +10,9 @@ parser = window?.paperclip.template.compiler
 
 exports.compile = (files, complete) ->
   addLocalDeps files
-  addRemoteFiles files, () ->
+  addRemoteFiles files, (err) ->
+    if err
+      return complete err
     try 
       complete null, compile files
     catch e
@@ -46,9 +48,13 @@ addRemoteFiles = (files, complete) ->
 
   superagent.post("http://wzrd.in/multi").send(pkg).end (err, response) ->
 
-    console.log err
-    console.log response
+    if err
+      return complete err
+
+    unless response.body
+      return complete new Error response.text
     
+
     for moduleName of response.body
       files.push {
         path: if remoteDeps[moduleName] is "*" then moduleName else moduleName + "@" + remoteDeps[moduleName],
