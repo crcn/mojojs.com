@@ -14,7 +14,7 @@
           <div class="col-md-12">
             <img id="logo" src="/img/mojo-js-transparent.png"></img>
 
-            <div class="navlinks">
+            <div class="navlinks text-right">
               <a href="/docs">Documentation</a>
               <a href="/guides">Guides</a>
               <a href="https://groups.google.com/forum/#!forum/mojojs">Community</a>
@@ -30,10 +30,8 @@
               Mojo.js is a modular, isomorphic web framework that allows you cherry-pick exactly what features you want to use for your application. 
             </p>
 
-            <div class="download-buttons">
               <a class="btn download-button" href="#">Download Beta</a>
               <a class="btn download-button get-started" href="#">Get Started</a>
-            </div>
           </div>
           <div class="col-md-3"></div>
         </div>

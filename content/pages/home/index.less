@@ -22,7 +22,7 @@ html, body {
   min-height: 100%;
   padding-bottom: 40px;
   color: rgba(255,255,255,0.9);
-  border-bottom: 1px solid @bgcolor-darker;
+  border-bottom: 2px solid @bgcolor-darker;
   & .caption {
     margin-top: 40px;
   }
@@ -42,15 +42,16 @@ html, body {
     border-bottom: 1px solid @fontColor;
   }
 
-  .download-buttons {
-    margin-top: 20px;
-  }
 
   .download-button {
+    margin-top: 10px;
+    width: 200px;
     border: 3px solid @fontColor;
     font-size: 20px !important;
     padding-left: 30px;
     padding-right: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
     .border-radius(5px);
     &:hover {
       color: #FFF;
