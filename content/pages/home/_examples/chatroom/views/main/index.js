@@ -10,14 +10,18 @@ module.exports = views.Base.extend({
     messages: {
       type: "list",
       source: "messages",
-      modelViewClass: MessageView
+      modelViewClass: MessageView,
+      sort: function (a, b) {
+        return a.get("createdAt") > b.get("createdAt") ? 1 : -1;
+      }
     }
   },
   createMessage: function () {
     if (!this.newMessage) return;
     this.get("messages").create({
       text: this.newMessage,
-      displayName: this.displayName
+      displayName: this.displayName,
+      createdAt: Date.now()
     });
     this.set("newMessage", void 0);
   }
