@@ -18,7 +18,7 @@ var ChatroomApplication = Application.extend({
   ]
 });
 
-exports.run = function (element) {
+module.exports = function (element) {
 
   var app = new ChatroomApplication();
 

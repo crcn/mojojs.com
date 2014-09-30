@@ -8,7 +8,7 @@ class Preview extends views.Base
         return
       try 
         div = document.createElement "div"          
-        script.run div
+        script div
         @set "content", div
         console.log div
       catch e
