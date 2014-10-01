@@ -8,6 +8,13 @@ to build your application
 - completely customizable javascript framework
 
 - A javascript framework that allows you to use ____ with ____.
+- talk about development speed
+- talk about features & benefits
+  - Mix and match any library you want
+  - build sophisticated, yet simple applications at a fraction of the time & cost*
+  - Explicit, cohesive
+  - written with process in mind
+
 
 - 
 - easy interpolation between any library
