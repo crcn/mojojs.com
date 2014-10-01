@@ -1,0 +1,27 @@
+@borderRadius: 3px;
+
+.mailing-list-form {
+  & input {
+    display: inline-block;
+    border: 0px;
+  }
+
+  & input[type="submit"] {
+    width: 130px !important;
+    .border-radius(0px);
+    .border-top-right-radius(@borderRadius);
+    .border-bottom-right-radius(@borderRadius);
+    background-color: @bgcolor-darker;
+    color: @fontColor;
+  }
+
+  & input[type="email"] {
+    width: 300px !important;
+    .border-radius(0px);
+    .border-top-left-radius(@borderRadius);
+    .border-bottom-left-radius(@borderRadius);
+    background-color: @bgcolor;
+    color: @fontColor;
+    .placeholder(#ADE7AD);
+  }
+}

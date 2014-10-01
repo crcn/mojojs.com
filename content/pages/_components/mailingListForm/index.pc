@@ -1,0 +1,9 @@
+<!-- Begin MailChimp Signup Form -->
+<div class="mailing-list-form text-right">
+  <form action="//mojojs.us9.list-manage.com/subscribe/post?u=606e045d2b1e73b0e3c43c99f&amp;id=4ff58d53d5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <input type="email" class="form-control" value="" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" />
+    <input type="submit" value="Get Updates" class="form-control" name="subscribe" id="mc-embedded-subscribe" />
+  </form>
+</div>
+
+<!--End mc_embed_signup-->
