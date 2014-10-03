@@ -81,7 +81,7 @@
 
       <div class="row text-center">
         <div class="col-md-12">
-          <h3>Customizable to the bone.</h3>
+          <h3>Customizable to the bone</h3>
           <p class="subheader">
             Mojo.js was designed to be plugin-based to the core, allowing you to customize every part of it. Easily write code once that works on any platform including web, server, and mobile. Build rich applications that give your user base the best experience possible. 
           </p>
