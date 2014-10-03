@@ -5,20 +5,7 @@
 }}">
   {{ html: sections.header }}
   <div class="row-fluid ide-content-outer">
-    <div class="ide-content row-fluid">
-      {{ html: sections.sidebar }}
-      {{ html: sections.edit }}
-    </div>
-  </div>
-
-  <div class="ide-arrow-down row-fluid">
-    <div class="col-sm-12">
-      <img src="/img/arrow-down.png"></img>
-    </div>
-  </div>
-
-  <div class="ide-preview-outer row-fluid">
-    {{ html: sections.preview }}
+    {{ html: sections.content }}
   </div>
 </div>
 

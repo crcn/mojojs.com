@@ -9,16 +9,22 @@
     </div>
     <div class="col-sm-4 filename">
       <span>
-        {{projectName}} - {{currentFile.name || "No File"}}
+        {{projectName}} 
+
+        {{#if:!showPreview}}
+          - {{currentFile.name || "No File"}}
+        {{/}}
       </span>
     </div>
 
     <div class="controls col-sm-4">
-      {{#if: error || script}}
-        <a href="#" data-bind="{{ onClick: recompile() }}">recompile</a>
-      {{/else}}
-        <span>compiling...</span>
-      {{/}}
+      <div class="toggle-view-pill">
+        <a href="#" data-bind="{{ onClick: editor(), css: {
+          selected: !showPreview
+        } }}">editor</a><a href="#" data-bind="{{ onClick: preview(), css: {
+          selected: showPreview
+        } }} }}">preview</a>
+      </div>
     </div>
   </div>
 </div>

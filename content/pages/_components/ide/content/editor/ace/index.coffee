@@ -21,6 +21,7 @@ views = require "mojo-views"
 class EditorView extends views.Base.extend({
 
   paper: require("./index.pc")
+  define: ["content"]
 
   bindings:
     "currentFile": (currentFile) ->

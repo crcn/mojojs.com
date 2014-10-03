@@ -2,6 +2,7 @@ views = require "mojo-views"
 
 class Preview extends views.Base
   paper: require("./index.pc")
+  define: ["content"]
   bindings:
     "script": (script) ->
       unless script

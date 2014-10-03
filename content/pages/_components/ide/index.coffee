@@ -16,11 +16,10 @@ class IdeView extends views.Base
     "compileRequest.error": "error"
 
   paper: require("./index.pc")
+  showPreview: true
   children:
     header: require("./header")
-    sidebar: require("./sidebar")
-    edit: require("./editor")
-    preview: require("./preview")
+    content: require("./content")
 
   setCurrentFile: (file) ->
     @set "currentFile", file
@@ -31,6 +30,7 @@ class IdeView extends views.Base
   recompile: () ->
     return unless process.browser
     @set "canRecompile", false
+    @preview()
     @set "compileRequest", bindableCall (complete) =>
       compiler.compile _flattenFiles(@file), complete
 
@@ -38,7 +38,14 @@ class IdeView extends views.Base
   expand: () ->
     @set "expanded", not @get "expanded"
 
-  collapse: () ->
+
+  editor: () ->
+    @set "showPreview", false
+
+  preview: () ->
+    @set "showPreview", true
+    if @canRecompile
+      @recompile()
 
   addFile: () ->
     fileName = String(prompt("file name:") || "").replace(/^\//, "")

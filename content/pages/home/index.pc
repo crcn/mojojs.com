@@ -50,8 +50,6 @@
         </div>
 
       </div>
-      <div class="subheader">
-      </div>
     </div>
 
     <div class="social-row">
@@ -126,7 +124,12 @@
       </div>
     </div>
 
-    <div class="content-footer">
+    <div class="container content-footer">
+      <div class="row">
+        <div class="col-sm-2">
+          
+        </div>
+      </div>
     </div>
 
   </body>

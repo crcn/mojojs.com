@@ -1,0 +1,1 @@
+{{ html: showPreview ? children.preview : children.editor }}
