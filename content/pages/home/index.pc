@@ -171,7 +171,10 @@
         <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-5">
-            <span>&copy; Built by Craig Condon at ClassDojo</span>
+            <span>
+              Built by <a href="http://github.com/crcn">Craig Condon</a> at
+              <a href="http://classdojo.com">ClassDojo</a>
+            </span>
           </div>
           <div class="col-md-5">
             {{
