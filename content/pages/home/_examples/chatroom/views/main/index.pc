@@ -6,7 +6,7 @@
   {{/else}}
 
     <ul>
-      <li>Hello <strong>{{displayName}}</strong>, say something! <br /><a href="#" data-bind="{{ onClick: displayName = null}}">change name</a></li>
+      <li>Hello <strong>{{displayName}}</strong>, say something! <a href="#" data-bind="{{ onClick: displayName = null}}">change name</a> <span class="tip muted">(tip, open this page in a new tab)</span></li>
       {{ html: children.messages }}
     </ul>
 
