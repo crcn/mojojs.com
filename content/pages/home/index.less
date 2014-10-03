@@ -10,13 +10,32 @@ html, body {
   background-color: @fontColor;
 }
 
-.content-footer {
-  margin-top: 80px;
+.top-footer {
   width: 100%;
-  min-height: 200px;
+  margin-top: 80px;
+  padding-top: 40px;
+  min-height: 150px;
   background-color: @green-lightmono;
   color: @green-almostblack;
 
+  & ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+
+.bottom-footer {
+  background-color: #597259;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: rgba(255,255,255,0.8);
+  & span {
+    position: relative;
+    top: 8px;
+  }
 }
   
 .header {
