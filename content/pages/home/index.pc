@@ -23,10 +23,11 @@
         <div class="row caption">
           <div class="col-md-3"></div>
           <div class="col-md-6 text-center">
-            <h2>A plugin-based framework for creating powerful web applications</h2>
+            <h2>Build beautifully crafted, and powerful web applications</h2>
 
             <p>
-              Mojo.js is a modular, isomorphic web framework that allows you cherry-pick exactly what features you want to use for your application. 
+              A non-opinionated, totally customizable JavaScript framework designed for writing
+              programs that scale across any platform
             </p>
 
               <a class="btn download-button" href="#">Download Beta</a>
@@ -36,6 +37,10 @@
         </div>
 
         <div class="row caption example">
+
+          <div class="col-md-12 text-center header-muted">
+            Make realtime applications with one line of code
+          </div>
           
           <div class="col-md-12">
             {{
@@ -74,7 +79,14 @@
 
     <div class="container content">
 
-      <div class="row">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h3>Customizable to the bone.</h3>
+          <p class="subheader">
+            Mojo.js was designed to be plugin-based to the core, allowing you to customize every part of it. Easily write code once that works on any platform including web, server, and mobile. Build rich applications that give your user base the best experience possible. 
+          </p>
+          <hr />
+        </div>
       </div>
 
       <div class="row">
