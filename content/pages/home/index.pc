@@ -39,7 +39,7 @@
         <div class="row caption example">
 
           <div class="col-md-12 text-center header-muted">
-            Make realtime applications with one line of code
+            Make realtime applications with just one line of code
           </div>
           
           <div class="col-md-12">
