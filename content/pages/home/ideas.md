@@ -15,6 +15,7 @@ to build your application
   - Explicit, cohesive
   - written with process in mind
 
+- elegance
 
 - 
 - easy interpolation between any library
