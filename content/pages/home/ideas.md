@@ -1,5 +1,34 @@
 ### What mojo is
 
+### What's important
+  - speed
+    - graph showing different frameworks
+  - testability
+    - modularity = testability
+    - test in node
+  - Simple
+    - designed to please the eye. We want you to write beautiful, well architected code.
+    - easy to understand
+    - very explicit - no unexpected, magic behavior
+    - work directly with browser API's, no needless abstractions. Metamorph tags, shadow dom, etc, dirty type checking.
+    - strong encapsulation - focus on the views, just the views. add stuff later
+      - easy to create API without a backend
+      - makes testing easier
+  - Flexible
+    - works with any framework
+    - works with your existing stack, not replace it
+  - platform support
+    - mobile support
+    - phonegap
+    - node.js
+  - features (with comparisons)
+    - routing
+    - explicit data-binding
+    - models
+    - totally customizable
+    - plugin-based
+    - 
+
 - just the views, just the models, just the router. Use whatever you want
 to build your application
 
