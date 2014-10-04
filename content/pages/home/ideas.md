@@ -24,9 +24,19 @@ to build your application
 ### Key benefits
 
 - No lock-in
+  - no magic
 - modeled after backbone
 - very fast
 - modular
+- broad usage
+
+
+### What are people going to use it for?
+
+- mobile development
+- server-side development
+  - fast
+  - 
 
 - Simple - Love Backbone.js? You'll appreciate mojo's straight-forward API. Nothing fancy about it. 
 

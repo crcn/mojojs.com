@@ -96,7 +96,7 @@
         <div class="col-md-6">
           <h3><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;Simple</h3>
           <p> 
-            Love Backbone.js? You'll appreciate Mojo's straight-forward, coherent API. 
+            Love Backbone.js? You'll appreciate Mojo's, straight-forward, coherent API. 
             <!-- explicity -->
           </p>
         </div>
@@ -149,17 +149,33 @@
           <div class="col-md-1"></div>
           <div class="col-md-2">
             <ul>
-              <li>Documentation</li>
+              <li>Downloads</li>
+              <li>Starter Kit</li>
             </ul>
           </div>
           <div class="col-md-2">
             <ul>
+              <li>Learn</li>
+              <li>Getting Started</li>
               <li>Documentation</li>
+              <li>Videos</li>
             </ul>
           </div>
           <div class="col-md-2">
             <ul>
-              <li>Documentation</li>
+              <li>Connect</li>
+              <li>Twitter</li>
+              <li>Github</li>
+              <li>ClassDojo</li>
+              <li>YouTube</li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <ul>
+              <li>Contribute</li>
+              <li>Github</li>
+              <li>Mojo IRC</li>
+              <li>Community</li>
             </ul>
           </div>
           <div class="col-md-5"></div>
