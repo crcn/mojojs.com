@@ -3,7 +3,11 @@
     expanded: expanded
   }
 }}">
-  {{ html: sections.header }}
+  {{#if:tabs}}
+    {{ html: sections.tabs }}
+  {{/else}}
+    {{ html: sections.header }}
+  {{/}}
   <div class="row-fluid ide-content-outer">
     {{ html: sections.content }}
   </div>

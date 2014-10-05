@@ -2,7 +2,7 @@
 <!DOCTYPE html> 
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="/vendor/rainbow/themes/github.css" />
+    <link rel="stylesheet" href="/vendor/rainbow/themes/tomorrow-night.css" />
     <script type="text/javascript" src="/app/index.built.js"></script>
     <link rel="stylesheet" href="/css/app.css" />
   </head>
@@ -89,6 +89,28 @@
     </div>
 
     <div class="container content">
+      <div class="row">
+        <div class="col-md-6">
+          <h3><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;Simple</h3>
+          <p> 
+            Love Backbone.js? You'll appreciate Mojo's, straight-forward, coherent API. 
+          </p>
+        </div>
+        <div class="col-md-6">
+          {{
+            idePrep: {
+              projectName: "Chatroom Example",
+              sourceDir: __dirname + "/_snippets/simple",
+              tabs: true,
+              showPreview: false,
+              compile: false
+            }
+          }}
+        </div>
+      </div>
+    </div>
+
+    <!--div class="container content">
       
 
       <div class="row">
@@ -96,7 +118,6 @@
           <h3><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;Simple</h3>
           <p> 
             Love Backbone.js? You'll appreciate Mojo's, straight-forward, coherent API. 
-            <!-- explicity -->
           </p>
         </div>
 
@@ -140,9 +161,59 @@
           </p>
         </div>
       </div>
-    </div>
+    </div-->
 
-    <div class="footer-spacer"></div>
+    <!--div class="container features">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h2>Features:</h2>
+          <ul>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div-->
+
+
+    <div class="top-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-2">
+            <ul>
+              <li>Downloads</li>
+              <li>Starter Kit</li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <ul>
+              <li>Learn</li>
+              <li>Getting Started</li>
+              <li>Documentation</li>
+              <li>Videos</li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <ul>
+              <li>Connect</li>
+              <li>Twitter</li>
+              <li>Github</li>
+              <li>ClassDojo</li>
+              <li>YouTube</li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <ul>
+              <li>Contribute</li>
+              <li>Github</li>
+              <li>Mojo IRC</li>
+              <li>Community</li>
+            </ul>
+          </div>
+          <div class="col-md-5"></div>
+        </div>
+      </div>
+    </div>
 
     <div class="top-footer">
       <div class="container">

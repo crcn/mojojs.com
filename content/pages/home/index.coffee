@@ -1,4 +1,5 @@
 views = require "mojo-views"
+fs = require "fs"
 
 class HomeView extends views.Base
   __dirname: __dirname

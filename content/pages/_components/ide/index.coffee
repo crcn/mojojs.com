@@ -9,6 +9,7 @@ class IdeView extends views.Base
     "file.files.first": "currentFile"
     "currentFile": () -> 
       return if @_compiledInitially
+      return unless @compile
       @_compiledInitially = true
       @recompile()
     "compileRequest.loading": "loading"
@@ -17,14 +18,17 @@ class IdeView extends views.Base
 
   paper: require("./index.pc")
   showPreview: true
+  compile: true
   children:
     header: require("./header")
     content: require("./content")
+    tabs: require("./tabs")
 
   setCurrentFile: (file) ->
     @set "currentFile", file
 
   prepForRecompile: () ->
+    return unless @compile
     @set "canRecompile", true
 
   recompile: () ->
@@ -43,6 +47,7 @@ class IdeView extends views.Base
     @set "showPreview", false
 
   preview: () ->
+    return unless @compile
     @set "showPreview", true
     if @canRecompile
       @recompile()

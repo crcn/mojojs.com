@@ -2,6 +2,9 @@
   browserify: {
     component: "ide",
     file: files,
-    projectName: projectName
+    projectName: projectName,
+    showPreview: showPreview,
+    tabs: tabs,
+    compile: compile
   }
 }}

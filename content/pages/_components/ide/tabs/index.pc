@@ -1,0 +1,3 @@
+<ul class="ide-tabs">  
+  {{ html: sections.tabs }}
+</ul>
