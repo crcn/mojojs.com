@@ -5,6 +5,6 @@
   {{/}}
 
   <li class="toggle" data-bind="{{ onClick: togglePreview() }}">
-    {{ showPreview ? 'edit' : 'preview' }}
+    {{ showPreview ? 'see code' : 'see preview' }}
   </li>
 </ul>

@@ -1,4 +1,6 @@
-var HelloView = require("./helloView");
+var HelloView = mojo.views.Base.extend({
+  paper: require("./template.pc")
+});
 
 module.exports = function (element) {
   var view = new HelloView();
