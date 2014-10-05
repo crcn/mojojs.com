@@ -43,11 +43,16 @@ class IdeView extends views.Base
     @set "expanded", not @get "expanded"
 
 
+  togglePreview: () ->
+    if @showPreview
+      @editor()
+    else
+      @preview()
+
   editor: () ->
     @set "showPreview", false
 
   preview: () ->
-    return unless @compile
     @set "showPreview", true
     if @canRecompile
       @recompile()

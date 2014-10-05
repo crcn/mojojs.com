@@ -1,3 +1,10 @@
 <ul class="ide-tabs">  
-  {{ html: sections.tabs }}
+
+  {{#if: !showPreview }}
+    {{ html: sections.tabs }}
+  {{/}}
+
+  <li class="toggle" data-bind="{{ onClick: togglePreview() }}">
+    {{ showPreview ? 'edit' : 'preview' }}
+  </li>
 </ul>

@@ -4,6 +4,7 @@
   <head>
     <link rel="stylesheet" href="/vendor/rainbow/themes/tomorrow-night.css" />
     <script type="text/javascript" src="/app/index.built.js"></script>
+    <script type="text/javascript" src="https://rawgithub.com/mojo-js/mojo.js/master/build/mojo.min.js"></script>
     <link rel="stylesheet" href="/css/app.css" />
   </head>
   <body>
@@ -102,8 +103,7 @@
               projectName: "Chatroom Example",
               sourceDir: __dirname + "/_snippets/simple",
               tabs: true,
-              showPreview: false,
-              compile: false
+              showPreview: true
             }
           }}
         </div>
