@@ -123,7 +123,7 @@
         <div class="col-md-6">
           <h3><span class="glyphicon glyphicon-link"></span>&nbsp;Compatible</h3>
           <p>   
-            Mojo works with just about any library. Easily incorporate Mojo into your pre-existing application, use any template engine you want, mix and match mojo plugins to make it the framework you truly desire.
+            Mojo works with just about any JavaScript library. Easily incorporate Mojo into your pre-existing web, mobile, or Node.js application. Use any template engine you want. Mix and match mojo plugins to make it the framework you truly desire.
           </p>
         </div>
       </div>
