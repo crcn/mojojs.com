@@ -4,7 +4,10 @@
     {{ html: sections.tabs }}
   {{/}}
 
-  <li class="toggle" data-bind="{{ onClick: togglePreview() }}">
-    {{ showPreview ? 'see code' : 'see preview' }}
-  </li>
+
+  {{#if:compile}}
+    <li class="toggle" data-bind="{{ onClick: togglePreview() }}">
+      {{ showPreview ? 'see code' : 'see preview' }}
+    </li>
+  {{/}}
 </ul>

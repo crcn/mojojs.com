@@ -82,7 +82,7 @@
         <div class="col-md-12">
           <h3>Customizable to the bone</h3>
           <p class="subheader">
-            Mojo.js was designed to be plugin-based to the core, allowing you to customize every part of it. Easily write code once that works on any platform including web, server, and mobile. Build rich applications that give your user base the best experience possible. 
+            Mojo.js was designed to be plugin-based to the core, allowing you to customize every part of it. Write code once that works on any platform including web, server, and mobile. Build rich applications that give your user base the best experience possible. 
           </p>
           <hr />
         </div>
@@ -93,14 +93,13 @@
       <div class="row">
         <div class="col-md-6">
           <h3><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;Simple</h3>
-          <p> 
-            Love Backbone.js? You'll appreciate Mojo's, straight-forward, coherent API. 
+          <p>   
+          You'll appreciate Mojo's straight-forward, non-opinionated API. Mojo encourages certain design principles, but doesn't lock you into building applications a certain way. Easily build applications however you want to. 
           </p>
         </div>
         <div class="col-md-6">
           {{
             idePrep: {
-              projectName: "Chatroom Example",
               sourceDir: __dirname + "/_snippets/simple",
               tabs: true,
               showPreview: true
@@ -110,31 +109,59 @@
       </div>
     </div>
 
-    <!--div class="container content">
-      
-
+    <div class="container content feature">
       <div class="row">
         <div class="col-md-6">
-          <h3><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;Simple</h3>
-          <p> 
-            Love Backbone.js? You'll appreciate Mojo's, straight-forward, coherent API. 
-          </p>
+          {{
+            idePrep: {
+              sourceDir: __dirname + "/_snippets/compatible",
+              tabs: true,
+              showPreview: true
+            }
+          }}
         </div>
-
         <div class="col-md-6">
           <h3><span class="glyphicon glyphicon-link"></span>&nbsp;Compatible</h3>
-          <p> 
-            Mojo easily works with just about any library. Work with jQuery, Angular, React, Backbone, 
-    whatever you want. Check out the available <a href="#">cross-framework plugins</a>.
+          <p>   
+            Mojo works with just about any library. Easily incorporate Mojo into your pre-existing application, use any template engine you want, mix and match mojo plugins to make it the framework you truly desire.
           </p>
         </div>
       </div>
+    </div>
+
+    <div class="container content feature">
+      <div class="row">
+        <div class="col-md-6">
+          <h3><span class="glyphicon glyphicon-ok"></span>&nbsp;Testable</h3>
+          <p>   
+            Mojo's modular nature makes it incredibly easy to write effective tests for your application. You even write tests that run in Node.js, allowing you to incorporate TDD, and BDD easily into your development process. 
+          </p>
+        </div>
+        <div class="col-md-6">
+          {{
+            idePrep: {
+              sourceDir: __dirname + "/_snippets/testing",
+              tabs: true,
+              showPreview: false,
+              compile: false
+            }
+          }}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container content">
+
+      <hr />
+      
     
        <div class="row">
+
         <div class="col-md-6">
-          <h3><span class="glyphicon glyphicon-wrench"></span>&nbsp;Modular</h3>
+          <h3><span class="glyphicon glyphicon-random"></span>&nbsp;Isomorphic</h3>
           <p>
-            Mojo is composed of many loosely coupled, and highly extendable libraries. Pick whatever you want to suite your application needs.
+            Easily write JavaScript apps that run on the server, and the browser. Check out <a href="https://github.com/mojo-js/mojojs.com">this website</a>.
           </p>
         </div>
 
@@ -145,23 +172,7 @@
           </p>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <h3><span class="glyphicon glyphicon-random"></span>&nbsp;Isomorphic</h3>
-          <p>
-            Easily write JavaScript apps that run on the server, and the browser. Check out <a href="https://github.com/mojo-js/mojojs.com">this website</a>.
-          </p>
-        </div>
-
-        <div class="col-md-6">
-          <h3><span class="glyphicon glyphicon-ok"></span>&nbsp;Testable</h3>
-          <p>
-            Writing unit tests is a breeze. You can even run them in Node.js! Check out <a href="#">writing unit tests with Mojo</a>.
-          </p>
-        </div>
-      </div>
-    </div-->
+    </div>
 
     <!--div class="container features">
       <div class="row">
@@ -260,10 +271,10 @@
           <div class="col-md-1"></div>
           <div class="col-md-5">
             <span>
-              &copy; 2014 - ClassDojo. Released under the <a href="http://opensource.org/licenses/mit-license.php">MIT License</a>. 
+              &copy; 2014 - ClassDojo. Released under the <a href="http://opensource.org/licenses/mit-license.php">MIT License</a>
               <br />
 
-              Built by <a href="http://github.com/crcn">Craig Condon</a>.
+              Built by <a href="http://github.com/crcn">Craig Condon</a> at <a href="http://classdojo.com">ClassDojo</a>
             </span>
           </div>
           <div class="col-md-5">

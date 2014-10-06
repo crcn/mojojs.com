@@ -1,4 +1,4 @@
-// commonjs & AMD are supported out of the box
+// commonjs & AMD are supported in the browser
 var HelloView = mojo.views.Base.extend({
   paper: require("./template.pc")
 });
