@@ -12,7 +12,7 @@ var ChatroomApplication = Application.extend({
     require("mojo-paperclip"),
     require("mojo-models"),
     require("mojo-event-bus"),
-    require("mojo-pubnub@0.0.11"),
+    require("mojo-pubnub@0.0.12"),
     require("./views"),
     require("./models")
   ]
@@ -24,10 +24,9 @@ module.exports = function (element) {
 
   // initialize pubnub here - important incase we wanna pass in a user ID 
   // later on
-  app.eventBus.publish("/initializePubnub");
-
-  // join the chatroom channel for pubnub after initialization
-  app.eventBus.publish("/joinChannel", "chatroom");
+  app.eventBus.publish("/initializePubnub", {
+    channel: "chatroom"
+  });
 
   // create the main view, and add the todos models
   element.appendChild(app.views.create("main", {
