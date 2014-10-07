@@ -15,13 +15,13 @@ html, body {
 }
 
 .top-footer {
-  display:none;
   width: 100%;
-  margin-top: 80px;
-  padding-top: 40px;
+  padding-top: 30px;
   min-height: 150px;
   background-color: @green-lightmono;
-  color: @green-almostblack;
+  //color: @green-almostblack;
+  background-color: #363636;
+  color: #FFF;
 
   & ul {
     list-style-type: none;
@@ -29,16 +29,17 @@ html, body {
     margin: 0px;
     :nth-child(1) {
       font-size: 18px;
+      padding-bottom: 8px;
     }
   }
 }
 
 .bottom-footer {
-  background-color: #597259;
+  //background-color: #597259;
+  background-color: #363636;
   width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-top: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   color: rgba(255,255,255,0.8);
   & span {
     position: relative;
@@ -116,7 +117,7 @@ html, body {
 }
 
 .feature {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .navbar {
@@ -154,11 +155,26 @@ html, body {
 
 
 .features {
-  margin-top: 30px;
+  margin-top: 50px;
   color: #FFF;
   .vertical-gradient(#333,#444);
   width: 100%;
-  min-height: 400px;
+  padding-top: 30px;
+  padding-bottom: 80px;
+  & ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 15px;
+    font-size: 18px;
+    & li {
+      margin-top: 8px;
+    }
+    & li:before {
+      content: "\2714";
+      margin-right: 8px;
+    }
+  }
 }
 
 

@@ -7,9 +7,11 @@ class Preview extends views.Base
     "script": (script) ->
       unless script
         return
+
+      @_runner?.dispose?()
       try 
         div = document.createElement "div"          
-        script div
+        @_runner = script div
         @set "content", div
         console.log div
       catch e

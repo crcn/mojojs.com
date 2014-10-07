@@ -4,7 +4,7 @@
   <head>
     <link rel="stylesheet" href="/vendor/rainbow/themes/tomorrow-night.css" />
     <script type="text/javascript" src="/app/index.built.js"></script>
-    <script type="text/javascript" src="https://rawgithub.com/mojo-js/mojo.js/master/build/mojo.min.js"></script>
+    <script type="text/javascript" src="./vendor/js/mojo.js"></script>
     <link rel="stylesheet" href="/css/app.css" />
   </head>
   <body>
@@ -123,7 +123,7 @@
         <div class="col-md-6 description">
           <h3><span class="glyphicon glyphicon-random"></span>&nbsp;Compatible</h3>
           <p>   
-            Mojo works with just about any JavaScript library. Easily incorporate Mojo into your pre-existing web, mobile, or Node.js application. Use any template engine you want. Mix and match mojo plugins to make it the framework you truly desire.
+            Mojo works with just about any JavaScript library. Incorporate Mojo into your pre-existing web, mobile, or Node.js application. Mix and match mojo plugins to make it the framework you truly desire.
           </p>
         </div>
       </div>
@@ -156,7 +156,7 @@
         <div class="col-md-6">
           {{
             idePrep: {
-              sourceDir: __dirname + "/_snippets/compatible",
+              sourceDir: __dirname + "/_snippets/fast2",
               tabs: true,
               showPreview: true
             }
@@ -164,8 +164,9 @@
         </div>
         <div class="col-md-6 description">
           <h3><span class="glyphicon glyphicon-flash"></span>&nbsp;Fast</h3>
+
           <p>
-            Mojo works very well with old browsers (IE 8+), along with newer browsers. <a href="/perf">Check out the benchmarks</a>.
+           Mojo uses some pretty slick techniques to ensure that whatever you write performs insanely well across any platform, including the older stuff such as IE 8+. 
           </p>
         </div>
       </div>
@@ -174,22 +175,28 @@
 
    
 
-    <!--div class="container features">
+    <div class="container features">
       <div class="row">
-        <div class="col-sm-12 text-center">
-          <h2>Features:</h2>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-8">
+          <h2>You should try Mojo if you like:</h2>
           <ul>
-            <li></li>
+            <li>Compatible with existing libraries</li>
+            <li>Non-opinionated</li>
+            <li>Customizable</li>
+            <li>Write once, run anywhere</li>
+            <li>straight-forward, explicit API</li>
           </ul>
         </div>
       </div>
-    </div-->
+    </div>
 
 
     <div class="top-footer">
       <div class="container">
         <div class="row">
-          <div class="col-md-1"></div>
+          <div class="col-md-2"></div>
           <div class="col-md-2">
             <ul>
               <li>Downloads</li>
@@ -221,50 +228,11 @@
               <li>Community</li>
             </ul>
           </div>
-          <div class="col-md-5"></div>
+          <div class="col-md-2"></div>
         </div>
       </div>
     </div>
 
-    <div class="top-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-2">
-            <ul>
-              <li>Downloads</li>
-              <li>Starter Kit</li>
-            </ul>
-          </div>
-          <div class="col-md-2">
-            <ul>
-              <li>Learn</li>
-              <li>Getting Started</li>
-              <li>Documentation</li>
-              <li>Videos</li>
-            </ul>
-          </div>
-          <div class="col-md-2">
-            <ul>
-              <li>Connect</li>
-              <li>Twitter</li>
-              <li>Github</li>
-              <li>ClassDojo</li>
-              <li>YouTube</li>
-            </ul>
-          </div>
-          <div class="col-md-2">
-            <ul>
-              <li>Contribute</li>
-              <li>Github</li>
-              <li>Mojo IRC</li>
-              <li>Community</li>
-            </ul>
-          </div>
-          <div class="col-md-5"></div>
-        </div>
-      </div>
-    </div>
     <div class="bottom-footer">
       <div class="container">
         <div class="row">
