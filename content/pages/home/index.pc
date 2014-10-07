@@ -188,7 +188,7 @@
           <li>Compatible with existing libraries</li>
           <li>Non-opinionated</li>
           <li>Customizable</li>
-          <li>Write once, run anywhere</li>
+          <li>Write once, run on any platform</li>
           <li>straight-forward, explicit API</li>
         </ul>
       </div>
