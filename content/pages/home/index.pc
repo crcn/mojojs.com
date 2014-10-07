@@ -214,9 +214,9 @@
           <div class="col-md-2">
             <ul>
               <li>Connect</li>
-              <li>Twitter</li>
-              <li>Github</li>
-              <li>ClassDojo</li>
+              <li><a href="http://twitter.com/mojoframework">Twitter</a></li>
+              <li><a href="http://github.com/mojojs">GitHub</a></li>
+              <li><a href="http://classdojo.com">ClassDojo</a></li>
               <li>YouTube</li>
             </ul>
           </div>
@@ -231,6 +231,13 @@
           <div class="col-md-2"></div>
         </div>
       </div>
+      <!--div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <hr />
+        </div>
+        <div class="col-md-2"></div>
+      </div-->
     </div>
 
     <div class="bottom-footer">

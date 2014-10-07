@@ -9,7 +9,7 @@
   {{/}}
 
   {{#if:followers}}
-    <li><a href="https://twitter.com/mojo-js" target="_blank"><i class="ion-social-twitter"></i> <span id="tw-followers">{{followers}}</span></a></li>
+    <li><a href="https://twitter.com/mojoframework" target="_blank"><i class="ion-social-twitter"></i> <span id="tw-followers">{{followers}}</span></a></li>
   {{/}}
 
 </ul>

@@ -12,7 +12,7 @@ class SocialButtonsView extends views.Base
   _loadTwitterFollowers: () ->
     $.ajax 
       dataType: "jsonp",
-      url: "https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=craigcondon",
+      url: "https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mojoframework",
       success: (data) =>
         @set "followers", data?[0]?.formatted_followers_count
     
