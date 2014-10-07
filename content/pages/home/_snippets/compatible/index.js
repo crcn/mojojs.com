@@ -1,6 +1,8 @@
 var marked = require("marked");
 
-mojo.application.paperclip.modifier("markdown", marked);
+mojo.application.paperclip.modifier("markdown", function (v) {
+  return marked(v || "");
+});
 
 var MarkedView = mojo.views.Base.extend({
     paper: require("./template.pc")
