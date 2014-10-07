@@ -9,7 +9,7 @@
 
     <title>Mojo.js - Build beautifully crafted, and powerful web applications</title> 
 
-    <meta property="og:image" content="http://wwww.mojojs.com/img/square-logo.png">
+    <meta property="og:image" content="http://wwww.mojojs.com/img/square-logo.png" />
     <meta name="Description" content="A non-opinionated, totally customizable JavaScript framework designed for writing programs that scale across any platform." />
 
   </head>
