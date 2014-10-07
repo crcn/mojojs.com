@@ -15,11 +15,13 @@
   </head>
   <body>
 
-    <div class="header">
+    <div class="header fixed">
       <div class="container blurb">
         <div class="row navbar">
           <div class="col-sm-6">
-            <img id="logo" src="/img/mojo-js-transparent.png"></img>
+            <a href="/">
+              <img id="logo" src="/img/mojo-js-transparent.png"></img>
+            </a>
           </div>
           <div class="navlinks col-sm-6 text-right">
             <a href="/docs">Documentation</a>
@@ -36,70 +38,72 @@
     {{ html: blocks.content }}
 
 
-    <div class="top-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-10 no-padding">
-            <div class="row-fluid">
-              <div class="col-md-3">
-                <ul>
-                  <li>Downloads</li>
-                  <li><a href="https://github.com/mojo-js/mojo-starter/archive/master.zip">Starter Kit</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <ul>
-                  <li>Learn</li>
-                  <li><a href="/docs/getting-started">Getting Started</a></li>
-                  <li><a href="/docs">Starter Kit</a></li>
-                  <li><a href="/docs/videos">Videos</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <ul>
-                  <li>Connect</li>
-                  <li><a href="http://twitter.com/mojoframework">Twitter</a></li>
-                  <li><a href="http://github.com/mojo-js">GitHub</a></li>
-                  <!--li>YouTube</li-->
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <ul>
-                  <li>Contribute</li>
-                  <li><a href="http://github.com/mojo-js">GitHub</a></li>
-                  <!--li>Mojo IRC</li-->
-                  <li><a href="https://groups.google.com/forum/#!forum/mojojs">Community</a></li>
-                </ul>
+    {{#if: showFooter !== false}}
+      <div class="top-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 no-padding">
+              <div class="row-fluid">
+                <div class="col-md-3">
+                  <ul>
+                    <li>Downloads</li>
+                    <li><a href="https://github.com/mojo-js/mojo-starter/archive/master.zip">Starter Kit</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3">
+                  <ul>
+                    <li>Learn</li>
+                    <li><a href="/docs/getting-started">Getting Started</a></li>
+                    <li><a href="/docs">Starter Kit</a></li>
+                    <li><a href="/docs/videos">Videos</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3">
+                  <ul>
+                    <li>Connect</li>
+                    <li><a href="http://twitter.com/mojoframework">Twitter</a></li>
+                    <li><a href="http://github.com/mojo-js">GitHub</a></li>
+                    <!--li>YouTube</li-->
+                  </ul>
+                </div>
+                <div class="col-md-3">
+                  <ul>
+                    <li>Contribute</li>
+                    <li><a href="http://github.com/mojo-js">GitHub</a></li>
+                    <!--li>Mojo IRC</li-->
+                    <li><a href="https://groups.google.com/forum/#!forum/mojojs">Community</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
+            <div class="col-md-1"></div>
           </div>
-          <div class="col-md-1"></div>
         </div>
       </div>
-    </div>
 
-    <div class="bottom-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-5">
-            <span>
-              Released under the <a href="http://opensource.org/licenses/mit-license.php">MIT License</a>
-              <br />
+      <div class="bottom-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+              <span>
+                Released under the <a href="http://opensource.org/licenses/mit-license.php">MIT License</a>
+                <br />
 
-              Built by <a href="http://github.com/crcn">Craig Condon</a> at <a href="http://classdojo.com">ClassDojo</a>
-            </span>
+                Built by <a href="http://github.com/crcn">Craig Condon</a> at <a href="http://classdojo.com">ClassDojo</a>
+              </span>
+            </div>
+            <div class="col-md-5">
+              {{
+                mailingListForm:
+              }}
+            </div>
+            <div class="col-md-1"></div>
           </div>
-          <div class="col-md-5">
-            {{
-              mailingListForm:
-            }}
-          </div>
-          <div class="col-md-1"></div>
         </div>
       </div>
-    </div>
+    {{/}}
 
   </body>
 

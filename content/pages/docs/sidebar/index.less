@@ -1,6 +1,47 @@
 .docs {
   & .sidebar {
+    position: fixed;
+    top: 72px;
     min-height: 700px;
+    background-color: #283628;
+    & .searchbar {
+      padding: 15px;
+      background-color: #1C271C;
+      & input {
+        .border-radius(100px);
+      }
+    }
 
+    color: #FFF;
+
+    & .headliner {
+      text-transform: uppercase;
+      color: rgba(255,255,255, 0.7);
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    & .options {
+      padding: 15px;
+    }
+
+    & ul {
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px;
+      padding-left: 15px;
+      & li {
+        line-height: 2;
+      }
+    }
+
+    & hr {
+      border-top: 1px solid rgba(0,0,0,0.6) !important;
+      border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+      margin: 0px;
+      padding: 0px;
+    }
   }
+
+
 }

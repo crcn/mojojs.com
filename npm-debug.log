@@ -1,24 +1,24 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'start' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'run', 'hotswap' ]
 2 info using npm@1.4.24
 3 info using node@v0.10.30
-4 verbose run-script [ 'prestart', 'start', 'poststart' ]
-5 info prestart mojojs.com@0.0.0
-6 info start mojojs.com@0.0.0
+4 verbose run-script [ 'prehotswap', 'hotswap', 'posthotswap' ]
+5 info prehotswap mojojs.com@0.0.0
+6 info hotswap mojojs.com@0.0.0
 7 verbose unsafe-perm in lifecycle true
-8 info mojojs.com@0.0.0 Failed to exec start script
-9 error mojojs.com@0.0.0 start: `NODE_ENV=debug node .`
-9 error Exit status 143
-10 error Failed at the mojojs.com@0.0.0 start script.
+8 info mojojs.com@0.0.0 Failed to exec hotswap script
+9 error mojojs.com@0.0.0 hotswap: `ditto-proxy http://127.0.0.1:8080 --port=8090 --verbose --watch='./content/pages/**'`
+9 error Exit status 8
+10 error Failed at the mojojs.com@0.0.0 hotswap script.
 10 error This is most likely a problem with the mojojs.com package,
 10 error not with npm itself.
 10 error Tell the author that this fails on your system:
-10 error     NODE_ENV=debug node .
+10 error     ditto-proxy http://127.0.0.1:8080 --port=8090 --verbose --watch='./content/pages/**'
 10 error You can get their info via:
 10 error     npm owner ls mojojs.com
 10 error There is likely additional logging output above.
 11 error System Darwin 13.4.0
-12 error command "node" "/usr/local/bin/npm" "start"
+12 error command "node" "/usr/local/bin/npm" "run" "hotswap"
 13 error cwd /Users/craig/Developer/Jobs/classdojo/mojojs.com
 14 error node -v v0.10.30
 15 error npm -v 1.4.24

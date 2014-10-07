@@ -6,7 +6,7 @@
   "scripts": {
     "test": "make test-node",
     "livereload": "NODE_ENV=dev node ./scripts/livereload.js",
-    "hotswap": "ulimit -n 8192; NODE_ENV=dev node ./scripts/livereload.js",
+    "hotswap": "./node_modules/.bin/ditto-proxy http://127.0.0.1:8080 --port=8090 --verbose --watch='./content/pages/**'",
     "start": "NODE_ENV=debug node ."
   },
   "repository": {
