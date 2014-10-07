@@ -1,0 +1,4 @@
+<textarea class="form-control" data-bind="{{ model: <~>content }}">
+</textarea>
+
+{{ html: content | markdown }}
