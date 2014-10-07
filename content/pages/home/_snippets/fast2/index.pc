@@ -1,5 +1,5 @@
 <div class="fast-snippet">
-  <a href="#" data-bind="{{ onClick: renderItems() }}">Render {{count}} items {{ duration ? "(" + duration + ")" : undefined }}</a>
+  <a href="#" data-bind="{{ onClick: renderItems() }}">Render {{count}} items {{ duration ? "(" + duration + " ms)" : undefined }}</a>
 
   <ul>
     {{ html: children.items }}
