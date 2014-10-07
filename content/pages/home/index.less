@@ -17,26 +17,34 @@ html, body {
 .top-footer {
   width: 100%;
   padding-top: 30px;
-  min-height: 150px;
-  background-color: @green-lightmono;
-  //color: @green-almostblack;
-  background-color: #363636;
+  padding-bottom: 30px;
+  background-color: #597259;
   color: #FFF;
 
   & ul {
     list-style-type: none;
     padding: 0px;
     margin: 0px;
-    :nth-child(1) {
+    > :nth-child(1) {
       font-size: 18px;
       padding-bottom: 8px;
+      //border-bottom: 1px solid white;
     }
+
+  }
+
+  & a {
+    color: #FFF;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height:2;
   }
 }
 
 .bottom-footer {
   //background-color: #597259;
-  background-color: #363636;
+  //background-color: #363636;
+  background-color: #4C614C;
   width: 100%;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -127,7 +135,7 @@ html, body {
 
 .content {
   max-width: 1024px;
-  padding-top: 40px;
+  padding-bottom: 40px;
   color: @green-almostblack;
 
   & .ide {
@@ -155,12 +163,18 @@ html, body {
 
 
 .features {
-  margin-top: 50px;
+  margin-top: 20px;
   color: #FFF;
-  .vertical-gradient(#333,#444);
+  //.vertical-gradient(#333,#444);
+  //background-color:#597259;
+  background-color:#728F72;
   width: 100%;
   padding-top: 30px;
-  padding-bottom: 80px;
+  padding-bottom: 50px;
+  & .features-center {
+    width: 420px;
+    margin: 0px auto;
+  }
   & ul {
     list-style-type: none;
     padding: 0px;
@@ -179,7 +193,7 @@ html, body {
 
 
 .core-feature {
-  padding-bottom: 30px;
+  padding-top: 30px;
   max-width: 1024px;
 }
 
