@@ -1,0 +1,110 @@
+
+#docs {
+  margin: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 16px;
+}
+
+.headline {
+  position: relative;
+  left: -23px;
+  padding-left: 23px;
+}
+
+.headline a.link {
+  display: none;
+  position: absolute;
+  font-size: 18px;
+  left: 0px;
+  top: 2px;
+}
+
+.headline:hover a {
+  display: inline-block;
+}
+
+#sidebar-inner {
+  position: fixed;
+  height: 100%;
+  font-size: 14px;
+  overflow: scroll;
+  width: inherit;
+  padding-bottom: 40px;
+}
+
+#articles {
+  padding-left: 50px;
+}
+
+#article-headlines {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.article-headline-h1 {
+  padding-left: 0px;
+  font-weight: bold;
+}
+
+.article-headline-h2 {
+  padding-left: 0px;
+  font-weight: bold;
+}
+
+.article-headline-h3 {
+  padding-left: 5px;
+  font-weight: bold;
+}
+
+.article-headline-h4 {
+  padding-left: 10px;
+
+  & a:before {
+    content: "- ";
+  }
+}
+
+#article-headlines li {
+  list-style-position:inside;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;  
+}
+
+.article-header {
+  border: 1px solid #CCC;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.article-header h1 {
+  margin: 0px;
+}
+
+.article-header p {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 0px;
+}
+
+.border-right {
+}
+
+.article-header a {
+  padding-right: 5px;
+  padding-left: 5px;
+  border-right: 1px solid #CCC;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.article-header a:first-child {
+  padding-left: 0px;
+}
+
+.article-header a:last-child {
+  border-right: 0px;
+}
