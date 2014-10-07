@@ -10,8 +10,7 @@
     <title>Mojo.js - Build beautifully crafted, and powerful web applications</title> 
 
     <meta property="og:image" content="http://wwww.mojojs.com/img/square-logo.png">
-    <meta name="Description" content="A non-opinionated, totally customizable JavaScript framework designed for writing
-              programs that scale across any platform." />
+    <meta name="Description" content="A non-opinionated, totally customizable JavaScript framework designed for writing programs that scale across any platform." />
 
   </head>
   <body>
@@ -220,7 +219,7 @@
                 <ul>
                   <li>Connect</li>
                   <li><a href="http://twitter.com/mojoframework">Twitter</a></li>
-                  <li><a href="http://github.com/mojojs">GitHub</a></li>
+                  <li><a href="http://github.com/mojo-js">GitHub</a></li>
                   <li><a href="http://classdojo.com">ClassDojo</a></li>
                   <!--li>YouTube</li-->
                 </ul>
@@ -228,7 +227,7 @@
               <div class="col-md-3">
                 <ul>
                   <li>Contribute</li>
-                  <li><a href="http://github.com/mojojs">GitHub</a></li>
+                  <li><a href="http://github.com/mojo-js">GitHub</a></li>
                   <!--li>Mojo IRC</li-->
                   <li><a href="https://groups.google.com/forum/#!forum/mojojs">Community</a></li>
                 </ul>
