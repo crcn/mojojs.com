@@ -10,7 +10,7 @@ var MarkedView = mojo.views.Base.extend({
 
 module.exports = function (element) {
     var view = new MarkedView({
-        content: "Hello *world*, I'm **Markdown**!"
+        content: "Hello *world*, I'm **[Markdown](http://daringfireball.net/projects/markdown/syntax)**!"
     });
     element.appendChild(view.render());
 }
