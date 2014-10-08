@@ -25,7 +25,7 @@
           </div>
           <div class="navlinks col-sm-6 text-right">
             <a href="/docs">Documentation</a>
-            <a href="/guides">Guides</a>
+            <a href="http://github.com/mojo-js">Github</a>
             <a href="https://groups.google.com/forum/#!forum/mojojs">Community</a>
           </div>
         </div>
@@ -55,8 +55,9 @@
                   <ul>
                     <li>Learn</li>
                     <li><a href="/docs/getting-started">Getting Started</a></li>
-                    <li><a href="/docs">Starter Kit</a></li>
-                    <li><a href="/docs/videos">Videos</a></li>
+                    <li><a href="/docs/guides">Guides</a></li>
+                    <li><a href="/docs/api">API</a></li>
+                    <!--li><a href="/docs/videos">Videos</a></li-->
                   </ul>
                 </div>
                 <div class="col-md-3">
