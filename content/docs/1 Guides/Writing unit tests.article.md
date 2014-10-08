@@ -4,4 +4,9 @@
   }
 }}
 
-TODO
+{{#block:"abba"}}
+  <!--
+  hello 
+  world
+  -->
+{{/}}
