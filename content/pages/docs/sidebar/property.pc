@@ -1,1 +1,1 @@
-<li> <a href="#">{{ model.name }}</a> </li>
+<li> <a href="/docs/{{category._id}}/{{article._id}}#{{model._id}}">{{ model.name }}</a> </li>

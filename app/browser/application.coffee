@@ -13,7 +13,8 @@ class BrowserApplication extends CommonApplication
   plugins: [
     require("./template"),
     require("./commands"),
-    require("./_commonModules")
+    require("./_commonModules"),
+    require("./plugins/scrollToDiv")
   ]
 
 module.exports = BrowserApplication
