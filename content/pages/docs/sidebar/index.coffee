@@ -1,9 +1,17 @@
 views = require "mojo-views"
 
+class PropertyView extends views.Base
+  paper: require("./property.pc")
+
 class ArticleView extends views.Base
   paper: require("./article.pc")
   bindings:
     "model": "article"
+  children:
+    properties:
+      type: "list"
+      source: "model.properties"
+      modelViewClass: PropertyView
 
 class CategoryView extends views.Base
   paper: require("./category.pc")

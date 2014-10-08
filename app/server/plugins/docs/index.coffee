@@ -62,11 +62,19 @@ loadArticle = (app, filePath) ->
     context = new viewClass null, app
     context.set("content", context.render().toString())
 
-
+  addAPIMethods context
   context
 
 
 
+addAPIMethods = (context) ->
+  content = context.get("content")
+
+
+  context.set "properties", content.match(/<h4 .*?>.*?<\/h4>/g)?.map (h4) ->
+    {
+      name: h4.match(/<h4 .*?>(.*?)<\/h4>/)[1].replace(/^\w+\s/, "").replace(/\(.*?\)/g, "()")
+    }
 
 
 parseMarkdown = (app, filePath) ->
