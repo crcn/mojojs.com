@@ -4,8 +4,6 @@
   }
 }}
 
-## Mojo Application
-
 Main entry point to mojo-based applications.
 
 ## Usage

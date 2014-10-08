@@ -28,6 +28,7 @@ class ExampleBlockBinding extends pc.BaseBlockBinding
             return {
               "component": "ide",
               "tabs": true,
+              "showPreview": false,
               "file": new bindable.Object 
                 name: "/",
                 files: files

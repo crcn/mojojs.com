@@ -4,8 +4,6 @@
   }
 }}
 
-## Mojo CLI
-
 
 Utility for compiling your mojo application into a single page application. This utility assumes that your application
 is written using **CommonJS**. 

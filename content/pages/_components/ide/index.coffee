@@ -10,6 +10,7 @@ class IdeView extends views.Base
     "currentFile": () -> 
       return if @_compiledInitially
       return unless @compile
+      return unless @showPreview
       @_compiledInitially = true
       @recompile()
     "compileRequest.loading": "loading"

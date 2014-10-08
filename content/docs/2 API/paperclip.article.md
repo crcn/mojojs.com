@@ -4,8 +4,6 @@
   }
 }}
 
-## Paperclip
-
 Paperclip is the preferred template engine for Mojo.js. However, any other template system can be used with the framework, including htmlbars, mustache, jade, and even angularjs.
 
 Templates Provide the *view* in *MVC* - they're simply used to display information to the user, and relay user-interactions back to the main application.

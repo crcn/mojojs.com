@@ -51,7 +51,7 @@ loadArticles = (app) ->
 combineArticles = (articles) ->
   articles.map((article) ->
     article.get("content")
-  ).join "<hr />"
+  ).join "\n"
 loadArticle = (app, filePath) ->
   extension = filePath.split(".").pop()
 
@@ -82,10 +82,11 @@ parseMarkdown = (app, filePath) ->
   content = fs.readFileSync filePath, "utf8"
   codeBlocks = content.match(repl = /```[\s\S]+```/g) || []
   content = content.replace(repl, ",,,,,CODE_BLOCK,,,,,")
-  pcBlocks  = content.match(repl = /\{\{[\s\S]+\}\}/g) || []
+  pcBlocks  = content.match(repl = /({{#[\s\S]+?}}[\s\S]+?{{\/}})|({{[\s\S]+?}})/g) || []
   content = content.replace(repl, ",,,,,PC_BLOCK,,,,,")
 
   content = marked(content)
+
 
   for pcBlock in pcBlocks
     content = content.replace ",,,,,PC_BLOCK,,,,,", pcBlock
@@ -97,11 +98,16 @@ parseMarkdown = (app, filePath) ->
   unless context.get("name")
     context.set("name", path.basename(filePath).split(".").shift().replace(/^\d+/, ""))
 
+  unless context.get("title")
+    context.set("title", context.get("name"))
+
   context.set("_id", context.get("name").replace(/[?!.]+/g, "").replace(/\s+/g, "-").toLowerCase())
 
 
   for codeBlock in codeBlocks
     content = content.replace ",,,,,CODE_BLOCK,,,,,", marked codeBlock
+
+  content = "<hr /><h2>"+context.get("title")+"</h2><hr />" + content
 
   context.set "content", content
 

@@ -4,8 +4,6 @@
   }
 }}
 
-## Crowbar HTTP Router
-
 Crowbar is a flexible routing system inspired by [express](http://expressjs.com/), and [director](https://github.com/flatiron/director). 
 
 ### Example
@@ -250,16 +248,4 @@ returns TRUE of the both locations are the same
 
 redirects the location
 
-## Mojo.js Usage
-
-basic usage:
-
-```javascript
-var mojo = require("mojojs"),
-app = new mojo.Application();
-app.use(require("crowbar"));
-
-app.router.add({
-  "/home": { }
-});
 ```

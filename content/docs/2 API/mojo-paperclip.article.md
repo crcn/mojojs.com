@@ -5,8 +5,6 @@
 }}
 
 
-## Mojo Paperclip
-
 mojo-paperclip enables the [paperclip](https://github.com/mojo-js/paperclip.js) template engine to be used for [mojo-views](https://github.com/mojo-js/mojo-views).
 
 ### Installation

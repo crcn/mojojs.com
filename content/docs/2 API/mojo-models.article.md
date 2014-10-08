@@ -4,8 +4,6 @@
   }
 }}
 
-## Mojo Models
-
 Models, like views, are plugin-based, meaning you can customize how models behave based on the properties defined in the class. You can also create your own plugins for models. By default, mojo-models come with a few: persist, virtuals, and bindings. 
 
 ### Installation
