@@ -16,7 +16,7 @@ module.exports = (app) ->
     next()
 
   app.router.param "article._id", (location, next) ->
-    for article in location.get("category.children").source()
+    for article in location.get("category.children")?.source()
       if article.get("_id") is location.get("params.article._id")
         location.set "article", article
         location.set "docContent", article.get("content")

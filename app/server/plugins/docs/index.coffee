@@ -89,7 +89,7 @@ parseMarkdown = (app, filePath) ->
 
 
   for codeBlock in codeBlocks
-    content = content.replace ",,,,,CODE_BLOCK,,,,,", codeBlock
+    content = content.replace ",,,,,CODE_BLOCK,,,,,", marked codeBlock
 
   context.set "content", content
 

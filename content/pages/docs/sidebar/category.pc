@@ -1,5 +1,5 @@
 <div class="options">
-  <span class="headliner"><a data-href="docCategory">Getting Started</a></span>
+  <span class="headliner"><a data-href="docCategory">{{ model.name }}</a></span>
 
   <ul>
     {{ html: sections.articles }}
