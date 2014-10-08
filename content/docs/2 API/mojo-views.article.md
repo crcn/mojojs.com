@@ -112,7 +112,7 @@ true / false if the view is currently visible to the user
 
 reference to the parent view
 
-#### events
+#### Events
 
 - `remove` - emitted when the view is removed
 - `render` - emitted when the view is rendered

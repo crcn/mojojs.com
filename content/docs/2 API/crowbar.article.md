@@ -40,7 +40,7 @@ router.redirect("/classes/classid/reports", function (err, location) {
 });
 ```
 
-#### Entering Routes
+### Entering Routes
 
 Called when a route is entered.
 
@@ -75,7 +75,7 @@ router.add({
 ## API
 
 
-#### Exiting Routes
+### Exiting Routes
 
 Useful if you want to teardown a route before entering another.
 
@@ -102,7 +102,7 @@ router.redirect("/home"); // exit handler called
 
 Just like enter handlers, you can specify multiple exit handlers
 
-#### Route States
+### Route States
 
 States are properties set by the router which may modify your application state. This is used specifically in mojo.js.
 
@@ -123,7 +123,7 @@ router.bind("location.states", function (states) {
 router.redirect("/classes/classid/reports");
 ```
 
-#### Parameters
+### Parameters
 
 Just like express.js, you have the ability to create parameter loaders.
 
@@ -142,7 +142,7 @@ router.redirect("/classes/classid", function (err, location) {
 })
 ```
 
-#### Naming Routes
+### Naming Routes
 
 ```javascript
 router.add({
