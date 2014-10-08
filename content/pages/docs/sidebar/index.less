@@ -1,9 +1,22 @@
 .docs {
+
   & .sidebar {
+  }
+
+  & .sidebar-inner {
+
     position: fixed;
+    overflow:scroll;
+    height: 100%;
     top: 72px;
-    min-height: 700px;
+    width: inherit;
     background-color: #283628;
+
+    & .footer {
+      height: 72px;
+    }
+
+
     & .searchbar {
       padding: 15px;
       background-color: #1C271C;

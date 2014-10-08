@@ -1,59 +1,63 @@
 <div class="col-sm-3 sidebar no-padding">
+  <div class="sidebar-inner">
 
-  <div class="searchbar">
-    <input type="text" placeholder="Search Docs..." class="form-control" data-bind="{{ model: <~>searchQuery, onEnter: search() }}" />
-  </div>
+    <div class="searchbar">
+      <input type="text" placeholder="Search Docs..." class="form-control" data-bind="{{ model: <~>searchQuery, onEnter: search() }}" />
+    </div>
 
-  <!--
+    <!--
 
-  - Installation
-  - Tutorials
-  - Videos
-  - API
-    - mojo-application
-    - mojo-views
-    - mojo-models
-    - mojo-router
-    - bindable
+    - Installation
+    - Tutorials
+    - Videos
+    - API
+      - mojo-application
+      - mojo-views
+      - mojo-models
+      - mojo-router
+      - bindable
 
 
-  -->
+    -->
 
-  <div class="options">
-    <span class="headliner">Getting Started</span>
+    <div class="options">
+      <span class="headliner">Getting Started</span>
 
-    <ul>
-      <li>What is Mojo?</li>
-      <li>Installation</li>
-      <li>Tutorial</li>
-      <li>Videos</li>
-    </ul>
-  </div>
+      <ul>
+        <li>What is Mojo?</li>
+        <li>Installation</li>
+        <li>Tutorial</li>
+        <li>Videos</li>
+      </ul>
+    </div>
 
-  <hr />
+    <hr />
 
-  <div class="options">
-    <span class="headliner">Guides</span>
+    <div class="options">
+      <span class="headliner">Guides</span>
 
-    <ul>
-      <li>Computed Properties</li>
-      <li>Installation</li>
-      <li>Tutorial</li>
-      <li>Videos</li>
-    </ul>
-  </div>
+      <ul>
+        <li>Computed Properties</li>
+        <li>Installation</li>
+        <li>Tutorial</li>
+        <li>Videos</li>
+      </ul>
+    </div>
 
-  <hr />
+    <hr />
 
-  <div class="options">
-    <span class="headliner">API</span>
+    <div class="options">
+      <span class="headliner">API</span>
 
-    <ul>
-      <li>mojo-application</li>
-      <li>mojo-views</li>
-      <li>mojo-models</li>
-      <li>paperclip</li>
-      <li>bindable</li>
-    </ul>
+      <ul>
+        <li>mojo-application</li>
+        <li>mojo-views</li>
+        <li>mojo-models</li>
+        <li>paperclip</li>
+        <li>bindable</li>
+      </ul>
+    </div>
+
+    <div class="footer"></div>
   </div>
 </div>

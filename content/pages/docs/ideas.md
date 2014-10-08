@@ -17,3 +17,5 @@
 - improve this page
 - breadcrumb
 - examples
+- header combines all documentation into one
+
