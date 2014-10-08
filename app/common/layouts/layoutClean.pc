@@ -25,6 +25,8 @@
           </div>
           <div class="navlinks col-sm-6 text-right">
             <a href="/docs">Documentation</a>
+            <a href="/docs/getting-started/installation">Download</a>
+            <!--a href="/blog">Blog</a-->
             <a href="http://github.com/mojo-js">Github</a>
             <a href="https://groups.google.com/forum/#!forum/mojojs">Community</a>
           </div>
