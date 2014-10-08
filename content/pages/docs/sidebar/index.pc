@@ -57,7 +57,7 @@
         <li>bindable</li>
       </ul>
     </div>
+    <div class="sidebar-inner-footer"></div>
 
-    <div class="footer"></div>
   </div>
 </div>
