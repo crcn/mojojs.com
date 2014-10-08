@@ -22,6 +22,7 @@ hello {{name}}!
 
 is translated to:
 
+
 ```javascript
 module.exports = function(fragment, block, element, text, textBlock, parser, modifiers) {
     return fragment([ text("hello "), block({

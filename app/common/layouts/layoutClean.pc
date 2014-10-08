@@ -2,7 +2,7 @@
 <!DOCTYPE html> 
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="/vendor/rainbow/themes/tomorrow-night.css" />
+    <link rel="stylesheet" href="/vendor/rainbow/themes/tomorrow.css" />
     <script type="text/javascript" src="/app/index.built.js"></script>
     <script type="text/javascript" src="/vendor/js/mojo.js"></script>
     <link rel="stylesheet" href="/css/app.css" />
