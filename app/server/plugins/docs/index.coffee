@@ -1,18 +1,21 @@
 glob = require "glob"
 marked = require "marked"
 fs = require "fs"
+views = require "mojo-views"
 paperclip = require "paperclip"
 bindable = require "bindable"
 express = require "express"
 path = require "path"
 
 module.exports = (app) ->
-  docs = loadArticles app
 
-  app.server.use "/docs/files", express.static app.get("directories.docs")
+  app.mediator.on "post bootstrap", (m, next) ->
+    docs = loadArticles app
 
-  app.models.set("docs", docs)
+    app.server.use "/docs/files", express.static app.get("directories.docs")
 
+    app.models.set("docs", docs)
+    next()
 
 loadArticles = (app) ->
   articleFiles = glob.sync app.get("directories.docs") + "/**/*.article.*"
@@ -78,9 +81,9 @@ parseMarkdown = (app, filePath) ->
   for pcBlock in pcBlocks
     content = content.replace ",,,,,PC_BLOCK,,,,,", pcBlock
 
-  content = paperclip.template(content, app).bind(context = new bindable.Object({
-    __dirname: filePath
-  })).render().toString()
+  content = paperclip.template(content, app).bind(context = new views.Base({
+    __dirname: path.dirname(filePath)
+  }, app)).render().toString()
 
   unless context.get("name")
     context.set("name", path.basename(filePath).split(".").shift().replace(/^\d+/, ""))

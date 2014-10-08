@@ -4,4 +4,11 @@
   }
 }}
 
-TODO
+
+{{
+  idePrep: {
+    sourceDir: __dirname + "/_examples/hello",
+    tabs: true,
+    showPreview: true
+  }
+}}

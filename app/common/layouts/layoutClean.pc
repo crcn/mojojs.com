@@ -4,7 +4,7 @@
   <head>
     <link rel="stylesheet" href="/vendor/rainbow/themes/tomorrow-night.css" />
     <script type="text/javascript" src="/app/index.built.js"></script>
-    <script type="text/javascript" src="./vendor/js/mojo.js"></script>
+    <script type="text/javascript" src="/vendor/js/mojo.js"></script>
     <link rel="stylesheet" href="/css/app.css" />
 
     <title>Mojo.js - Build beautifully crafted, and powerful web applications</title> 
@@ -15,7 +15,7 @@
   </head>
   <body>
 
-    <div class="header fixed">
+    <div class="header {{fixedHeader ? 'fixed' : ''}}">
       <div class="container blurb">
         <div class="row navbar">
           <div class="col-sm-6">

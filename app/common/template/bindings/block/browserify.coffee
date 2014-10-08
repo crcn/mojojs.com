@@ -26,25 +26,35 @@ class BrowserifyBlockBinding extends pc.BaseBlockBinding
           parent.insertBefore(view.render(), script);
 
           var sib = script;
+            console.log(sib);
+
+          var sibs = [];
 
           while(sib) {
-            var nextSibling = sib.nextSibling;
-            parent.removeChild(sib);
+            sibs.push(sib);
+            var prevSibling = sib.prevSibling;
             if ($(sib).attr('data-section') === 'end') break;
-            sib = nextSibling;
+            sib = prevSibling;
+          }
+
+          console.log(sibs.length);
+
+          for (var i = sibs.length; i--;) {
+            parent.removeChild(sibs[i]);
           }
         }
       });
     "
     script.appendChild(content)
 
-    @section.replaceChildNodes script
-
     @section.append (@_view = @context.application.views.create(value.component, value)).render()
     s1 = @context.application.nodeFactory.createElement "span"
     s1.setAttribute("style", "display:none");
     s1.setAttribute("data-section", "end")
-    @section.append s1
+
+
+    @section.replaceChildNodes s1
+    @section.append script
 
   ###
   ###

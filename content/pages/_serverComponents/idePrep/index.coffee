@@ -11,7 +11,6 @@ class IdePrepView extends views.Base
     "sourceDir": (sourceDir) ->
       files = glob.sync sourceDir + "/**/*.*"
 
-
       readFiles = (parentPath, filePath, depth = 0) ->
         name =  filePath.replace(parentPath, "").replace(/^\//, "")
         if fs.lstatSync(filePath).isDirectory()
