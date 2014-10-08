@@ -20,43 +20,9 @@
 
     -->
 
-    <div class="options">
-      <span class="headliner">Getting Started</span>
+    {{ html: sections.categories }}
 
-      <ul>
-        <li>What is Mojo?</li>
-        <li>Installation</li>
-        <li>Tutorial</li>
-        <li>Videos</li>
-      </ul>
-    </div>
-
-    <hr />
-
-    <div class="options">
-      <span class="headliner">Guides</span>
-
-      <ul>
-        <li>Computed Properties</li>
-        <li>Installation</li>
-        <li>Tutorial</li>
-        <li>Videos</li>
-      </ul>
-    </div>
-
-    <hr />
-
-    <div class="options">
-      <span class="headliner">API</span>
-
-      <ul>
-        <li>mojo-application</li>
-        <li>mojo-views</li>
-        <li>mojo-models</li>
-        <li>paperclip</li>
-        <li>bindable</li>
-      </ul>
-    </div>
+    
     <div class="sidebar-inner-footer"></div>
 
   </div>

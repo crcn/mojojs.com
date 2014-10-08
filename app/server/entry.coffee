@@ -11,6 +11,7 @@ app = new ClassDojoWebsiteApplication({
     content: path.normalize(__dirname + "/../../content"),
     root: path.normalize(__dirname + "/../../"),
     pages: path.normalize(__dirname + "/../../content/pages")
+    docs: path.normalize(__dirname + "/../../content/docs")
   }
 })
 
