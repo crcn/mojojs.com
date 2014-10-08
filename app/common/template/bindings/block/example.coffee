@@ -19,12 +19,39 @@ class ExampleBlockBinding extends pc.BaseBlockBinding
     @_ctpl?.dispose()
     @_tpl?.dispose()
 
-    tpl = pc.template @context.get("application.layouts." + ops.name), @application
+    files = new bindable.Collection
 
-    @context.set "blocks.main", (@_ctpl = @contentTemplate.bind(@context)).render()
+    tpl = pc.template ((fragment, block) ->
+      block {
+        "browserify": {
+          run: () ->
+            return {
+              "component": "ide",
+              "tabs": true,
+              "file": new bindable.Object 
+                name: "/",
+                files: files
+            }
+          refs: []
+        }
+      }
+    ), @application
+
+
+    (@_ctpl = @contentTemplate.bind(@context)).render()
+
     @_tpl?.dispose()
 
+    for name of @context.get("blocks")
+      node = @context.get("blocks." + name)
+      files.push new bindable.Object {
+        _id: name,
+        name: name.replace('-', '.'),
+        content: encodeURIComponent(node.toString().replace(/^<!--/, "").replace(/-->$/,""))
+      }
+
     @section.replaceChildNodes (@_tpl = tpl.bind(@context)).render()
+
 
   ###
   ###
@@ -36,4 +63,4 @@ class ExampleBlockBinding extends pc.BaseBlockBinding
 
 
 
-module.exports = LayoutBlockBinding
+module.exports = ExampleBlockBinding

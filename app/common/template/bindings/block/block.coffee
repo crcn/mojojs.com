@@ -9,7 +9,6 @@ class BlockBinding extends pc.BaseBlockBinding
   _onChange: (value) ->
     @_tpl?.dispose()
     @context.set "blocks.#{value}", (@_tpl = @contentTemplate.bind(@context)).render()
-    console.log @contentTemplate.paper.toString()
 
   ###
   ###
