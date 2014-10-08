@@ -74,6 +74,7 @@
     "mojo-views": "0.1.x",
     "moment": "^2.8.1",
     "nofactor": "0.0.x",
+    "npm": "^2.1.2",
     "outcome": "0.0.18",
     "paperclip": "0.4.x",
     "paperclip-bootstrap": "0.0.x",

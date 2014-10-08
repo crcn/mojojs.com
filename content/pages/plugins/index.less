@@ -1,0 +1,26 @@
+.plugins-header {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  & input {
+    border: 2px solid @green-slightlydarker;
+    height: 50px;
+    font-size: 24px;
+  }
+}
+
+.plugins {
+  height: inherit;
+  padding: 15px;
+  & .plugin {
+    float: left;
+    padding: 7px;
+    width: 50%;
+    min-width: 300px;
+
+    &-inner {
+      border: 2px solid #EBEBEB;
+      .border-radius(5px);
+      min-height: 200px;
+    }
+  }
+}
