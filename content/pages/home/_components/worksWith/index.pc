@@ -1,3 +1,0 @@
-<h4>
-  A modular, isomorphic framework for developing advanced web applictions
-</h4>
