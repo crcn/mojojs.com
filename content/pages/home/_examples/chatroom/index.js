@@ -18,18 +18,18 @@ var ChatroomApplication = Application.extend({
   ]
 });
 
-module.exports = function (element) {
+exports.initialize = function (options) {
 
   var app = new ChatroomApplication();
 
-  // initialize pubnub here - important incase we wanna pass in a user ID 
+  // initialize pubnub here - important incase we wanna pass in a user ID
   // later on
   app.eventBus.publish("/initializePubnub", {
     channel: "chatroom"
   });
 
   // create the main view, and add the todos models
-  element.appendChild(app.views.create("main", {
+  options.element.appendChild(app.views.create("main", {
     messages: app.models.create("messages")
   }).render());
 

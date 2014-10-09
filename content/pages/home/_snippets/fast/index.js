@@ -35,15 +35,15 @@ var BoxesView = mojo.views.List.extend({
 var boxesView;
 
 
-module.exports = function (element) {
+exports.initialize = function (options) {
 
     var _disposed;
 
     var boxes = new Boxes(void 0, mojo.application);
     for (var i = N; i--;) boxes.create();
     boxesView = new BoxesView({ source: boxes });
-    
-    element.appendChild(boxesView.render());
+
+    options.element.appendChild(boxesView.render());
 
     function animate () {
         if (_disposed) return;

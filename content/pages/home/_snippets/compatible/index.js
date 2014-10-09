@@ -8,9 +8,9 @@ var MarkedView = mojo.views.Base.extend({
     paper: require("./template.pc")
 });
 
-module.exports = function (element) {
+exports.initialize = function (options) {
     var view = new MarkedView({
         content: "Hello *world*, I'm **[Markdown](http://daringfireball.net/projects/markdown/syntax)**!"
     });
-    element.appendChild(view.render());
-}
+    options.element.appendChild(view.render());
+};
