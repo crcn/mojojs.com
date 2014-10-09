@@ -1,0 +1,12 @@
+<hr />
+<div class="docs-article-header">
+  <h2 class='article-title'>
+    <i class='ion-document-text'></i>
+    {{ title }}
+  </h2>
+  <a class="improve-docs-link" href="{{ githubUrl }}"><i class="ion-edit"></i></a>
+</div>
+<hr />
+<div class='docs-article'>
+  {{ html: content }}
+</div>

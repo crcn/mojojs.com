@@ -78,6 +78,8 @@ addAPIMethods = (context) ->
     }
 
 
+articleTemplate = paperclip.template(fs.readFileSync(__dirname + "/article.pc", "utf8"))
+
 parseMarkdown = (app, filePath) ->
   content = fs.readFileSync filePath, "utf8"
   codeBlocks = content.match(repl = /```[\s\S]+```/g) || []
@@ -107,7 +109,20 @@ parseMarkdown = (app, filePath) ->
   for codeBlock in codeBlocks
     content = content.replace ",,,,,CODE_BLOCK,,,,,", marked codeBlock
 
-  content = "<hr /><h2 class='article-title'><i class='ion-document-text'></i>"+context.get("title")+"</h2><hr /><div class='docs-article'>" + content + "</div>"
+
+
+  relpath = filePath.replace(app.get("directories.root"), "")
+  name    = path.basename(relpath).replace(/article\*$/,"")
+
+  # TODO  -shouldn't hardcode repo here - put in app config
+  ghUrl = "http://github.com/mojo-js/mojojs.com/tree/master/" + relpath.replace(name, encodeURIComponent(name))
+
+  content = articleTemplate.bind({
+      title: context.get("title"),
+      content: content,
+      githubUrl: ghUrl
+  }).render().toString()
+
 
   context.set "content", content
 
