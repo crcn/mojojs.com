@@ -107,7 +107,7 @@ parseMarkdown = (app, filePath) ->
   for codeBlock in codeBlocks
     content = content.replace ",,,,,CODE_BLOCK,,,,,", marked codeBlock
 
-  content = "<hr /><h2>"+context.get("title")+"</h2><hr /><div class='docs-article'>" + content + "</div>"
+  content = "<hr /><h2 class='article-title'><i class='ion-document-text'></i>"+context.get("title")+"</h2><hr /><div class='docs-article'>" + content + "</div>"
 
   context.set "content", content
 

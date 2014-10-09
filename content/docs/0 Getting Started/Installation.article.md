@@ -15,22 +15,20 @@ tinkering around.
 
 ## Starter Kit
 
-The **best** way to start using MojoJS is to download the [starter kit](https://github.com/mojo-js/mojo-starter).
-
-### Start Kit Requirements
-
-- [NodeJS](http://nodejs.org/) - required for bundling your application into one script
+The **best** way to start using MojoJS is to download the [starter kit](https://github.com/mojo-js/mojo-starter). Before you
+begin, **make sure you have [NodeJS](http://nodejs.org/) installed**.
 
 ### Usage
 
-Before you start using the starter kit, you'll need to install the dependencies, first `cd` into
-your starter kit directory using `terminal`, and run:
+You're going to need to install a few dependencies first. Open terminal and `cd` into
+your starter kit directory, then run `npm install`. After that, you can go ahead and
+run `npm start`, which will prompt you to open `http://localhost:8080` in your browser.
 
-```
-npm install
-```
+Below are a list of available commands you can run.
 
-After that, you can start running the commands:
+#### npm install
+
+Installs all dependencies for the starter kit
 
 #### npm start
 
