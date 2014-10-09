@@ -1,14 +1,47 @@
 .docs {
-  h4 {
-    background-color: #EFEFEF;
-    padding: 15px;
-    border-left: 3px solid @green-dark;
-    color: @green-darker;
-  }
+  & .docs-article {
+    & h1, h2 {
+      padding-bottom: 15px;
+      padding-top: 15px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
 
-  pre {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #EFEFEF !important;
+    & .ide {
+      margin-bottom: 30px;
+      max-height: 200px;
+      font-size: 14px !important;
+      & .ide-content-outer {
+        height: 100%;
+        border: 2px solid #DADADA;
+        .border-radius(5px);
+      }
+    }
+
+    h4 {
+      background-color: #EFEFEF;
+      padding: 15px;
+      border-left: 3px solid @green-dark;
+      color: @green-darker;
+    }
+
+    & pre code {
+      background-color: transparent;
+      font-weight: normal;
+      font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    }
+
+    & pre {
+      border: 2px solid #DADADA !important;
+      background-color: #FFF !important;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    & code {
+      color: @green-dark;
+      background-color: #DAF0DA;
+      font-weight: bold;
+      font-family: @fontFamily;
+    }
   }
 }
