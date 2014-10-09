@@ -13,7 +13,7 @@ exports.compile = (files, complete) ->
   addRemoteFiles files, (err) ->
     if err
       return complete err
-    try 
+    try
       complete null, compile files
     catch e
       complete e
@@ -56,7 +56,7 @@ addRemoteFiles = (files, complete) ->
 
     unless response.body
       return complete new Error response.text
-    
+
 
     console.log response.body
     for moduleName of response.body
@@ -78,6 +78,15 @@ compile = (files) ->
 
     var defined = {},
     modules     = {};
+
+    var _console = window.console,
+    console  = {};
+    
+    ['log', 'error', 'warn', 'notice'].forEach(function (level) {
+      console[level] = function () {
+        window.console[level].apply(window.console, arguments);
+      };
+    });
 
     function define (path, createModule) {
       defined[path] = createModule;
@@ -119,7 +128,7 @@ compile = (files) ->
     buffer += "\n" + transformContent(file) + "\n";
     buffer += "});"
 
-  
+
   buffer += "return require('/index.js');";
   buffer += "\n})();"
 
@@ -135,4 +144,3 @@ transformContent = (file) ->
     return file.content
   else
     return "module.exports = decodeURIComponent('" + encodeURIComponent(file.content) + "');"
-

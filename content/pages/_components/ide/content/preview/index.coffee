@@ -1,8 +1,23 @@
 views = require "mojo-views"
+bindable = require "bindable"
+
+class LogView extends views.Base
+  paper: require("./log.pc")
 
 class Preview extends views.Base
+
+  ###
+  ###
+
   paper: require("./index.pc")
+
+  ###
+  ###
   define: ["content"]
+
+  ###
+  ###
+
   bindings:
     "script": (script) ->
       unless script
@@ -10,14 +25,35 @@ class Preview extends views.Base
 
       @_runner?.dispose?()
       try
-        div = document.createElement "div"
-        @_runner = script.initialize {
-          element: div
-        }
+        @element = div = document.createElement "div"
+        @_runner = script.initialize @
         @set "content", div
         console.log div
       catch e
         console.error e
+
+  ###
+  ###
+
+  children:
+    logs:
+      type: "list"
+      source: "logs"
+      modelViewClass: LogView
+
+  ###
+  ###
+
+  captureLogs: (_console) ->
+    @set "logs", logs = new bindable.Collection()
+    ["log", "error", "warn", "notice"].forEach (level) ->
+      _console[level] = (text) ->
+        logs.push new bindable.Object {
+          level: level,
+          text: text
+        }
+
+
 
 
 module.exports = Preview

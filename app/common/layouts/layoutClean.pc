@@ -1,5 +1,5 @@
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <link rel="stylesheet" href="/vendor/rainbow/themes/tomorrow.css" />
@@ -7,7 +7,7 @@
     <script type="text/javascript" src="/vendor/js/mojo.js"></script>
     <link rel="stylesheet" href="/css/app.css" />
 
-    <title>Mojo.js - Build beautifully crafted, and powerful web applications</title> 
+    <title>Mojo.js - Build beautifully crafted, and powerful web applications</title>
 
     <meta property="og:image" content="http://wwww.mojojs.com/img/square-logo.png" />
     <meta name="Description" content="A non-opinionated, totally customizable JavaScript framework designed for writing programs that scale across any platform." />
@@ -32,7 +32,7 @@
             <a href="https://groups.google.com/forum/#!forum/mojojs">Community</a>
           </div>
         </div>
-        
+
         {{ html: blocks.header }}
       </div>
     </div>

@@ -4,7 +4,7 @@
   }
 }}
 
-Incredibly flexible, fast bi-directional data binding library. 
+Incredibly flexible, fast bi-directional data binding library.
 
 Two-way data binding means linking properties of two separate objects - when one changes, the other will automatically update with that change.  It enables much easier interactions between data models and UIs, among other uses outside of MVC.
 
@@ -19,24 +19,6 @@ Bindable.js is similar to Ember's data-binding system, except it doesn't include
 - [AWSM](https://github.com/crcn/node-awsm) - aws library.
 - [ditto](https://github.com/browsertap/ditto.js) - synchronized user interactions across browsers.
 
-
-### BindableObject Example 2
-
-{{#example}}
-{{#block:"index-js"}}
-<!--
-var bindable = require("bindable");
-
-var person = new bindable.Object({
-  name: "Craig"
-});
-
-module.exports = function (element) {
-  alert(person.get("name"));
-}
--->
-{{/}}
-{{/}}
 
 ### BindableObject Example
 
@@ -56,7 +38,7 @@ person.bind("location.zip", function(value) {
 }).now();
 
 //triggers the binding
-person.set("location.zip", "94102"); 
+person.set("location.zip", "94102");
 
 //bind location.zip to another property in the model, and do it only once
 person.bind("location.zip", { to: "zip", max: 1 }).now();

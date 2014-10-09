@@ -24,7 +24,7 @@
       <div class="col-md-12 text-center header-muted">
         Make realtime applications with just one line of code
       </div>
-      
+
       <div class="col-md-12">
         {{
           idePrep: {
@@ -61,7 +61,7 @@
         <div class="col-md-12">
           <h3>Customizable to the bone</h3>
           <p class="subheader">
-            Mojo.js was designed to be plugin-based to the core, allowing you to customize every part of it. Write code once that works on any platform including web, server, and mobile. Build rich applications that give your user base the best experience possible. 
+            Mojo.js was designed to be plugin-based to the core, allowing you to customize every part of it. Write code once that works on any platform including web, server, and mobile. Build rich applications that give your user base the best experience possible.
           </p>
           <hr />
         </div>
@@ -72,8 +72,8 @@
       <div class="row">
         <div class="col-md-6 description">
           <h3><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;Simple</h3>
-          <p>   
-          You'll appreciate Mojo's straight-forward, non-opinionated API. Mojo encourages certain design principles, but doesn't lock you into building applications a certain way. Easily build applications however you want to. 
+          <p>
+          You'll appreciate Mojo's straight-forward, non-opinionated API. Mojo encourages certain design principles, but doesn't lock you into building applications a certain way. Easily build applications however you want to.
           </p>
         </div>
         <div class="col-md-6">
@@ -101,7 +101,7 @@
         </div>
         <div class="col-md-6 description">
           <h3><span class="glyphicon glyphicon-random"></span>&nbsp;Compatible</h3>
-          <p>   
+          <p>
             Mojo works with just about any JavaScript library. Incorporate Mojo into your pre-existing web, mobile, or Node.js application. Mix and match mojo plugins to make it the framework you truly desire.
           </p>
         </div>
@@ -112,8 +112,8 @@
       <div class="row">
         <div class="col-md-6 description">
           <h3><span class="glyphicon glyphicon-ok"></span>&nbsp;Testable</h3>
-          <p>   
-            Mojo's modular nature makes it incredibly easy to write effective tests for your application. You even write tests that run in Node.js, allowing you to incorporate TDD, and BDD easily into your development process. 
+          <p>
+            Mojo's modular nature makes it incredibly easy to write effective tests for your application. You even write tests that run in Node.js, allowing you to incorporate TDD, and BDD easily into your development process.
           </p>
         </div>
         <div class="col-md-6">
@@ -145,14 +145,14 @@
           <h3><span class="glyphicon glyphicon-flash"></span>&nbsp;Fast</h3>
 
           <p>
-           Mojo uses some pretty slick techniques to ensure that whatever you write performs very well across any platform, including the older stuff such as IE 8+. 
+           Mojo uses some pretty slick techniques to ensure that whatever you write performs very well across any platform, including the older stuff such as IE 8+.
           </p>
         </div>
       </div>
     </div>
 
 
-   
+
 
     <div class="features">
       <div class="features-center">
