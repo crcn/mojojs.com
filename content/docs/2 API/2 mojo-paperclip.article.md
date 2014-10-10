@@ -42,11 +42,7 @@ each data-binding, so there's no use of innerHTML, or any other operations that 
 
 - [hello input](http://jsfiddle.net/JTxdM/67/)
 - [hello world](http://jsfiddle.net/JTxdM/68/)
-- [modifiers](http://jsfiddle.net/JTxdM/69/)
-- [simple calculator](http://jsfiddle.net/JTxdM/98/)
 - [data-binding attributes](http://jsfiddle.net/JTxdM/71/)
-- [animal age calculator](http://jsfiddle.net/JTxdM/73/)
-- [titlecase / lowercase modifiers](http://jsfiddle.net/JTxdM/74/)
 - [if / elseif / else block](http://jsfiddle.net/JTxdM/75/)
 - [html block helper](http://jsfiddle.net/JTxdM/76/)
 - [onEnter event](http://jsfiddle.net/JTxdM/77/)
@@ -131,72 +127,85 @@ preview.element.appendChild(template.bind(context).render());
 
 ### Modifiers
 
-Modifiers format data in a variable block. A good example of this might be presenting data to the user depending on their locale, or parsing data into markdown.
+Modifiers format data in a variable block. A good example of this might be presenting data to the user depending on their locale, or parsing data into markdown. Here are a few examples of how you can use
+modifiers:
 
 
 {{#example}}
-{{#block:"index-js"}}
+{{#block:"index-pc"}}
 <!--
 
+Converting content to markdown:
+
+{{ html: content | markdown }}
+
+Uppercasing & converting to markdown:
+
+{{ html: content | uppercase | markdown }}
+
+Modifiers with parameters:
+
+A human that is {{age}} years old is like a {{ age | divide(5.6) }} year old dog!
+-->
+{{/}}
+{{#block:"index-js"}}
+<!--
 var marked = require("marked");
 
 mojo.application.paperclip.modifier("markdown", function(value) {
   return marked(value || "");
-})
-
-var context = new mojo.Object({
-  content: "This is some **awesome** markdown!"
 });
 
-var template = paperclip.template(require("./index.pc"), mojo.application);
+mojo.application.paperclip.modifier("divide", function(value, num) {
+  return Math.round((value || 0) / num);
+});
+
+var context = new mojo.Object({
+  content: "This is some **awesome** markdown!",
+  age: 65
+});
+
+var template = mojo.application.paperclip.template(require("./index.pc"), mojo.application);
 
 preview.element.appendChild(template.bind(context).render());
 -->
 {{/}}
-{{#block:"index-pc"}}
-<!--
-{{ html: content | markdown }}
--->
-{{/}}
 {{/}}
 
-Modifiers can be chained together. For example, you can send a strong message to your users by writing something like:
-
-```html
-{{ "hello.world" | t() | uppercase() }}!!!
-```
-
-Which might produce:
-
-```bash
-HELLO WORLD!!!
-```
-
-Modifiers also accept parameters. [For example](http://jsfiddle.net/JTxdM/73/):
-
-```javascript
-paperclip.modifier("divide", function(value, num) {
-  return Math.round((value || 0) / num);
-});
-```
-
-template usage:
-
-```html
-A human that is {{age}} years old is like a {{ age | divide(5.6) }} year old dog!
-```
 
 ### Binding Operators
 
 Paperclip comes with various binding operators that give you full control over how references are handled. You can easily
 specify whether to bind one way, two ways, or not at all. Here's the basic syntax:
 
-```html
-<input data-bind="{{ model: <~>fullName }}" /> <!-- two-way data-binding against input -->
-<input data-bind="{{ model: ~>fullName }}" /> <!-- bind value once, and bind input value to fullName -->
-<input data-bind="{{ model: <~fullName }}" /> <!-- bind to input once -->
-{{ ~fullName }} <!-- unbound helper - get fullName value, but don't watch for changes -->
-```
+{{#example}}
+{{#block:"index-pc"}}
+<!--
+
+Two-way binding:
+<input class="form-control" data-bind="{{ model: <~>fullName }}" />
+
+Bind input value to fullName only:
+<input class="form-control" data-bind="{{ model: ~>fullName }}" />
+
+Bind fullName to input value only:
+
+<input class="form-control" data-bind="{{ model: <~fullName }}" />
+
+Unbound helper - don't watch for any changes:
+{{ ~fullName }}
+-->
+{{/}}
+{{#block:"index-js"}}
+<!--
+var context = new mojo.Object({
+  fullName: "John Smith"
+});
+var template = mojo.application.paperclip.template(require("./index.pc"), mojo.application);
+preview.element.appendChild(template.bind(context).render());
+-->
+{{/}}
+{{/}}
 
 Note that that `~fullName` tells paperclip not to watch the reference, so any changes to `fullName` don't get reflected in the view. [Here's an example](http://jsfiddle.net/JTxdM/93/).
 
