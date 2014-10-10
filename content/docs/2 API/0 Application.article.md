@@ -4,7 +4,7 @@
   }
 }}
 
-Extends [bindable-object](/docs/api/-bindable-object)
+Extends [bindable.Object](/docs/api/-bindableobject)
 
 Your Mojo application entry point. This module ties everything together, and allows other
 parts of your application to communicate with each other. This should be your only [singleton](http://en.wikipedia.org/wiki/Singleton_pattern).

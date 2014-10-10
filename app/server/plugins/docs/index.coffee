@@ -103,7 +103,7 @@ parseMarkdown = (app, filePath) ->
   }, app)).render().toString()
 
   unless context.get("name")
-    context.set("name", path.basename(filePath).split(".").shift().replace(/^\d+/, ""))
+    context.set("name", path.basename(filePath).replace(/\.article\.\w+$/,"").replace(/^\d+/, ""))
 
   unless context.get("title")
     context.set("title", context.get("name"))

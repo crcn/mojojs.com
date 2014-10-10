@@ -53,11 +53,11 @@ person.bind("name", {
 
 -->
 
-#### bindable.Object(context)
+#### Object(context)
 
 creates a new bindable object
 
-#### value bindable.get(property)
+#### value get(property)
 
 Returns a property on the bindable object
 
@@ -71,7 +71,7 @@ console.log(bindable.get("city.name")); // SF
 {{/}}
 {{/}}
 
-#### bindable.set(property, value)
+#### set(property, value)
 
 Sets a value to the bindable object
 
@@ -85,7 +85,7 @@ console.log(obj.get("city.name")); // SF
 {{/}}
 {{/}}
 
-#### bindable.setProperties(properties)
+#### setProperties(properties)
 
 sets multiple properties on the bindable object
 
@@ -102,7 +102,7 @@ console.log(person.get("firstName"), person.get("lastName")); // Jon Doe
 {{/}}
 {{/}}
 
-#### bindable.has(property)
+#### has(property)
 
 Returns true if the bindable object has a given property
 
@@ -119,7 +119,7 @@ console.log(obj.has("city")); // false
 {{/}}
 {{/}}
 
-#### Object bindable.context()
+#### Object context()
 
 returns the context of the bindable object.
 
@@ -140,11 +140,11 @@ console.log(obj.context() === obj); // true
 {{/}}
 {{/}}
 
-#### listener bindable.on(event, callback)
+#### listener on(event, callback)
 
 adds a new listener to the bindable object
 
-#### bindable.emit(event[,args...])
+#### emit(event[,args...])
 
 emits a new event
 
@@ -162,7 +162,7 @@ person.emit("blarg", "something!", "something again!!");
 {{/}}
 {{/}}
 
-#### bindable.once(event, callback)
+#### once(event, callback)
 
 listens to one event, then disposes the listener.
 
@@ -181,11 +181,11 @@ person.emit("blarg", "never caught again!");
 {{/}}
 {{/}}
 
-#### bindable.removeAllListeners([type])
+#### removeAllListeners([type])
 
 returns all the listeners on the bindable object
 
-#### binding bindable.bind(from, options)
+#### binding bind(from, options)
 
 `options` - the options for the binding
   - `to` - the property to bind to. Can be a `string`, `array`, or `function`
