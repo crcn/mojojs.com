@@ -27,13 +27,14 @@ npm install mojo-application --save-exact
 
 ### Playground Example
 
-Here's a full example of just about everything you can do with the `mojo-application` module.
+Here's an example of how to use just about every property / method in the `Application` class.
 
 {{#example}}
 {{#block:"index-js"}}
 <!--
 
-var Application = require("mojo-application");
+var Application = require("mojo-application"),
+
 
 var MyApplication = Application.extend({
   plugins: [
@@ -98,6 +99,9 @@ module.exports = views.Base.extend({
 #### Application(properties)
 
 Your main application entry point.
+
+- `properties` - properties to set on the application
+  - `nodeFactory` - (optional) the node factory to use for creating views. Automatically set depending on the platform.
 
 {{#example}}
 {{#block:"index-js"}}
