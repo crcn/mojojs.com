@@ -45,7 +45,6 @@ each data-binding, so there's no use of innerHTML, or any other operations that 
 - [modifiers](http://jsfiddle.net/JTxdM/69/)
 - [simple calculator](http://jsfiddle.net/JTxdM/98/)
 - [data-binding attributes](http://jsfiddle.net/JTxdM/71/)
-- [inline javascript](http://jsfiddle.net/JTxdM/72/)
 - [animal age calculator](http://jsfiddle.net/JTxdM/73/)
 - [titlecase / lowercase modifiers](http://jsfiddle.net/JTxdM/74/)
 - [if / elseif / else block](http://jsfiddle.net/JTxdM/75/)
@@ -66,40 +65,100 @@ Paperclip takes on a mustache / handlebars approach with variables, blocks, and 
 
 Paperclip support variable blocks, just like Angular.js. [For example](http://jsfiddle.net/JTxdM/80/):
 
-```html
+
+{{#example}}
+{{#block:"index-pc"}}
+<!--
 hello {{ name.first }} {{ name.last }}!
-```
+-->
+{{/}}
+{{#block:"index-js"}}
+<!--
+var context = new mojo.Object({
+  name: {
+    first: "Morgan",
+    last: "Freeman"
+  }
+});
 
-You can also specify blocks within attributes. [For example](http://jsfiddle.net/JTxdM/71/):
+var template = paperclip.template(require("./index.pc"), mojo.application);
 
-```html
+preview.element.appendChild(template.bind(context).render());
+-->
+{{/}}
+{{/}}
+
+You can also specify blocks within attributes.
+
+{{#example}}
+{{#block:"index-pc"}}
+<!--
 my favorite color is <span style="color: {{color}}">{{color}}</span>
-```
+-->
+{{/}}
+{{#block:"index-js"}}
+<!--
+var context = new mojo.Object({
+  color: "blue"
+});
 
+var template = paperclip.template(require("./index.pc"), mojo.application);
 
-If you want to add some sugar, go ahead and [drop-in some javascript](http://jsfiddle.net/JTxdM/72/):
+preview.element.appendChild(template.bind(context).render());
+-->
+{{/}}
+{{/}}
 
-```html
-hello {{ message || "world!" }}!
-```
+Paperclip also supports **inline javascript**. For example:
+
+{{#example}}
+{{#block:"index-pc"}}
+<!--
+hello {{ message || "World" }}!
+-->
+{{/}}
+{{#block:"index-js"}}
+<!--
+var context = new mojo.Object({
+});
+
+var template = paperclip.template(require("./index.pc"), mojo.application);
+
+preview.element.appendChild(template.bind(context).render());
+-->
+{{/}}
+{{/}}
 
 ### Modifiers
 
-Modifiers format data in a variable block. A good example of this might be presenting data to the user depending on their locale. For example:
+Modifiers format data in a variable block. A good example of this might be presenting data to the user depending on their locale, or parsing data into markdown.
 
-translation modifier:
 
-```javascript
-paperclip.modifier("t", function(value) {
-  return i18n.t(value);
+{{#example}}
+{{#block:"index-js"}}
+<!--
+
+var marked = require("marked");
+
+mojo.application.paperclip.modifier("markdown", function(value) {
+  return marked(value || "");
 })
-```
 
-template usage:
+var context = new mojo.Object({
+  content: "This is some **awesome** markdown!"
+});
 
-```html
-{{ "hello.world" | t() }}
-```
+var template = paperclip.template(require("./index.pc"), mojo.application);
+
+preview.element.appendChild(template.bind(context).render());
+-->
+{{/}}
+{{#block:"index-pc"}}
+<!--
+{{ html: content | markdown }}
+-->
+{{/}}
+{{/}}
 
 Modifiers can be chained together. For example, you can send a strong message to your users by writing something like:
 
