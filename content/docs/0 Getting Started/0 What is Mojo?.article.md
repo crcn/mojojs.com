@@ -15,9 +15,8 @@ Mojo's level of abstraction also makes it very easy to re-purpose the framework 
 use Mojo on the backend without the additional baggage of having other platform-specific modules, such as the HTTP router.
 Another example of re-purposing Mojo is to use a different layout engine such as [famou.us](http://famo.us/).
 
-
-
 <!--
+
 ### History
 
 Mojo was originally developed in-house at [ClassDojo](https://www.classdojo.com/) to refactor a pre-existing codebase.
@@ -27,6 +26,8 @@ At the time, the team at ClassDojo evaluated existing frameworks which had to fi
 2. The framework had to work with our existing codebase (AMD, Backbone, API)
 3. The framework had to be built on-top of our existing application (strangler pattern).
 
+
+<!--
 ### Architecture
 
 
