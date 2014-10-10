@@ -2,14 +2,15 @@
   properties: {
     category: "api",
     links: {
-      application: "/docs/api/-application"
+      application: "/docs/api/-application",
+      templates: "/docs/api/-templates"
     }
   }
 }}
 
 Extends [bindable.Object](/docs/api/-bindableobject) <br />
 Inherited By [views.List](/docs/api/-viewslist), [views.Stack](/docs/api/-viewsstack) <br />
-See also [Application]({{links.application}}),  [Templates](/docs/api/-templates)<br />
+See also [Application]({{links.application}}),  [Templates]({{links.templates}})<br />
 
 Mojo views control exactly what the user sees & does. This is where all your view-specific logic should go.
 
@@ -198,8 +199,8 @@ someView.dispose();
 
 ## Property Scope
 
-Views, just like variable scope, have the ability to inherit properties from their parent view. This is incredibly
-useful if you want to implicitly pass properties from the parent view to the child view. For example:
+Views have the ability to inherit properties from their parent. Think of this a bit like variable scope. This mechanism
+is incredibly useful if you want to implicitly pass properties from one view to the other. For example:
 
 {{#example}}
 {{#block:"index-js"}}
@@ -229,7 +230,9 @@ preview.element.appendChild(new ParentView({ message: "Hello", personName: "Jeff
 
 ### Breaking Scope
 
-You can easily break out of variable scope simply by defining a property on the child view. For instance:
+In many cases, you might not want to inherit properties from the parent. To stop inheriting values, simply
+define whatever properties you want within each child view. This can be done either by setting properties in the prototype,
+or calling `view.set(property, value)`. Here's an example:
 
 {{#example}}
 {{#block:"index-js"}}
@@ -259,10 +262,85 @@ preview.element.appendChild(new ParentView({ message: "Hello", personName: "Jeff
 {{/}}
 {{/}}
 
+The added benefit of breaking out of variable scope by defining them is that is also shows exactly
+what properties to the view expects.
 
+## Plugin API
 
-### Plugin API
+Below are a list of optional extensions you can use for mojo views.
 
 #### paper
 
+Defined by the [paperclip]({{links.paperclip}}) extension. The property expects either a compiled template (function),
+or string to compile. Here's an example:
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var views   = require("mojo-views"),
+paperclip   = require("mojo-paperclip"),
+Application = require("mojo-application");
+
+var app = new Application();
+app.use(views);
+app.use(paperclip);
+app.use(require("./views"));
+
+preview.element.appendChild(app.views.create("view1").render());
+preview.element.appendChild(app.views.create("view2").render());
+preview.element.appendChild(app.views.create("view3").render());
+-->
+{{/}}
+{{#block:"views/index-js"}}
+<!--
+var views = require("mojo-views");
+
+// compiled as the file's required
+var View1 = views.Base.extend({
+  paper: require("./template.pc")
+});
+
+// you can also define a string, and the extension will
+// automatically compile it for you
+var View2 = views.Base.extend({
+  paper: "string template - hello {{name}}! <br />"
+});
+
+
+// You can also manually generate the DOM elements
+var View3 = views.Base.extend({
+  paper: function (fragment, block, element, text) {
+    return fragment([
+      text("manually created template - hello "),
+      block({
+        run: function () {
+          return this.get(["name"])
+        },
+        refs: [["name"]]
+      }),
+      element("br")
+    ]);
+  }
+});
+
+module.exports = function (app) {
+  app.views.register({
+    view1: View1,
+    view2: View2,
+    view3: View3
+  });
+}
+-->
+{{/}}
+{{#block:"views/template-pc"}}
+<!--
+compiled template - hello {{name}}! <br />
+-->
+{{/}}
+{{/}}
+
+
+
 #### bindings
+
+#### children

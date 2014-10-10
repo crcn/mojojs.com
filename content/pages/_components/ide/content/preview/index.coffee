@@ -31,6 +31,7 @@ class Preview extends views.Base
         @set "content", div
       catch e
         console.error e
+        @set "error", e
 
   ###
   ###
