@@ -32,9 +32,7 @@ Here's an example of how to use just about every property / method in the `Appli
 {{#example}}
 {{#block:"index-js"}}
 <!--
-
-var Application = require("mojo-application"),
-
+var Application = require("mojo-application");
 
 var MyApplication = Application.extend({
   plugins: [
