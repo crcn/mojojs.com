@@ -207,9 +207,11 @@ preview.element.appendChild(template.bind(context).render());
 {{/}}
 {{/}}
 
-Note that that `~fullName` tells paperclip not to watch the reference, so any changes to `fullName` don't get reflected in the view. [Here's an example](http://jsfiddle.net/JTxdM/93/).
+Note that that `~fullName` tells paperclip not to watch the reference, so any changes to `fullName` don't get reflected in the view.
 
 Binding helpers are especially useful for [paperclip components](https://github.com/mojo-js/paperclip-component). Say for instance you have a date picker:
+
+<!-- todo - make this into a real example, or defer to docs below -->
 
 ```
 {{
