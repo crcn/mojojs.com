@@ -93,7 +93,26 @@ module.exports = views.Base.extend({
 {{/}}
 {{/}}
 
-#### Application()
+#### Application(properties)
+
+Your main application entry point.
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var Application = require("mojo-application");
+var app = new Application({
+  name: "some property!",
+  plugins: [
+    mojo.views
+  ]
+});
+console.log(app.get("name"), app.name);
+
+console.log(app.views);
+-->
+{{/}}
+{{/}}
 
 #### Application.main
 
@@ -101,28 +120,59 @@ module.exports = views.Base.extend({
 
 The plugins to register when initializing the application
 
-#### use()
+#### use(plugins...)
 
-
-
-#### initialize()
-
-#### willInitialize()
-
-called before initializing
-
-#### didInitialize()
-
-called after initializing
 
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var app = new mojo.Application();
+var Application = require("mojo-application");
+
+var app = new Application();
+app.use(function (app) {
+  console.log("registering a plugin to mojo app");
+  app.someModule = {
+    name: "some module"
+  };
+}, function (app) {
+  console.log("registering another plugin to mojo app");
+  console.log("some module: ", app.someModule);
+  app.anotherModule = {
+
+  };
+});
 -->
 {{/}}
 {{/}}
 
+#### initialize()
+
+method to initialize the application. This method calls `willInitialize`, and `didInitialize`. it also
+emits an `initialize` event.
+
+
+#### override willInitialize()
+
+called immediately before initializing the application
+
+#### override didInitialize()
+
+caled immediately after initializing the application
+
 #### Events
 
 - `initialize` - emitted when the application initializes
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var Application = require("mojo-application");
+
+var app = new Application();
+app.on("initialize", function () {
+    console.log("initialized!");
+});
+app.initialize();
+-->
+{{/}}
+{{/}}

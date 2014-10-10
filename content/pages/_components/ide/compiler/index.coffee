@@ -30,6 +30,8 @@ scanRemoteDeps = (files) ->
 cdn = "http://browserify-cdn.herokuapp.com"
 cdn = "http://wzrd.in"
 
+_remoteModuleCache = {}
+
 addRemoteFiles = (files, complete) ->
   remoteDeps = {}
 
@@ -37,7 +39,15 @@ addRemoteFiles = (files, complete) ->
     for dep in file.deps
       unless ~dep.indexOf("/")
         depParts = dep.split("@")
-        remoteDeps[depParts.shift()] = depParts.shift() || "latest"
+        name = depParts.shift()
+        version = depParts.shift() || "latest"
+        moduleName = name + (if version is "latest" then "" else "@" + version)
+
+        if _remoteModuleCache[moduleName]
+          files.push _remoteModuleCache[moduleName]
+          continue
+
+        remoteDeps[name] = version
 
   pkg = {
     "options": {
@@ -57,13 +67,13 @@ addRemoteFiles = (files, complete) ->
     unless response.body
       return complete new Error response.text
 
-
-    console.log response.body
     for moduleName of response.body
-      files.push {
-        path: if remoteDeps[moduleName] is "latest" then moduleName else moduleName + "@" + remoteDeps[moduleName],
+      files.push remoteModule = {
+        path: modulePath = if remoteDeps[moduleName] is "latest" then moduleName else moduleName + "@" + remoteDeps[moduleName],
         content: "module.exports = " + response.body[moduleName].bundle + "('"+moduleName+"')"
       }
+
+      _remoteModuleCache[modulePath] = remoteModule
 
     complete()
 
@@ -124,7 +134,6 @@ compile = (files) ->
   "
 
   for file in files
-    console.log file.path
     buffer += "\ndefine('"+file.path+"', function (module, exports, require) {"
     buffer += "\n" + transformContent(file) + "\n";
     buffer += "});"
