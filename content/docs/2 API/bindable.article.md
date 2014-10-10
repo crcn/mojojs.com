@@ -123,7 +123,13 @@ returns the context of the bindable object.
 var context = {};
 var obj     = new mojo.Object(context);
 
+console.log(obj.context() === false); // true
 console.log(obj.context() == context); // true
+
+// change context to self
+obj.context(obj);
+
+console.log(obj.context() === obj); // true
 -->
 {{/}}
 {{/}}
@@ -136,9 +142,38 @@ adds a new listener to the bindable object
 
 emits a new event
 
+{{#example:"test"}}
+{{#block:"index-js"}}
+<!--
+var person = new mojo.Object();
+
+person.on("blarg", function (arg1, arg2) {
+  console.log(arg1, arg2);
+});
+
+person.emit("blarg", "something!", "something again!!");
+-->
+{{/}}
+{{/}}
+
 #### bindable.once(event, callback)
 
-listens to one event
+listens to one event, then disposes the listener.
+
+{{#example:"test"}}
+{{#block:"index-js"}}
+<!--
+var person = new mojo.Object();
+
+person.once("blarg", function (arg1, arg2) {
+  console.log(arg1, arg2);
+});
+
+person.emit("blarg", "something!", "something again!!");
+person.emit("blarg", "never caught again!");
+-->
+{{/}}
+{{/}}
 
 #### bindable.removeAllListeners([type])
 
@@ -181,7 +216,7 @@ Executes a binding now
 {{#block:"index-js"}}
 <!--
 var person = new mojo.Object({ name: "jeff" });
-person.bind("name", function (name) {
+person.bind("name", function (name, oldName) {
   console.log("binding called, name is: ", name);
 }).now();
 
@@ -201,7 +236,7 @@ Disposes a binding
 <!--
 var person = new mojo.Object({ name: "jeff" });
 
-var binding = person.bind("name", function (name) {
+var binding = person.bind("name", function (name, oldName) {
   console.log("binding called, name is: ", name);
 }).now();
 
@@ -221,3 +256,32 @@ Bindable objects emit a few events:
 - `change` - emitted when any property changes on the bindable object
 - `watching` - emitted when a property is being watched
 - `dispose` - emitted when `dispose()` is called on a bindable object
+
+{{#example:"test"}}
+{{#block:"index-js"}}
+<!--
+var person = new mojo.Object({ name: "jeff" });
+
+person.on("change:name", function (newName) {
+  console.log("the name changed to", newName);
+});
+
+person.on("change", function (key, value) {
+  console.log("some value has changed: ", key, "=", value);
+});
+
+person.on("watching", function (property) {
+  console.log("watching ", property);
+});
+
+person.on("dispose", function () {
+  console.log("the object was disposed");
+});
+
+person.set("name", "james");
+person.set("city", "sf");
+person.bind("name", function(){}); // trigger watching
+person.dispose();
+-->
+{{/}}
+{{/}}

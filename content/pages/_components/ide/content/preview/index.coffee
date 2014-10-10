@@ -29,7 +29,6 @@ class Preview extends views.Base
         @element.setAttribute "class", "preview-content"
         @_runner = script.initialize @
         @set "content", div
-        console.log div
       catch e
         console.error e
 
