@@ -4,25 +4,15 @@
   }
 }}
 
-Incredibly flexible, fast bi-directional data binding library.
+BindableObjects are used primarily to synchronize information between Models, Templates, and Views.
 
 Two-way data binding means linking properties of two separate objects - when one changes, the other will automatically update with that change.  It enables much easier interactions between data models and UIs, among other uses outside of MVC.
 
-Bindable.js is similar to Ember's data-binding system, except it doesn't include anything View related, so the library has many use-cases - whether replacing Backbone's Model, providing a way to maintain the state between server <-> client for a realtime front-end application (similar to Firebase), or perhaps a way to communicate between server <-> server for a realtime distributed Node.js application.
+### Playground Example
 
-
-### Projects using bindable.js
-
-- [Paperclip.js](https://github.com/classdojo/paperclip.js) - data-bindable templating engine.
-- [Sherpa.js](https://github.com/classdojo/sherpa.js) - online tours library
-- [Mojo.js](https://github.com/classdojo/mojo.js) - javascript MVC framework.
-- [AWSM](https://github.com/crcn/node-awsm) - aws library.
-- [ditto](https://github.com/browsertap/ditto.js) - synchronized user interactions across browsers.
-
-
-### BindableObject Example
-
-```javascript
+{{#example:"test"}}
+{{#block:"index-js"}}
+<!--
 var bindable = require("bindable");
 
 var person = new bindable.Object({
@@ -57,7 +47,9 @@ person.bind("name", {
     return name.toUpperCase();
   }
 }).now();
-```
+-->
+{{/}}
+{{/}}
 
 #### value bindable.get(property)
 
