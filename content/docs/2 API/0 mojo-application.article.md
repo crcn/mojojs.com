@@ -4,6 +4,8 @@
   }
 }}
 
+Extends [bindable-object](/docs/api/-bindable-object)
+
 Your Mojo application entry point. This module ties everything together, and allows other
 parts of your application to communicate with each other. This should be your only [singleton](http://en.wikipedia.org/wiki/Singleton_pattern).
 
@@ -114,11 +116,74 @@ console.log(app.views);
 #### Application.main
 
 The pre-defined application instance. This is the `default` application when the `application` parameter is omitted from the `View(properties[, application])`, and `Model(properties[, application])`
-classes. Useful if you want a global reference to an application. 
+classes. Useful if you want a global reference to an application.
 
 #### plugins
 
 The plugins to register when initializing the application. See `playground example` for usage.
+
+#### nodeFactory
+
+The node factory to use for rendering the DOM
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var Application = require("mojo-application"),
+nodeFactories   = require("nofactor"),
+MainView        = require("./views/main.js");
+
+var MyApplication = Application.extend({
+  plugins: [
+    require("mojo-views"),
+    require("mojo-paperclip@0.6.1"),
+    function (app) {
+      app.views.register("main", MainView);
+    }
+  ]
+});
+
+var browserApp = new MyApplication({ nodeFactory: nodeFactories.dom    });
+var nodeApp    = new MyApplication({ nodeFactory: nodeFactories.string });
+
+// update immediately - this happens in node automatically. Overridden here
+// to demonstrate the difference between a node-based & browser-based application.
+nodeApp.animate = function (animatable) {
+  animatable.update();
+}
+
+
+preview.element.appendChild(browserApp.views.create("main", {
+    message: "I'm rendering for the browser!"
+}).render())
+
+console.log(nodeApp.views.create("main", {
+    message: "I'm rendering for NodeJS!"
+}).render().toString());
+-->
+{{/}}
+{{#block:"views/main-js"}}
+<!--
+var views = require("mojo-views");
+module.exports = views.Base.extend({
+  paper: require("./main.pc")
+});
+-->
+{{/}}
+{{#block:"views/main-js"}}
+<!--
+var views = require("mojo-views");
+module.exports = views.Base.extend({
+  paper: require("./main.pc")
+});
+-->
+{{/}}
+{{#block:"views/main-pc"}}
+<!--
+<h3>{{message}}</h3>
+-->
+{{/}}
+{{/}}
 
 #### use(plugins...)
 
