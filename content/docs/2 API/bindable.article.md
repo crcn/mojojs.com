@@ -77,48 +77,64 @@ console.log(bindable.get("city.name")); // SF
 
 Sets a value to the bindable object
 
-```javascript
-var obj = new bindable.Object();
-bindable.set("city.name", "SF");
+{{#example:"test"}}
+{{#block:"index-js"}}
+<!--
+var obj = new mojo.Object();
+obj.set("city.name", "SF");
 console.log(obj.get("city.name")); // SF
-```
+-->
+{{/}}
+{{/}}
 
 #### bindable.setProperties(properties)
 
 sets multiple properties on the bindable object
 
-```javascript
-var person = new bindable.Object();
+{{#example:"test"}}
+{{#block:"index-js"}}
+<!--
+var person = new mojo.Object();
 person.setProperties({
   firstName: "Jon",
   lastName: "Doe"
 });
 console.log(person.get("firstName"), person.get("lastName")); // Jon Doe
-```
+-->
+{{/}}
+{{/}}
 
 #### bindable.has(property)
 
 Returns true if the bindable object has a given property
 
-```javascript
+{{#example:"test"}}
+{{#block:"index-js"}}
+<!--
 var obj = new bindable.Object({ count: 0, male: false, name: "craig" });
 
 console.log(obj.has("count")); // true
 console.log(obj.has("male")); // true
 console.log(obj.has("name")); // true
 console.log(obj.has("city")); // false
-```
+-->
+{{/}}
+{{/}}
 
 #### Object bindable.context()
 
 returns the context of the bindable object.
 
-```javascript
+{{#example:"test"}}
+{{#block:"index-js"}}
+<!--
 var context = {};
-var obj     = new bindable.Object(context);
+var obj     = new mojo.Object(context);
 
 console.log(obj.context() == context); // true
-```
+-->
+{{/}}
+{{/}}
 
 #### listener bindable.on(event, callback)
 
@@ -146,51 +162,63 @@ returns all the listeners on the bindable object
   - `map` - transforms the data-bound value
   - `bothWays` - makes the data-binding bi-directional.
 
-```javascript
-var obj = new bindable.Object({ name: "craig" });
 
-//bind to name2
-obj.bind("name", "name2").now();
-
-//same as above, different style.
-obj.bind("name", { to: "name2" }).now();
+{{#example:"test"}}
+{{#block:"index-js"}}
+<!--
+var obj = new mojo.Object({ name: "craig" });
 
 // bind the name, but transform it to upper case
 obj.bind("name", { to: "name2", map: function (name) {
-  return name.toUpperCase();
+  return String(name).toUpperCase();
 }}).now();
-```
+
+console.log(obj.get("name"), obj.get("name2"));
+obj.set("name", "jeff");
+console.log(obj.get("name"), obj.get("name2"));
+-->
+{{/}}
+{{/}}
 
 
 #### binding.now()
 
 Executes a binding now
 
-```javascript
-var person = new bindable.Object({ name: "jeff" });
+{{#example:"test"}}
+{{#block:"index-js"}}
+<!--
+var person = new mojo.Object({ name: "jeff" });
 person.bind("name", function (name) {
-  // called ~ name = jeff
+  console.log("binding called, name is: ", name);
 }).now();
 
 // above is triggered
 person.set("name", "joe");
-```
+-->
+{{/}}
+{{/}}
+
 
 #### binding.dispose()
 
 Disposes a binding
 
-```javascript
-var person = new bindable.Object({ name: "jeff" });
+{{#example:"test"}}
+{{#block:"index-js"}}
+<!--
+var person = new mojo.Object({ name: "jeff" });
 
 var binding = person.bind("name", function (name) {
-  // called ~ name = jeff
+  console.log("binding called, name is: ", name);
 }).now();
 
 binding.dispose();
 
 person.set("name", "jake"); // binding not triggered
-```
+-->
+{{/}}
+{{/}}
 
 
 #### Events

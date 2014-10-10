@@ -47,12 +47,12 @@ class Preview extends views.Base
   captureLogs: (_console) ->
     @set "logs", logs = new bindable.Collection()
     ["log", "error", "warn", "notice"].forEach (level) ->
-      _console[level] = (text) ->
+      _console[level] = () ->
         if typeof text is "object"
           text = JSON.stringify text, null, 2
         logs.push new bindable.Object {
           level: level,
-          text: text
+          text: Array.prototype.slice.call(arguments).join(" ")
         }
 
 
