@@ -34,7 +34,5 @@ var MainView = mojo.views.Base.extend({
   }
 });
 
-exports.initialize = function (options) {
-  var mainView = new MainView();
-  options.element.appendChild(mainView.render());
-}
+var mainView = new MainView();
+preview.element.appendChild(mainView.render());

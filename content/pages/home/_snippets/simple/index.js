@@ -3,9 +3,7 @@ var HelloView = mojo.views.Base.extend({
   paper: require("./template.pc")
 });
 
-exports.initialize = function (options) {
-  var view = new HelloView();
+var view = new HelloView();
 
-  // render() returns a document fragment
-  options.element.appendChild(view.render());
-}
+// render() returns a document fragment
+preview.element.appendChild(view.render());

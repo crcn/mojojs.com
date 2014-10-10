@@ -155,15 +155,15 @@ The above example will apply a two-way data-binding to the `datePicker.currentDa
 
 ### Built-in components
 
-#### {{ html: content }}
+#### &#123;&#123; html: content &#125;&#125;
 
-Similar to escaping content in mustache (`{{{content}}}`). [For example](http://jsfiddle.net/JTxdM/76/):
+Similar to escaping content in mustache (`&#123;&#123;&#123;content&#125;&#125;&#125;`). [For example](http://jsfiddle.net/JTxdM/76/):
 
 ```html
 {{ html: content }}
 ```
 
-#### {{#if: condition }}
+#### &#123;&#123; #if: condition &#125;&#125;
 
 Conditional block helper. [For example](http://jsfiddle.net/JTxdM/75/):
 
@@ -182,7 +182,7 @@ Conditional block helper. [For example](http://jsfiddle.net/JTxdM/75/):
 data-bind attributes are borrowed from [knockout.js](http://knockoutjs.com/). This is useful if you want to attach behavior to any DOM element.
 
 
-#### {{ model: context }}
+#### &#123;&#123; model: context &#125;&#125;
 
 Input data-binding. [For example](http://jsfiddle.net/JTxdM/96/):
 
@@ -200,7 +200,7 @@ You can also reference `message` directly. [For example](http://jsfiddle.net/JTx
 Notice the `<~>` operator. This tells paperclip to bind both ways. See [binding operators](#binding-operators).
 
 
-#### {{ event: expression }}
+#### &#123;&#123; event: expression &#125;&#125;
 
 Executed when an event is fired on the DOM element. Here are all the available events:
 
@@ -224,12 +224,12 @@ Executed when an event is fired on the DOM element. Here are all the available e
 ```
 
 
-#### {{ show: bool }}
+#### &#123;&#123; show: bool &#125;&#125;
 
-Toggles the display mode of a given element. This is similar to the `{{#if: expression }}` conditional helper.
+Toggles the display mode of a given element. This is similar to the ` &#123;&#123;#if: expression &#125;&#125;` conditional helper.
 
 
-#### {{ css: styles }}
+#### &#123;&#123; css: styles &#125;&#125;
 
 Sets the css of a given element. [For example](http://jsfiddle.net/JTxdM/81/):
 
@@ -243,7 +243,7 @@ Sets the css of a given element. [For example](http://jsfiddle.net/JTxdM/81/):
 }}> It's pretty warm! </strong>
 ```
 
-#### {{ style: styles }}
+#### &#123;&#123; style: styles &#125;&#125;
 
 Sets the style of a given element. [For example](http://jsfiddle.net/JTxdM/78/):
 
@@ -256,7 +256,7 @@ Sets the style of a given element. [For example](http://jsfiddle.net/JTxdM/78/):
 }}> Hello World </span>
 ```
 
-#### {{ disable: bool }}
+#### &#123;&#123; disable: bool &#125;&#125;
 
 Toggles the enabled state of an element.
 
@@ -264,7 +264,7 @@ Toggles the enabled state of an element.
 <button data-bind={{ disable: !formIsValid }}>Sign Up</button>
 ```
 
-#### {{ focus: bool }}
+#### &#123;&#123; focus: bool &#125;&#125;
 
 Focuses cursor on an element.
 

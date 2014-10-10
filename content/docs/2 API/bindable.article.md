@@ -63,12 +63,15 @@ person.bind("name", {
 
 Returns a property on the bindable object
 
-```javascript
-var bindable = new bindable.Object({ city: { name: "SF" } });
-
+{{#example:"test"}}
+{{#block:"index-js"}}
+<!--
+var bindable = new mojo.Object({ city: { name: "SF" } });
 console.log(bindable.get("city"));      // { name: "SF" }
 console.log(bindable.get("city.name")); // SF
-```
+-->
+{{/}}
+{{/}}
 
 #### bindable.set(property, value)
 

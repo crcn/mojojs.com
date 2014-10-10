@@ -81,7 +81,7 @@ compile = (files) ->
 
     var _console = window.console,
     console  = {};
-    
+
     ['log', 'error', 'warn', 'notice'].forEach(function (level) {
       console[level] = function () {
         window.console[level].apply(window.console, arguments);
@@ -136,6 +136,14 @@ compile = (files) ->
 
 
 transformContent = (file) ->
+
+  if file.path is "/index.js"
+    file.content = "exports.initialize = function (preview) {" +
+      "preview.captureLogs(console);" +
+      file.content +
+    "};"
+    
+
 
 
   if (ext = file.path.split(".").pop()) is "pc"

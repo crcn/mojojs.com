@@ -82,13 +82,12 @@ articleTemplate = paperclip.template(fs.readFileSync(__dirname + "/article.pc", 
 
 parseMarkdown = (app, filePath) ->
   content = fs.readFileSync filePath, "utf8"
-  codeBlocks = content.match(repl = /```[\s\S]+```/g) || []
+  codeBlocks = content.match(repl = /```[\s\S]+?```/g) || []
   content = content.replace(repl, ",,,,,CODE_BLOCK,,,,,")
   pcBlocks  = content.match(repl = /({{#[\s\S]+?}}[\s\S]+?{{\/}})|({{[\s\S]+?}})/g) || []
   content = content.replace(repl, ",,,,,PC_BLOCK,,,,,")
 
   content = marked(content)
-
 
   for pcBlock in pcBlocks
     content = content.replace ",,,,,PC_BLOCK,,,,,", pcBlock

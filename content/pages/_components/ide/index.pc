@@ -8,8 +8,7 @@
   {{/else}}
     {{ html: sections.header }}
   {{/}}
-  <div class="row-fluid ide-content-outer">
+  <div class="row ide-content-outer">
     {{ html: sections.content }}
   </div>
 </div>
-

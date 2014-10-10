@@ -26,7 +26,7 @@ class BrowserifyBlockBinding extends pc.BaseBlockBinding
           parent.insertBefore(view.render(), script);
 
           var sib = script;
-            console.log(sib);
+
 
           var sibs = [];
 
@@ -37,7 +37,7 @@ class BrowserifyBlockBinding extends pc.BaseBlockBinding
             sib = prevSibling;
           }
 
-          console.log(sibs.length);
+        
 
           for (var i = sibs.length; i--;) {
             parent.removeChild(sibs[i]);
@@ -103,7 +103,7 @@ props = (vo) ->
   p = {}
   if vo.__context isnt vo
     vo = vo.__context
-    
+
   for k of vo
     v = vo[k]
     if /string|number|object/.test typeof v
