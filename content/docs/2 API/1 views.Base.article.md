@@ -13,6 +13,9 @@ See also [Application]({{links.application}}),  [Templates](/docs/api/-templates
 
 Mojo views control exactly what the user sees & does. This is where all your view-specific logic should go.
 
+View controllers are plugin-based - they don't come with any special features out of the box, such as a template engine.
+This allows you to fully customize exactly how view controllers behave. See the plugins section to understand how to extend view functionality.
+
 ### Installation
 
 ```javascript
@@ -193,7 +196,68 @@ someView.dispose();
 {{/}}
 {{/}}
 
-### Property Scope
+## Property Scope
+
+Views, just like variable scope, have the ability to inherit properties from their parent view. This is incredibly
+useful if you want to implicitly pass properties from the parent view to the child view. For example:
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var views = require("mojo-views");
+
+var ChildView = views.Base.extend({
+  willRender: function () {
+    var fullMessage = this.get("message") + " " + (this.get("personName") || "Anonymous");
+    this.section.appendChild(document.createTextNode(fullMessage));
+  }
+})
+
+var ParentView = views.Base.extend({
+  children: {
+    child: ChildView
+  },
+  willRender: function () {
+    this.section.appendChild(this.get("children.child").render());
+  }
+});
+
+preview.element.appendChild(new ParentView({ message: "Hello", personName: "Jeff" }).render());
+-->
+{{/}}
+{{/}}
+
+### Breaking Scope
+
+You can easily break out of variable scope simply by defining a property on the child view. For instance:
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var views = require("mojo-views@0.2.1");
+
+var ChildView = views.Base.extend({
+  personName: undefined,
+  message: "Yo",
+  willRender: function () {
+    var fullMessage = this.get("message") + " " + (this.get("personName") || "Anonymous");
+    this.section.appendChild(document.createTextNode(fullMessage));
+  }
+})
+
+var ParentView = views.Base.extend({
+  children: {
+    child: ChildView
+  },
+  willRender: function () {
+    this.section.appendChild(this.get("children.child").render());
+  }
+});
+
+preview.element.appendChild(new ParentView({ message: "Hello", personName: "Jeff" }).render());
+-->
+{{/}}
+{{/}}
 
 
 
