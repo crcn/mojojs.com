@@ -26,6 +26,7 @@ class Preview extends views.Base
       @_runner?.dispose?()
       try
         @element = div = document.createElement "div"
+        @element.setAttribute "class", "preview-content"
         @_runner = script.initialize @
         @set "content", div
         console.log div
