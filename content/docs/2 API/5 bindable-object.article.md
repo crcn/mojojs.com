@@ -4,7 +4,7 @@
   }
 }}
 
-BindableObjects are used primarily to synchronize information between Models, Templates, and Views.
+Bindable Objects are the base class for most components including [views](/mojo-views), and [models](/mojo-models).
 
 Two-way data binding means linking properties of two separate objects - when one changes, the other will automatically update with that change.  It enables much easier interactions between data models and UIs, among other uses outside of MVC.
 
@@ -52,6 +52,11 @@ person.bind("name", {
 {{/}}
 
 -->
+
+#### bindable.Object(context)
+
+creates a new bindable object
+
 #### value bindable.get(property)
 
 Returns a property on the bindable object
