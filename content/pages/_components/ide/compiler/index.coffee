@@ -124,6 +124,7 @@ compile = (files) ->
   "
 
   for file in files
+    console.log file.path
     buffer += "\ndefine('"+file.path+"', function (module, exports, require) {"
     buffer += "\n" + transformContent(file) + "\n";
     buffer += "});"
@@ -142,7 +143,7 @@ transformContent = (file) ->
       "preview.captureLogs(console);" +
       file.content +
     "};"
-    
+
 
 
 

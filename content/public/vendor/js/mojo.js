@@ -29432,7 +29432,26 @@ module.exports.BaseAttrBinding     = bindings.BaseAttrBinding;
 module.exports.BaseAttrDataBinding = bindings.BaseAttrDataBinding;
 
 },{"../clip":396,"./bindings":409,"./modifiers":429,"./template":430,"bindable":9,"mojo-application":466,"nofactor":479,"underscore":512}],429:[function(require,module,exports){
-module.exports=require(252)
+module.exports = {
+  uppercase: function (value) {
+    return String(value).toUpperCase();
+  },
+  lowercase: function (value) {
+    return String(value).toLowerCase();
+  },
+  titlecase: function (value) {
+    var str;
+
+    str = String(value);
+    return str.substr(0, 1).toUpperCase() + str.substr(1);
+  },
+  json: function (value, count, delimiter) {
+    return JSON.stringify.apply(JSON, arguments);
+  },
+  isNaN: function (value) {
+    return isNaN(value);
+  }
+};
 },{}],430:[function(require,module,exports){
 arguments[4][253][0].apply(exports,arguments)
 },{"./binding":398,"./bindings/binders":401,"./bindings/collection":408,"./writers/block":432,"./writers/comment":433,"./writers/element":434,"./writers/fragment":435,"./writers/parse":436,"./writers/text":437,"OpdoqP":69,"bindable":9,"loaf":463,"mojo-animator":465,"mojo-application":466,"nofactor":479,"protoclass":509}],431:[function(require,module,exports){

@@ -1,5 +1,6 @@
 pc = require "paperclip"
 bindable = require "bindable"
+views = require "mojo-views"
 
 
 class ExampleBlockBinding extends pc.BaseBlockBinding
@@ -29,7 +30,7 @@ class ExampleBlockBinding extends pc.BaseBlockBinding
               "component": "ide",
               "tabs": true,
               "showPreview": false,
-              "file": new bindable.Object 
+              "file": new bindable.Object
                 name: "/",
                 files: files
             }
@@ -38,20 +39,21 @@ class ExampleBlockBinding extends pc.BaseBlockBinding
       }
     ), @application
 
+    context = new views.Base({ parent: @context })
 
-    (@_ctpl = @contentTemplate.bind(@context)).render()
+    (@_ctpl = @contentTemplate.bind(context)).render()
 
     @_tpl?.dispose()
 
-    for name of @context.get("blocks")
-      node = @context.get("blocks." + name)
+    for name of context.get("blocks")
+      node = context.get("blocks." + name)
       files.push new bindable.Object {
         _id: name,
         name: name.replace('-', '.'),
         content: encodeURIComponent(node.toString().replace(/^<!--/, "").replace(/-->$/,""))
       }
 
-    @section.replaceChildNodes (@_tpl = tpl.bind(@context)).render()
+    @section.replaceChildNodes (@_tpl = tpl.bind(context)).render()
 
 
   ###
