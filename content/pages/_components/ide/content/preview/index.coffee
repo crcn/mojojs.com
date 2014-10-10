@@ -48,11 +48,13 @@ class Preview extends views.Base
     @set "logs", logs = new bindable.Collection()
     ["log", "error", "warn", "notice"].forEach (level) ->
       _console[level] = () ->
-        if typeof text is "object"
-          text = JSON.stringify text, null, 2
         logs.push new bindable.Object {
           level: level,
-          text: Array.prototype.slice.call(arguments).join(" ")
+          text: Array.prototype.slice.call(arguments).map((v) ->
+            if typeof v is "object"
+              v = JSON.stringify v, null, 2
+            return v
+          ).join(" ")
         }
 
 
