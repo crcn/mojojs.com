@@ -74,7 +74,7 @@ addAPIMethods = (context) ->
   context.set "properties", content.match(/<h4 .*?>.*?<\/h4>/g)?.map (h4) ->
     {
       _id: h4.match(/id="(.*?)"/)[1],
-      name: h4.match(/<h4 .*?>(.*?)<\/h4>/)[1].replace(/\(.*?\)/g, " ( )")
+      name: h4.match(/<h4 .*?>(.*?)<\/h4>/)[1].replace(/\(.*?\)/g, " ( )").replace(/<.*?>/g,"")
     }
 
 

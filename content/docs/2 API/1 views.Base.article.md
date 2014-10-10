@@ -9,7 +9,7 @@
 
 Extends [bindable.Object](/docs/api/-bindableobject) <br />
 Inherited By [views.List](/docs/api/-viewslist), [views.Stack](/docs/api/-viewsstack) <br />
-See also [Application]({{links.application}}) <br />
+See also [Application]({{links.application}}),  [Templates](/docs/api/-templates)<br />
 
 Mojo views control exactly what the user sees & does. This is where all your view-specific logic should go.
 
@@ -55,7 +55,7 @@ someView.section.appendChild(document.createTextNode("Hello World!"));
 {{/}}
 {{/}}
 
-#### Application application
+#### [Application]({{links.application}}) application
 
 The [application]({{links.application}}). Views use the application to communicate with other parts of your program. The application
 also defines exactly how views behave through registered plugins.
@@ -151,7 +151,7 @@ preview.element.appendChild(someView.render());
 {{/}}
 {{/}}
 
-#### DocumentFragment remove()
+#### remove()
 
 Removes the view from the DOM
 
@@ -194,6 +194,8 @@ someView.dispose();
 {{/}}
 
 ### Property Scope
+
+
 
 ### Plugin API
 
