@@ -8,11 +8,12 @@ BindableObjects are used primarily to synchronize information between Models, Te
 
 Two-way data binding means linking properties of two separate objects - when one changes, the other will automatically update with that change.  It enables much easier interactions between data models and UIs, among other uses outside of MVC.
 
+<!--
+
 ### Playground Example
 
 {{#example:"test"}}
 {{#block:"index-js"}}
-<!--
 var bindable = require("bindable");
 
 var person = new bindable.Object({
@@ -47,10 +48,10 @@ person.bind("name", {
     return name.toUpperCase();
   }
 }).now();
--->
 {{/}}
 {{/}}
 
+-->
 #### value bindable.get(property)
 
 Returns a property on the bindable object
