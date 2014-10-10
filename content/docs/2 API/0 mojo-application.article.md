@@ -102,10 +102,7 @@ Your main application entry point.
 <!--
 var Application = require("mojo-application");
 var app = new Application({
-  name: "some property!",
-  plugins: [
-    mojo.views
-  ]
+  name: "some property!"
 });
 console.log(app.get("name"), app.name);
 
@@ -116,9 +113,12 @@ console.log(app.views);
 
 #### Application.main
 
+The pre-defined application instance. This is the `default` application when the `application` parameter is omitted from the `View(properties[, application])`, and `Model(properties[, application])`
+classes. Useful if you want a global reference to an application. 
+
 #### plugins
 
-The plugins to register when initializing the application
+The plugins to register when initializing the application. See `playground example` for usage.
 
 #### use(plugins...)
 
