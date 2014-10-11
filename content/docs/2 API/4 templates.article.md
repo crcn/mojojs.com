@@ -51,6 +51,30 @@ each data-binding, so there's no use of innerHTML, or any other operations that 
 
 -->
 
+### Installation
+
+```
+npm install mojo-paperclip --save-exact
+```
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var Application = require("mojo-application");
+var MyApplication = Application.extend({
+  plugins: [
+    require("mojo-views"),
+    require("mojo-paperclip")
+  ]
+});
+var app = new MyApplication();
+console.log("successfuly registered paperclip as a plugin");
+-->
+{{/}}
+{{/}}
+
+
+
 ## Template Syntax
 
 #### &#123;&#123; blocks &#125;&#125;

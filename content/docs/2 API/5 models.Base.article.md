@@ -37,7 +37,7 @@ npm install mojo-models
 
 ## API
 
-### Base(properties[, [application](https://github.com/mojo-js/mojo-application)])
+#### Base(properties[, [application](https://github.com/mojo-js/mojo-application)])
 
 Extends [bindable.Object](https://github.com/mojo-js/bindable.js)
 
@@ -52,7 +52,7 @@ var model = new models.Base({ message: "Hello world!" });
 console.log(model.message);
 ```
 
-#### base.data
+#### data
 
 The raw data set on the model - this is usually transformed into something the model can
 use via `deserialize`.
@@ -63,7 +63,7 @@ consol.log(model.message); // Hello world!
 console.log(model.data); // { message: "Hello world!" }
 ```
 
-#### base.deserialize(data)
+#### deserialize(data)
 
 deserializes data once `data` is set on the model
 
@@ -103,58 +103,9 @@ console.log(person.fullName); // A B
 
 serializes data. This is an alias to `toJSON`
 
-### Collection(properties[, [application](https://github.com/mojo-js/mojo-application)])
+## Extended API
 
-Extends [bindable.Collection](https://github.com/mojo-js/bindable.js)
-
-#### collection.data
-
-the raw source for the collection. Should be an array.
-
-```javascript
-var Models = Collection.extend({
-  createModel: function (properties) {
-    return new models.Base(properties, this.application);
-  }
-});
-
-var models = new Models();
-
-models.set("data", [{ name: "a" }, { name: "b" }]);
-
-console.log(models.length); // 2
-```
-
-#### model collection.createModel(options)
-
-Creates a model. This method is usually defined when extending the base collection. It's also
-called when deserializing each item in `data`.
-
-```javascript
-var Friend = models.Base.extend({
-});
-
-var Friends = models.Collection.extend({
-  createModel: function (properties) {
-    return new Friend(properties, this.application);
-  }
-});
-
-var friends = new Friends();
-var friend = friends.create({ firstName: "John" });
-
-console.log(friend.firstName); // John
-console.log(friends.length); // 1
-```
-
-#### model collection.create(properties)
-
-creates a new model, and adds to the collection immediately. See example above.
-
-
-## Built-in plugins
-
-### persist
+#### persist
 
 Persistence layer for models / collections. Also adds the methods `load`, `save`, and `remove`.
 
@@ -194,24 +145,24 @@ person.load(); // loads the s
 person.remove(); // removes the model
 ```
 
-#### persistable.load(onLoad)
+#### model.load(onLoad)
 
 calls the `persist.load` function, and sets result to `data` to be deserialized on the model. Note that
 load can be called only once. Use `reload` to reload the model
 
-#### persistable.reload(onReload)
+#### model.reload(onReload)
 
 reloads the model
 
-#### persistable.save(onSave)
+#### model.save(onSave)
 
 calls the `persist.save` function, and sets result to `data` to be deserialized on the model.
 
-#### persistable.remove(onRemove)
+#### model.remove(onRemove)
 
 removes the model
 
-#### persistable Events
+#### Persist events
 
 - `willSave` - emitted when the model is about to be saved
 - `didSave` - emitted when the model has been saved
@@ -221,7 +172,7 @@ removes the model
 
 removes the model
 
-### virtuals
+#### virtuals
 
 Virtual properties all you to load external resources as they're needed. This is especially useful when
 data-binding models to views.
@@ -270,7 +221,7 @@ person.bind("friends", function (friends) {
 
 ```
 
-### bindings
+#### bindings
 
 Bindings allow you to compute properties on models.
 
@@ -290,71 +241,7 @@ console.log(person.fullName); //
 document.body.appendChild(person.render());
 ```
 
-
-## Application API
-
-#### views(application)
-
-registers `mojo-models` to the [mojo-application](https://github.com/mojo-js/mojo-application), which will add a few properties
-/ methods onto the application.
-
-```javascript
-var Application = require("mojo-application"),
-models         = require("mojo-models");
-
-var app = new Application();
-app.use(models);
-```
-
-#### application.models.register(modelNameOrClasses[, class])
-
-Registers a model class that's accessible anywhere in the application.
-
-`modelNameOrClasses` - view name to register, or an object of classses to register
-`class` - the class to register
-
-```javascript
-
-var app = new Application();
-
-app.use(require("mojo-models"));
-
-// register views one at a time
-app.models.register("person", Person);
-
-// or register multiple views at a time
-app.models.register({
-  person: Person,
-  friends: Friends
-});
-
-var person = app.models.create("person");
-```
-
-#### application.models.create(modelName, properties)
-
-Creates a new, registered component
-
-- `modelName` - the registered model component name
-- `properties` - the properties to assign to the created model.
-
-```javascript
-var Person = models.Base.extend({
-
-});
-
-application.models.register("person", Person);
-
-var hello = application.models.create("person", { name: "Craig" });
-
-console.log(hello.name); // Craig
-```
-
-#### application.models.decorator(decorator)
-
-Registers a model plugin. This is useful if you want to extend the functionality for each model. The implementation
-is idential to [mojo view decorators](https://github.com/mojo-js/mojo-views#applicationviewsdecoratordecorator).
-
+<!--
 ## Unit Testing
 
 Unit tests are very easy to write for mojo-models. Here's a basic example using `mocha`, and `expect.js`:
@@ -395,3 +282,4 @@ describe(__filename + "#", function() {
     });
 });
 ```
+-->
