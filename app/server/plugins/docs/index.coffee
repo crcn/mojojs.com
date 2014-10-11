@@ -90,7 +90,7 @@ stripHTML = (text) ->
 
 parseMarkdown = (app, filePath) ->
 
-  fileName = path.basename(filePath).replace(/\.article\.\w+$/,"").replace(/^\d+\s*/, "")
+  fileName = getCleanTitle(path.basename(filePath).replace(/\.article\.\w+$/,"").replace(/^\d+\s*/, ""))
   content = fs.readFileSync filePath, "utf8"
   commentBlocks = content.match(repl = /\<!--[\s\S]+?--\>/g) || []
   content = content.replace(repl, "<!--COMMENT-->")
@@ -99,10 +99,12 @@ parseMarkdown = (app, filePath) ->
   pcBlocks  = content.match(repl = /({{#[\s\S]+?}}[\s\S]+?{{\/}})|({{[\s\S]+?}})/g) || []
   content = content.replace(repl, ",,,,,PC_BLOCK,,,,,")
 
+
   renderer = new marked.Renderer();
   renderer.heading = (text, level) ->
 
     _id = getLink(text)
+  
     buffer = "<h" + level + " class='doc-headline' id='"+_id+"'>"
     buffer += "<a href='#"+ _id + "' class='link'><span class='glyphicon glyphicon-link'></span></a>"
     buffer += text
