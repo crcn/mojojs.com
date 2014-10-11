@@ -4,14 +4,6 @@
   }
 }}
 
-
-{{
-  properties: {
-    category: "core api"
-  }
-}}
-
-
 #### paperclip.attrDataBinding(name, attrDataBindingClass)
 
 Registers a attr data binding class for the `data-bind` attribute.
