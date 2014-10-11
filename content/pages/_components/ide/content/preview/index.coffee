@@ -23,6 +23,8 @@ class Preview extends views.Base
       unless script
         return
 
+      @set "error", undefined
+
       @_runner?.dispose?()
       try
         @element = div = document.createElement "div"

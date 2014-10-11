@@ -278,17 +278,15 @@ or string to compile. Here's an example:
 {{#block:"index-js"}}
 <!--
 var views   = require("mojo-views"),
-paperclip   = require("mojo-paperclip"),
+paperclip   = require("mojo-paperclip@0.6.3"),
 Application = require("mojo-application");
 
 var app = new Application();
-app.use(views);
-app.use(paperclip);
-app.use(require("./views"));
+app.use(views, paperclip, require("./views"));
 
-preview.element.appendChild(app.views.create("view1").render());
-preview.element.appendChild(app.views.create("view2").render());
-preview.element.appendChild(app.views.create("view3").render());
+preview.element.appendChild(app.views.create("view1", { name: "Craig" }).render());
+preview.element.appendChild(app.views.create("view2", { name: "Craig" }).render());
+preview.element.appendChild(app.views.create("view3", { name: "Craig" }).render());
 -->
 {{/}}
 {{#block:"views/index-js"}}
@@ -313,11 +311,14 @@ var View3 = views.Base.extend({
     return fragment([
       text("manually created template - hello "),
       block({
-        run: function () {
-          return this.get(["name"])
-        },
-        refs: [["name"]]
+        value: {
+          run: function () {
+            return this.get(["name"]);
+          },
+          refs: [["name"]]
+        }
       }),
+      text("!"),
       element("br")
     ]);
   }
@@ -342,5 +343,44 @@ compiled template - hello {{name}}! <br />
 
 
 #### bindings
+
+Bindings allow you to compute properties on each view.
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var views        = require("mojo-views"),
+    Application  = require("mojo-application"),
+    bindable     = require("bindable");
+
+var PersonView = views.Base.extend({
+  paper: require("./index.pc"),
+  bindings: {
+    "model.firstName, model.lastName": function (firstName, lastName) {
+      this.set("fullName", firstName + " " + lastName);
+    }
+  }
+});
+
+var app = new Application();
+app.use(views, require("mojo-paperclip"));
+
+
+var person = new PersonView({
+  model: new bindable.Object({
+    firstName: "John",
+  lastName: "Gordon"
+  })
+}, app);
+
+preview.element.appendChild(person.render());
+-->
+{{/}}
+{{#block:"index-pc"}}
+<!--
+  hello {{ fullName }}!
+-->
+{{/}}
+{{/}}
 
 #### children
