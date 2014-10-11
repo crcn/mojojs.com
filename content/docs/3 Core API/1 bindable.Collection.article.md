@@ -1,10 +1,10 @@
 {{
   properties: {
-    category: "api"
+    category: "core api"
   }
 }}
 
-Extends [bindable.Object](/docs/apibindableobject)
+Extends [bindable.Object](/docs/coreapibindableobject)
 
 bindable.Collection operates like arrays, except they're watchable if anything changes.
 

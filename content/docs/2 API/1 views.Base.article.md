@@ -8,7 +8,7 @@
   }
 }}
 
-Extends [bindable.Object](/docs/apibindableobject) <br />
+Extends [bindable.Object](/docs/coreapibindableobject) <br />
 Inherited By [views.List](/docs/apiviewslist), [views.Stack](/docs/apiviewsstack) <br />
 See also [Application]({{links.application}}),  [Templates]({{links.templates}})<br />
 
