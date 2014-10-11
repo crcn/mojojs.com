@@ -20,7 +20,7 @@ Registers a node name or attribute binding class
 <span data-text="{{text}}"></span>
 -->
 {{/}}
-{{#block:"textAttrDataBinding-js"}}
+{{#block:"textAttrBinding-js"}}
 <!--
 var paperclip = require("paperclip"),
 views         = require("mojo-views");
@@ -59,4 +59,4 @@ called whenever the attribute changes
 
 #### node
 
-the DOM node we're binding to
+the DOM node being bound to
