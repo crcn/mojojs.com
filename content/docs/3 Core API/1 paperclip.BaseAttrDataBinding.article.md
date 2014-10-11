@@ -34,7 +34,7 @@ views         = require("mojo-views");
 
 module.exports = paperclip.BaseAttrDataBinding.extend({
   _onChange: function (text) {
-    this.node.innerHTML = text;
+    this.node.innerHTML = text || "";
   }
 });
 -->
@@ -49,16 +49,12 @@ paperclip    = require("mojo-paperclip")
 var app = new Application();
 app.use(views, paperclip);
 
-app.paperclip.attrDataBinding("text", require("./eachBlockBinding"));
+app.paperclip.attrDataBinding("text", require("./textAttrDataBinding"));
 
 preview.element.appendChild(new views.Base({
-  paper: require("./index.pc"),
-  items: [
-    { text: "item 1" },
-    { text: "item 2" },
-    { text: "item 3" }
-  ]
+  paper: require("./index.pc")
 }, app).render());
+
 -->
 {{/}}
 {{/}}
