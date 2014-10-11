@@ -9,8 +9,9 @@
 }}
 
 Extends [views.Base](/docs/api/-viewsbase) <br />
+See Also [bindable.Collection](/docs/api/-bindablecollection), [models.Collection](/docs/api/-modelscollection) <br />
 
-Creates a list of views which is represented by a bindable collection. Note that each model is set as model property for each list item view created. See the example below.
+Creates a list of views which is represented by an array, or [bindable.Collection](/docs/api/-bindablecollection).
 
 ### Installation
 
@@ -20,32 +21,45 @@ npm install mojo-views --save-exact
 
 ### Basic Example
 
-```javascript
-var bindable = require("bindable");
+{{#example}}
+{{#block:"view-js"}}
+<!--
+var views = require("mojo-views");
 
-var items = new bindable.Collection([
-  new bindable.Object({ text: "hello 1" }),
-  new bindable.Object({ text: "hello 2" }),
-  new bindable.Object({ text: "hello 3" })
-]);
-
-var ItemView = views.Base.extend({
-  didCreateSection: function () {
-    this.section.appendChild(this.nodeFactory.createTextNode(this.get("model.text")));
-  }
+var ItemsView = views.List.extend({
+  source: "items",
+  modelViewClass: views.Base.extend({
+    paper: "item: {{ model.text }} <br />"
+  })
 });
 
-var ItemsView = new views.List.extend({
-  modelViewClass: ItemView
-});
+module.exports = ItemsView;
+-->
+{{/}}
+{{#block:"index-js"}}
+<!--
+var Application = require("mojo-application"),
+bindable        = require("bindable"),
+MainView        = require("./view");
 
-var items = new ItemsView({ source: items });
-document.body.appendChild(items.render());
-```
+var app = new Application();
+app.use(require("mojo-views"), require("mojo-paperclip"));
+
+// create the view, and populate it with models
+preview.element.appendChild(new MainView({
+  items: new bindable.Collection([
+    new bindable.Object({ text: "hello 1" }),
+    new bindable.Object({ text: "hello 2" }),
+    new bindable.Object({ text: "hello 3" })
+  ])
+}, app).render());
+-->
+{{/}}
+{{/}}
 
 #### source
 
-The source of the list. This should be a [bindable.Collection](https://github.com/classdojo/bindable.js).
+The source of the list. This can be an array, or [bindable.Collection](https://github.com/classdojo/bindable.js) (recommended).
 Note that this can also be a reference to another property in the list. This is especially useful when inheriting properties from a parent view. See [property scope](#property-scope) for more info.
 
 #### modelViewClass
