@@ -469,16 +469,8 @@ registers a new paperclip modifier within the context of the application. See ex
 
 Parses a template.
 
-#### renderer template.bind(context)
+#### template.bind(context).render()
 
-Binds a template, and returns the template renderer.
-
-#### DocumentFragment renderer.render()
-
-Renders the template, and returns a data-bound document fragment.
-
-#### renderer.remove()
-
-removes the template elements
+Binds a template, and returns a document fragment.
 
 **For extended paperclip documentation, see [Core API](/docs/core-api)**
