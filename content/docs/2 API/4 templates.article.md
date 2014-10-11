@@ -457,23 +457,43 @@ Focuses cursor on an element.
 ### API
 
 
-#### paperclip(app)
+#### paperclip([application])
+
+initializes paperclip with the given application. `Application.main` will be used if this is omitted.
 
 #### paperclip.modifier(modifierName, modifier)
 
+registers a new paperclip modifier within the context of the application. See above for examples.
+
 #### template paperclip.template(source)
+
+Parses a template.
 
 #### renderer template.bind(context)
 
-#### renderer.render()
+Binds a template, and returns the template renderer.
+
+#### DocumentFragment renderer.render()
+
+Renders the template, and returns a data-bound document fragment.
 
 #### renderer.remove()
 
+removes the template elements
+
 #### paperclip.blockBinding(blockBindingClass)
+
+Registers a new block binding
+
+<!-- do example -->
 
 #### paperclip.nodeBinding(nodeBindingClass)
 
+Registers a new node binding
+
 #### paperclip.attrDataBinding(attrDataBindingClass)
+
+Registers an attribute binding
 
 <!--
 TODO - Extended API
