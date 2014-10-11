@@ -80,7 +80,17 @@ addAPIMethods = (context) ->
 
 articleTemplate = paperclip.template(fs.readFileSync(__dirname + "/article.pc", "utf8"))
 
+getCleanTitle = (text) ->
+  text.replace(/[^a-zA-Z0-9]/g, "").toLowerCase()
+
+
+stripHTML = (text) ->
+  text.replace(/<[^>]*>/g,"")
+
+
 parseMarkdown = (app, filePath) ->
+
+  fileName = path.basename(filePath).replace(/\.article\.\w+$/,"").replace(/^\d+\s*/, "")
   content = fs.readFileSync filePath, "utf8"
   commentBlocks = content.match(repl = /\<!--[\s\S]+?--\>/g) || []
   content = content.replace(repl, "<!--COMMENT-->")
@@ -89,8 +99,23 @@ parseMarkdown = (app, filePath) ->
   pcBlocks  = content.match(repl = /({{#[\s\S]+?}}[\s\S]+?{{\/}})|({{[\s\S]+?}})/g) || []
   content = content.replace(repl, ",,,,,PC_BLOCK,,,,,")
 
+  renderer = new marked.Renderer();
+  renderer.heading = (text, level) ->
 
-  content = marked(content)
+    _id = getLink(text)
+    buffer = "<h" + level + " class='doc-headline' id='"+_id+"'>"
+    buffer += "<a href='#"+ _id + "' class='link'><span class='glyphicon glyphicon-link'></span></a>"
+    buffer += text
+    buffer += "</h" + level + ">"
+    buffer
+
+
+  getLink = (text) ->
+    String(fileName + getCleanTitle(stripHTML(text))).toLowerCase()
+
+
+
+  content = marked(content, { renderer: renderer })
 
   for pcBlock in pcBlocks
     content = content.replace ",,,,,PC_BLOCK,,,,,", pcBlock
@@ -103,7 +128,7 @@ parseMarkdown = (app, filePath) ->
   }, app)).render().toString()
 
   unless context.get("name")
-    context.set("name", path.basename(filePath).replace(/\.article\.\w+$/,"").replace(/^\d+/, ""))
+    context.set("name", fileName)
 
   unless context.get("title")
     context.set("title", context.get("name"))

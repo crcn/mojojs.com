@@ -4,4 +4,4 @@
   }
 }}
 
-Extends [bindable.Collection](/docs/api/-bindablecollection) <br />
+Extends [bindable.Collection](/docs/apibindablecollection) <br />

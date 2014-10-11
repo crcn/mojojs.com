@@ -4,7 +4,7 @@
   }
 }}
 
-Extends [bindable.Object](/docs/api/-bindableobject)
+Extends [bindable.Object](/docs/apibindableobject)
 
 bindable.Collection operates like arrays, except they're watchable if anything changes.
 

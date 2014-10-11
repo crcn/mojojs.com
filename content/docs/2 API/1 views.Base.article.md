@@ -2,14 +2,14 @@
   properties: {
     category: "api",
     links: {
-      application: "/docs/api/-application",
-      templates: "/docs/api/-templates"
+      application: "/docs/apiapplication",
+      templates: "/docs/apitemplates"
     }
   }
 }}
 
-Extends [bindable.Object](/docs/api/-bindableobject) <br />
-Inherited By [views.List](/docs/api/-viewslist), [views.Stack](/docs/api/-viewsstack) <br />
+Extends [bindable.Object](/docs/apibindableobject) <br />
+Inherited By [views.List](/docs/apiviewslist), [views.Stack](/docs/apiviewsstack) <br />
 See also [Application]({{links.application}}),  [Templates]({{links.templates}})<br />
 
 Mojo views control exactly what the user sees & does. This is where all your view-specific logic should go.

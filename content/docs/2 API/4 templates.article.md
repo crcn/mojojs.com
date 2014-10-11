@@ -5,7 +5,7 @@
 }}
 
 
-Templates Provide the *view* in *MVC* - they're simply used to display information to the user, and relay user-interactions back to the [view controller](/docs/api/-viewsbase).
+Templates Provide the *view* in *MVC* - they're simply used to display information to the user, and relay user-interactions back to the [view controller](/docs/apiviewsbase).
 
 
 Paperclip takes on a mustache / handlebars approach with variables, blocks, and pollyfills. Paperclip also allows basic inline javascript, similar to angular.js.
@@ -463,7 +463,7 @@ initializes paperclip with the given application. `Application.main` will be use
 
 #### paperclip.modifier(modifierName, modifier)
 
-registers a new paperclip modifier within the context of the application. See above for examples.
+registers a new paperclip modifier within the context of the application. See example above.
 
 #### template paperclip.template(source)
 
@@ -494,6 +494,7 @@ Registers a new node binding
 #### paperclip.attrDataBinding(attrDataBindingClass)
 
 Registers an attribute binding
+
 
 <!--
 TODO - Extended API

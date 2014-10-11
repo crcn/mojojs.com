@@ -25,7 +25,36 @@
 
   & h1, h2, h3 {
     font-family: "proxima_nova_ltbold", sans-serif;
+    position: relative;
   }
+
+  & h4 {
+    position: relative;
+    & a {
+      top: 15px !important;
+      left: -26px !important;
+    }
+  }
+
+  & .doc-headline {
+    & a {
+      font-size: 18px;
+      visibility: hidden;
+      position: absolute;
+      left: -23px;
+      top: 2px;
+      color: #555;
+      padding-right: 30px;
+      &:hover {
+        visibility: visible;
+      }
+    }
+
+    &:hover a {
+      visibility: visible;
+    }
+  }
+
   & .docs-article {
     & h1, h2 {
       padding-bottom: 15px;
@@ -42,7 +71,9 @@
       margin-bottom: 30px;
       font-size: 14px !important;
       & .ide-content-outer {
-        height: inherit;
+
+        // keep this here - links get screwed up otherwise
+        height: 200px;
         border: 2px solid #DADADA;
         .border-radius(5px);
       }
