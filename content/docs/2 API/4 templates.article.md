@@ -498,4 +498,5 @@ Registers an attribute binding
 <!--
 TODO - Extended API
 - router API
+- each binding
 -->
