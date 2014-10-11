@@ -46,7 +46,7 @@ each data-binding, so there's no use of innerHTML, or any other operations that 
 
 -->
 
-### Blocks
+#### Blocks
 
 Variable blocks as placeholders for information that might change. For example:
 
@@ -59,14 +59,17 @@ hello {{ name.first }} {{ name.last }}!
 {{/}}
 {{#block:"index-js"}}
 <!--
-var context = new mojo.Object({
+var bindable = require("bindable"),
+paperclip    = require("paperclip")();
+
+var context = new bindable.Object({
   name: {
     first: "Morgan",
     last: "Freeman"
   }
 });
 
-var template = paperclip.template(require("./index.pc"), mojo.application);
+var template = paperclip.template(require("./index.pc"));
 
 preview.element.appendChild(template.bind(context).render());
 -->
@@ -83,11 +86,14 @@ my favorite color is <span style="color: {{color}}">{{color}}</span>
 {{/}}
 {{#block:"index-js"}}
 <!--
-var context = new mojo.Object({
+var bindable = require("bindable"),
+paperclip    = require("paperclip")();
+
+var context = new bindable.Object({
   color: "blue"
 });
 
-var template = paperclip.template(require("./index.pc"), mojo.application);
+var template = paperclip.template(require("./index.pc"));
 
 preview.element.appendChild(template.bind(context).render());
 -->
@@ -99,15 +105,19 @@ Paperclip also supports **inline javascript**. For example:
 {{#example}}
 {{#block:"index-pc"}}
 <!--
-hello {{ message || "World" }}!
+hello {{ message || "World" }}! <br />
+inline-json {{ {'5+10 is':5+10, 'message is defined?' : message ? 'yes' : 'no' } | json }}
 -->
 {{/}}
 {{#block:"index-js"}}
 <!--
-var context = new mojo.Object({
+var bindable = require("bindable"),
+paperclip    = require("paperclip")();
+
+var context = new bindable.Object({
 });
 
-var template = paperclip.template(require("./index.pc"), mojo.application);
+var template = paperclip.template(require("./index.pc"));
 
 preview.element.appendChild(template.bind(context).render());
 -->
@@ -139,13 +149,15 @@ A human that is {{age}} years old is like a {{ age | divide(5.6) }} year old dog
 {{/}}
 {{#block:"index-js"}}
 <!--
-var marked = require("marked");
+var marked = require("marked"),
+bindable   = require("bindable"),
+paperclip  = require("paperclip")();
 
-mojo.application.paperclip.modifier("markdown", function(value) {
+paperclip.modifier("markdown", function(value) {
   return marked(value || "");
 });
 
-mojo.application.paperclip.modifier("divide", function(value, num) {
+paperclip.modifier("divide", function(value, num) {
   return Math.round((value || 0) / num);
 });
 
@@ -154,7 +166,7 @@ var context = new mojo.Object({
   age: 65
 });
 
-var template = mojo.application.paperclip.template(require("./index.pc"), mojo.application);
+var template = paperclip.template(require("./index.pc"));
 
 preview.element.appendChild(template.bind(context).render());
 -->
@@ -187,20 +199,22 @@ Unbound helper - don't watch for any changes:
 {{/}}
 {{#block:"index-js"}}
 <!--
-var context = new mojo.Object({
+var bindable = require("bindable"),
+paperclip    = require("paperclip@0.5.7")();
+
+var context = new bindable.Object({
   fullName: "John Smith"
 });
-var template = mojo.application.paperclip.template(require("./index.pc"), mojo.application);
+var template = paperclip.template(require("./index.pc"));
 preview.element.appendChild(template.bind(context).render());
 -->
 {{/}}
 {{/}}
 
+<!--
 Note that that `~fullName` tells paperclip not to watch the reference, so any changes to `fullName` don't get reflected in the view.
 
 Binding helpers are especially useful for [paperclip components](https://github.com/mojo-js/paperclip-component). Say for instance you have a date picker:
-
-<!-- todo - make this into a real example, or defer to docs below -->
 
 ```
 {{
@@ -212,52 +226,93 @@ Binding helpers are especially useful for [paperclip components](https://github.
 
 The above example will apply a two-way data-binding to the `datePicker.currentDate` property and the `currentDate` property of the view controller.
 
+-->
+
 ### Built-in components
 
 #### &#123;&#123; html: content &#125;&#125;
 
-Similar to escaping content in mustache (`&#123;&#123;&#123;content&#125;&#125;&#125;`). [For example](http://jsfiddle.net/JTxdM/76/):
+Similar to escaping content in mustache (`&#123;&#123;&#123;content&#125;&#125;&#125;`). Good for security.
 
-```html
-{{ html: content }}
-```
+{{#example}}
+{{#block:"index-pc"}}
+<!--
+Unsafe:
+{{ html: content }} <br />
+
+Safe:
+{{ content }} <br />
+-->
+{{/}}
+{{#block:"index-js"}}
+<!--
+var bindable = require("bindable"),
+paperclip    = require("paperclip@0.5.8")();
+
+var context = new bindable.Object({
+  content: "Hello, I'm <strong>HTML</strong>!"
+});
+var template = paperclip.template(require("./index.pc"));
+preview.element.appendChild(template.bind(context).render());
+-->
+{{/}}
+{{/}}
 
 #### &#123;&#123; #if: condition &#125;&#125;
 
-Conditional block helper. [For example](http://jsfiddle.net/JTxdM/75/):
+Conditional block helper
 
-```
-{{#if: age > 18 }}
+{{#example}}
+{{#block:"index-pc"}}
+<!--
+<input type="text" class="form-control" placeholder="What's your age?" data-bind="{{ model: <~>age }}"></input>
+{{#if: age >= 18 }}
   You're legally able to vote in the U.S.
-{{/elseif: anotherCondition }}
-  another condition
+{{/elseif: age > 16 }}
+  You're almost old enough to vote in the U.S.
 {{/else}}
-  final condition
+  You're too young to vote in the U.S.
 {{/}}
-```
+
+-->
+{{/}}
+{{#block:"index-js"}}
+<!--
+var bindable = require("bindable"),
+paperclip    = require("paperclip@0.5.8")();
+var template = paperclip.template(require("./index.pc"));
+preview.element.appendChild(template.bind().render());
+-->
+{{/}}
+{{/}}
 
 ### data-bind attributes
 
-data-bind attributes are borrowed from [knockout.js](http://knockoutjs.com/). This is useful if you want to attach behavior to any DOM element.
+data-bind attributes are inspired by [knockout.js](http://knockoutjs.com/). This is useful if you want to attach behavior to any DOM element.
 
 
 #### &#123;&#123; model: context &#125;&#125;
 
-Input data-binding. [For example](http://jsfiddle.net/JTxdM/96/):
+Input data-binding
 
-```html
-<input type="text" name="message" data-bind={{ model: this }}></input> {{ message }}
-```
+{{#example}}
+{{#block:"index-pc"}}
+<!--
+<input type="text" class="form-control" placeholder="Type in a message" data-bind="{{ model: <~>message }}"></input>
+<h3>{{message}}</h3>
+-->
+{{/}}
+{{#block:"index-js"}}
+<!--
+var bindable = require("bindable"),
+paperclip    = require("paperclip@0.5.8")();
+var template = paperclip.template(require("./index.pc"));
+preview.element.appendChild(template.bind().render());
+-->
+{{/}}
+{{/}}
 
-You can also reference `message` directly. [For example](http://jsfiddle.net/JTxdM/94/)
-
-
-```html
-<input type="text" data-bind={{ model: <~>message }}></input> {{ message }}
-```
-
-Notice the `<~>` operator. This tells paperclip to bind both ways. See [binding operators](#binding-operators).
-
+Notice the `<~>` operator. This tells paperclip to bind both ways. See [binding operators](#binding-operators) for more info.
 
 #### &#123;&#123; event: expression &#125;&#125;
 
