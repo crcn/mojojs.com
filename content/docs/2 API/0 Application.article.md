@@ -364,7 +364,7 @@ var HelloView = views.Base.extend({
 
 // create the view, and pass in the appliation so the handlebars
 // decorator gets used
-var view = new HelloView({ message: "World" }, app);
+var view = new HelloView({ message: "Mustache emplates" }, app);
 
 preview.element.appendChild(view.render());
 -->
