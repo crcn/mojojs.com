@@ -157,3 +157,11 @@ preview.element.appendChild(app.views.create("main").render());
 -->
 {{/}}
 {{/}}
+
+<!--
+
+TODO
+
+extended documentation on router
+
+-->
