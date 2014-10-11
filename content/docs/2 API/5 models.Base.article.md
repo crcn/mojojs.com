@@ -4,7 +4,9 @@
   }
 }}
 
-Models, like views, are plugin-based, meaning you can customize how models behave based on the properties defined in the class. You can also create your own plugins for models. By default, mojo-models come with a few: persist, virtuals, and bindings. 
+Extends [bindable.Object](/docs/api/-bindableobject) <br />
+
+Models, like views, are plugin-based, meaning you can customize how models behave based on the properties defined in the class. You can also create your own plugins for models. By default, mojo-models come with a few: persist, virtuals, and bindings.
 
 ### Installation
 
@@ -48,8 +50,8 @@ console.log(model.message);
 
 #### base.data
 
-The raw data set on the model - this is usually transformed into something the model can 
-use via `deserialize`. 
+The raw data set on the model - this is usually transformed into something the model can
+use via `deserialize`.
 
 ```javascript
 var model = new models.Base({ data: { message: "Hello world!" }});
@@ -85,7 +87,7 @@ var person = new Person({
 
 console.log(person.fullName); // Craig Condon
 
-person.set("data", { 
+person.set("data", {
   firstName: "A",
   lastName: "B"
 });
@@ -121,7 +123,7 @@ console.log(models.length); // 2
 
 #### model collection.createModel(options)
 
-Creates a model. This method is usually defined when extending the base collection. It's also 
+Creates a model. This method is usually defined when extending the base collection. It's also
 called when deserializing each item in `data`.
 
 ```javascript
@@ -184,7 +186,7 @@ var person = new Person({ _id: "person1" });
 person.set("firstName", "Craig");
 
 person.save(); // POST /people/person1 { firstName: "Craig" }
-person.load(); // loads the s 
+person.load(); // loads the s
 person.remove(); // removes the model
 ```
 
@@ -232,7 +234,7 @@ var Friends = models.Collection.extend({
     return new Person(options, this.application);
   },
   persist: {
-  
+
     // executed when .load, or .reload is called
     load: function (complete) {
       superagent.get("/person/" + this.friendee._id + "/friends").end(function (err, result) {
@@ -244,7 +246,7 @@ var Friends = models.Collection.extend({
 
 var Person = models.Base.extend({
   virtuals: {
-  
+
     // triggered on bind()
     friends: function (onLoad) {
       new Friends({ friendee: this }).load(onLoad);
@@ -259,7 +261,7 @@ console.log(person.get("friends")); // should be undefined
 // activates virtual property, and calls /person/person1/friends API
 person.bind("friends", function (friends) {
   this.dispose(); // dispose the binding immediately
-  
+
 });
 
 ```
@@ -280,7 +282,7 @@ var Person = models.Base.extend({
   }
 
 var person = new Person({ firstName: "A", lastName: "B" });
-console.log(person.fullName); // 
+console.log(person.fullName); //
 document.body.appendChild(person.render());
 ```
 
@@ -302,7 +304,7 @@ app.use(models);
 
 #### application.models.register(modelNameOrClasses[, class])
 
-Registers a model class that's accessible anywhere in the application. 
+Registers a model class that's accessible anywhere in the application.
 
 `modelNameOrClasses` - view name to register, or an object of classses to register
 `class` - the class to register
@@ -330,11 +332,11 @@ var person = app.models.create("person");
 Creates a new, registered component
 
 - `modelName` - the registered model component name
-- `properties` - the properties to assign to the created model. 
+- `properties` - the properties to assign to the created model.
 
 ```javascript
 var Person = models.Base.extend({
-  
+
 });
 
 application.models.register("person", Person);
@@ -375,11 +377,11 @@ expect = require("expect.js");
 describe(__filename + "#", function() {
 
     var model;
-    
+
     beforeEach(function() {
         model = new Person();
     });
-    
+
     it("properly computes first / last name when changed", function () {
         model.setProperties({
           firstName: "A",
