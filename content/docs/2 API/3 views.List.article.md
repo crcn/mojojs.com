@@ -2,16 +2,16 @@
   properties: {
     category: "api",
     links: {
-      application: "/docs/apiapplication",
-      templates: "/docs/apitemplates"
+      application: "/docs/api/application",
+      templates: "/docs/api/templates"
     }
   }
 }}
 
-Extends [views.Base](/docs/apiviewsbase) <br />
-See Also [bindable.Collection](/docs/apibindablecollection), [models.Collection](/docs/apimodelscollection) <br />
+Extends [views.Base](/docs/api/viewsbase) <br />
+See Also [bindable.Collection](/docs/api/bindablecollection), [models.Collection](/docs/api/modelscollection) <br />
 
-Creates a list of views which is represented by an array, or [bindable.Collection](/docs/apibindablecollection).
+Creates a list of views which is represented by an array, or [bindable.Collection](/docs/api/bindablecollection).
 
 ### Installation
 

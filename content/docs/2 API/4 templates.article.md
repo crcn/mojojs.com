@@ -4,8 +4,9 @@
   }
 }}
 
+See Also [bindable.Object](/docs/api/bindableobject), [views.Base](/docs/api/viewsbase) <br />
 
-Templates Provide the *view* in *MVC* - they're simply used to display information to the user, and relay user-interactions back to the [view controller](/docs/apiviewsbase).
+Templates Provide the *view* in *MVC* - they're simply used to display information to the user, and relay user-interactions back to the [view controller](/docs/api/viewsbase).
 
 
 Paperclip takes on a mustache / handlebars approach with variables, blocks, and pollyfills. Paperclip also allows basic inline javascript, similar to angular.js.

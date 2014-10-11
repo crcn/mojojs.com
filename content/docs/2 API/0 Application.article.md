@@ -4,8 +4,8 @@
   }
 }}
 
-Extends [bindable.Object](/docs/api/-bindableobject) <br />
-See Also [views.Base](/docs/api/-viewsbase), [models.Base](/docs/api/-modelsbase), [templates](/docs/api/-templates) <br />
+Extends [bindable.Object](/docs/api/bindableobject) <br />
+See Also [views.Base](/docs/api/viewsbase), [models.Base](/docs/api/modelsbase), [templates](/docs/api/templates) <br />
 
 Your Mojo application entry point. This module ties everything together, and allows other
 parts of your application to communicate with each other. This should be your only [singleton](http://en.wikipedia.org/wiki/Singleton_pattern).
@@ -251,7 +251,7 @@ Below are a list of extensions to mojo applications.
 
 #### views
 
-Property added by [views extension](/docs/api/-viewsbase) when registering to the application.
+Property added by [views extension](/docs/apiviewsbase) when registering to the application.
 
 {{#example}}
 {{#block:"index-js"}}
@@ -374,7 +374,7 @@ preview.element.appendChild(view.render());
 
 #### models
 
-Property added by [models extension](/docs/api/-modelsbase) when registering to the application.
+Property added by [models extension](/docs/api/modelsbase) when registering to the application.
 
 #### models.register(classesOrClassName[, class])
 
@@ -419,4 +419,4 @@ app.animate({
 
 #### paperclip
 
-Added property. See [paperclip template extension](/docs/api/-templates) for more details.
+Added property. See [paperclip template extension](/docs/api/templates) for more details.

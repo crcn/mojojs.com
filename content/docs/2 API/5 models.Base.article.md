@@ -8,7 +8,7 @@
 TODO - pull JSONP data from streams such as twitter
 -->
 
-Extends [bindable.Object](/docs/apibindableobject) <br />
+Extends [bindable.Object](/docs/api/bindableobject) <br />
 
 Models, like views, are plugin-based, meaning you can customize how models behave based on the properties defined in the class. You can also create your own plugins for models. By default, mojo-models come with a few: persist, virtuals, and bindings.
 

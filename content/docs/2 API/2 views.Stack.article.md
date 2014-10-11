@@ -2,18 +2,18 @@
   properties: {
     category: "api",
     links: {
-      application: "/docs/apiapplication",
-      templates: "/docs/apitemplates"
+      application: "/docs/api/application",
+      templates: "/docs/api/templates"
     }
   }
 }}
 
-Extends [views.Base](/docs/apiviewsbase) <br />
-See Also [http router](/docs/apirouter) <br />
+Extends [views.Base](/docs/api/viewsbase) <br />
+See Also [http router](/docs/api/router) <br />
 
 The stack view is a container with many children where only one is displayed at a time.
 Stack views are very useful when building Single Page Applications with navigation,
-and often times with something such as an HTTP [router](/docs/apirouter).
+and often times with something such as an HTTP [router](/docs/api/router).
 
 ### Installation
 
