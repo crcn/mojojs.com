@@ -5,6 +5,7 @@
 }}
 
 Extends [bindable.Object](/docs/api/-bindableobject)
+See Also [views.Base](/docs/api/-viewsbase), [models.Base](/docs/api/-modelsbase), [templates](/docs/api/-templates)
 
 Your Mojo application entry point. This module ties everything together, and allows other
 parts of your application to communicate with each other. This should be your only [singleton](http://en.wikipedia.org/wiki/Singleton_pattern).
@@ -275,8 +276,8 @@ preview.element.appendChild(new views.Base({
 
 #### views.register(classesOrClassName[, class])
 
-Registers a globally accessible view class. This is useful for re-usable components, especially when using the [paperclip
-template engine](/docs/api/-templates).
+Registers a view class that's accessible anywhere in the application. This is especially useful when registering reusable components
+you might want to use in something like [paperclip components](https://github.com/mojo-js/paperclip-component).
 
 - `classesOrClassName` - classes, or class name
 - `class` - the class if className is provided
@@ -322,6 +323,55 @@ console.log(view.application == app); // true
 {{/}}
 {{/}}
 
+#### views.decorator(decorator)
+
+Registers a view plugin. This is useful if you want to extend the functionality for each view. Super useful for
+interpolation between different libraries. Here's an example of paperclip using the handlebars template engine:
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+ var views       = require("mojo-views"),
+     Application = require("mojo-application"),
+     handlebars  = require("handlebars");
+
+ var app = new Application();
+ app.use(views);
+
+// register the view decorator, and
+// look for the handlebars property on each view
+app.views.decorator({
+  getOptions: function (view) {
+    return view.handlebars;
+  },
+  decorate: function (view, templateSource) {
+    var template = handlebars.compile(templateSource);
+    var div = document.createElement("div");
+
+    function renderTemplate () {
+     div.innerHTML = template(view);  
+      view.section.replaceChildNodes.apply(view.section, div.childNodes);
+    }
+
+    renderTemplate();
+  }
+});
+
+// create a new view class with the handlebars template
+var HelloView = views.Base.extend({
+  handlebars: "<h3>Hello {{message}}!</h3>"
+});
+
+// create the view, and pass in the appliation so the handlebars
+// decorator gets used
+var view = new HelloView({ message: "World" }, app);
+
+preview.element.appendChild(view.render());
+-->
+{{/}}
+{{/}}
+
+
 #### models
 
 Property added by [models extension](/docs/api/-modelsbase) when registering to the application.
@@ -337,6 +387,15 @@ Registers a globally accessible model class. Similar to how `views.register(...)
 #### models.create(className, properties)
 
 Creates a new registered model. Similar to how `models.register(...)` works.
+
+
+#### models.decorate(decorator)
+
+Registers a model extension. Works exactly like view extensions.
+
+<!--
+TODO - show example here
+-->
 
 #### animate(animatable)
 
@@ -357,3 +416,7 @@ app.animate({
 -->
 {{/}}
 {{/}}
+
+#### paperclip
+
+Added property. See [paperclip template extension](/docs/api/-templates) for more details.
