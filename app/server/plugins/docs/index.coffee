@@ -115,7 +115,7 @@ parseMarkdown = (app, filePath) ->
 
 
   getLink = (text) ->
-    String(getCleanTitle(stripHTML(fileName = text))).toLowerCase()
+    String(getCleanTitle(stripHTML(text))).toLowerCase()
 
 
 
