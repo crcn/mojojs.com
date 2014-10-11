@@ -368,8 +368,8 @@ app.use(views, require("mojo-paperclip"));
 
 var person = new PersonView({
   model: new bindable.Object({
-    firstName: "John",
-  lastName: "Gordon"
+    firstName: "Gordon",
+  lastName: "Ramsay"
   })
 }, app);
 
