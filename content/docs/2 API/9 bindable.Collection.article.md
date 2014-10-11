@@ -92,10 +92,10 @@ removes the first item from the collection
 
 #### Events
 
-- `insert`
-- `update`
-- `replace`
-- `remove`
+- `insert` - emitted when items are inserted
+- `update` - emitted when the collection is updated
+- `reset` - emitted when the source has been reset
+- `remove` - emitted when items have been removed
 
 {{#example}}
 {{#block:"index-js"}}
