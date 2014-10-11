@@ -1,6 +1,6 @@
 {{
   properties: {
-    category: "core api"
+    category: "api"
   }
 }}
 
