@@ -14,3 +14,7 @@ to build applications using views, models, routes, and local storage for persist
 ### [Mojojs.com](https://github.com/mojo-js/mojojs.com)
 
 MojoJS main website. Demonstrates how to run MojoJS on the backend (NodeJS), along with the front-end.
+
+<!--
+TODO - more complex examples
+-->
