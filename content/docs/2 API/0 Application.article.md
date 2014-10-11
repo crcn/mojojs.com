@@ -243,3 +243,117 @@ app.initialize();
 -->
 {{/}}
 {{/}}
+
+## Extended API
+
+Below are a list of extensions to mojo applications.
+
+#### views
+
+Property added by [views extension](/docs/api/-viewsbase) when registering to the application.
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var Application = require("mojo-application"),
+views           = require("mojo-views"),
+paperclip       = require("mojo-paperclip@0.6.3");
+
+var app = new Application();
+
+// register views, and paperclip. Registering paperclip
+// to the application will allow the "paper" property for each view.
+app.use(views, paperclip);
+
+preview.element.appendChild(new views.Base({
+  fullName: "Ryan Renolds",
+  paper: "hello {{fullName}}!"
+}, app).render());
+-->
+{{/}}
+{{/}}
+
+#### views.register(classesOrClassName[, class])
+
+Registers a globally accessible view class. This is useful for re-usable components, especially when using the [paperclip
+template engine](/docs/api/-templates).
+
+- `classesOrClassName` - classes, or class name
+- `class` - the class if className is provided
+
+```javascript
+var Application = require("mojo-application"),
+views = require("mojo-views");
+
+var app = new Application();
+app.use(views);
+app.views.register("someViewName", views.Base);
+app.views.register({
+  someViewName: views.Base,
+  someOtherView: views.Base.extend({
+    paper: require("./someTemplate.pc")
+  })
+});
+```
+
+#### views.create(className, properties)
+
+Creates a new registered view.
+
+- `className` - the className of the view you want to create
+- `properties` - the properties to assign to the created class
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var Application = require("mojo-application"),
+views = require("mojo-views");
+
+var app = new Application();
+app.use(views);
+app.views.register("base", views.Base);
+var view = app.views.create("base", {
+  personName: "Hillary Clinton"
+});
+
+console.log(view.personName); // Hillary Clinton
+console.log(view.application == app); // true
+-->
+{{/}}
+{{/}}
+
+#### models
+
+Property added by [models extension](/docs/api/-modelsbase) when registering to the application.
+
+#### models.register(classesOrClassName[, class])
+
+Registers a globally accessible model class. Similar to how `views.register(...)` works.
+
+- `classesOrClassName` - classes, or class name
+- `class` - the class if className is provided
+
+
+#### models.create(className, properties)
+
+Creates a new registered model. Similar to how `models.register(...)` works.
+
+#### animate(animatable)
+
+Added property by the [animator](https://github.com/mojo-js/mojo-animator). The animator plugin leverages the browsers native requestAnimationFrame
+function to update the DOM. It's used in views, and templates.
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var Application = require("mojo-application");
+var app = new Application();
+app.use(require("mojo-animator"));
+app.animate({
+  update: function () {
+    console.log("update! called on requestAnimationFrame");
+  }
+})
+-->
+{{/}}
+{{/}}
