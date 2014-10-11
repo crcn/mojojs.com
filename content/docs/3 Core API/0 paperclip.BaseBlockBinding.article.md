@@ -110,7 +110,7 @@ make your block binding compatible with the NodeJS and the browser.
 
 the application
 
-#### [clip](/docs/core-api/paperclipclip)
+#### clip
 
 the data binding
 
@@ -128,7 +128,7 @@ the content template - this might be undefined if your block binding doesn't hav
 
 #### childBlockTemplate
 
-The child block template.  Used in the [conditional block](https://github.com/mojo-js/paperclip.js/blob/master/lib/paper/bindings/block/conditional.js).
+The child block template. Used in the [conditional block](https://github.com/mojo-js/paperclip.js/blob/master/lib/paper/bindings/block/conditional.js).
 
 
 
