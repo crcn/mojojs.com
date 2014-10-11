@@ -384,3 +384,72 @@ preview.element.appendChild(person.render());
 {{/}}
 
 #### children
+
+Children allow you to define child view controller which get added to the view controller. This allows a greater level of
+organization in your codebase. Here's an example of a basic view structure:
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var Application = require("mojo-application");
+var app = new Application();
+app.use(require("mojo-views"), require("mojo-paperclip"), require("./views"));
+preview.element.appendChild(app.views.create("home", {
+  user: {
+    fullName: "Sendra Bullock"
+  }
+}).render());
+-->
+{{/}}
+{{#block:"views/index-js"}}
+<!--
+module.exports = function (app) {
+  app.views.register("home", require("./home"))
+}
+-->
+{{/}}
+{{#block:"views/home/index-js"}}
+<!--
+module.exports = require("mojo-views").Base.extend({
+  paper: require("./index.pc"),
+  children: {
+    header: require("./header"),
+    content: require("./content")
+  }
+});
+-->
+{{/}}
+{{#block:"views/home/index-pc"}}
+<!--
+Entire Application: <br />
+{{ html: children.header }}
+{{ html: children.content }}
+-->
+{{/}}
+{{#block:"views/home/header-js"}}
+<!--
+module.exports = require("mojo-views").Base.extend({
+  paper: require("./header.pc")
+});
+-->
+{{/}}
+{{#block:"views/home/header-pc"}}
+<!--
+<br />Header: <br />
+Welcome back {{ user.fullName }}
+-->
+{{/}}
+{{#block:"views/home/content-js"}}
+<!--
+module.exports = require("mojo-views").Base.extend({
+  paper: require("./content.pc")
+});
+-->
+{{/}}
+{{#block:"views/home/content-pc"}}
+<!--
+<br />Content: <br />
+Some content!
+-->
+{{/}}
+{{/}}
