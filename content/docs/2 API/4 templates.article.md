@@ -4,14 +4,20 @@
   }
 }}
 
-Paperclip is the preferred template engine for Mojo.js. However, any other template system can be used with the framework, including htmlbars, mustache, jade, and even angularjs.
 
-Templates Provide the *view* in *MVC* - they're simply used to display information to the user, and relay user-interactions back to the main application.
+Templates Provide the *view* in *MVC* - they're simply used to display information to the user, and relay user-interactions back to the [view controller](/docs/api/-viewsbase).
+
+
+Paperclip takes on a mustache / handlebars approach with variables, blocks, and pollyfills. Paperclip also allows basic inline javascript, similar to angular.js.
+
+<!--
+
+this stuff should be somewhere else
 
 Templates should be encapsulated. The only thing that should interact with templates is the view controller, so theoretically, you should have a functional application that
 runs without the view, or information displayed to the user. This makes Unit Tests, and TDD much easier, and more effective.
 
-Paperclip works by listening to the view controller, and updating the template if anything changes. Paperclip first translates HTML directly to JavaScript. At the same time, the parser also marks any data-bindings that it runs into. Paperclip then creates an element from the template, and then runs the browser's native `cloneNode()` method each time
+Paperclip works by listening to the view controller, and updates the template if anything changes. Paperclip first translates HTML directly to JavaScript. At the same time, the parser also marks any data-bindings that it runs into. Paperclip then creates an element from the template, and then runs the browser's native `cloneNode()` method each time
 the template is needed. Here's an example `hello` template:
 
 ```html
@@ -38,28 +44,11 @@ Notice `refs` in the data-binding. This effectively tells paperclip exactly whic
 each data-binding, so there's no use of innerHTML, or any other operations that might re-create the element. This means you can use additional third-party libraries such as
 `jQuery` without worrying that any attached behavior might be removed after a user interaction.
 
-### Examples
-
-- [hello input](http://jsfiddle.net/JTxdM/67/)
-- [hello world](http://jsfiddle.net/JTxdM/68/)
-- [data-binding attributes](http://jsfiddle.net/JTxdM/71/)
-- [if / elseif / else block](http://jsfiddle.net/JTxdM/75/)
-- [html block helper](http://jsfiddle.net/JTxdM/76/)
-- [onEnter event](http://jsfiddle.net/JTxdM/77/)
-- [data-binding css](http://jsfiddle.net/JTxdM/81/)
-- [data-binding styles](http://jsfiddle.net/JTxdM/78/)
-- [binding helpers](http://jsfiddle.net/JTxdM/93/)
-- [manually updating templates](http://jsfiddle.net/JTxdM/79/)
-- [list benchmark](http://jsfiddle.net/JTxdM/65/) - 10k items
-- [dots benchmark](http://jsfiddle.net/JTxdM/62/)
-
-## Syntax
-
-Paperclip takes on a mustache / handlebars approach with variables, blocks, and pollyfills. Paperclip also allows basic inline javascript, similar to angular.js.
+-->
 
 ### Blocks
 
-Paperclip support variable blocks, just like Angular.js. [For example](http://jsfiddle.net/JTxdM/80/):
+Variable blocks as placeholders for information that might change. For example:
 
 
 {{#example}}
