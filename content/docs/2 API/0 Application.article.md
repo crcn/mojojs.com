@@ -225,7 +225,7 @@ called immediately before initializing the application
 
 #### override didInitialize()
 
-caled immediately after initializing the application
+called immediately after initializing the application
 
 #### Events
 

@@ -64,7 +64,8 @@ Returns a property on the bindable object
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var bindable = new mojo.Object({ city: { name: "SF" } });
+var bindable = require("bindable");
+var bindable = new bindable.Object({ city: { name: "SF" } });
 console.log(bindable.get("city"));      // { name: "SF" }
 console.log(bindable.get("city.name")); // SF
 -->
@@ -78,7 +79,8 @@ Sets a value to the bindable object
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var obj = new mojo.Object();
+var bindable = require("bindable");
+var obj = new bindable.Object();
 obj.set("city.name", "SF");
 console.log(obj.get("city.name")); // SF
 -->
@@ -92,7 +94,8 @@ sets multiple properties on the bindable object
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var person = new mojo.Object();
+var bindable = require("bindable");
+var person = new bindable.Object();
 person.setProperties({
   firstName: "Jon",
   lastName: "Doe"
@@ -109,6 +112,7 @@ Returns true if the bindable object has a given property
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
+var bindable = require("bindable");
 var obj = new bindable.Object({ count: 0, male: false, name: "craig" });
 
 console.log(obj.has("count")); // true
@@ -126,8 +130,9 @@ returns the context of the bindable object.
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
+var bindable = require("bindable");
 var context = {};
-var obj     = new mojo.Object(context);
+var obj     = new bindable.Object(context);
 
 console.log(obj.context() === false); // true
 console.log(obj.context() == context); // true
@@ -151,7 +156,8 @@ emits a new event
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var person = new mojo.Object();
+var bindable = require("bindable");
+var person = new bindable.Object();
 
 person.on("blarg", function (arg1, arg2) {
   console.log(arg1, arg2);
@@ -169,7 +175,8 @@ listens to one event, then disposes the listener.
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var person = new mojo.Object();
+var bindable = require("bindable");
+var person = new bindable.Object();
 
 person.once("blarg", function (arg1, arg2) {
   console.log(arg1, arg2);
@@ -199,7 +206,8 @@ returns all the listeners on the bindable object
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var obj = new mojo.Object({ name: "craig" });
+var bindable = require("bindable");
+var obj = new bindable.Object({ name: "craig" });
 
 // bind the name, but transform it to upper case
 obj.bind("name", { to: "name2", map: function (name) {
@@ -221,7 +229,8 @@ Executes a binding now
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var person = new mojo.Object({ name: "jeff" });
+var bindable = require("bindable");
+var person = new bindable.Object({ name: "jeff" });
 person.bind("name", function (name, oldName) {
   console.log("binding called, name is: ", name);
 }).now();
@@ -240,7 +249,8 @@ Disposes a binding
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var person = new mojo.Object({ name: "jeff" });
+var bindable = require("bindable");
+var person = new bindable.Object({ name: "jeff" });
 
 var binding = person.bind("name", function (name, oldName) {
   console.log("binding called, name is: ", name);
@@ -266,7 +276,8 @@ Bindable objects emit a few events:
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var person = new mojo.Object({ name: "jeff" });
+var bindable = require("bindable");
+var person = new bindable.Object({ name: "jeff" });
 
 person.on("change:name", function (newName) {
   console.log("the name changed to", newName);
