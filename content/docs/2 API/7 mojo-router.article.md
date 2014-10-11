@@ -60,7 +60,7 @@ the current location of the router
 
 
 
-Crowbar is a flexible routing system inspired by [express](http://expressjs.com/), and [director](https://github.com/flatiron/director). 
+Crowbar is a flexible routing system inspired by [express](http://expressjs.com/), and [director](https://github.com/flatiron/director).
 
 ### Example
 
@@ -305,5 +305,3 @@ returns TRUE of the both locations are the same
 redirects the location
 
 ```
-
-
