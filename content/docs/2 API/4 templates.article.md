@@ -11,6 +11,10 @@ Templates Provide the *view* in *MVC* - they're simply used to display informati
 Paperclip takes on a mustache / handlebars approach with variables, blocks, and pollyfills. Paperclip also allows basic inline javascript, similar to angular.js.
 
 <!--
+TODO - template API's here
+-->
+
+<!--
 
 this stuff should be somewhere else
 
@@ -46,7 +50,9 @@ each data-binding, so there's no use of innerHTML, or any other operations that 
 
 -->
 
-#### Blocks
+## Template API
+
+#### &#123;&#123; blocks &#125;&#125;
 
 Variable blocks as placeholders for information that might change. For example:
 
@@ -329,13 +335,28 @@ Executed when an event is fired on the DOM element. Here are all the available e
 - `onKeyDown` - called on key down
 - `onKeyUp` - called on key up
 - `onEnter` - called on enter key up
-- `onDepete` - called on delete key up
+- `onDelete` - called on delete key up
 
-[Basic example](http://jsfiddle.net/JTxdM/77/):
 
-```html
-<input type="text" data-bind={{ model: <~>name, onEnter: sayHello() }}></input>
-```
+{{#example}}
+{{#block:"index-pc"}}
+<!--
+<input type="text" class="form-control" placeholder="Type in a message" data-bind="{{ onEnter: enterPressed = true, focus: true }}"></input>
+
+{{#if: enterPressed }}
+  enter pressed
+{{/}}
+-->
+{{/}}
+{{#block:"index-js"}}
+<!--
+var bindable = require("bindable"),
+paperclip    = require("paperclip@0.5.8")();
+var template = paperclip.template(require("./index.pc"));
+preview.element.appendChild(template.bind().render());
+-->
+{{/}}
+{{/}}
 
 
 #### &#123;&#123; show: bool &#125;&#125;
@@ -347,34 +368,81 @@ Toggles the display mode of a given element. This is similar to the ` &#123;&#12
 
 Sets the css of a given element. [For example](http://jsfiddle.net/JTxdM/81/):
 
-```html
-<strong data-bind={{
+{{#example}}
+{{#block:"index-pc"}}
+<!--
+how hot is it (fahrenheit)?: <input type="text" class="form-control" data-bind="{{ model: <~>temp }}"></input> <br />
+
+<style type="text/css">
+.cool { color: blue;   }
+.warm { color: yellow; }
+.hot  { color: red;    }
+</style>
+
+<strong data-bind="{{
   css: {
-      cool    : temp > 0,
-      warm    : temp > 60,
-      hot     : temp > 90
+    cool    : temp > 0 || !temp,
+    warm    : temp > 60,
+    hot     : temp > 90
   }
-}}> It's pretty warm! </strong>
-```
+}}">
+  {{
+    temp > 60 ?
+    temp > 90 ? "it's hot" : "it's warm" :
+    "it's cool"
+  }}
+</strong>
+
+-->
+{{/}}
+{{#block:"index-js"}}
+<!--
+var bindable = require("bindable"),
+paperclip    = require("paperclip@0.5.8")(),
+context = new bindable.Object({
+  temp: 70
+});
+var template = paperclip.template(require("./index.pc"));
+preview.element.appendChild(template.bind(context).render());
+-->
+{{/}}
+{{/}}
 
 #### &#123;&#123; style: styles &#125;&#125;
 
-Sets the style of a given element. [For example](http://jsfiddle.net/JTxdM/78/):
+Sets the style of a given element.
 
-```
-<span data-bind={{
+{{#example}}
+{{#block:"index-pc"}}
+<!--
+color: <input type="text" data-bind="{{ model: <~>color }}" class="form-control"></input> <br />
+size: <input type="text" data-bind="{{ model: <~>size }}" class="form-control"></input> <br />
+<span data-bind="{{
   style: {
     color       : color,
     'font-size' : size
   }
-}}> Hello World </span>
-```
+}}">Hello World</span>
+-->
+{{/}}
+{{#block:"index-js"}}
+<!--
+var bindable = require("bindable"),
+paperclip    = require("paperclip@0.5.8")(),
+context = new bindable.Object({
+  temp: 70
+});
+var template = paperclip.template(require("./index.pc"));
+preview.element.appendChild(template.bind(context).render());
+-->
+{{/}}
+{{/}}
 
 #### &#123;&#123; disable: bool &#125;&#125;
 
 Toggles the enabled state of an element.
 
-```
+```html
 <button data-bind={{ disable: !formIsValid }}>Sign Up</button>
 ```
 
@@ -382,6 +450,32 @@ Toggles the enabled state of an element.
 
 Focuses cursor on an element.
 
-```
+```html
 <input data-bind={{ focus: true }}></input>
 ```
+
+### API
+
+
+#### paperclip(app)
+
+#### paperclip.modifier(modifierName, modifier)
+
+#### template paperclip.template(source)
+
+#### renderer template.bind(context)
+
+#### renderer.render()
+
+#### renderer.remove()
+
+#### paperclip.blockBinding(blockBindingClass)
+
+#### paperclip.nodeBinding(nodeBindingClass)
+
+#### paperclip.attrDataBinding(attrDataBindingClass)
+
+<!--
+TODO - Extended API
+- router API
+-->
