@@ -297,7 +297,7 @@ var Projects = models.Collection.extend({
     load: function (onLoad) {
         
       // simulate async latency
-      setTimeout(onLoad, 1000, null, [
+      setTimeout(onLoad, Math.random() * 1000, null, [
         { _id: "p1", name: "Sift.js" },
         { _id: "p2", name: "Awsm.js" },
         { _id: "p3", name: "Mojo.js" }
@@ -341,7 +341,7 @@ var Tags = models.Collection.extend({
       };
 
       // simulate async latency
-      setTimeout(onLoad, 1000, null, data[this.project._id]);
+      setTimeout(onLoad, Math.random() * 1000, null, data[this.project._id]);
     }
   }
 });
@@ -364,8 +364,9 @@ var models  = require("./models"),
 Application = require("mojo-application");
 
 var app = new Application();
-app.use(require("mojo-views"), require("mojo-paperclip"), require("mojo-models"));
+app.use(require("mojo-views@0.2.2"), require("mojo-paperclip@0.6.3"), require("mojo-models@0.3.4"));
 app.models.register(models);
+app.paperclip.blockBinding("each", require("./eachBlockBinding"));
 
 var user = app.models.create("user", { name: "Ryan Gosling" });
 
@@ -378,9 +379,55 @@ preview.element.appendChild(fragment);
 {{#block:"template-pc"}}
 <!--
 User: {{name}} <br />
-Num Projects: {{projects.length}} <br />
-First Project: {{projects.first | json }} <br />
-First Project's tags: {{projects.first.tags | json }}
+
+Projects: <br />
+<ul>
+  {{#each:projects}}
+    <li>
+      {{model.name}} <br />
+      Tags:
+      <ul>
+        {{#each:model.tags}}
+            <li>{{model.name}}</li>    
+        {{/}}
+      </ul>
+    </li>
+  {{/}}
+</ul>
+-->
+{{/}}
+{{#block:"eachBlockBinding-js"}}
+<!--
+var paperclip = require("paperclip"),
+views         = require("mojo-views@0.2.2");
+
+module.exports = paperclip.BaseBlockBinding.extend({
+  bind: function (context) {
+
+    var ItemView = views.Base.extend({
+      paper: this.contentTemplate.paper
+    });
+
+    this._view = new views.List({
+      modelViewClass: ItemView,
+      parent: context
+    });
+
+    this.section.append(this._view.render());
+
+    return paperclip.BaseBlockBinding.prototype.bind.call(this, context);
+  },
+  _onChange: function (properties) {
+
+    if (!properties || properties.__isBindableCollection || !properties.source) {
+      properties = {
+        source: properties || []
+      }
+    }
+
+    this._view.setProperties(properties);
+  }
+});
 -->
 {{/}}
 {{/}}

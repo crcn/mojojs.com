@@ -47,7 +47,7 @@ module.exports = paperclip.BaseBlockBinding.extend({
   },
   _onChange: function (properties) {
 
-    if (!properties || !properties.source) {
+    if (!properties || properties.__isBindableCollection || !properties.source) {
       properties = {
         source: properties || []
       }
