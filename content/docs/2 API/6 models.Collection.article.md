@@ -6,6 +6,11 @@
 
 Extends [bindable.Collection](/docs/api/bindablecollection) <br />
 
+### Installation
+
+```
+npm install mojo-models --save-exact
+```
 
 #### Collection(properties[, [application](/docs/api/application)])
 
