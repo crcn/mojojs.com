@@ -12,7 +12,7 @@ TODO - pull JSONP data from streams such as twitter
 -->
 
 Extends [bindable.Object](/docs/api/bindableobject) <br />
-See Also [Application](/docs/api/application), [Application]({{links.application}}) <br />
+See Also [models.Collection](/docs/api/modelscollection), [Application]({{links.application}}) <br />
 
 Models represent data, and implement properties, methods, and virtuals depending on how you need to interact with that data. Just like views, models are also extendable. 
 
