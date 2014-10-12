@@ -436,21 +436,24 @@ module.exports = paperclip.BaseBlockBinding.extend({
 
 Bindings allow you to compute properties on models.
 
-```javascript
-
-var bindable = require("bindable");
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var models = require("mojo-models@0.3.4");
 
 var Person = models.Base.extend({
   bindings: {
     "firstName, lastName": function (firstName, lastName) {
       this.set("fullName", firstName + " "+ lastName);
+      console.log("full name set to ", this.fullName);
     }
   }
+});
 
-var person = new Person({ firstName: "A", lastName: "B" });
-console.log(person.fullName); //
-document.body.appendChild(person.render());
-```
+var person = new Person({ firstName: "Natalie", lastName: "Portman" });
+-->
+{{/}}
+{{/}}
 
 <!--
 ## Unit Testing
