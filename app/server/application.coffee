@@ -15,7 +15,8 @@ class ClassDojoServerApplication extends ClassDojoApplication
     require("./routes"),
     require("./models"),
     require("./views"),
-    require("./plugins/docs")
+    require("./plugins/docs"),
+    require("./plugins/todosExample")
   ]
 
 

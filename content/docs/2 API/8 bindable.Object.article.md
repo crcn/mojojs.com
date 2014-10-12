@@ -53,6 +53,12 @@ person.bind("name", {
 
 -->
 
+### Installation
+
+```
+npm install bindable --save-exact
+```
+
 #### Object(context)
 
 creates a new bindable object

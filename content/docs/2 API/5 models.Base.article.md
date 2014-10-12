@@ -1,6 +1,9 @@
 {{
   properties: {
-    category: "api"
+    category: "api",
+    links: {
+      application: "/docs/api/application"
+    }
   }
 }}
 
@@ -9,95 +12,90 @@ TODO - pull JSONP data from streams such as twitter
 -->
 
 Extends [bindable.Object](/docs/api/bindableobject) <br />
+See Also [Application](/docs/api/application), [Application]({{links.application}}) <br />
 
-Models, like views, are plugin-based, meaning you can customize how models behave based on the properties defined in the class. You can also create your own plugins for models. By default, mojo-models come with a few: persist, virtuals, and bindings.
+Models represent data, and implement properties, methods, and virtuals depending on how you need to interact with that data. Just like views, models are also extendable. 
 
 ### Installation
 
 ```
-npm install mojo-models
+npm install mojo-models --save-exact
 ```
 
-### Features
-
-- easy to extend. register your own custom plugins to extend the functionality of models.
-
-### Examples
-
-- https://github.com/mojo-js/mojo-todomvc-example
-- [deserializing data](http://requirebin.com/?gist=d174776852d4f1a13bc4)
-- [loading models](http://requirebin.com/?gist=ef4c57b8004501d15447)
-- [collections](http://requirebin.com/?gist=516f703d3eeb719940a1)
-
-
-### See Also
-
-- [bindable.js](https://github.com/classdojo/bindable.js) - base class for models & collections
-- [mojo-application](https://github.com/mojo-js/mojo-application) - entry point to application
-
-## API
-
-#### Base(properties[, [application](https://github.com/mojo-js/mojo-application)])
-
-Extends [bindable.Object](https://github.com/mojo-js/bindable.js)
+#### Base(properties[, [application](/docs/api/application)])
 
 base model constructor
 
-- `properties` - properties to set on the model
-- `application` - (optional) mojo application
+- `properties` - values to set onto the view. This could be anything.
+- `application` - (optional) the [application]({{links.application}}). `Application.main` will be set if this is omitted.
 
-```javascript
-var models = require("mojo-models");
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var models = require("mojo-models@0.3.4");
 var model = new models.Base({ message: "Hello world!" });
 console.log(model.message);
-```
+-->
+{{/}}
+{{/}}
 
 #### data
 
 The raw data set on the model - this is usually transformed into something the model can
 use via `deserialize`.
 
-```javascript
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var models = require("mojo-models@0.3.4");
 var model = new models.Base({ data: { message: "Hello world!" }});
-consol.log(model.message); // Hello world!
+console.log(model.message); // Hello world!
 console.log(model.data); // { message: "Hello world!" }
-```
+model.set("data", { message: "Hola Mundo!" });
+console.log(model.message); // Hola Mundo!
+console.log(model.data); // { message: "Hola Mundo!" }
+-->
+{{/}}
+{{/}}
 
 #### deserialize(data)
 
-deserializes data once `data` is set on the model
+deserialize takes the `data` property on the model, and transforms the returned values as *additional*
+properties on the model. 
 
-Example: http://requirebin.com/?gist=d174776852d4f1a13bc4
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var models  = require("mojo-models"),
+Application = require("mojo-application");
 
-```javascript
-
+var app = new Application();
+app.use(models);
 
 var Person = models.Base.extend({
-  deserialize: (data) {
+  deserialize: function (data) {
     return {
       firstName: data.firstName,
       lastName: data.lastName,
-      fullName: data.firstName + " " + data.lastName
+      fullName: data.firstName + " " + data.lastName,
+      createdAt: new Date(data.createdAt)
     };
   }
 });
 
-var person = new Person({
-  data: {
-    firstName: "Craig",
-    lastName: "Condon"
-  }
-});
+// first set the properties on the instance
+var person = new Person({ firstName: "Craig", lastName: "Jefferds" }, app);
 
-console.log(person.fullName); // Craig Condon
+console.log(person);
 
-person.set("data", {
-  firstName: "A",
-  lastName: "B"
-});
+// set the data on the person, deserializing the data, and setting
+// to the model again
+person.set("data", { firstName: "Sarah", lastName: "Smith", createdAt: "2014-10-12T18:24:15.944Z" });
 
-console.log(person.fullName); // A B
-```
+console.log(person);
+-->
+{{/}}
+{{/}}
 
 #### base.serialize()
 
@@ -109,58 +107,152 @@ serializes data. This is an alias to `toJSON`
 
 Persistence layer for models / collections. Also adds the methods `load`, `save`, and `remove`.
 
-```javascript
-var superagent = require("superagent");
 
-var Person = models.Base.extend({
+{{#example}}
+{{#block:"todo-js"}}
+<!--
+var models = require("mojo-models"),
+transport  = require("./transport");
+
+var Todo = models.Base.extend({
   persist: {
     load: function (onLoad) {
-      superagent.get("/people/" + this._id).end(onLoad);
-    },
-    remove: function (onRemove) {
-      superagent.del("/people/" + this._id).end(onRemove);
+      transport.get("/api/todos/" + this._id, onLoad);
     },
     save: function (onSave) {
       if (this._id) {
-        superagent.put("/people/" + this._id).body(this.serialize()).end(onSave);
+        transport.put("/api/todos/" + this._id, { body: this.serialize() }, onSave);
       } else {
-        superagent.post("/people").body(this.serialize()).end(onSave);
+        transport.post("/api/todos", { body: this.serialize() }, onSave);
       }
+    },
+    remove: function (onRemove) {
+      transport.del("/api/todos/" + this._id, onRemove);
+    }
+  },
+  deserialize: function (data) {
+    return {
+      _id: data._id,
+      text: data.text,
+      createdAt: new Date(data.createdAt)
     }
   },
   serialize: function () {
     return {
-      firstName: this.firstName,
-      lastName: this.lastName
-    };
+      _id: this._id,
+      text: this.text
+    }
   }
 });
 
-var person = new Person({ _id: "person1" });
+module.exports = Todo;
+-->
+{{/}}
+{{#block:"transport-js"}}
+<!--
+var superagent = require("superagent");
 
-person.set("firstName", "Craig");
+module.exports = {
+  get: function (path, options, complete) {
+    superagent.
+    get(path).
+    query(options.query || {}).
+    end(function (err, response) {
+      if (err) return complete(err);
+      complete(err, response.body);
+    });   
+  },
+  put: function (path, options, complete) {
+    superagent.
+    put(path).
+    send(options.query || {}).
+    end(function (err, response) {
+      if (err) return complete(err);
+      complete(err, response.body);
+    });   
+  },
+  post: function (path, options, complete) {
+    superagent.
+    post(path).
+    send(options.body || {}).
+    end(function (err, response) {
+      if (err) return complete(err);
+      complete(err, response.body);
+    });   
+  },
+  del: function (path, complete) {
+    superagent.
+    del(path).
+    end(function (err, response) {
+      if (err) return complete(err);
+      complete(err, response.body);
+    });   
+  }
+}
+-->
+{{/}}
+{{#block:"index-js"}}
+<!--
+var Todo   = require("./todo"),
+paperclip  = require("paperclip");
 
-person.save(); // POST /people/person1 { firstName: "Craig" }
-person.load(); // loads the s
-person.remove(); // removes the model
-```
+var todo = new Todo();
 
+todo.on("willSave", function () {
+  console.log("saving ", todo);
+});
+
+todo.on("didSave", function () {
+  console.log("saved ", todo);
+});
+
+todo.on("willRemove", function () {
+  console.log("removing ", todo);
+});
+
+todo.on("didRemove", function () {
+  console.log("removed ", todo);
+
+  // remove _id to remove the button
+  todo.set("_id", void 0);
+});
+
+var fragment = paperclip.template(require("./template.pc")).bind(todo).render();
+
+preview.element.appendChild(fragment);
+-->
+{{/}}
+{{#block:"template-pc"}}
+<!--
+<input type="text" class="form-control" placeholder="add a new todo!" data-bind="{{ model: <~>text, onEnter: save() }}"></input>
+{{#if:_id}}
+<input type="submit" class="btn btn-default" value="remove todo" data-bind="{{ onClick: remove() }}"></input>
+{{/}}
+-->
+{{/}}
+{{/}}
 #### model.load(onLoad)
 
-calls the `persist.load` function, and sets result to `data` to be deserialized on the model. Note that
-load can be called only once. Use `reload` to reload the model
+Defined when `persist` is present, and calls `persist.load`. 
+
+- `onLoad` - onLoad callback function. Expects an `(err, data)` response. `data` is set as the `data` property
+on the model, and gets `deserialized`.
+
+Note that this method can be called only *once* during the lifetime of the model. If you want to reload the 
+model, you'll need to call the `reload` method.
 
 #### model.reload(onReload)
 
-reloads the model
+Reloads the model. This can be called many times.
 
 #### model.save(onSave)
 
-calls the `persist.save` function, and sets result to `data` to be deserialized on the model.
+Similar to `model.load`. Calls the `persist.save` function, and sets result to `data` to be deserialized on the model.
 
 #### model.remove(onRemove)
 
-removes the model
+Removes the model. Note that if the model is part of a `models.Collection`, the model will automatically
+be removed from the collection.
 
 #### Persist events
 
@@ -169,57 +261,129 @@ removes the model
 - `willRemove` - emitted when the model is about to be removed
 - `didRemove` - emitted when the model has been removed
 
-
-removes the model
+See above for example.
 
 #### virtuals
 
-Virtual properties all you to load external resources as they're needed. This is especially useful when
-data-binding models to views.
+Virtual properties allow you to load external resources on demand. This is especially useful when you're
+data-binding a model property to a view layer, and only what to load what the user currently needs. 
 
+Note that virtual properties are triggered when they are data-bound.
 
-```javascript
+<!-- 
+TODO - need production apps as examples
+-->
 
-var superagent = require("superagent");
+{{#example}}
+{{#block:"models-js"}}
+<!--
+var models = require("mojo-models@0.3.4");
 
-var Friends = models.Collection.extend({
+var User = models.Base.extend({
+  virtuals: {
+    projects: function (onLoad) {
+      this.application.models.create("projects", {
+        user: this
+      }).load(onLoad);
+    }
+  }
+});
 
-  // creates a new person for each item in .data
-  createModel: function (options) {
-    return new Person(options, this.application);
+var Projects = models.Collection.extend({
+  createModel: function (properties) {
+    return this.application.models.create("project", properties);
   },
   persist: {
-
-    // executed when .load, or .reload is called
-    load: function (complete) {
-      superagent.get("/person/" + this.friendee._id + "/friends").end(function (err, result) {
-        complete(null, result);
-      });  
+    load: function (onLoad) {
+        
+      // simulate async latency
+      setTimeout(onLoad, 1000, null, [
+        { _id: "p1", name: "Sift.js" },
+        { _id: "p2", name: "Awsm.js" },
+        { _id: "p3", name: "Mojo.js" }
+      ]);
     }
   }
 });
 
-var Person = models.Base.extend({
+var Project = models.Base.extend({
   virtuals: {
-
-    // triggered on bind()
-    friends: function (onLoad) {
-      new Friends({ friendee: this }).load(onLoad);
+    tags: function (onLoad) {
+      this.application.models.create("tags", {
+        project: this
+      }).load(onLoad);
     }
   }
 });
 
-var person = new Person({ _id: "person1" });
+var Tags = models.Collection.extend({
+  createModel: function (properties) {
+    return this.application.models.create("project", properties);
+  },
+  persist: {
+    load: function (onLoad) {
+      
+      var data = {
+        p1: [
+          { _id: "t1", name: "filtering" },
+          { _id: "t2", name: "mongodb" },
+          { _id: "t3", name: "syntactic" }
+        ],
+        p2: [
+          { _id: "t1", name: "ec2" },
+          { _id: "t2", name: "aws" },
+          { _id: "t3", name: "mongodb" }
+        ],
+        p3: [
+          { _id: "t1", name: "framework" },
+          { _id: "t2", name: "JavaScript" }
+        ]
+      };
 
-console.log(person.get("friends")); // should be undefined
-
-// activates virtual property, and calls /person/person1/friends API
-person.bind("friends", function (friends) {
-  this.dispose(); // dispose the binding immediately
-
+      // simulate async latency
+      setTimeout(onLoad, 1000, null, data[this.project._id]);
+    }
+  }
 });
 
-```
+var Tag = models.Base.extend({});
+
+module.exports = {
+  user     : User,
+  projects : Projects,
+  project  : Project,
+  tags     : Tags,
+  tag      : Tag
+};
+
+-->
+{{/}}
+{{#block:"index-js"}}
+<!--
+var models  = require("./models"),
+Application = require("mojo-application");
+
+var app = new Application();
+app.use(require("mojo-views"), require("mojo-paperclip"), require("mojo-models"));
+app.models.register(models);
+
+var user = app.models.create("user", { name: "Ryan Gosling" });
+
+var fragment = app.paperclip.template(require("./template.pc")).bind(user).render();
+
+preview.element.appendChild(fragment);
+
+-->
+{{/}}
+{{#block:"template-pc"}}
+<!--
+User: {{name}} <br />
+Num Projects: {{projects.length}} <br />
+First Project: {{projects.first | json }} <br />
+First Project's tags: {{projects.first.tags | json }}
+-->
+{{/}}
+{{/}}
 
 #### bindings
 

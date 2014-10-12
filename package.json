@@ -88,7 +88,8 @@
     "traverse": "^0.6.6",
     "type-component": "0.0.1",
     "ua-parser": "^0.3.3",
-    "verify": "^0.1.2"
+    "verify": "^0.1.2",
+    "xss": "^0.1.12"
   },
   "devDependencies": {
     "awsm": "0.0.44",

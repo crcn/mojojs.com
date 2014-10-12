@@ -8,6 +8,12 @@ Extends [bindable.Object](/docs/coreapibindableobject)
 
 bindable.Collection operates like arrays, except they're watchable if anything changes.
 
+### Installation
+
+```
+npm install bindable --save-exact
+```
+
 #### Collection(source)
 
 The constructor

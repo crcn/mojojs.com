@@ -23,7 +23,7 @@ This allows you to fully customize exactly how view controllers behave. See the 
 npm install mojo-views --save-exact
 ```
 
-#### View(properties[, [application]({{links.application}})])
+#### Base(properties[, [application]({{links.application}})])
 
 The view constructor.
 
