@@ -14,7 +14,7 @@
     "url": "git://github.com/mojo-js/mojojs.git"
   },
   "author": "",
-  "license": "BSD-2-Clause",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/classdojo/classdojo.com/issues"
   },
