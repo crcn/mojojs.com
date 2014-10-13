@@ -417,6 +417,12 @@ app.animate({
 {{/}}
 {{/}}
 
+<!--
+#### router
+
+####
+--> 
+
 #### paperclip
 
 Added property. See [paperclip template extension](/docs/api/templates) for more details.

@@ -1,9 +1,9 @@
 <div class="col-sm-3 sidebar no-padding">
   <div class="sidebar-inner">
 
-    <div class="searchbar">
+    <!--div class="searchbar">
       <input type="text" placeholder="Search Docs..." class="form-control" data-bind="{{ model: <~>searchQuery, onEnter: search() }}" />
-    </div>
+    </div-->
 
     <!--
 

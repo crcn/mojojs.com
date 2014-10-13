@@ -20,10 +20,6 @@ HTTP router which helps maintain application state.
 
 **See [crowbar](https://github.com/mojo-js/crowbar.js) for extended documentation**
 
-## Paperclip API
-
-TODO
-
 ## Application API
 
 #### router(application)
