@@ -13,9 +13,10 @@ if process.browser
 
   window.jQuery = window.$ = require("jquery");
   require("jquery.transit");
+  require("./segment");
   require("jquery.placeholder");
   require("loggly");
-  require("./heap");
+  # require("./heap");
 
   
   require("requestAnimationFrame");
