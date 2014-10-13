@@ -10,209 +10,256 @@ HTTP router which helps maintain application state.
 
 - https://github.com/mojo-js/mojo-todomvc-example
 
-### See Also
 
-- [crowbar](https://github.com/mojo-js/crowbar.js) - routing engine used
-- [paperclip](https://github.com/mojo-js/paperclip.js) - template engine for links
-- [mojo-views](https://github.com/mojo-js/mojo-views)
+### Playground Example
 
-## API
-
-**See [crowbar](https://github.com/mojo-js/crowbar.js) for extended documentation**
-
-## Application API
-
-#### router(application)
-
-registers `mojo-router` to the [mojo-application](https://github.com/mojo-js/mojo-application), which will add a few properties
-/ methods onto the application.
-
-```javascript
-var Application = require("mojo-application"),
-router         = require("mojo-router");
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var Application = require("mojo-application");
 
 var app = new Application();
-app.use(router);
-```
 
-#### application.router
+app.use(require("mojo-bootstrap"));
+app.use(require("mojo-router"));
 
-The [crowbar](https://github.com/mojo-js/crowbar.js) router instance
-
-```javascript
-application.router.add({
-  "/home": {
+app.router.add({
+  "/": {
+    name: "home",
     states: {
       main: "home",
       home: "contact"
     }
-  }
-});
-```
-
-#### application.location
-
-the current location of the router
-
-
-
-Crowbar is a flexible routing system inspired by [express](http://expressjs.com/), and [director](https://github.com/flatiron/director).
-
-### Example
-
-```javascript
-var router = require("crowbar")();
-
-function auth (location, next) {
-  // authenticate here
-}
-
-router.param("classroom", function (location, next) {
-  // load classroom
-  next(null, classroom);
-});  
-
-router.add({
-  enter: auth,
-  "/classes/:classroom": {
-    "/reports": {
-      enter: function (location, next) {
-        // do stuff with route
-      }
-    }
-  }
-});
-
-router.redirect("/classes/classid/reports", function (err, location) {
-  console.log(location.get("params.classroom")); // classroom model
-  console.log(location.get("pathname")); // /classes/classid/reports
-  console.log(location.get("url")); // same as pathname, but also includes query params
-});
-```
-
-### Entering Routes
-
-Called when a route is entered.
-
-```javascript
-router.add({
-  "/home": {
-    enter: function (location, next) {
-      // do stuff
-      next(); // continue
-    }
-  }
-});
-
-router.redirect("/home", function (err, location) {
-
-});
-```
-
-You can also specify multiple enter handlers:
-
-```javascript
-router.add({
-  "/home": {
-    enter: [auth, function (location, next) {
-      // do stuff
-      next(); // continue
-    }]
-  }
-});
-```
-
-## API
-
-
-### Exiting Routes
-
-Useful if you want to teardown a route before entering another.
-
-```javascript
-router.add({
-  "/contact": {
-    exit: function (location, next) {
-      next();
-    },
-    enter: function (location, next) {
-      next();
-    }
   },
-  "/home": {
+  "/login": {
+    name: "login",
+    states: {
+      main: "auth",
+      auth: "login"
+    }
+  }
+});
+
+// bind these to views.States
+app.bind("router.location", function (location) {
+    console.log(location.states);
+})
+
+app.bootstrap({
+  useHistory: false
+}, function () {
+    app.router.redirect("home");
+    app.router.redirect("login");
+});
+-->
+{{/}}
+{{/}}
+
+### Route Syntax
+
+
+
+
+#### route.enter
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var Application = require("mojo-application");
+
+var app = new Application();
+
+app.use(require("mojo-bootstrap"));
+app.use(require("mojo-router"));
+
+app.router.add({
+  "/people/:person._id": {
     enter: function (location, next) {
-      next(); // continue
+      console.log("enter route");
+      console.log(location.get("params"));
+      next();
+    }
+  }
+});
+app.bootstrap({
+  useHistory: false
+}, function () {
+  app.router.redirect("/people/person1", function () {
+    console.log("redirected");
+  });
+});
+-->
+{{/}}
+{{/}}
+
+#### route.name
+
+Name of the route. It's recommended that you redirect with this incase the route ever changes.
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var Application = require("mojo-application");
+
+var app = new Application();
+
+app.use(require("mojo-bootstrap"));
+app.use(require("mojo-router"));
+
+app.router.add({
+  enter: function (location, next) {
+    console.log("enter root route");
+    next();
+  },
+  "/people": {
+    "/:person._id": {
+      enter: function (location, next) {
+        console.log("enter person route");
+        next();
+      },
+      "/friends": {
+        enter: function (location, next) {
+          console.log("enter friends route");
+          next();
+        },
+        states: {
+          person: "friends"
+        }
+      },
+      states: {
+        people: "person"
+      }
+    },
+    states: {
+      home: "people"
     }
   }
 });
 
-router.redirect("/contact");
-router.redirect("/home"); // exit handler called
-```
-
-Just like enter handlers, you can specify multiple exit handlers
-
-### Route States
-
-States are properties set by the router which may modify your application state. This is used specifically in mojo.js.
-
-```javascript
-router.add({
-  "/classes/:classroom": {
-    states: { app: "classes" },
-    "/reports": {
-      states: { classes: "reports" }
-    }
-  }
+app.router.bind("location", function (location) {
+  console.log("current location states", location.states);
+})
+app.bootstrap({
+  useHistory: false
+}, function () {
+  app.router.redirect("/people",function () {
+    app.router.redirect("/people/person1",function () {
+      app.router.redirect("/people/person1/friends",function () {
+      });
+    });
+  });
 });
+-->
+{{/}}
+{{/}}
 
-router.bind("location.states", function (states) {
-  // { app: "classes", classes: "reports" }
-});
+#### route.states
 
-router.redirect("/classes/classid/reports");
-```
+The application state set by the route. This is used to change your UI state. See
+example above. 
 
-### Parameters
+<!--
+TODO - show actual example
+-->
+
+#### route parameters
 
 Just like express.js, you have the ability to create parameter loaders.
 
-```javascript
-router.param("classroom", function (location, next) {
-  console.log("location.params.classroom"); // classid
-  next(null, classroomModel);
-});
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var Application = require("mojo-application");
 
-router.add({
-  "/classes/:classroom": {}
-});
+var app = new Application();
 
-router.redirect("/classes/classid", function (err, location) {
-  console.log(location.get("params.classroom")); // classroomModel
+app.use(require("mojo-bootstrap"));
+app.use(require("mojo-router"));
+
+app.router.param("person._id", function (location, next) {
+  location.person = { name: "Ben Stiller" };
+  console.log("passed through person._id param");
+  next();
 })
-```
 
-### Naming Routes
+app.router.add({
+  "/people/:person._id": {
+  }
+});
+app.bootstrap({
+  useHistory: false
+}, function () {
+  app.router.redirect("/people/person1",function () {
+    console.log("redirected");
+  });
+});
+-->
+{{/}}
+{{/}}
 
-```javascript
-router.add({
-  "/classes/:classroom": {
-    name: "classroom"
+#### nested routes
+
+You can also nest routes. 
+
+
+{{#example}}
+{{#block:"index-js"}}
+<!--
+var Application = require("mojo-application");
+
+var app = new Application();
+
+app.use(require("mojo-bootstrap"));
+app.use(require("mojo-router"));
+
+app.router.add({
+  enter: function (location, next) {
+    console.log("enter root route");
+    next();
+  },
+  "/people": {
+    "/:person._id": {
+      enter: function (next) {
+        console.log("enter person route");
+        next();
+      },
+      "/friends": {
+        enter: function (next) {
+          console.log("enter friends route");
+          next();
+        },
+        states: {
+          person: "friends"
+        }
+      },
+      states: {
+        people: "person"
+      }
+    },
+    states: {
+      home: "people"
+    }
   }
 });
 
-router.redirect("classroom", {
-  params: {
-    classroom: "classid"
-  }
-}, function (err, location) {
-
+app.router.bind("location", function (location) {
+  console.log("current location states", location.states);
+})
+app.bootstrap({
+  useHistory: false
+}, function () {
+  app.router.redirect("/people",function () {
+    app.router.redirect("/people/person1",function () {
+      app.router.redirect("/people/person1/friends",function () {
+      });
+    });
+  });
 });
-```
+-->
+{{/}}
+{{/}}
 
-### listeners
-
-Kubrick comes with an HTTP listener by default, which is loaded automatically in the browser.
+### API
 
 #### router.redirect(pathnameOrRouteName[, options], complete)
 
@@ -226,10 +273,6 @@ Kubrick comes with an HTTP listener by default, which is loaded automatically in
 
 adds new routes to the router
 
-#### router.use(plugins...)
-
-adds plugins to the router
-
 #### router.location
 
 The current location of the router
@@ -238,25 +281,6 @@ The current location of the router
 router.bind("location", function () {
   // called whenever the location changes
 });
-```
-
-#### Routes router.routes
-
-Routes property
-
-#### routes.find(query)
-
-Finds a route based on the query.
-
-```javascript
-router.add({
-  "/home": {
-    name: "homeRoute"
-  }
-});
-
-console.log(router.routes.find({ pathname: "/home" })); // /home route
-console.log(router.routes.find({ pathname: "homeRoutek " })); // /home route
 ```
 
 #### location.query
@@ -291,10 +315,6 @@ router.redirect("/home?hello=blah");
 #### location.pathname
 
 just the pathname of the location
-
-#### location.equals(location)
-
-returns TRUE of the both locations are the same
 
 #### location.redirect(pathname, options)
 

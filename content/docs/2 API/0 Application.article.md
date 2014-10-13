@@ -417,11 +417,9 @@ app.animate({
 {{/}}
 {{/}}
 
-<!--
 #### router
 
-####
---> 
+Added property from mojo-router. See [HTTP Router docs](/docs/api/router) for usage.
 
 #### paperclip
 
