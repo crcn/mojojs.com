@@ -97,7 +97,7 @@
                 Released under the <a href="http://opensource.org/licenses/mit-license.php">MIT License</a>
                 <br />
 
-                Built by <a href="http://github.com/crcn">Craig Condon</a> at <a href="http://classdojo.com">ClassDojo</a>
+                Built by <a href="http://github.com/crcn">Craig Condon</a>
               </span>
             </div>
             <div class="col-md-5">
