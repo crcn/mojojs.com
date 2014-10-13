@@ -300,6 +300,7 @@ router.redirect("/home?hello=blah");
 
 similar to `location.query`. `location.params` are taken from the route parameters.
 
+
 #### location.url
 
 pathname + query params.
