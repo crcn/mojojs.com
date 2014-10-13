@@ -54,7 +54,6 @@ console.log("no preview available");
 -->
 {{/}}
 {{/}}
-```
 
 <!--
 Bower
@@ -70,26 +69,51 @@ the application instance
 
 the property set by the [views](/docs/api/viewsbase) plugin. See http://www.mojojs.com/docs/api/application#views for documentation.
 
+```javascript
+mojo.application.models.register({
+  main: MainView,
+  confirmPopup: ComfirmPopupView,
+});
+```
+
 #### application.paperclip
 
 the property set by the [template](/docs/api/templates) plugin. 
+
+```javascript
+var tpl = application.paperclip.template("hello {{name}}");
+document.body.appendChild(tpl.bind({ name: "Jim Carrey" }).render());
+```
 
 #### application.models
 
 the property set by the [models](/docs/api/modelsbase) plugin. See http://www.mojojs.com/docs/api/application#models for documentation. 
 
+```javascript
+mojo.application.models.register({
+  person: PersonModel,
+  people: PeopleCollection
+});
+```
+
 #### models
 
 The models namespace. Contains `Base`, `Collection`.
+
+```javascript
+var people = new mojo.models.Collection([
+  new mojo.models.Base({ name: "Johnny Depp"    }),
+  new mojo.models.Base({ name: "Tom Cruise"     }),
+  new mojo.models.Base({ name: "Angelina Jolie" })
+]);
+```
 
 #### views
 
 The views namespace. Contains `Base`, `Stack`, and `List`.
 
-#### Object
-
-the [bindable.Object](/docs/api/bindableobject) class.
-
-#### Collection
-
-the [bindable.Collection](/docs/api/bindablecollection) class.
+```javascript
+var baseView = mojo.views.Base();
+var stackView = mojo.views.Stack();
+var listView = mojo.views.List();
+```
