@@ -12,6 +12,7 @@
     <meta property="og:image" content="http://wwww.mojojs.com/img/square-logo.png" />
     <meta name="Description" content="A non-opinionated, totally customizable JavaScript framework designed for writing programs that scale across any platform." />
 
+
   </head>
   <body>
 
@@ -30,7 +31,7 @@
             <a href="/docs/getting-started/installation">Download</a>
             <!--a href="/blog">Blog</a-->
             <a href="http://github.com/mojo-js">Github</a>
-            <a href="https://groups.google.com/forum/#!forum/mojojs">Community</a>
+            <!--a href="https://groups.google.com/forum/#!forum/mojojs">Community</a-->
           </div>
         </div>
 
