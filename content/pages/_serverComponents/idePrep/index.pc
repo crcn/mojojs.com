@@ -5,6 +5,7 @@
     projectName: projectName,
     showPreview: showPreview,
     tabs: tabs,
-    compile: compile
+    compile: compile,
+    theme: theme
   }
 }}

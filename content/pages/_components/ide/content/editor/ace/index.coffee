@@ -2,6 +2,7 @@ if process.browser
   ace = require "brace"
   require("brace/mode/javascript")
   require("brace/mode/html")
+  require("brace/theme/tomorrow_night")
   require("brace/theme/tomorrow")
 else
   ace = 
@@ -39,7 +40,7 @@ class EditorView extends views.Base.extend({
     return unless process.browser
     div = document.createElement "div"
     @editor = ace.edit div
-    @editor.setTheme("ace/theme/tomorrow")
+    @editor.setTheme("ace/theme/" + (this.get("theme") || "tomorrow"))
     @editor.getSession().setUseWorker(false)
     @editor.renderer.setShowGutter(false)
     @editor.getSession().setUseWrapMode(true)
