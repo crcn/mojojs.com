@@ -498,4 +498,8 @@ Parses a template.
 
 Binds a template, and returns a document fragment.
 
-**For extended paperclip documentation, see [Core API](/docs/core-api)**
+**For core paperclip documentation, see [Core API](/docs/core-api)**
+
+<!--
+extended API - router docs
+-->
