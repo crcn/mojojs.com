@@ -320,5 +320,3 @@ just the pathname of the location
 #### location.redirect(pathname, options)
 
 redirects the location
-
-```
