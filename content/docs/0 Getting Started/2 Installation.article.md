@@ -12,6 +12,8 @@ The **easiest** way to start playing around with MojoJS is to first download the
 Once you've downloaded the pre-bundled version, head over to the `/examples` directory and open any-one of them in your browser to start
 tinkering around.
 
+You can also checkout the [mojo](/docs/api/mojo) docs for additional information on how to use the pre-bundled package.
+
 
 ## Starter Kit
 

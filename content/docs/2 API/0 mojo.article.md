@@ -7,7 +7,7 @@
 See Also [Application](/docs/api/application), [models.Base](/docs/api/modelsbase), [models.Collection](/docs/api/modelscollection), [views.Base](/docs/api/viewsbase), [views.List](/docs/api/viewslist), [views.Stack](/docs/api/viewsstack), [router](/docs/api/router) <br />
 
 
-This package comes pre-bundled with all the default Mojo plugins, including the [views](/docs/api/viewsbase), [models](/docs/api/viewsbase), [template engine](/docs/api/templates), and [http router](/docs/api/viewsbase)
+This package comes pre-bundled with all the default Mojo plugins, including the [views](/docs/api/viewsbase), [models](/docs/api/viewsbase), [template engine](/docs/api/templates), and [http router](/docs/api/viewsbase).
 
 
 ### Installation
