@@ -151,20 +151,46 @@
       </div>
     </div>
 
+    <!--div class="container content core-feature supported-browsers">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h3>Supported Browsers</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="browsers">
+            <div class="browser">
+              <i class="icon ie"></i> IE &gt;= 8
+            </div>
+            <div class="browser">
+              <i class="icon chrome"></i> Chrome &gt;= 15
+            </div>
+            <div class="browser">
+              <i class="icon safari"></i> Safari &gt;= 5
+            </div>
+            <div class="browser">
+              <i class="icon opera"></i> Opera &gt;= 12
+            </div>
+          </div>
+        </div>
+      </div>
+    </div-->
 
-
-
-    <div class="features">
-      <div class="features-center">
-        <h2>You should try Mojo if you like:</h2>
-        <ul>
-          <li>Compatible with existing libraries</li>
-          <li>Non-opinionated</li>
-          <li>Customizable</li>
-          <li>Write once, run on any platform</li>
-          <li>straight-forward, explicit API</li>
-        </ul>
+    <div class="bottom-feature">
+      <div class="container content core-feature">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <h3>Used by millions of people</h3>
+            <p class="subheader">
+              Mojo was originally started at <a href="http://classdojo.com">ClassDojo</a> in 2012 to build rich web, and server-side applications. The framework now supports more than <strong>35 million</strong> happy users around the world.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+
+
+
   {{/}}
 {{/}}
