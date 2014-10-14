@@ -59,7 +59,7 @@ person.bind("name", {
 npm install bindable --save-exact
 ```
 
-#### Object(context)
+#### Object(properties)
 
 creates a new bindable object
 
@@ -70,10 +70,12 @@ Returns a property on the bindable object
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var bindable = require("bindable");
-var bindable = new bindable.Object({ city: { name: "SF" } });
-console.log(bindable.get("city"));      // { name: "SF" }
-console.log(bindable.get("city.name")); // SF
+var bindable = require("bindable@0.6.1");
+var obj = new bindable.Object({ city: { name: "SF" } });
+console.log(obj.get("city"));      // { name: "SF" }
+console.log("no getter", bindable.city); // { name: "SF" }
+console.log(obj.get("city.name")); // SF
+console.log("no getter", bindable.city.name); // { name: "SF" }
 -->
 {{/}}
 {{/}}
@@ -85,7 +87,7 @@ Sets a value to the bindable object
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var bindable = require("bindable");
+var bindable = require("bindable@0.6.1");
 var obj = new bindable.Object();
 obj.set("city.name", "SF");
 console.log(obj.get("city.name")); // SF
@@ -100,7 +102,7 @@ sets multiple properties on the bindable object
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var bindable = require("bindable");
+var bindable = require("bindable@0.6.1");
 var person = new bindable.Object();
 person.setProperties({
   firstName: "Jon",
@@ -118,35 +120,13 @@ Returns true if the bindable object has a given property
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var bindable = require("bindable");
+var bindable = require("bindable@0.6.1");
 var obj = new bindable.Object({ count: 0, male: false, name: "craig" });
 
 console.log(obj.has("count")); // true
 console.log(obj.has("male")); // true
 console.log(obj.has("name")); // true
 console.log(obj.has("city")); // false
--->
-{{/}}
-{{/}}
-
-#### Object context()
-
-returns the context of the bindable object.
-
-{{#example:"test"}}
-{{#block:"index-js"}}
-<!--
-var bindable = require("bindable");
-var context = {};
-var obj     = new bindable.Object(context);
-
-console.log(obj.context() === false); // true
-console.log(obj.context() == context); // true
-
-// change context to self
-obj.context(obj);
-
-console.log(obj.context() === obj); // true
 -->
 {{/}}
 {{/}}
@@ -162,7 +142,7 @@ emits a new event
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var bindable = require("bindable");
+var bindable = require("bindable@0.6.1");
 var person = new bindable.Object();
 
 person.on("blarg", function (arg1, arg2) {
@@ -181,7 +161,7 @@ listens to one event, then disposes the listener.
 {{#example:"test"}}
 {{#block:"index-js"}}
 <!--
-var bindable = require("bindable");
+var bindable = require("bindable@0.6.1");
 var person = new bindable.Object();
 
 person.once("blarg", function (arg1, arg2) {
