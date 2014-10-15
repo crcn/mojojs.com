@@ -25,11 +25,7 @@ module.exports = function (app) {
 
     r.init();
 
-    if (!process.browser) return next();
-
-    r.bind("location", { max: 1, to: function () {
-      next();
-    }}).now();
+    next();
   });
 
 

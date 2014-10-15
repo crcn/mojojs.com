@@ -31,12 +31,6 @@ describe("base/core/basic#", function () {
     expect(view.c).to.be("d");
   });
 
-  it("the context of the view is itself", function () {
-    var view = new views.Base({ a: "b" });
-    expect(view.context()).to.be(view);
-    expect(view.get("a")).to.be("b");
-  })
-
   it("has a 'this' property", function () {
     var view = new views.Base();
     expect(view["this"]).to.be(view);

@@ -168,7 +168,7 @@ describe("collection#", function () {
     }, app);
 
     c.once("didUpdate", function(data) { 
-      expect(data.create[0]).to.be(c.at(0));
+      expect(data.insert[0]).to.be(c.at(0));
       next(); 
     });
 
@@ -278,7 +278,7 @@ describe("collection#", function () {
 
 
     c.once("didUpdate", function(data) { 
-      expect(data.create[0]._id).to.be("model2");
+      expect(data.insert[0]._id).to.be("model2");
       next(); 
     });
 

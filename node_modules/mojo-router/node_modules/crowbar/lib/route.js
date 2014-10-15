@@ -104,7 +104,7 @@ bindable.Object.extend(Route, {
     }
 
     var pathname = this.pathname,
-    pcontext      = params.context();
+    pcontext      = params;
 
     var paramParts = pathname.match(/\:[^\/]+/g) || [];
 

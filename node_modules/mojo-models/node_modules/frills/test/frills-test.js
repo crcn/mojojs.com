@@ -124,6 +124,38 @@ describe("frills#", function () {
 
   });
 
+  it("can stop inheritance", function () {
+    var p = function() {
+
+    };
+
+    protoclass(p);
+
+    var c = p.extend({
+      subChild: true
+    });
+
+    var d = frills();
+    var i = 0;
+    d.use({
+      inherit: false,
+      getOptions: function (target) {
+        if (target.subChild) return void 0;
+        return true;
+      },
+      decorate: function (target, options) {
+        i++;
+      }
+    });
+
+    var c1 = new c();
+
+    d.decorate(c1);
+
+    expect(i).to.be(0);
+
+  });
+
   it("attaches a decorator multiple times if multi is true", function () {
     var p = function() {
 

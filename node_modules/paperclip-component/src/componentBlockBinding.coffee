@@ -24,7 +24,7 @@ module.exports = (Component) ->
       ops = @_fixOptions value
 
       unless @_component
-        @_createComponent()
+        @_createComponent(ops)
 
       @_settings.set "options", ops
 

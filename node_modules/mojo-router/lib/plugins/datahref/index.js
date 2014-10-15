@@ -34,7 +34,7 @@ module.exports = pc.BaseNodeBinding.extend({
       if (self._bindings) self._bindings.dispose();
 
       var pparams = location.get("params"),
-      params      = new bindable.Object(_.extend({}, pparams ? pparams.context() : {})),
+      params      = new bindable.Object(_.extend({}, pparams ? pparams.toJSON() : {})),
       route       = context.get("application.router").routes.find({ pathname: href, params: params });
 
       function setHref () {

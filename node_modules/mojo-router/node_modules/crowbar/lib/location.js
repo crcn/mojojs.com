@@ -43,11 +43,11 @@ bindable.Object.extend(Location, {
   merge: function (request) {
 
     this.setProperties({ 
-      route    : request.route
+      route    : request.route,
+      params   : request.params
     });
 
-    this.params.context(request.params.context());
-    this.mergeQuery(request.query.context());
+    this.mergeQuery(request.query.toJSON());
     return this;
   },
 
@@ -109,8 +109,8 @@ bindable.Object.extend(Location, {
 
     var url = this.get("pathname");
 
-    if (this.query.keys().length) {
-      url += "?" + qs.stringify(this.query.context());
+    if (Object.keys(this.query.toJSON()).length) {
+      url += "?" + qs.stringify(this.query.toJSON());
     }
 
     this.set("url", url);

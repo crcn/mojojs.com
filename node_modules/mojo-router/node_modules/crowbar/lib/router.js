@@ -74,7 +74,7 @@ bindable.Object.extend(Router, {
         this.location.merge(request);
         return next(null, self.location);
       }
-      request.mergeQuery(this.location.query.context());
+      request.mergeQuery(this.location.query.toJSON());
     }
 
 

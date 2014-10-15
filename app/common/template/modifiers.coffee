@@ -18,18 +18,6 @@ module.exports = (app) ->
     ###
 
     "round": Math.round
-    
-    ###
-    ###
-
-    "t": (text, params = {}) ->
-
-      return text unless app.i18n
-
-      @disposable @__context.bind "lang", () =>
-        @update()
-
-      app.i18n.t text, params, @__context.get "lang"
 
 
     ###

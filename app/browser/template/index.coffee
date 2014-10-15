@@ -3,14 +3,12 @@
 pollyfills          = require "./pollyfills"
 bindable            = require "bindable"
 blockBindings       = require "./bindings/block"
-paperclipBootstrap  = require "paperclip-bootstrap"
 dataAttrBindings    = require "./bindings/dataBind"
 TrackElementBinding = require "./bindings/element/track"
 
 
 module.exports = (app) ->
   pc = app.paperclip
-  pc.use require("paperclip-bootstrap")
 
 
   for name of dataAttrBindings

@@ -28,7 +28,7 @@ scanRemoteDeps = (files) ->
   remoteDeps = []
 
 cdn = "http://browserify-cdn.herokuapp.com"
-cdn = "http://wzrd.in"
+#cdn = "http://wzrd.in"
 
 _remoteModuleCache = {}
 
@@ -137,6 +137,7 @@ compile = (files) ->
     buffer += "\ndefine('"+file.path+"', function (module, exports, require) {"
     buffer += "\n" + transformContent(file) + "\n";
     buffer += "});"
+
 
 
   buffer += "return require('/index.js');";

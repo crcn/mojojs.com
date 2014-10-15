@@ -30,7 +30,7 @@ noselector         = require("noselector");
 
 function BaseView (data, application) {
 
-  SubindableObject.call(this, this);
+  SubindableObject.call(this);
 
   this._onParent     = _.bind(this._onParent, this);
 

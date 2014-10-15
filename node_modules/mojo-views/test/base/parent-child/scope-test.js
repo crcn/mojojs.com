@@ -87,6 +87,18 @@ describe("base/parent-child/scope#", function () {
     expect(b.get("a")).to.be(void 0);
   });
 
+  it("doesn't inherit a propertly if defined as undefined in the prototype", function () {
+    var a = new views.Base({ a : "b" }),
+    B     = views.Base.extend({
+      a: void 0
+    });
+
+    var b = new B({ parent: a });
+
+
+    expect(b.get("a")).to.be(void 0);
+  });
+
   it("can change inheritance if the parent changes", function () {
     var p1 = new views.Base({ a : "b" }),
     p2     = new views.Base({ a : "c" }),

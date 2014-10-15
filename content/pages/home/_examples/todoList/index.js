@@ -3,7 +3,7 @@ Application = require("mojo-application");
 
 var app = new Application();
 app.use(views);
-app.use(require("mojo-paperclip@0.5.6"));
+app.use(require("mojo-paperclip"));
 
 var HelloView = views.Base.extend({
   paper: require("./template.pc")
