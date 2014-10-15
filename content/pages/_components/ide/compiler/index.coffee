@@ -19,8 +19,6 @@ exports.compile = (cache, files, complete) ->
     compileServerSide files, (err, content) ->
 
       if content
-        console.log content
-        console.log "a", _compiler.script content
         return complete null, _compiler.script content
 
       _compiler.compile files, complete 
