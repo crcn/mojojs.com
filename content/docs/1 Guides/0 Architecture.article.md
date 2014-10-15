@@ -26,11 +26,14 @@ It might be easy to think of your application in layers, where each new layer is
 
 service -> models -> controllers -> views -> user.
 
-Each proceding layer can interact with the previous layer, but not vice-versa. This means that, as a rule of thumb, controllers can interact with models, and service, but models should never interact with controllers. Views can interact with controllers, but controllers shouldn't really ever interact with the views. Users can interact with the view, but a view cannot interact with the user. 
+Each proceding layer can interact with the previous layer, but not vice-versa. This means that, as a rule of thumb, controllers can interact with models, and service, but models should never interact with controllers. Views can interact with controllers, but controllers shouldn't really ever interact with the views. And the obvious - users can interact with the view, but a view cannot interact with the user. 
 
 This sort of model also comes with many other benefits. For one, it'll make your application more maintainable, and testable. Another benefit is that parts of your application will become modular. For instance, you could theoretically take out just the service, and models and re-use them for an API server.
 
 <!--
+
+- intuitiveness for less error-prone code.
+
 
 More on added benefits. Designers, ab testing
 #### Framework Layers
