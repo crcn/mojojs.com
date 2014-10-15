@@ -60,6 +60,7 @@
     "marked": "http://registry.npmjs.org/marked/-/marked-0.3.2.tgz",
     "mediocre": "0.1.x",
     "memoizee": "^0.3.6",
+    "mkdirp": "^0.5.0",
     "module-deps": "^2.1.2",
     "mojo-application": "0.1.x",
     "mojo-bootstrap": "0.1.x",
@@ -83,6 +84,7 @@
     "traverse": "^0.6.6",
     "type-component": "0.0.1",
     "ua-parser": "^0.3.3",
+    "uglify-js": "^2.4.15",
     "verify": "^0.1.2",
     "xss": "^0.1.12"
   },

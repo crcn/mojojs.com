@@ -18,6 +18,7 @@ class IdeView extends views.Base
     "compileRequest.error": "error"
 
   paper: require("./index.pc")
+  _cache: true
   showPreview: true
   compile: true
   children:
@@ -37,7 +38,10 @@ class IdeView extends views.Base
     @set "canRecompile", false
     @preview()
     @set "compileRequest", bindableCall (complete) =>
-      compiler.compile _flattenFiles(@file), complete
+
+      # cache ONCE to prevent XSS
+      compiler.compile @_cache, _flattenFiles(@file), complete
+      @_cache = false
 
 
   expand: () ->
