@@ -8,7 +8,7 @@ fs       = require "fs"
 module.exports = (app) ->
 
   app.router.param "category._id", (location, next) ->
-    for cat in app.models.get("docs").source()
+    for cat in app.models.get("docs").source
       if cat.get("_id") is location.get("params.category._id")
         location.set "category", cat
         location.set "docContent", cat.get("content")
@@ -16,7 +16,7 @@ module.exports = (app) ->
     next()
 
   app.router.param "article._id", (location, next) ->
-    for article in location.get("category.children")?.source()
+    for article in location.get("category.children")?.source
       if article.get("_id") is location.get("params.article._id")
         location.set "article", article
         location.set "docContent", article.get("content")
