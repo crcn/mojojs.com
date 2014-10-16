@@ -71,7 +71,7 @@ Notice the `pc` files - these are the templates that get displayed to the user. 
 TODO - explain index.js
 -->
 
-Keep in mind that it's totally fine to build out an application without an HTTP router - that can be added last without affecting your application structure.
+> Keep in mind that it's totally fine to build out an application without an HTTP router - that can be added last without affecting your application structure.
 
 #### HTTP router
 
