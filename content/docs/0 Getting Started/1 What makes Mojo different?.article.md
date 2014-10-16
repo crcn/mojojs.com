@@ -6,7 +6,7 @@
 
 More to come here
 
-### Property Scope
+#### Property Scope
 
 Mojo views have the ability to inherit properties from their parent, all the way up to the root view. This feature is incredibly useful when you want to pass data from one view to another. A `user` model for for instance might be used in other parts of your application. All you need to do is set the user model in the root view, and `get()` that property in any sub-view. This pattern is a great way of avoiding singletons, and makes your code far more interchangeable, and modular. 
 
@@ -15,7 +15,7 @@ Of course, you can be as implicit, or explicit as you want. Mojo also has the ab
 Take a look at the [property scope docs](/docs/api/viewsbase#propertyscope) for more info.
 
 
-### Compiled templates
+#### Compiled templates
 
 
 Mojo templates (paperclip) are translated from HTML, straight to JavaScript - this also includes data-bindings. For example, here's a template:
