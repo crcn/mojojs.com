@@ -10,6 +10,3 @@ MojoJS was designed with the [Strangler Pattern](http://www.martinfowler.com/bli
 
 Mojo's level of abstraction also makes it very easy to re-purpose the framework to do whatever you want. You can
 use Mojo on the backend without the additional baggage of having other platform-specific modules, such as the HTTP router.
-
-
-Another example of re-purposing Mojo is to use a different layout engine such as [famou.us](http://famo.us/), or [Snap.svg](http://snapsvg.io/).
