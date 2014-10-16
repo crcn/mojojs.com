@@ -43,7 +43,10 @@ Pretty clear what's going on here. Here's what we know at a glance:
 2. Data-bindings are identified *as the template is created*. Note that this happens once for every template. Paperclip takes each translated template, caches them, and uses the browser's native `cloneNode()` whenever a template is used.
 3. References are identified when translated from the template. 
 
-As it turns out, the method above for generating views is insanely fast - [50k list items in 1 seconds fast](http://requirebin.com/?gist=d9ae1065106891f7d218). And paperclip is only getting faster.
+As it turns out, the method above for generating templates is very efficient. Essentially, paperclip does the least amount of work necessary to update the DOM since we know where everything is. 
+
+Paperclip will also lazily batch DOM changes together into one update, and run them on requestAnimationFrame. This kind of optimization is similar to how layout engines work, and helps prevent
+unnecessary performance penalties in the browser.
 
 
 #### Organization
@@ -56,6 +59,8 @@ TODO
 ### Organization
 
 Intuitiveness
+
+http://stackoverflow.com/questions/731743/php-vs-template-engine
 
 ### Explicit & Implicitness
 
