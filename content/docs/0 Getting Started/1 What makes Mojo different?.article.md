@@ -66,10 +66,11 @@ Mojo uses [virtuals](/docs/api/modelsbase#virtuals) on models to asynchronously 
 This has a number of sweet benefits:
 
 1. Reduces the number of API calls.
-2. Reduces the cognitive overhead of handling asynchronous resources.
-3. Allows for views to be used synchronously used on the backend.
-4. Makes code more testable since virtuals can be overridden.
-5. Makes code more maintainable if there's ever an API change - i.e: you might (and probably will) have a virtual property that's converted into a non-virtual property. 
+2. Reduces the cognitive overhead of manually handling asynchronous resources.
+3. Keeps your code DRY. No more calling `load()` anywhere outside of your models.
+4. Allows for views to be used synchronously used on the backend.
+5. Makes code more testable since virtuals can be overridden.
+6. Makes code more maintainable if there's ever an API change - i.e: you might (and probably will) have a virtual property that's converted into a non-virtual property. 
 
 <!--
 show diagram?
