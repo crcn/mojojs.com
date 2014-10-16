@@ -17,6 +17,10 @@ The "C" in MVC represents a Controller. Controllers contain logic specifc to the
 
 The "V" in MVC represents a View (or templates). Views take information from the controller, and display it to the user. Views also take any interaction, and relay them back to the controller. 
 
+<!--
+Explain why views are separate from controllers
+-->
+
 Notice the order of these terms - MCV - this is how data flows to the user . You typically start with a model, which provides information to the controller, to the view, then finally to the user (model -> controller -> view -> user). Think of your application in layers.
 
 
