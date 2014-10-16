@@ -48,8 +48,9 @@ Pretty clear what's going on here. Here's what we know at a glance:
 As it turns out, the method above for generating views is insanely fast - [50k list items in 1 seconds fast](http://requirebin.com/?gist=d9ae1065106891f7d218). And paperclip is only getting faster.
 
 
-### Organization
+#### Organization
 
+TODO
 
 <!--
 
