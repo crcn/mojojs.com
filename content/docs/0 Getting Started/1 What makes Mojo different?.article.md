@@ -63,7 +63,7 @@ unnecessary performance penalties in the browser.
 
 Mojo uses [virtuals](/docs/api/modelsbase#virtuals) on models to asynchronously load remote resources as they're demanded in the application. They are essentially properties that only get defined when they're data-bound to. 
 
-This has a number of awesome benefits:
+This has a number of sweet benefits:
 
 1. Reduces the number of API calls.
 2. Reduces the cognitive overhead of handling asynchronous resources.
