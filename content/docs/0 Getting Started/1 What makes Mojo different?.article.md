@@ -4,13 +4,17 @@
   }
 }}
 
-#### Property Scope
+#### Property scope
 
-Mojo views have the ability to inherit properties from their parent, all the way up to the root view. This feature is incredibly useful when you want to pass data from one view to another. A `user` model for for instance might be used in other parts of your application. All you need to do is set the user model in the root view, and `get()` that property in any sub-view. This pattern is a great way of avoiding singletons, and makes your code far more interchangeable, and modular. 
+Mojo views have the ability to inherit properties from their parent, all the way up to the root view. This feature is incredibly useful when you want to pass data from one view to another. A `user` model for instance might be used in other parts of your application. All you need to do is set the user model in the root view, and `get()` that property in any sub-view. This pattern is a great way of avoiding singletons, and makes your code far more interchangeable, and modular. 
 
 Of course, you can be as implicit, or explicit as you want. Mojo also has the ability to break property scope simply by setting a property in any sub-view. 
 
 Take a look at the [property scope docs](/docs/api/viewsbase#propertyscope) for more info.
+
+<!--
+show diagram here explaining property scope & models
+-->
 
 
 #### Compiled templates
@@ -22,7 +26,7 @@ Mojo templates (paperclip) are translated from HTML, straight to JavaScript - th
 hello {{name}}!
 ```
 
-Here's the translation to JavaScript:
+Here's the templated translated to JavaScript:
 
 ```javascript
 module.exports = (function(fragment, block, element, text, comment, parser, modifiers) {
@@ -37,24 +41,54 @@ module.exports = (function(fragment, block, element, text, comment, parser, modi
 });
 ```
 
-Pretty clear what's going on here. Here's what we know at a glance:
+Pretty clear what's going on. Here's what we know at a glance:
 
-1. Generated DOM is identical to the HTML we provide. No weird additions here.
-2. Data-bindings are identified *as the template is created*. Note that this happens once for every template. Paperclip takes each translated template, caches them, and uses the browser's native `cloneNode()` whenever a template is used.
-3. References are identified when translated from the template. 
+1. Generated DOM is identical to the HTML templates. No weird manipulations here.
+2. Data-bindings are identified *as the template is created*. Note that this happens *once* for every template. Paperclip takes each translated template, caches them, and uses the browser's native `cloneNode()` whenever a template is used. 
+3. JavaScript references within the templates are identified at translation time, and cached in the data-binding.
 
 As it turns out, the method above for generating templates is very efficient. Essentially, paperclip does the least amount of work necessary to update the DOM since we know where everything is. 
 
 Paperclip will also lazily batch DOM changes together into one update, and run them on requestAnimationFrame. This kind of optimization is similar to how layout engines work, and helps prevent
 unnecessary performance penalties in the browser.
 
+<!-- more info on parsed JS and bound helpers -->
+
+<!--
+- no explicit API calls
+- virtual properties
+-->
+
+#### Virtual properties
+
+Mojo uses [virtuals](/docs/api/modelsbase#virtuals) on models to asynchronously load remote resources as they're demanded in the application. They are essentially properties that only get defined when they're data-bound to anywhere in the application. 
+
+This has a number of awesome benefits:
+
+1. Reduces the number of API calls.
+2. Reduces the cognitive overhead of handling asynchronous resources.
+3. Allows for views to be used synchronously used on the backend.
+4. Makes code more testable since virtuals can be overridden.
+5. Makes code more maintainable if there's ever an API change - i.e: you might (and probably will) have a virtual property that's converted into a non-virtual property. 
+
+<!--
+show diagram?
+-->
 
 #### Organization
 
-TODO
+Todo!
+
+
+<!--
+relationships
+data bindings
+-->
+
 
 <!--
 
+### virtual properties
 
 ### Organization
 
@@ -76,6 +110,7 @@ Very few
 ### Architecture
 
 modules were designed 
+well thought out, minimal API's. Doesn't do what it doesn't need to do.
 
 ### Developer workflow
 
