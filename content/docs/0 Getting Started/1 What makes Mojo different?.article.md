@@ -42,11 +42,14 @@ module.exports = (function(fragment, block, element, text, comment, parser, modi
 Pretty clear what's going on here. Here's what we know at a glance:
 
 1. Generated DOM is identical to the HTML we provide. No weird additions here.
-2. Data-bindings are identified *as the template is created*. Note that this happens once for every template. Paperclip takes each translated template, and caches them for future use using the browser's native `cloneNode()` method.
+2. Data-bindings are identified *as the template is created*. Note that this happens once for every template. Paperclip takes each translated template, caches them, and uses the browser's native `cloneNode()` whenever a template is used.
 3. References are identified when translated from the template. 
 
-
 As it turns out, the method above for generating views is insanely fast - [50k list items in 1 seconds fast](http://requirebin.com/?gist=d9ae1065106891f7d218). And paperclip is only getting faster.
+
+
+### Organization
+
 
 <!--
 
