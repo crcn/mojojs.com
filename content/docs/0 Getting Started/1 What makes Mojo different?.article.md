@@ -17,12 +17,8 @@ Take a look at the [property scope docs](/docs/api/viewsbase#propertyscope) for 
 
 ### Compiled templates
 
-Todo!
-<!--
-DIAGRAM HERE
 
-
-Mojo templates (paperclip) are translated from HTML, straight to JavaScript, all the way down to data-bindings. For example, here's a template:
+Mojo templates (paperclip) are translated from HTML, straight to JavaScript - this also includes data-bindings. For example, here's a template:
 
 ```html
 hello {{name}}!
@@ -43,16 +39,16 @@ module.exports = (function(fragment, block, element, text, comment, parser, modi
 });
 ```
 
-A few things to note about the translation above:
+Pretty clear what's going on here. Here's what we know at a glance:
 
-1. Generated DOM is identical to the source we provide.
-2. Data-bindings are identified *as the template is created*.
+1. Generated DOM is identical to the source we provide. No weird additions here.
+2. Data-bindings are identified *as the template is created*. Note that this happens once for every template. Paperclip takes each translated template, and caches them for future use using the browser's native `cloneNode()` method.
+3. References are identified when translated from the template. 
 
 
+As it turns out, the method above for generating views is insanely fast - [50k list items in 1 seconds fast](http://requirebin.com/?gist=d9ae1065106891f7d218). And paperclip is only getting faster.
 
-
-During the translation process, data-bindings are mapped out, and cached. This means that we From there, templates use the browser's native `cloneNode()` method to quickly setup views. This turns out to be incredibly fast, and efficient way to update the DOM - [50k list items in 1 seconds fast](http://requirebin.com/?gist=d9ae1065106891f7d218) - pow!
-
+<!--
 
 
 ### Organization
