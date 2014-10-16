@@ -77,6 +77,10 @@ TODO - explain index.js
 
 the [HTTP router](/docs/api/router) is a module that can be added at any time during the development process, since the HTTP router generally handles the application states at the root view. Those states get propagated, and used by `stack views` throughout the entire application. 
 
+<!--
+TODO - show how to structure this stuff
+-->
+
 
 #### unit tests
 
