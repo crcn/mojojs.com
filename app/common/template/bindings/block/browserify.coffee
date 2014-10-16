@@ -27,7 +27,6 @@ class BrowserifyBlockBinding extends pc.BaseBlockBinding
 
           var sib = script;
 
-
           var sibs = [];
 
           while(sib) {
@@ -36,8 +35,6 @@ class BrowserifyBlockBinding extends pc.BaseBlockBinding
             if ($(sib).attr('data-section') === 'end') break;
             sib = prevSibling;
           }
-
-        
 
           for (var i = sibs.length; i--;) {
             parent.removeChild(sibs[i]);

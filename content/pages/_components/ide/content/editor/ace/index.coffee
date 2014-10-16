@@ -1,3 +1,5 @@
+async = require "async"
+
 if process.browser  
   ace = require "brace"
   require("brace/mode/javascript")
@@ -29,12 +31,15 @@ class EditorView extends views.Base.extend({
       src = currentFile.get("content")
       return unless @editor
 
+      clearTimeout @_timeout
+
       @editor.getSession().setMode("ace/mode/" + getMode(currentFile))
       @editor.setValue src = decodeURIComponent src
       @editor.setValue(src, -1) 
       @editor.setValue(src, 1) 
 
       @$(".ide-editor").scrollTop(0)
+
 
   didCreateSection: () ->
     return unless process.browser

@@ -14,7 +14,7 @@ parser = window?.paperclip.template.compiler
 
 
 exports.compile = (cache, files, complete) ->
-
+  
   if cache
     compileServerSide files, (err, content) ->
 
