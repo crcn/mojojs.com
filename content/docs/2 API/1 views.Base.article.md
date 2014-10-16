@@ -263,7 +263,7 @@ preview.element.appendChild(new ParentView({ message: "Hello", personName: "Jeff
 {{/}}
 
 The added benefit of breaking out of variable scope by defining them is that is also shows exactly
-what properties to the view expects.
+what properties the view expects.
 
 ## Extended API
 
