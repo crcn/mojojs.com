@@ -13,7 +13,7 @@ MVC, MVP, HMVC, these are design patterns to help develop web, or server-side ap
 
 The "M" in MVC represents a Model. A model can be anything that represents **data**, such as a person, message, or a collection of messages. Models might also have properties, and methods specific for the data it's representing. A good example might be `Messages.markAllRead`, `Message.markRead`, or `User.logout`. 
 
-The "C" in MVC represents a Controller. Controllers contain logic specifc to the **view** it's representing. The controller typically displays information from a model, or many models to the view, and also relays any user interaction from the view, to the models. The controller effectively guards the model from any view-specific logic. 
+The "C" in MVC represents a Controller. Controllers contain logic specifc to the **view** it's representing. The controller typically displays information from a model, or many models to the view, and also relays any user interaction from the view, to the models. The controller effectively guards the model, or any part of the application from view-specific logic. 
 
 The "V" in MVC represents a View (or templates). Views take information from the controller, and display it to the user. Views also take any interaction, and relay them back to the controller. 
 
