@@ -47,7 +47,7 @@ Pretty clear what's going on. Here's what we know at a glance:
 2. Data-bindings are identified *as the template is created*. Note that this happens *once* for every template. Paperclip takes each translated template, caches them, and uses the browser's native `cloneNode()` whenever a template is used. 
 3. JavaScript references within the templates are identified at translation time, and cached in the data-binding.
 
-As it turns out, the method above for generating templates is very efficient. Essentially, paperclip does the least amount of work necessary to update the DOM since we know where everything is. 
+As it turns out, the method above for generating templates is very efficient. Essentially, paperclip does the least amount of work necessary to update the DOM since it know where everything is. 
 
 Paperclip will also lazily batch DOM changes together into one update, and run them on requestAnimationFrame. This kind of optimization is similar to how layout engines work, and helps prevent
 unnecessary performance penalties in the browser.
@@ -88,7 +88,9 @@ data bindings
 
 <!--
 
-### virtual properties
+#### minimal API
+
+Mojo was reduced to the API's essential for application development. We don't want to provide unnecessary features that won't get used, or make you wonder what it does. 
 
 ### Organization
 
