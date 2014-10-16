@@ -61,7 +61,7 @@ unnecessary performance penalties in the browser.
 
 #### Virtual properties
 
-Mojo uses [virtuals](/docs/api/modelsbase#virtuals) on models to asynchronously load remote resources as they're demanded in the application. They are essentially properties that only get defined when they're data-bound to anywhere in the application. 
+Mojo uses [virtuals](/docs/api/modelsbase#virtuals) on models to asynchronously load remote resources as they're demanded in the application. They are essentially properties that only get defined when they're data-bound to. 
 
 This has a number of awesome benefits:
 
