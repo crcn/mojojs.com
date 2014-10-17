@@ -86,6 +86,12 @@ Data-bindings are even explicit. You can easily define [1-way, 2-way, or even un
 
 
 <!--
+#### Architecture
+
+Mojo isn't just a tool, or library, it's a set of libraries that work very well together. We understand that 
+-->
+
+<!--
 #### Flexibility
 
 -->
