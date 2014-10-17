@@ -85,6 +85,7 @@ Mojo was designed around explicity, and simplicity. What you write is what you s
 Data-bindings are even explicit. You can easily define [1-way, 2-way, or even unbound references](/docs/api/templates#bindingoperators) within templates.
 
 
+
 <!--
 #### Architecture
 
@@ -94,6 +95,12 @@ Mojo isn't just a tool, or library, it's a set of libraries that work very well 
 <!--
 #### Flexibility
 
+Mojo finds the right balance between ease of use, and structure. The patterns used in Mojo make it possible to extend the framework. Easily build applications that support [offline mode](/docs/guides/offlinemode), [realtime data](/docs/guids/realtime), [internationalization](/docs/guides/internationalization), etc. 
+
+Or, 
+
+
+#### Clear separation of concerns
 -->
 
 
