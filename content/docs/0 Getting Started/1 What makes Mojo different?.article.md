@@ -68,7 +68,7 @@ This has a number of sweet benefits:
 
 #### Explicit
 
-Mojo was designed around explicity, and simplicity. What you write is what you should expect out of the framework. There are no gotchyas, no magic (If there is, then tell us about it!), everything was designed to work in a coherent way. 
+Mojo was designed around explicity, and simplicity. What you write is what you should expect out of the framework. There are no gotchyas, no magic, everything was designed to work in a coherent way. 
 
 Data-bindings are even explicit. You can easily define [1-way, 2-way, or even unbound references](/docs/api/templates#bindingoperators) within templates.
 
@@ -96,7 +96,7 @@ Mojo also encourages hierarchical views that are intuitive to construct. It's ea
 <!--
 #### built for humans
 
-Mojo was designed to allow you to focus on what's immediately needed in your application. 
+Mojo was designed to allow you to focus on what's immediately needed in your application. For instance, you can easily build out your views, then add models and & router later. Likewise, mojo patterns allow you to build  models wihout being concerned about how 
 
 -->
 
