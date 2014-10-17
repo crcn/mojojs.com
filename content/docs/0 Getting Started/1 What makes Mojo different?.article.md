@@ -70,6 +70,10 @@ This has a number of sweet benefits:
 
 Mojo was designed around explicity, and simplicity. What you write is what you should expect out of the framework. There are no gotchyas, no magic, everything was designed to work in a coherent way. 
 
+<!--
+Explicit getters & setters were also chosen in the framework since 
+-->
+
 Data-bindings are even explicit. You can easily define [1-way, 2-way, or even unbound references](/docs/api/templates#bindingoperators) within templates.
 
 #### Flexibility

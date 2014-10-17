@@ -34,7 +34,18 @@ Each proceding layer can interact with the previous layer, but not vice-versa. T
 
 This sort of model also comes with many other benefits. For one, it'll make your application more maintainable, and testable. Another benefit is that parts of your application will become modular. For instance, you could theoretically take out just the service, and models and re-use them for an API server. 
 
+
 <!--
+#### Consistency
+
+The modules used in mojo work together in a consistent way, and it'd be helpful to develop applications in a similar fassion for a number of reasons
+
+-->
+
+<!--
+
+- encapsulation
+- consistency
 
 - intuitiveness for less error-prone code.
 
