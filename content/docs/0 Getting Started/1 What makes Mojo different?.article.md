@@ -52,13 +52,6 @@ As it turns out, the method above for generating templates is very efficient. Es
 Paperclip will also lazily batch DOM changes together into one update, and run them on requestAnimationFrame. This kind of optimization is similar to how layout engines work, and helps prevent
 unnecessary performance penalties in the browser.
 
-<!-- more info on parsed JS and bound helpers -->
-
-<!--
-- no explicit API calls
-- virtual properties
--->
-
 #### Virtual properties
 
 Mojo uses [virtuals](/docs/api/modelsbase#virtuals) on models to asynchronously load remote resources as they're demanded in the application. They are essentially properties that only get defined when they're data-bound to. 
@@ -72,17 +65,47 @@ This has a number of sweet benefits:
 5. Makes code more testable since virtuals can be overridden.
 6. Makes code more maintainable if there's ever an API change - i.e: you might (and probably will) have a virtual property that's converted into a non-virtual property. 
 
-<!--
-#### Explicit data-bindings
-
-Template data-bindings can be defined as [1-way, 2-way or even unbound](/docs/api/templates#bindingoperators). 
--->
 
 #### Explicit
 
 Mojo was designed around explicity, and simplicity. What you write is what you should expect out of the framework. There are no gotchyas, no magic (If there is, then tell us about it!), everything was designed to work in a coherent way. 
 
 Data-bindings are even explicit. You can easily define [1-way, 2-way, or even unbound references](/docs/api/templates#bindingoperators) within templates.
+
+#### Flexibility
+
+Mojo finds the right balance between ease of use, and structure. The patterns used in Mojo make it possible to extend the framework without feeling like you're working against it. Easily build applications that support [offline mode](/docs/guides/offlinemode), [realtime data](/docs/guids/realtime), [internationalization](/docs/guides/internationalization), etc. 
+
+
+<!--
+#### full package
+
+Mojo isn't just a library, it's a family of modules that compliment each other. You're given all the tools necessary to build a highly scalable application without 
+
+-->
+
+<!--
+#### built for teams
+
+Mojo encourages a few principles that help with developer workflow, especially between other people on teams. Templates for instance are separated from the view controller to allow greater encapsulation between both components. Designers for instance will have a better time updating UI if it's defined in a template, versus combined with the controller. 
+
+Mojo also encourages hierarchical views that are intuitive to construct. It's easy for engineers on teams to follow 
+-->
+
+
+<!--
+#### built for humans
+
+Mojo was designed to allow you to focus on what's immediately needed in your application. 
+
+-->
+
+<!--
+#### built for teams
+
+
+
+-->
 
 
 
@@ -93,12 +116,6 @@ Mojo isn't just a tool, or library, it's a set of libraries that work very well 
 -->
 
 <!--
-#### Flexibility
-
-Mojo finds the right balance between ease of use, and structure. The patterns used in Mojo make it possible to extend the framework. Easily build applications that support [offline mode](/docs/guides/offlinemode), [realtime data](/docs/guids/realtime), [internationalization](/docs/guides/internationalization), etc. 
-
-Or, 
-
 
 #### Clear separation of concerns
 -->
