@@ -91,6 +91,8 @@
     <div class="container content feature">
       <div class="row">
         <div class="col-md-6">
+
+          <!-- TODO: make multiline work here -->
           {{
             idePrep: {
               sourceDir: __dirname + "/_snippets/compatible",
