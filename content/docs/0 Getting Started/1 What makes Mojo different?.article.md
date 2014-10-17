@@ -72,19 +72,18 @@ This has a number of sweet benefits:
 5. Makes code more testable since virtuals can be overridden.
 6. Makes code more maintainable if there's ever an API change - i.e: you might (and probably will) have a virtual property that's converted into a non-virtual property. 
 
-
+<!--
 #### Explicit data-bindings
 
 Template data-bindings can be defined as [1-way, 2-way or even unbound](/docs/api/templates#bindingoperators). 
+-->
 
-<!--
 #### Explicit
 
 Mojo was designed around explicity, and simplicity. What you write is what you should expect out of the framework. There are no gotchyas, no magic (If there is, then tell us about it!), everything was designed to work in a coherent way. 
 
 Data-bindings are even explicit. You can easily define [1-way, 2-way, or even unbound references](/docs/api/templates#bindingoperators) within templates.
 
--->
 
 <!--
 #### Flexibility
