@@ -76,10 +76,6 @@ This has a number of sweet benefits:
 show diagram?
 -->
 
-#### Organization
-
-Todo!
-
 
 <!--
 relationships
@@ -89,11 +85,16 @@ data bindings
 
 <!--
 
+
+#### Organization
+
 #### minimal API
 
 Mojo was reduced to the API's essential for application development. We don't want to provide unnecessary features that won't get used, or make you wonder what it does. 
 
-### Organization
+#### Organization
+
+Mojo application s
 
 Intuitiveness
 
