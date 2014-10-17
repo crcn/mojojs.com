@@ -11,11 +11,15 @@ It's helpful to understand some of the philosophies behind the framework at a ve
 
 MVC, MVP, HMVC, these are design patterns to help develop web, or server-side applications. Let's disect a little bit what MVC actually means in Mojo. 
 
-The "M" in MVC represents a Model. A model can be anything that represents **data**, such as a person, message, or a collection of messages. Models might also have properties, and methods specific for the data it's representing. A good example might be `Messages.markAllRead`, `Message.markRead`, or `User.logout`. 
+The "M" in MVC represents a Model. A model can be anything that represents **data**, such as a person, message, or a collection of messages. Models might also have properties, and/or methods specific to the data it's representing. A good example might be `Messages.markAllRead`, `Message.markRead`, or `User.logout`. 
 
-The "C" in MVC represents a Controller. Controllers contain logic specifc to the **view** it's representing. The controller typically displays information from a model, or many models to the view, and also relays any user interaction from the view, to the models. The controller effectively guards the model, or any part of the application from view-specific logic. 
+The "C" in MVC represents a Controller. Controllers contain logic specifc to the **view** it's representing. The controller typically displays information from a model, or many models to the view, and also relays any user interaction from the view, to the models. The controller effectively *guards* the model, or any part of the application from view-specific logic. 
 
 The "V" in MVC represents a View (or templates). Views take information from the controller, and display it to the user. Views also take any interaction, and relay them back to the controller. 
+
+> In Mojo, it's possible to include the view with the controller (and it's easier to implement up-front), but this practice is discouraged since it makes maintanence a bit more difficult. Designers for instance might have a harder time modifying templates if it means they have to dive into JavaScript files. 
+
+<!--[Checkout this Stack Overflow](http://stackoverflow.com/questions/731743/php-vs-template-engine) thread for more discussion between why not to include templates with the controller.-->
 
 <!--
 Explain why views are separate from controllers
