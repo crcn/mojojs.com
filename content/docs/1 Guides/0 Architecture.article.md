@@ -68,13 +68,13 @@ This sort of practice is easy to pick-up between other team members, and creates
 
 Once you have an idea of how your application should be broken apart, you can start building your views with the data it needs to represent - step two.
 
-You typically write fixtures (fake data) along with views, so you know what properties the view needs. They allow you to construct views independently from models - great for encapsulation. Mojo easily allows you to write views with *just* fixtures, then swap them out for models you'll be implementing later on - like a flip of a switch.
+You typically write fixtures (fake data) along with views, so you know what properties the view needs. Fixtures allow you to construct views independently from models - great for encapsulation. Mojo easily allows you to write views with *just* fixtures, then swap them out for models you'll be implementing later on - like a flip of a switch.
 
 <!-- show other benefits of writing with fixtures -->
 
 <!-- SHOW FIXTURES -->
 
-After you've created out your views with fixture data, you should know have a clear idea of the models your application needs. This is a pretty straight forward process. See [structuring models](/docs/guides/structuring-your-application#models) for more information.
+After you've created your views with fixture data, you should know have a clear idea of the models your application needs. This is a pretty straight forward process. See [structuring models](/docs/guides/structuring-your-application#models) for more information.
 
 After developing your models, you can to add other parts of your application, such as an [HTTP router](/docs/api/router), realtime data, offline mode, or [internationalization](/docs/extended-api/i18n). These sort of features are non-fundamental, and should always be added after you've figured out models & views. 
 
