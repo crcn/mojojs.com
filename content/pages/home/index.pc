@@ -6,7 +6,7 @@
       <div class="col-md-6 text-center">
 
         <!-- beautifully used as verb - maybe use elegantly crafted -->
-        <h2>Build beautifully crafted, and powerful web applications</h2>
+        <h2>Build beautifully crafted, and powerful applications</h2>
 
         <p>
           A non-opinionated, customizable JavaScript framework designed for writing
