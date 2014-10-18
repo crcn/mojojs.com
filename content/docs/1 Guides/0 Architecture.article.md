@@ -76,7 +76,7 @@ You typically write fixtures (fake data) along with views, so you know what prop
 
 After you've created your views with fixture data, you should know have a clear idea of the models your application needs. This is a pretty straight forward process. See [structuring models](/docs/guides/structuring-your-application#models) for more information.
 
-After developing your models, you can to add other parts of your application, such as an [HTTP router](/docs/api/router), realtime data, offline mode, or [internationalization](/docs/extended-api/i18n). These sort of features are non-fundamental, and should always be added after you've figured out models & views. 
+After developing your models, you can add other parts of your application, such as an [HTTP router](/docs/api/router), realtime data, offline mode, or [internationalization](/docs/extended-api/i18n). These sort of features are non-fundamental, and should always be added after you've figured out models & views. 
 
 
 <!-- 
