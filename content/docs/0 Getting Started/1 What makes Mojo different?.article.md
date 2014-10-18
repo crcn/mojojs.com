@@ -78,7 +78,7 @@ Data-bindings are even explicit. You can easily define [1-way, 2-way, or even un
 
 #### Flexibility
 
-Mojo finds the right balance between ease of use, and structure. The patterns used in Mojo make it possible to extend the framework without feeling like you're working against it. Easily build applications that support <!-- [offline mode](/docs/guides/offlinemode), --> [realtime data](https://github.com/mojo-js/mojo-pubnub), [internationalization](/docs/extendedapi/i18n), etc. 
+Mojo finds the right balance between ease of use, and structure. The patterns used in Mojo make it possible to extend the framework without feeling like you're working against it. Easily build applications that support <!-- [offline mode](/docs/guides/offlinemode), --> [realtime data](https://github.com/mojo-js/mojo-pubnub), [internationalization](/docs/extended-api/i18n), etc. 
 
 
 <!--
