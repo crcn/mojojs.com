@@ -4,6 +4,7 @@
   }
 }}
 
+
 See Also https://github.com/mojo-js/mojo-todomvc-example
 
 #### models
@@ -113,6 +114,7 @@ This convention does a few things:
 2. It ensures that your application is broken out into smaller units.
 3. It's easier, and much faster writing unit tests.
 4. It's an easy pattern to follow.
+5. Doesn't break if you need to source files around.
 
 Here's an short example of a `messages` model unit test:
 

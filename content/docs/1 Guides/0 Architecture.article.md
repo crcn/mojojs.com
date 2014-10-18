@@ -38,7 +38,61 @@ Each proceding layer can interact with the previous layer, but not vice-versa. T
 
 This sort of model also comes with many other benefits. For one, it'll make your application more maintainable, and testable. Another benefit is that parts of your application will become modular. For instance, you could theoretically take out just the service, and models and re-use them for an API server. 
 
-Framework
+Thinking about applications development in layers also reduces the cognitive overhead of planning your application architecure. Layering encourages you to focus on what you need immediately, and nothing else. If you're focusing on the views, just focus on that, not their relationship between other parts of the application. This includes models, and the HTTP router. 
+
+
+<!-- move to structuring your application? -->
+
+#### Planning
+
+<!-- VIDEO HERE -->
+
+See [structuring your application](/docs/guides/structuring-your-application) for more info.
+
+When starting a new project, it's helpful to know the application requirements before jumping into code. This usually involves a few things:
+
+1. What does the application look like?
+2. What sort of data does the application need to represent?
+
+The first step is probably easier to tackle since we can visually breakdown our application, and *know* exactly how, and where the views should be laid out into a heirarchial folder structure.
+
+<!-- DIAGRAM HERE -->
+
+For instance, when you look at a list of items in a mock-up, you can assume it's a [list view](/docs/api/viewslist). If you see a view that's clearly toggling between two states (pages), it's probably a [stack view](/docs/api/viewsviews). Everything else is just a [base view](/docs/api/viewsbase). 
+
+<!-- FOLDER STRUCTURE HERE -->
+
+This sort of practice is easy to pick-up between other team members, and creates a consistent way to handle how view components are created. It's also easy for non-developers to follow, especially designers looking to change some of the UI elements. 
+
+Maintaining a hierarchy of views in Mojo also makes it easy to move components around within your application if you need to perform any sort of maintainence, or refactoring.
+
+Once you have an idea of how your application should be broken apart, you can start building your views with the data it needs to represent - step two.
+
+You typically write fixtures (fake data) along with views, so you know what properties the view needs. They allow you to construct views independently from models - great for encapsulation. Mojo easily allows you to write views with *just* fixtures, then swap them out for models you'll be implementing later on - like a flip of a switch.
+
+<!-- show other benefits of writing with fixtures -->
+
+<!-- SHOW FIXTURES -->
+
+After you've created out your views with fixture data, you should know have a clear idea of the models your application needs. This is a pretty straight forward process. See [structuring models](/docs/guides/structuring-your-application#models) for more information.
+
+After developing your models, you can to add other parts of your application, such as an [HTTP router](/docs/api/router), realtime data, offline mode, or [internationalization](/docs/extended-api/i18n). These sort of features are non-fundamental, and should always be added after you've figured out models & views. 
+
+
+<!-- 
+
+For instance
+
+-->
+
+
+
+
+
+
+
+
+
 
 
 <!--
