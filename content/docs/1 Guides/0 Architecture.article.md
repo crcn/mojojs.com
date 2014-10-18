@@ -9,7 +9,7 @@ It's helpful to understand some of the philosophies behind the framework at a ve
 
 #### What is MV*?
 
-MVC, MVP, HMVC, these are design patterns to help develop web, or server-side applications. Let's disect a little bit what MVC actually means in Mojo. 
+MVC, MVP, MVVM, HMVC, these are design patterns to help develop web, or server-side applications. Let's disect a little bit what MVC actually means in Mojo. 
 
 The "M" in MVC represents a Model. A model can be anything that represents **data**, such as a person, message, or a collection of messages. Models might also have properties, and/or methods specific to the data it's representing. A good example might be `Messages.markAllRead`, `Message.markRead`, or `User.logout`. 
 
