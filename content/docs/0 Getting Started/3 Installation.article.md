@@ -20,13 +20,12 @@ You can also checkout the [mojo](/docs/api/mojo) docs for additional information
 The **best** way to start using MojoJS is to download the [starter kit](https://github.com/mojo-js/mojo-starter). Before you
 begin, **make sure you have [NodeJS](http://nodejs.org/) installed**.
 
-### Usage
+Once you've downloaded NodeJS, and the starter kit, simply double-click the `server` file to start running your seed application, then open up `http://localhost:8080` in your browser.
 
-You're going to need to install a few dependencies first. Open terminal and `cd` into
-your starter kit directory, then run `npm install`. After that, you can go ahead and
-run `npm start`, which will prompt you to open `http://localhost:8080` in your browser.
+If you're comfortable with terminal, then you can also run `npm install; npm start` in the application directory. 
 
-Below are a list of available commands you can run.
+Below are a list of available commands you can run for the starter kit.
+
 
 #### npm install
 
