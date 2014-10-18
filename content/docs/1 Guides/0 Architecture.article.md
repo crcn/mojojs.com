@@ -17,7 +17,7 @@ The "C" in MVC represents a Controller. Controllers contain logic specifc to the
 
 The "V" in MVC represents a View (or templates). Views take information from the controller, and display it to the user. Views also take any interaction, and relay them back to the controller. 
 
-> In Mojo, it's possible to include the view with the controller (and it's easier to implement up-front), but this practice is discouraged since it makes maintanence a bit more difficult. Designers for instance might have a harder time modifying templates if it means they have to dive into JavaScript files. 
+> In Mojo, it's possible to include the view with the controller (it's easier to implement up-front), but this practice is discouraged since it makes maintanence a bit more difficult. Designers for instance might have a harder time modifying templates if it means they have to dive into JavaScript files. 
 
 <!--[Checkout this Stack Overflow](http://stackoverflow.com/questions/731743/php-vs-template-engine) thread for more discussion between why not to include templates with the controller.-->
 
