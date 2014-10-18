@@ -64,6 +64,7 @@ This has a number of sweet benefits:
 4. Allows for views to be used synchronously used on the backend.
 5. Makes code more testable since virtuals can be overridden.
 6. Makes code more maintainable if there's ever an API change - i.e: you might (and probably will) have a virtual property that's converted into a non-virtual property. 
+7. Allows you to design models independently from views, and vice-versa. 
 
 
 #### Explicit
