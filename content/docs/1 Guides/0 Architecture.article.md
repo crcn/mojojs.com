@@ -4,7 +4,11 @@
   }
 }}
 
-It's helpful to understand some of the philosophies behind the framework at a very high level. These are abstract concepts, but will help construct a mental model of how to develop Mojo applications in a scalable, elegant way.
+It's helpful to understand some of the philosophies behind Mojo at a very high level. These are abstract concepts, but will help construct a mental model of how to develop applications in a scalable, elegant way.
+
+<!--
+Keep in mind that this document is not specific to Mojo - you can use these ideas in many other UI Frameworks. These ideas however are very complimentary to Mojo, so it's much easier 
+-->
 
 
 #### What is MV*?
