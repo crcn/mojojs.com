@@ -23,6 +23,12 @@ The "V" in MVC represents a View (or templates). Views take information from the
 
 > In Mojo, it's possible to include the view with the controller (it's easier to implement up-front), but this practice is discouraged since it makes maintanence a bit more difficult. Designers for instance might have a harder time modifying templates if it means they have to dive into JavaScript files. 
 
+<!-- 
+More stuff here on controllers being re-usable. Combining view with controller logic makes things bigger, and possibly harder to maintain. Easier to manage when things are smaller. V+C also makes code more brittle since you're mixing view logic with controller logic - more of a blocker for designers. Engineers aren't always mindful of there code is viewed by other people - less technical. This is a human error that can be solved through a technical process (templates).
+
+I.E: templates are more rigid, but a predictable process that makes code more maintainable, consistent, refactorable, and less intimidating. 
+--> 
+
 <!--[Checkout this Stack Overflow](http://stackoverflow.com/questions/731743/php-vs-template-engine) thread for more discussion between why not to include templates with the controller.-->
 
 <!--
