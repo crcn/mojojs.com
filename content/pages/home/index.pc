@@ -14,7 +14,7 @@
         </p>
 
           <a class="btn download-button" href="https://github.com/mojo-js/mojo-starter/archive/master.zip">Download Beta</a>
-          <a class="btn download-button get-started" href="/docs/getting-started">Get Started</a>
+          <a class="btn download-button get-started" href="/docs/getting-started/installation">Get Started</a>
       </div>
       <div class="col-md-3"></div>
     </div>
