@@ -29,7 +29,7 @@ The "V" in MVC represents a View (or templates). Views take information from the
 Explain why views are separate from controllers
 -->
 
-Notice the order of these terms - MCV - this is how data flows to the user . You typically start with a model, which provides information to the controller, to the view, then finally to the user (model -> controller -> view -> user). Think of this like layers of your application.
+Notice the order of these terms - MCV - this is how data flows to the user . You typically start with a model which provides information to the controller, to the view, then finally to the user (model -> controller -> view -> user). Think of this like layers of your application.
 
 
 #### Framework Layers

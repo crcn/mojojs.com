@@ -43,6 +43,10 @@ module.exports = (function(fragment, block, element, text, comment, parser, modi
 
 Pretty clear what's going on. Here's what we know at a glance:
 
+<!--
+More stuff here - no innerHTML, DOM abstractions. Generated template item is a DOM element.
+-->
+
 1. Generated DOM is identical to the HTML templates. No weird manipulations here.
 2. Data-bindings are identified *as the template is created*. Note that this happens *once* for every template. Paperclip takes each translated template, caches them, and uses the browser's native `cloneNode()` whenever a template is used. 
 3. JavaScript references within the templates are identified at translation time, and cached in the data-binding.
