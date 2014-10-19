@@ -84,7 +84,7 @@ well-written, but no place to go
 > In most applications, the steps listed above (views & data) are probably the only two things you need to really focus on during most of the development process. Everything else from the HTTP router, to additional application-specific features such as offline mode, or realtime data should be added these two steps; i.e., write your views & models first.
 -->
 
-After developing your models, you can add other parts of your application, such as an [HTTP router](/docs/api/router), realtime data, offline mode, or [internationalization](/docs/extended-api/i18n). These sort of features are non-fundamental, and should always be added after you've figured out models & views. 
+After developing your models, you can add other parts of your application, such as an [HTTP router](/docs/api/router), realtime data, offline mode, or [internationalization](/docs/extended-api/i18n). These sort of features are non-fundamental, and should always be added *after* you've figured the structure of your models and views. 
 
 
 <!-- 
