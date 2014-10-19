@@ -68,7 +68,7 @@ For instance, when you look at a list of items in a mock-up, you can assume it's
 
 This sort of practice is easy to pick-up between other team members, and creates a consistent way to handle how view components are created. It's also easy for non-developers to follow, especially designers looking to change some of the UI elements. 
 
-> Maintaining a hierarchy of views in Mojo also makes it easy to move components around within your application if you need to perform any sort of maintainence, or refactoring.
+Maintaining a hierarchy of views in Mojo also makes it easy to move components around within your application if you need to perform any sort of maintainence, or refactoring.
 
 Once you have an idea of how your application should be broken apart, you can start building your views with the data it needs to represent - step two.
 
