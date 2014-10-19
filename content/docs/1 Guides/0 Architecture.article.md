@@ -75,6 +75,9 @@ You typically write fixtures (fake data) along with views, so you know what prop
 Developing views with fixtures is also a great way of building apps indendently from any API (especially with teams of people, you can easily write front-end and backend apps in parallel with this method). Fixtures also make your views more testable, and give you an additional idea of how model relationships could look like - similar to the practice of looking at your mock-ups before building your views.
 
 <!--
+add bit about evaluating fixtures to see if the relationships make sense - if not, then there's something likely wrong with the views.
+-->
+<!--
 1. It's easy for non-developers to follow, especially designers looking to change some of the UI elements. 
 2. It's easy to move components around within your application if you need to perform any sort of maintainence, or refactoring.
 3. You can easily build the front-end independently from any API.
