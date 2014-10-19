@@ -55,7 +55,7 @@ Thinking about applications development in layers also reduces the cognitive ove
 
 #### Planning
 
-<!-- VIDEO HERE -->
+<!-- ENTIRE VIDEO HERE? -->
 
 See [structuring your application](/docs/guides/structuring-your-application) for more info.
 
@@ -78,6 +78,8 @@ Once you have an idea of how your application should be broken apart, you can st
 
 You typically write fixtures (fake data) along with views, so you know what properties the view needs. Fixtures allow you to construct views independently from models - great for encapsulation. Mojo easily allows you to write views with *just* fixtures, then later on, swap them out for real models - like a flip of a switch.
 
+<!-- VIDEO HERE BUILDING APP WITH FIXTURES -->
+
 Developing views with fixtures is also a great way of building apps indendently from any API (especially with teams of people, you can easily write front-end and backend apps in parallel with this method). Fixtures also make your views more testable, and give you an additional idea of what model relationships look like - similar to the practice of looking at your mock-ups before building your views.
 
 <!--
@@ -95,7 +97,10 @@ add bit about evaluating fixtures to see if the relationships make sense - if no
 
 After you've created your views with fixture data, you should have a clear idea of the models your application needs. This is a pretty straight forward process. See [structuring models](/docs/guides/structuring-your-application#models) for more information.
 
+<!-- VIDEO HERE -->
+
 <!--
+
 add bit regarding swapping out fixtures. 
 
 Also information regarding knowing the relationships between different models, and using the event bus to update any relationships. This allows for sweet, sweet stuff such as offline mode, and realtime data without wondering how persisting data's going to affect other parts of the application on the backend.
