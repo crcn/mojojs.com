@@ -90,6 +90,10 @@ add bit about evaluating fixtures to see if the relationships make sense - if no
 After you've created your views with fixture data, you should know have a clear idea of the models your application needs. This is a pretty straight forward process. See [structuring models](/docs/guides/structuring-your-application#models) for more information.
 
 <!--
+add bit regarding swapping out fixtures
+-->
+
+<!--
 well-written, but no place to go
 
 > In most applications, the steps listed above (views & data) are probably the only two things you need to really focus on during most of the development process. Everything else from the HTTP router, to additional application-specific features such as offline mode, or realtime data should be added these two steps; i.e., write your views & models first.
