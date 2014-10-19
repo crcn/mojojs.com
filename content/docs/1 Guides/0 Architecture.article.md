@@ -93,7 +93,7 @@ add bit about evaluating fixtures to see if the relationships make sense - if no
 
 <!-- SHOW FIXTURES -->
 
-After you've created your views with fixture data, you should know have a clear idea of the models your application needs. This is a pretty straight forward process. See [structuring models](/docs/guides/structuring-your-application#models) for more information.
+After you've created your views with fixture data, you should have a clear idea of the models your application needs. This is a pretty straight forward process. See [structuring models](/docs/guides/structuring-your-application#models) for more information.
 
 <!--
 add bit regarding swapping out fixtures. 
