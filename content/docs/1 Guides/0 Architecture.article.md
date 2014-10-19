@@ -72,7 +72,7 @@ Once you have an idea of how your application should be broken apart, you can st
 
 You typically write fixtures (fake data) along with views, so you know what properties the view needs. Fixtures allow you to construct views independently from models - great for encapsulation. Mojo easily allows you to write views with *just* fixtures, then later on, swap them out for real models - like a flip of a switch.
 
-Developing views with fixtures is also a great way of building apps indendently from any API. Fixtures also make your views more testable, and give you an additional idea of how model relationships could look like - similar to the practice of looking at your mock-ups before building your views.
+Developing views with fixtures is also a great way of building apps indendently from any API (especially with teams of people, you can easily write front-end and backend apps in parallel with this method). Fixtures also make your views more testable, and give you an additional idea of how model relationships could look like - similar to the practice of looking at your mock-ups before building your views.
 
 <!--
 1. It's easy for non-developers to follow, especially designers looking to change some of the UI elements. 
