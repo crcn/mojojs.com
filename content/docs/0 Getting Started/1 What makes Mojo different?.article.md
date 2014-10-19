@@ -81,10 +81,18 @@ Explicit getters & setters were also chosen in the framework since
 
 Data-bindings are even explicit. You can easily define [1-way, 2-way, or even unbound references](/docs/api/templates#bindingoperators) within templates.
 
-#### Flexibility
+#### Flexible
 
 <!-- more examples here? E.g: manipuating the DOM manually -->
 Mojo finds the right balance between ease of use, and structure. The patterns used in Mojo make it possible to extend the framework without feeling like you're working against it. Easily build applications that support <!-- [offline mode](/docs/guides/offlinemode), --> [realtime data](https://github.com/mojo-js/mojo-pubnub), [internationalization](/docs/extended-api/i18n), etc. 
+
+<!--
+#### Simple
+
+models & views are fundumental - everything else is additive. Philiosphies and design patterns are complimentary to the framework.
+-->
+
+
 
 
 <!--
