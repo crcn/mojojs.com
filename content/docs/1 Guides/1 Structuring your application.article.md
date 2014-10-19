@@ -72,7 +72,9 @@ Notice the `pc` files - these are the templates that get displayed to the user. 
 TODO - explain index.js
 -->
 
+<!--
 > Keep in mind that it's totally fine to build out an application without an HTTP router - that can be added last without affecting your application structure.
+-->
 
 #### HTTP router
 
@@ -85,7 +87,7 @@ TODO - show how to structure this stuff
 
 #### unit tests
 
-It's easier to keep tests along side the file your testing. For example:
+It's easier to keep tests alongside the file you're testing. For example:
 
 ```
 application/
@@ -116,7 +118,7 @@ This convention does a few things:
 4. It's an easy pattern to follow.
 5. Doesn't break if you need to source files around.
 
-Here's an short example of a `messages` model unit test:
+Here's a short example of a `messages` model unit test:
 
 ```javascript
 var Messages = require("./messages"),
