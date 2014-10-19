@@ -90,7 +90,11 @@ add bit about evaluating fixtures to see if the relationships make sense - if no
 After you've created your views with fixture data, you should know have a clear idea of the models your application needs. This is a pretty straight forward process. See [structuring models](/docs/guides/structuring-your-application#models) for more information.
 
 <!--
-add bit regarding swapping out fixtures
+add bit regarding swapping out fixtures. 
+
+Also information regarding knowing the relationships between different models, and using the event bus to update any relationships. This allows for sweet, sweet stuff such as offline mode, and realtime data without wondering how persisting data's going to affect other parts of the application on the backend.
+
+Maybe, models on the front-end should mirror how the backend alters relationships. 
 -->
 
 <!--
