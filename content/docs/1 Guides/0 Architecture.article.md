@@ -72,6 +72,14 @@ Once you have an idea of how your application should be broken apart, you can st
 
 You typically write fixtures (fake data) along with views, so you know what properties the view needs. Fixtures allow you to construct views independently from models - great for encapsulation. Mojo easily allows you to write views with *just* fixtures, then later on, swap them out for real models - like a flip of a switch.
 
+Developing views with fixtures is also a great way of building apps indendently from any API. Fixtures also make your views more testable, and give you an additional idea of how model relationships could look like - similar to the practice of looking at your mock-ups before building your views.
+
+<!--
+1. It's easy for non-developers to follow, especially designers looking to change some of the UI elements. 
+2. It's easy to move components around within your application if you need to perform any sort of maintainence, or refactoring.
+3. You can easily build the front-end independently from any API.
+-->
+
 <!-- show other benefits of writing with fixtures -->
 
 <!-- SHOW FIXTURES -->
@@ -84,7 +92,7 @@ well-written, but no place to go
 > In most applications, the steps listed above (views & data) are probably the only two things you need to really focus on during most of the development process. Everything else from the HTTP router, to additional application-specific features such as offline mode, or realtime data should be added these two steps; i.e., write your views & models first.
 -->
 
-After developing your models, you can add other parts of your application, such as an [HTTP router](/docs/api/router), realtime data, offline mode, or [internationalization](/docs/extended-api/i18n). These sort of features are non-fundamental, and should always be added *after* you've figured the structure of your models and views. 
+After developing your models, you can add other parts of your application, such as an [HTTP router](/docs/api/router), realtime data, offline mode, or [internationalization](/docs/extended-api/i18n). These sort of features are non-fundamental, and should always be added *after* you've figured the structure of your models & views. 
 
 
 <!-- 
