@@ -2,9 +2,13 @@ parseBody = require "body-parser"
 xss       = require "xss"
 
 module.exports = (app) ->
-  
-  messages = []
+
   _id = 1
+  
+  messages = [
+    { _id: String(_id++), text: "Welcome! This is a simple chatroom example.", createdAt: Date.now(), displayName: "Craig" },
+    { _id: String(_id++), text: "Try editing, or adding a comment!", createdAt: Date.now(), displayName: "Craig" }
+  ]
 
   sanitizeText = (text) -> String(xss(text)).substr(0, 100)
 
