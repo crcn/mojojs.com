@@ -12,7 +12,7 @@ var ChatroomApplication = Application.extend({
     require("mojo-paperclip"),
     require("mojo-models@0.3.10"),
     require("mojo-event-bus@0.0.12"),
-    require("mojo-pubnub@0.0.16"),
+    require("mojo-pubnub@0.0.18"),
     require("./views"),
     require("./models")
   ]
