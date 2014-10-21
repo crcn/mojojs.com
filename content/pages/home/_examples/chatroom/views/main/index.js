@@ -6,7 +6,22 @@ var MessageView = views.Base.extend({
    * message template
    */
 
-  paper: require("./message.pc")
+  paper: require("./message.pc"),
+
+  /**
+   */
+
+  save: function () {
+    this.set("editMode", false);
+    this.model.save();
+  },
+
+  /**
+   */
+
+  edit: function () {
+    this.set("editMode", true);
+  }
 });
 
 module.exports = views.Base.extend({
@@ -52,7 +67,7 @@ module.exports = views.Base.extend({
       text: this.newMessage,
       displayName: this.displayName,
       createdAt: Date.now()
-    });
+    }).save();
 
     // reset the form input
     this.set("newMessage", void 0);

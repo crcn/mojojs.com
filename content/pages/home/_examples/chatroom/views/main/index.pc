@@ -10,6 +10,6 @@
       {{ html: children.messages }}
     </ul>
 
-    <input type="text" class="form-control" placeholder="Enter a message" data-bind="{{ model: <~>newMessage, onEnter: createMessage() }}"></input>
+    <input type="text" class="form-control" placeholder="Enter a message" data-bind="{{ model: <~>newMessage, onEnter: createMessage() }}"></input> 
   {{/}}
 </div>

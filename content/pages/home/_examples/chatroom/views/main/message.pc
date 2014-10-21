@@ -3,11 +3,11 @@
   {{model.displayName || "Anonymous"}}: 
 
   {{#if:editMode}}
-    <input type="text" class="form-control" data-bind="{{ focus: true, model: <~>model.text, onEnter: editMode = false }}"></input>
+    <input type="text" class="form-control" data-bind="{{ focus: true, model: <~>model.text, onEnter: save() }}"></input>
   {{/else}}
     {{ model.text }}
-    <span class="glyphicon glyphicon-remove text" data-bind="{{ onClick: model.dispose() }}"></span>
-    <span class="glyphicon glyphicon-pencil text" data-bind="{{ onClick: editMode = true }}"></span>
+    <span class="glyphicon glyphicon-remove text" data-bind="{{ onClick: model.remove() }}"></span>
+    <span class="glyphicon glyphicon-pencil text" data-bind="{{ onClick: edit() }}"></span>
   {{/}}
 
 </li>

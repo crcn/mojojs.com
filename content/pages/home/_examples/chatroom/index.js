@@ -10,9 +10,9 @@ var ChatroomApplication = Application.extend({
   plugins: [
     require("mojo-views"),
     require("mojo-paperclip"),
-    require("mojo-models"),
-    require("mojo-event-bus"),
-    require("mojo-pubnub"),
+    require("mojo-models@0.3.10"),
+    require("mojo-event-bus@0.0.12"),
+    require("mojo-pubnub@0.0.16"),
     require("./views"),
     require("./models")
   ]
@@ -28,5 +28,5 @@ app.eventBus.publish("/initializePubnub", {
 
 // create the main view, and add the todos models
 preview.element.appendChild(app.views.create("main", {
-  messages: app.models.create("messages")
+  messages: app.models.create("messages").load()
 }).render());

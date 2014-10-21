@@ -17,6 +17,7 @@ class ClassDojoServerApplication extends ClassDojoApplication
     require("./views"),
     require("./plugins/docs"),
     require("./plugins/todosExample"),
+    require("./plugins/chatroomExample"),
     require("./plugins/compileScript")
   ]
 
