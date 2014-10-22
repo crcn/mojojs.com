@@ -86,7 +86,8 @@ addRemoteFiles = (files, complete) ->
         content: "module.exports = " + response.body[moduleName].bundle + "('"+moduleName+"')"
       }
 
-      _remoteModuleCache[modulePath] = remoteModule
+      if process.browser
+        _remoteModuleCache[modulePath] = remoteModule
 
     complete()
 
