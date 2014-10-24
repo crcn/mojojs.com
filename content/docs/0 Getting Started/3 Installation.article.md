@@ -34,7 +34,7 @@ Installs all dependencies for the starter kit
 
 #### npm start
 
-starts the development server on port `8080`
+starts the development server on port `8085`
 
 #### npm run build
 
