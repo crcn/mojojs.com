@@ -4,7 +4,7 @@
   }
 }}
 
-Below is a list of examples, and open source projects using Mojo.js
+Below is a list of examples, and open source projects using MojoJS.
 
 ### [TodoMVC Example](https://github.com/mojo-js/mojo-todomvc-example)
 
