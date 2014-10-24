@@ -117,6 +117,12 @@ well-written, but no place to go
 After developing your models, you can add other parts of your application, such as an [HTTP router](/docs/api/router), realtime data, offline mode, or [internationalization](/docs/extended-api/i18n). These sort of features are non-fundamental, and should always be added *after* you've figured the structure of your models & views. 
 
 
+
+> If you're interested to see the above concepts applied in practice, checkout this demonstration of a [reader application developed](https://github.com/mojo-js/mojo-reader-example) in less than 2 hours:
+
+> <iframe class="video" src="//www.youtube.com/embed/Qup3P7S5I0I" frameborder="0" allowfullscreen></iframe>
+
+
 <!-- 
 
 For instance
