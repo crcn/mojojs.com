@@ -19,6 +19,14 @@ MojoJS main website. Demonstrates how to run MojoJS on the backend (NodeJS), alo
 
 Uses Mojo throughout the entire stack, both server-side, and client-side. 
 
+### [Reader Example](https://github.com/mojo-js/mojo-reader-example)
+
+Queries articles from various sources, and displays them within the application using [Diffbot](https://www.diffbot.com/). 
+
+<img src="https://cloud.githubusercontent.com/assets/757408/4746915/e2e8f6ec-5a51-11e4-9d51-638edde1993a.png"></img>
+
+<!-- show tutorial here -->
+
 <!--
 TODO - more complex examples
 -->
