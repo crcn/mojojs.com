@@ -4,17 +4,6 @@
   }
 }}
 
-
-## Pre-bundled package
-
-The **easiest** way to start playing around with MojoJS is to first download the [pre-bundled](https://github.com/mojo-js/mojo.js/archive/master.zip) version which which contains the [views](http://github.com/mojo-js/mojo-views), [models](http://github.com/mojo-js/mojo-models), [template engine](http://github.com/mojo-js/mojo-paperclip), and [HTTP router](http://github.com/mojo-js/mojo-router) plugins.
-
-Once you've downloaded the pre-bundled version, head over to the `/examples` directory and open any-one of them in your browser to start
-tinkering around.
-
-You can also checkout the [mojo](/docs/api/mojo) docs for additional information on how to use the pre-bundled package.
-
-
 ## Starter Kit
 
 <iframe class="video" src="//www.youtube.com/embed/FSq_yUbHkfQ" frameborder="0" allowfullscreen></iframe>
@@ -65,4 +54,14 @@ Example:
 ```
 make test-watch ONLY=messages REPORTER=list # run only messages tests with the list reporter
 ```
+
+## Pre-bundled package
+
+The **easiest** way to start playing around with MojoJS is to first download the [pre-bundled](https://github.com/mojo-js/mojo.js/archive/master.zip) version which which contains the [views](http://github.com/mojo-js/mojo-views), [models](http://github.com/mojo-js/mojo-models), [template engine](http://github.com/mojo-js/mojo-paperclip), and [HTTP router](http://github.com/mojo-js/mojo-router) plugins.
+
+Once you've downloaded the pre-bundled version, head over to the `/examples` directory and open any-one of them in your browser to start
+tinkering around.
+
+You can also checkout the [mojo](/docs/api/mojo) docs for additional information on how to use the pre-bundled package.
+
 
