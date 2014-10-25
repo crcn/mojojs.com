@@ -13,7 +13,12 @@
           programs that scale across any platform
         </p>
 
-          <a class="btn download-button" href="https://github.com/mojo-js/mojo-starter/archive/master.zip">Download Beta</a>
+          {{
+            browserify: {
+              component: "download"
+            }
+          }}
+          
           <a class="btn download-button get-started" href="/docs/getting-started/installation">Get Started</a>
       </div>
       <div class="col-md-3"></div>
