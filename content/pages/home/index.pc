@@ -10,7 +10,7 @@
 
         <p>
           A non-opinionated, customizable JavaScript framework designed for writing
-          scalable <!--web, and server-side--> applications
+          large-scale web, and server-side programs
         </p>
 
           {{
