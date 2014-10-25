@@ -44,3 +44,25 @@ bundles your application into one script
 
 runs the [hotswap server](https://github.com/browsertap/ditto.js) on port `8090`. This script automatically reloads
 your browser if any file changes locally.
+
+#### make test
+
+Runs the unit tests
+
+Example:
+
+```
+make test ONLY=messages REPORTER=list # run only messages tests with the list reporter
+```
+
+#### make test-watch
+
+Runs the unit tests, and re-run them whenever a file changes
+
+
+Example:
+
+```
+make test-watch ONLY=messages REPORTER=list # run only messages tests with the list reporter
+```
+
