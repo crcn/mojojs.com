@@ -53,16 +53,18 @@
                 <div class="col-md-3">
                   <ul>
                     <li>Downloads</li>
-                    <li><a href="https://github.com/mojo-js/mojo-starter/archive/master.zip">Starter Kit</a></li>
+                    <li><a href="https://github.com/mojo-js/mojo-starter/archive/master.zip">Starter kit</a></li>
+
+                    <li><a href="https://github.com/mojo-js/mojo.js/archive/master.zip">Bundled version</a></li>
                   </ul>
                 </div>
                 <div class="col-md-3">
                   <ul>
                     <li>Learn</li>
-                    <li><a href="/docs/getting-started">Getting Started</a></li>
-                    <!--li><a href="/docs/guides">Guides</a></li-->
+                    <li><a href="/docs/getting-started">Getting started</a></li>
+                    <li><a href="/docs/guides">Guides</a></li>
+                    <li><a href="/docs/getting-started/installation">Installation</a></li>
                     <li><a href="/docs/api">API</a></li>
-                    <!--li><a href="/docs/videos">Videos</a></li-->
                   </ul>
                 </div>
                 <div class="col-md-3">
