@@ -66,7 +66,7 @@
         <div class="col-md-12">
           <h3>Customizable to the bone</h3>
           <p class="subheader">
-            Mojo.js was designed to be plugin-based to the core, allowing you to customize every part of it. Write code once that works on any platform including web, server, and mobile. Build rich applications that give your user base the best experience possible.
+            MojoJS was designed to be plugin-based to the core, allowing you to customize every part of it. Write code once that works on many platforms including web, server, and mobile. Build rich applications that give your user base the best experience possible.
           </p>
           <hr />
         </div>
@@ -152,7 +152,7 @@
           <h3><span class="glyphicon glyphicon-flash"></span>&nbsp;Fast</h3>
 
           <p>
-           Mojo uses some pretty slick techniques to ensure that whatever you write performs well across any platform, including the older stuff such as IE 8+.
+           MojoJS uses some pretty slick techniques to ensure that whatever you write performs well, including the older stuff such as IE 8+.
           </p>
         </div>
       </div>
