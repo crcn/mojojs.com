@@ -71,6 +71,7 @@
     "mojo-router": "0.6.x",
     "mojo-views": "0.2.x",
     "moment": "^2.8.1",
+    "mongodb": "^1.4.19",
     "nofactor": "0.0.x",
     "npm": "^2.1.2",
     "outcome": "0.0.x",

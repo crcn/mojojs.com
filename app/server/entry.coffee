@@ -6,6 +6,9 @@ app = new ClassDojoWebsiteApplication({
   http: {
     port: process.env.PORT || 8080
   },
+  mongo: {
+    url: process.env.MONGOHQ_URL || "mongodb://localhost:27017/mojojs"
+  }
   directories: {
     public: path.normalize(__dirname + "/../../content/public"),
     content: path.normalize(__dirname + "/../../content"),
