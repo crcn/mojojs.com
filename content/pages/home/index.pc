@@ -73,28 +73,14 @@
       </div>
     </div>
 
-    <div class="container content">
-      <div class="row">
-        <div class="col-md-6 description">
-          <h3><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;Simple</h3>
-          <p>
-          You'll appreciate Mojo's straight-forward, non-opinionated API. Mojo encourages certain design principles, but doesn't lock you into building applications a certain way. Easily build applications however you want to.
-          </p>
-        </div>
-        <div class="col-md-6">
-          {{
-            idePrep: {
-              sourceDir: __dirname + "/_snippets/simple",
-              tabs: true,
-              showPreview: true
-            }
-          }}
-        </div>
-      </div>
-    </div>
-
     <div class="container content feature">
       <div class="row">
+        <div class="col-md-6 description">
+          <h3><span class="glyphicon glyphicon-random"></span>&nbsp;Compatible</h3>
+          <p>
+            Everything's a plugin - the views, models, template engine, router. This allows you to pick whatever part of the framework you like, and leave the rest. This also means that Mojo works with just about any JavaScript library. Easily incorporate Mojo into your pre-existing web, mobile, or NodeJS application. <!--Easily mix and match mojo plugins to make it the framework you truly desire.-->
+          </p>
+        </div>
         <div class="col-md-6">
 
           <!-- TODO: make multiline work here -->
@@ -106,10 +92,24 @@
             }
           }}
         </div>
+      </div>
+    </div>
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-6">
+          {{
+            idePrep: {
+              sourceDir: __dirname + "/_snippets/simple",
+              tabs: true,
+              showPreview: true
+            }
+          }}
+        </div>
         <div class="col-md-6 description">
-          <h3><span class="glyphicon glyphicon-random"></span>&nbsp;Compatible</h3>
+          <h3><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;Simple</h3>
           <p>
-            Mojo works with just about any JavaScript library. Incorporate Mojo into your pre-existing web, mobile, or NodeJS application. Mix and match mojo plugins to make it the framework you truly desire.
+          You'll appreciate Mojo's straight-forward, non-opinionated API. Mojo encourages certain design principles, but doesn't lock you into building applications a certain way. Easily build applications however you want to.
           </p>
         </div>
       </div>
