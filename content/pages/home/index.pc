@@ -9,7 +9,7 @@
         <h2>Build beautifully crafted, and powerful applications</h2>
 
         <p>
-          A family of non-opinionated, customizable JavaScript libraries designed for writing
+          A non-opinionated, customizable JavaScript family of libraries designed for writing
           scalable web, mobile, and server-side programs
         </p>
 
@@ -202,7 +202,7 @@
           <div class="col-md-12">
             <h3>Used by millions of people</h3>
             <p class="subheader">
-              Mojo was originally started at <a href="http://classdojo.com">ClassDojo</a> in 2012 to build rich web, and server-side applications. It now supports more than <strong>35 million</strong> happy users around the world.
+              Mojo was originally started at <a href="http://classdojo.com">ClassDojo</a> in 2012 to build rich web, and server-side applications. The framework now supports more than <strong>35 million</strong> happy users around the world.
             </p>
           </div>
         </div>
