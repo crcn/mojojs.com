@@ -41,7 +41,7 @@ scanRemoteDeps = (files) ->
   remoteDeps = []
 
 cdn = "http://browserify-cdn.herokuapp.com"
-cdn = "http://wzrd.in"
+#cdn = "http://wzrd.in"
 
 _remoteModuleCache = {}
 

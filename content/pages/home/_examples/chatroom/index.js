@@ -1,4 +1,4 @@
-var Application = require("mojo-application");
+var Application = require("mojo-application@0.1.x");
 
 var ChatroomApplication = Application.extend({
   config: {
@@ -8,8 +8,8 @@ var ChatroomApplication = Application.extend({
     }
   },
   plugins: [
-    require("mojo-views"),
-    require("mojo-paperclip"),
+    require("mojo-views@0.2.x"),
+    require("mojo-paperclip@0.6.x"),
     require("mojo-models@0.3.10"),
     require("mojo-event-bus@0.0.12"),
     require("mojo-pubnub@0.0.18"),

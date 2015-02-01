@@ -22,7 +22,7 @@ Base class to extend when creating custom attr data binding.
 {{#block:"textAttrDataBinding-js"}}
 <!--
 var paperclip = require("paperclip"),
-views         = require("mojo-views");
+views         = require("mojo-views@0.2.x");
 
 module.exports = paperclip.BaseAttrDataBinding.extend({
   _onChange: function (text) {
@@ -35,7 +35,7 @@ module.exports = paperclip.BaseAttrDataBinding.extend({
 <!--
 var bindable = require("bindable"),
 Application  = require("mojo-application"),
-views        = require("mojo-views"),
+views        = require("mojo-views@0.2.x"),
 paperclip    = require("mojo-paperclip")
 
 var app = new Application();

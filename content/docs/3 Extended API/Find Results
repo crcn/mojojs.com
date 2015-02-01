@@ -1,0 +1,49 @@
+Searching 24 files for ""mojo-views"" (case sensitive)
+
+/Users/craig/Developer/Public/mojojs.com/content/docs/3 Extended API/0 i18n.article.md:
+   21  var Application = require("mojo-application"),
+   22  paperclip       = require("mojo-paperclip"),
+   23: views           = require("mojo-views"),
+   24  i18n            = require("mojo-i18n");
+   25  
+
+/Users/craig/Developer/Public/mojojs.com/content/docs/4 Core API/0 paperclip.BaseBlockBinding.article.md:
+   28  <!--
+   29  var paperclip = require("paperclip"),
+   30: views         = require("mojo-views");
+   31  
+   32  module.exports = paperclip.BaseBlockBinding.extend({
+   ..
+   63  var bindable = require("bindable"),
+   64  Application  = require("mojo-application"),
+   65: views        = require("mojo-views"),
+   66  paperclip    = require("mojo-paperclip")
+   67  
+
+/Users/craig/Developer/Public/mojojs.com/content/docs/4 Core API/1 paperclip.BaseAttrDataBinding.article.md:
+   23  <!--
+   24  var paperclip = require("paperclip"),
+   25: views         = require("mojo-views");
+   26  
+   27  module.exports = paperclip.BaseAttrDataBinding.extend({
+   ..
+   36  var bindable = require("bindable"),
+   37  Application  = require("mojo-application"),
+   38: views        = require("mojo-views"),
+   39  paperclip    = require("mojo-paperclip")
+   40  
+
+/Users/craig/Developer/Public/mojojs.com/content/docs/4 Core API/2 paperclip.BaseAttrBinding.article.md:
+   24  <!--
+   25  var paperclip = require("paperclip"),
+   26: views         = require("mojo-views");
+   27  
+   28  module.exports = paperclip.BaseAttrBinding.extend({
+   ..
+   37  var bindable = require("bindable"),
+   38  Application  = require("mojo-application"),
+   39: views        = require("mojo-views"),
+   40  paperclip    = require("mojo-paperclip")
+   41  
+
+7 matches across 4 files

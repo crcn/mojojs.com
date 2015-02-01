@@ -33,12 +33,12 @@ Here's an example of how to use just about every property / method in the `Appli
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var Application = require("mojo-application");
+var Application = require("mojo-application@0.1.x");
 
 var MyApplication = Application.extend({
   plugins: [
-    require("mojo-views"),     // views plugin
-    require("mojo-paperclip"), // paperclip template plugin
+    require("mojo-views@0.2.x"),     // views plugin
+    require("mojo-paperclip@0.6.x"), // paperclip template plugin
     require("./views"),        // views specific to this application
   ],
   willInitialize: function (preview) {
@@ -72,7 +72,7 @@ module.exports = function (app) {
 {{/}}
 {{#block:"views/main-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 module.exports = views.Base.extend({
   paper: require("./main.pc"),
   divide: function (value, multiplier) {
@@ -105,7 +105,7 @@ Your main application entry point.
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var Application = require("mojo-application");
+var Application = require("mojo-application@0.1.x");
 var app = new Application({
   name: "some property!"
 });
@@ -132,13 +132,13 @@ The node factory to use for rendering the DOM
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var Application = require("mojo-application"),
+var Application = require("mojo-application@0.1.x"),
 nodeFactories   = require("nofactor"),
 MainView        = require("./views/main.js");
 
 var MyApplication = Application.extend({
   plugins: [
-    require("mojo-views"),
+    require("mojo-views@0.2.x"),
     require("mojo-paperclip@0.6.1"),
     function (app) {
       app.views.register("main", MainView);
@@ -167,7 +167,7 @@ console.log(nodeApp.views.create("main", {
 {{/}}
 {{#block:"views/main-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 module.exports = views.Base.extend({
   paper: require("./main.pc")
 });
@@ -175,7 +175,7 @@ module.exports = views.Base.extend({
 {{/}}
 {{#block:"views/main-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 module.exports = views.Base.extend({
   paper: require("./main.pc")
 });
@@ -194,7 +194,7 @@ module.exports = views.Base.extend({
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var Application = require("mojo-application");
+var Application = require("mojo-application@0.1.x");
 
 var app = new Application();
 app.use(function (app) {
@@ -234,7 +234,7 @@ called immediately after initializing the application
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var Application = require("mojo-application");
+var Application = require("mojo-application@0.1.x");
 
 var app = new Application();
 app.on("initialize", function () {
@@ -256,8 +256,8 @@ Property added by [views extension](/docs/apiviewsbase) when registering to the 
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var Application = require("mojo-application"),
-views           = require("mojo-views"),
+var Application = require("mojo-application0.1.x"),
+views           = require("mojo-views@0.2.x"),
 paperclip       = require("mojo-paperclip@0.6.3");
 
 var app = new Application();
@@ -283,8 +283,8 @@ you might want to use in something like [paperclip components](https://github.co
 - `class` - the class if className is provided
 
 ```javascript
-var Application = require("mojo-application"),
-views = require("mojo-views");
+var Application = require("mojo-application@0.1.x"),
+views = require("mojo-views@0.2.x");
 
 var app = new Application();
 app.use(views);
@@ -307,8 +307,8 @@ Creates a new registered view.
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var Application = require("mojo-application"),
-views = require("mojo-views");
+var Application = require("mojo-application@0.1.x"),
+views = require("mojo-views@0.2.x");
 
 var app = new Application();
 app.use(views);
@@ -331,8 +331,8 @@ interpolation between different libraries. Here's an example of paperclip using 
 {{#example}}
 {{#block:"index-js"}}
 <!--
- var views       = require("mojo-views"),
-     Application = require("mojo-application"),
+ var views       = require("mojo-views@0.2.x"),
+     Application = require("mojo-application@0.1.x"),
      handlebars  = require("handlebars");
 
  var app = new Application();

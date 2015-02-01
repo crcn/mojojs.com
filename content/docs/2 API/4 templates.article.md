@@ -63,7 +63,7 @@ npm install mojo-paperclip --save-exact
 var Application = require("mojo-application");
 var MyApplication = Application.extend({
   plugins: [
-    require("mojo-views"),
+    require("mojo-views@0.2.x"),
     require("mojo-paperclip")
   ]
 });

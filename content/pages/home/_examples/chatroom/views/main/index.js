@@ -1,4 +1,4 @@
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 
 var MessageView = views.Base.extend({
 

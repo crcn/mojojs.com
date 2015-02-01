@@ -33,7 +33,7 @@ The view constructor.
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 var someView = new views.Base({
   name: "Jeff"
 });
@@ -51,7 +51,7 @@ this property is created **after** the view has been rendered.
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 var someView = new views.Base();
 preview.element.appendChild(someView.render());
 someView.section.appendChild(document.createTextNode("Hello World!"));
@@ -75,7 +75,7 @@ TODO: example here showing different template engines.
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 var someView = new views.Base({
   didCreateSection: function () {
     this.section.appendChild(document.createTextNode("Hello World!"));
@@ -108,7 +108,7 @@ Called immediately before rendering the view
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 var someView = new views.Base({
   willRender: function () {
     console.log("about to render");
@@ -132,7 +132,7 @@ the view
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 var someView = new views.Base({
   didCreateSection: function () {
     console.log("created section!");
@@ -176,7 +176,7 @@ called immediately after removing the view. Similar to `didRemove`.
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 var someView = new views.Base();
 
 someView.on("render", function () {
@@ -205,7 +205,7 @@ is incredibly useful if you want to implicitly pass properties from one view to 
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 
 var ChildView = views.Base.extend({
   willRender: function () {
@@ -277,7 +277,7 @@ or string to compile. Here's an example:
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var views   = require("mojo-views"),
+var views   = require("mojo-views@0.2.x"),
 paperclip   = require("mojo-paperclip@0.6.3"),
 Application = require("mojo-application");
 
@@ -291,7 +291,7 @@ preview.element.appendChild(app.views.create("view3", { name: "Craig" }).render(
 {{/}}
 {{#block:"views/index-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 
 // compiled as the file's required
 var View1 = views.Base.extend({
@@ -349,7 +349,7 @@ Bindings allow you to compute properties on each view.
 {{#example}}
 {{#block:"index-js"}}
 <!--
-var views        = require("mojo-views"),
+var views        = require("mojo-views@0.2.x"),
     Application  = require("mojo-application"),
     bindable     = require("bindable");
 
@@ -393,7 +393,7 @@ organization in your codebase. Here's an example of a basic view structure:
 <!--
 var Application = require("mojo-application");
 var app = new Application();
-app.use(require("mojo-views"), require("mojo-paperclip"), require("./views"));
+app.use(require("mojo-views@0.2.x"), require("mojo-paperclip"), require("./views"));
 preview.element.appendChild(app.views.create("home", {
   user: {
     fullName: "Sendra Bullock"
@@ -410,7 +410,7 @@ module.exports = function (app) {
 {{/}}
 {{#block:"views/home/index-js"}}
 <!--
-module.exports = require("mojo-views").Base.extend({
+module.exports = require("mojo-views@0.2.x").Base.extend({
   paper: require("./index.pc"),
   children: {
     header: require("./header"),
@@ -428,7 +428,7 @@ Entire Application: <br />
 {{/}}
 {{#block:"views/home/header-js"}}
 <!--
-module.exports = require("mojo-views").Base.extend({
+module.exports = require("mojo-views@0.2.x").Base.extend({
   paper: require("./header.pc")
 });
 -->
@@ -441,7 +441,7 @@ Welcome back {{ user.fullName }}
 {{/}}
 {{#block:"views/home/content-js"}}
 <!--
-module.exports = require("mojo-views").Base.extend({
+module.exports = require("mojo-views@0.2.x").Base.extend({
   paper: require("./content.pc")
 });
 -->
@@ -464,7 +464,7 @@ Unit tests are very easy to write for mojo-views. Here's a basic example using `
 View:
 
 ```javascript
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 module.exports = views.Base.extend({
     : {
         "firstName, lastName": function (firstName, lastName) {

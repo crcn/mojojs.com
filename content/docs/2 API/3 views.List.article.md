@@ -28,7 +28,7 @@ which defines the source.
 {{#example}}
 {{#block:"view-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 
 var ItemsView = views.List.extend({
 
@@ -49,7 +49,7 @@ bindable        = require("bindable"),
 MainView        = require("./view");
 
 var app = new Application();
-app.use(require("mojo-views"), require("mojo-paperclip"));
+app.use(require("mojo-views@0.2.x"), require("mojo-paperclip"));
 
 // create the view, and populate it with models
 preview.element.appendChild(new MainView({
@@ -78,7 +78,7 @@ The sorting function for the list
 {{#example}}
 {{#block:"view-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 
 var PeopleView = views.List.extend({
   source: "people",
@@ -100,7 +100,7 @@ bindable        = require("bindable"),
 MainView        = require("./view");
 
 var app = new Application();
-app.use(require("mojo-views"), require("mojo-paperclip"));
+app.use(require("mojo-views@0.2.x"), require("mojo-paperclip"));
 
 // create the view, and populate it with models
 preview.element.appendChild(new MainView({

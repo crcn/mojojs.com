@@ -28,7 +28,7 @@ the current state of the stack view. This property is **not** inheritable.
 {{#example}}
 {{#block:"main-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 
 var HomeView = views.Base.extend({
   paper: "Home view"
@@ -66,7 +66,7 @@ module.exports = views.Base.extend({
 {{#block:"index-js"}}
 <!--
 var Application = require("mojo-application");
-views           = require("mojo-views"),
+views           = require("mojo-views@0.2.x"),
 paperclip       = require("mojo-paperclip@0.6.3");
 
 var app = new Application();
@@ -88,7 +88,7 @@ view level.
 {{#example}}
 {{#block:"main-js"}}
 <!--
-var views = require("mojo-views");
+var views = require("mojo-views@0.2.x");
 
 var HomeView = views.Base.extend({
   paper: "Home view"
@@ -140,7 +140,7 @@ module.exports = views.Base.extend({
 {{#block:"index-js"}}
 <!--
 var Application = require("mojo-application");
-views           = require("mojo-views"),
+views           = require("mojo-views@0.2.x"),
 paperclip       = require("mojo-paperclip@0.6.3");
 
 var app = new Application({

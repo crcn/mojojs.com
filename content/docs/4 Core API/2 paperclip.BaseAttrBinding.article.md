@@ -23,7 +23,7 @@ Registers a node name or attribute binding class
 {{#block:"textAttrBinding-js"}}
 <!--
 var paperclip = require("paperclip"),
-views         = require("mojo-views");
+views         = require("mojo-views@0.2.x");
 
 module.exports = paperclip.BaseAttrBinding.extend({
   _onChange: function (text) {
@@ -36,7 +36,7 @@ module.exports = paperclip.BaseAttrBinding.extend({
 <!--
 var bindable = require("bindable"),
 Application  = require("mojo-application"),
-views        = require("mojo-views"),
+views        = require("mojo-views@0.2.x"),
 paperclip    = require("mojo-paperclip")
 
 var app = new Application();

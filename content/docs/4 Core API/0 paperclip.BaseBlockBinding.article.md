@@ -27,7 +27,7 @@ Base class to extend when creating custom block bindings. Here's an example for 
 {{#block:"eachBlockBinding-js"}}
 <!--
 var paperclip = require("paperclip"),
-views         = require("mojo-views");
+views         = require("mojo-views@0.2.x");
 
 module.exports = paperclip.BaseBlockBinding.extend({
   bind: function (context) {
@@ -62,7 +62,7 @@ module.exports = paperclip.BaseBlockBinding.extend({
 <!--
 var bindable = require("bindable"),
 Application  = require("mojo-application"),
-views        = require("mojo-views"),
+views        = require("mojo-views@0.2.x"),
 paperclip    = require("mojo-paperclip")
 
 var app = new Application();
