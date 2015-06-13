@@ -15,7 +15,7 @@
 
         <ul class="libraries">
           <li>
-            <a href="http://mesh.mojojs.com">
+            <a href="http://meshjs.herokuapp.com">
               <div class="blurb">
                 Mesh: isomorphic data flow library
               </div>
@@ -23,7 +23,7 @@
             </a>
           </li>
           <li>
-            <a href="http://paperclip.mojojs.com">
+            <a href="http://paperclipjs.com">
               <div class="blurb">
                 Paperclip: fast immutable virtual DOM library
               </div>
