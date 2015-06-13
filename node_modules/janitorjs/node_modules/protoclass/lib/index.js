@@ -31,7 +31,7 @@ function protoclass (parent, child) {
   ctor.prototype  = parent.prototype;
   child.prototype = new ctor();
   child.__super__ = parent.prototype;
-  child.parent = child.superclass = parent;
+  child.parent    = child.superclass = parent;
 
   _copy(child.prototype, mixins);
 
@@ -56,8 +56,15 @@ protoclass.setup = function (child) {
 
       return protoclass.apply(this, [this].concat(args));
     }
+
     child.mixin = function(proto) {
       _copy(this.prototype, arguments);
+    }
+
+    child.create = function () {
+      var obj = Object.create(child.prototype);
+      child.apply(obj, arguments);
+      return obj;
     }
   }
 

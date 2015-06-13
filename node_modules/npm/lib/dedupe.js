@@ -240,10 +240,10 @@ function findVersions (npm, summary, cb) {
     var versions = data.versions
 
     var ranges = data.ranges
-    mapToRegistry(name, npm.config, function (er, uri) {
+    mapToRegistry(name, npm.config, function (er, uri, auth) {
       if (er) return cb(er)
 
-      npm.registry.get(uri, null, next)
+      npm.registry.get(uri, { auth : auth }, next)
     })
 
     function next (er, data) {
@@ -314,11 +314,28 @@ function readInstalled (dir, counter, parent, cb) {
   })
 
   fs.readdir(path.resolve(dir, "node_modules"), function (er, c) {
-    children = c || [] // error is ok, just means no children.
-    children = children.filter(function (p) {
-      return !p.match(/^[\._-]/)
-    })
-    next()
+    children = children || [] // error is ok, just means no children.
+    // check if there are scoped packages.
+    asyncMap(c || [], function (child, cb) {
+      if (child.indexOf('@') === 0) {
+        fs.readdir(path.resolve(dir, "node_modules", child), function (er, scopedChildren) {
+          // error is ok, just means no children.
+          (scopedChildren || []).forEach(function (sc) {
+            children.push(path.join(child, sc))
+          })
+          cb()
+        })
+      } else {
+        children.push(child)
+        cb()
+      }
+    }, function (er) {
+      if (er) return cb(er)
+      children = children.filter(function (p) {
+        return !p.match(/^[\._-]/)
+      })
+      next();
+    });
   })
 
   function next () {

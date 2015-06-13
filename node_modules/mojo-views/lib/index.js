@@ -4,7 +4,8 @@ defaultViews      = require("./plugins/defaultComponents"),
 RegisteredClasses = require("mojo-registered-classes");
 
 var mojoViews = module.exports = function (app) {
-  app.views = new RegisteredClasses(app);
+
+  app.set("views", new RegisteredClasses(app));
 
   if (!app.animate) {
     app.use(require("mojo-animator"));

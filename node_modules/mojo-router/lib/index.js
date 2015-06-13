@@ -3,7 +3,11 @@ var crowbar = require("crowbar");
 module.exports = function (app) {
 
   if (!app.mediator) app.use(require("mojo-mediator"));
-  if (app.paperclip) app.paperclip.nodeBinding("data-href", require("./plugins/datahref"));
+
+  app.bind("paperclip", { to: function (paperclip) {
+    app.paperclip.nodeBinding("data-href", require("./plugins/datahref"))
+  }}).now();
+
   app.use(require("./plugins/statesRouter"));
 
   var r = app.router = crowbar({});

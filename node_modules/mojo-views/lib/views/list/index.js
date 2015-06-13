@@ -110,10 +110,18 @@ BaseView.extend(ListView, {
     if (newSource && !newSource.__isBindableCollection) {
       newSource = new bindable.Collection(newSource);
     }
+    var self = this;
 
     this._source = newSource;
     if (newSource) {
-      this._sourceListeners.add(newSource.on("update", wrapInAnimation.call(this, this._onSourceUpdate)));
+      this._sourceListeners.add(newSource.on("willUpdate", function () {
+        self._lockUpdate = true;
+        newSource.once("didUpdate", function (updates) {
+          self._lockUpdate = false;
+          self._onSourceUpdate(updates);
+        });
+      }));
+      this._sourceListeners.add(newSource.on("update", _.bind(this._onSourceUpdate, this)));
       this._onSourceUpdate({ insert: newSource.source });
     }
   },
@@ -171,13 +179,14 @@ BaseView.extend(ListView, {
     filter = this._filter = _.bind(filter || ListView.prototype._filter, this);
     if (!this._source) return;
 
-    var toRemove = [], toInsert = [];
+    var toRemove = [], toInsert = [], existingModels = {};
 
     for (var i = this._source.length; i--;) {
 
       var model = this._source.at(i),
       child     = this._modelViewMap[model.cid],
       useModel  = filter(model);
+
 
       if (child && !useModel) {
         toRemove.push(model);
@@ -186,8 +195,24 @@ BaseView.extend(ListView, {
       }
     }
 
-    if (toRemove.length) this._removeChildren(toRemove);
+
     if (toInsert.length || forceSort) this._addChildren(toInsert || []);
+
+    for (var i = this._source.length; i--;) {
+
+      var model = this._source.at(i);
+      existingModels[model.cid] = model;
+    }
+
+    for (var cid in this._modelViewMap) {
+      var child = this._modelViewMap[cid], 
+      model = child ? child.model : void 0;
+      if (model && !existingModels[cid] && !~toRemove.indexOf(model)) {
+        toRemove.push(model);
+      }
+    }
+
+    if (toRemove.length) this._removeChildren(toRemove);
   },
 
   /**
@@ -259,10 +284,13 @@ BaseView.extend(ListView, {
 
   _onSourceUpdate: function (sourceChanges) {
 
+    if (this._lockUpdate) return;
+
     this._insertModels = this._insertModels.concat(sourceChanges.insert || []);
     this._removeModels = this._removeModels.concat(sourceChanges.remove || []);
 
     if (this._syncingModels) return;
+    this._syncingModels = true;
     var self = this;
     this.application.animate({
       update: function () {
@@ -276,24 +304,8 @@ BaseView.extend(ListView, {
    */
 
   _syncModels: function () {
-
-    if (!this._source) return;
-    
-    var insert = this._insertModels,
-    remove     = this._removeModels;
-
-    this._insertModels = [];
-    this._removeModels = [];
-
-    if (insert.length) {
-      this._watchModels(insert);
-      this._addChildren(insert.filter(this._filter));
-    }
-
-    if (remove.length) {
-      this._rewatchModels();
-      this._removeChildren(remove);
-    }
+    this._rewatchModels()
+    this._onFilterChange(this._filter);
   },
 
   /**
@@ -318,6 +330,7 @@ BaseView.extend(ListView, {
 
   _removeChildren: function (models) {
 
+
     for (var i = models.length; i--;) {
       var model = models[i];
       var child = this._modelViewMap[model.cid];
@@ -325,6 +338,7 @@ BaseView.extend(ListView, {
         this._modelViewMap[model.cid] = void 0;
         child.dispose();
         this.children.splice(this.children.indexOf(child), 1);
+      } else {
       }
     }
   },

@@ -28,11 +28,15 @@ noselector         = require("noselector");
  */
 
 
-function BaseView (data, application) {
+function BaseView (properties, application) {
 
-  SubindableObject.call(this);
+  // note that if application is not defined, this.application will
+  // default to the default, global application.
+  this.application = application;
 
   this._onParent     = _.bind(this._onParent, this);
+  SubindableObject.call(this, properties);
+
 
   /**
    * The main application that instantiated this view
@@ -40,11 +44,7 @@ function BaseView (data, application) {
    * @type {Application}
    */
 
-  // note that if application is not defined, this.application will
-  // default to the default, global application.
-  this.application = application;
-
-  this.initialize(data);
+  this.initialize();
   
   // ref back to this context for templates
   this["this"]     = this;
@@ -99,7 +99,7 @@ protoclass(SubindableObject, BaseView, {
     // copy the data to this object. Note this shaves a TON
     // of time off initializing any view, especially list items if we
     // use this method over @setProperties data
-    if (data) {
+    if (false) {
       for(var key in data) {
         this[key] = data[key];
       }

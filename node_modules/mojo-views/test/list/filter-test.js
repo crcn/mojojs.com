@@ -91,7 +91,9 @@ describe("list/filter#", function () {
 
     expect(list.render().toString()).to.be("");
 
+
     source.at(0).set("name", "a");
+
     expect(list.render().toString()).to.be("0,");
 
   });

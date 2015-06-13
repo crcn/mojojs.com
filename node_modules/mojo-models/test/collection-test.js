@@ -132,6 +132,33 @@ describe("collection#", function () {
     expect(c.length).to.be(0);
   });
 
+  it("sets isNew property to true on model when created", function () {
+    var c = new models.Collection(null, app);
+    var m = c.create({ data: 5 });
+    expect(m.isNew).to.be(true);
+  });
+
+  it("sets isNew property to false on model when created", function () {
+    var Model = models.Base.extend({
+      persist: {
+        save: function (complete) {
+          complete(null, { _id: "blah" });
+        }
+      }
+    });
+    var c = new models.Collection({
+      createModel: function (options) {
+        return new Model({ data: options.data }, this.application);
+      }
+    }, app);
+
+    var model = c.create();
+    expect(model.isNew).to.be(true);
+    model.save();
+    expect(model.isNew).to.be(false);
+  }); 
+
+
   it("can create a model, and push only after saving the model", function () {
     var Model = models.Base.extend({
       persist: {

@@ -19,6 +19,9 @@
   "bugs": {
     "url": "https://github.com/classdojo/classdojo.com/issues"
   },
+  "engines": {
+    "node": "0.10.x"
+  },
   "browser": {
     "soundmanager": "./app/browser/vendor/soundmanager2/script/soundmanager2-nodebug.js",
     "jquery": "./app/browser/vendor/js/jquery.js",

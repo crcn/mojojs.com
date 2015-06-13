@@ -22,7 +22,7 @@ Note that `package-name` is taken from `package.json`,
 not from directory name.
 
 The package name can be optionally prefixed with a scope. See `npm-scope(7)`.
-The scope must by preceded by an @-symbol and followed by a slash.
+The scope must be preceded by an @-symbol and followed by a slash.
 
 When creating tarballs for `npm publish`, the linked packages are
 "snapshotted" to their current state by resolving the symbolic links.
@@ -38,7 +38,8 @@ For example:
     npm link redis              # link-install the package
 
 Now, any changes to ~/projects/node-redis will be reflected in
-~/projects/node-bloggy/node_modules/redis/
+~/projects/node-bloggy/node_modules/node-redis/. Note that the link should
+be to the package name, not the directory name for that package. 
 
 You may also shortcut the two steps in one.  For example, to do the
 above use-case in a shorter way:
@@ -49,7 +50,7 @@ above use-case in a shorter way:
 The second line is the equivalent of doing:
 
     (cd ../node-redis; npm link)
-    npm link redis
+    npm link node-redis
 
 That is, it first creates a global link, and then links the global
 installation target into your project's `node_modules` folder.

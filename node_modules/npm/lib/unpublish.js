@@ -2,12 +2,12 @@
 module.exports = unpublish
 
 var log = require("npmlog")
-  , npm = require("./npm.js")
-  , registry = npm.registry
-  , readJson = require("read-package-json")
-  , path = require("path")
-  , mapToRegistry = require("./utils/map-to-registry.js")
-  , npa = require("npm-package-arg")
+var npm = require("./npm.js")
+var readJson = require("read-package-json")
+var path = require("path")
+var mapToRegistry = require("./utils/map-to-registry.js")
+var npa = require("npm-package-arg")
+var getPublishConfig = require("./utils/get-publish-config.js")
 
 unpublish.usage = "npm unpublish <project>[@<version>]"
 
@@ -19,10 +19,10 @@ unpublish.completion = function (opts, cb) {
     var un = encodeURIComponent(username)
     if (!un) return cb()
     var byUser = "-/by-user/" + un
-    mapToRegistry(byUser, npm.config, function (er, uri) {
+    mapToRegistry(byUser, npm.config, function (er, uri, auth) {
       if (er) return cb(er)
 
-      registry.get(uri, null, function (er, pkgs) {
+      npm.registry.get(uri, { auth : auth }, function (er, pkgs) {
         // do a bit of filtering at this point, so that we don't need
         // to fetch versions for more than one thing, but also don't
         // accidentally a whole project.
@@ -33,10 +33,10 @@ unpublish.completion = function (opts, cb) {
           return p.indexOf(pp) === 0
         })
         if (pkgs.length > 1) return cb(null, pkgs)
-        mapToRegistry(pkgs[0], npm.config, function (er, uri) {
+        mapToRegistry(pkgs[0], npm.config, function (er, uri, auth) {
           if (er) return cb(er)
 
-          registry.get(uri, null, function (er, d) {
+          npm.registry.get(uri, { auth : auth }, function (er, d) {
             if (er) return cb(er)
             var vers = Object.keys(d.versions)
             if (!vers.length) return cb(null, pkgs)
@@ -72,18 +72,28 @@ function unpublish (args, cb) {
     return readJson(cwdJson, function (er, data) {
       if (er && er.code !== "ENOENT" && er.code !== "ENOTDIR") return cb(er)
       if (er) return cb("Usage:\n" + unpublish.usage)
-      gotProject(data.name, data.version, cb)
+      log.verbose('unpublish', data)
+      gotProject(data.name, data.version, data.publishConfig, cb)
     })
   }
   return gotProject(project, version, cb)
 }
 
-function gotProject (project, version, cb_) {
+function gotProject (project, version, publishConfig, cb_) {
+  if (typeof cb_ !== 'function') {
+    cb_ = publishConfig
+    publishConfig = null
+  }
+
   function cb (er) {
     if (er) return cb_(er)
     console.log("- " + project + (version ? "@" + version : ""))
     cb_()
   }
+
+  var mappedConfig = getPublishConfig(publishConfig, npm.config, npm.registry)
+  var config = mappedConfig.config
+  var registry = mappedConfig.client
 
   // remove from the cache first
   npm.commands.cache(["clean", project, version], function (er) {
@@ -92,10 +102,14 @@ function gotProject (project, version, cb_) {
       return cb(er)
     }
 
-    mapToRegistry(project, npm.config, function (er, uri) {
+    mapToRegistry(project, config, function (er, uri, auth) {
       if (er) return cb(er)
 
-      registry.unpublish(uri, version, cb)
+      var params = {
+        version: version,
+        auth: auth
+      }
+      registry.unpublish(uri, params, cb)
     })
   })
 }

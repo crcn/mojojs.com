@@ -5,7 +5,7 @@ BaseCollection        = require("./base/collection"),
 Application           = require("mojo-application");
 
 module.exports = function (app) {
-  app.models = new RegisteredClasses(app);
+  app.set("models", new RegisteredClasses(app));
   app.use(modelDecor);
 }
 

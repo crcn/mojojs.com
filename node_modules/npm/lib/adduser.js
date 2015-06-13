@@ -3,7 +3,6 @@ module.exports = adduser
 
 var log = require("npmlog")
   , npm = require("./npm.js")
-  , registry = npm.registry
   , read = require("read")
   , userValidate = require("npm-user-validate")
   , crypto
@@ -125,13 +124,6 @@ function readEmail (c, u, cb) {
 }
 
 function save (c, u, cb) {
-  if (c.changed) {
-    delete registry.auth
-    delete registry.username
-    delete registry.password
-    registry.username = u.u
-    registry.password = u.p
-  }
   npm.spinner.start()
 
   // save existing configs, but yank off for this PUT
@@ -143,16 +135,20 @@ function save (c, u, cb) {
     if (scope.charAt(0) !== "@") scope = "@" + scope
 
     var scopedRegistry = npm.config.get(scope + ":registry")
-    if (scopedRegistry) uri = scopedRegistry
+    var cliRegistry = npm.config.get("registry", "cli")
+    if (scopedRegistry && !cliRegistry) uri = scopedRegistry
   }
 
-  registry.adduser(uri, u.u, u.p, u.e, function (er, doc) {
+  var params = {
+    auth : {
+      username : u.u,
+      password : u.p,
+      email    : u.e
+    }
+  }
+  npm.registry.adduser(uri, params, function (er, doc) {
     npm.spinner.stop()
     if (er) return cb(er)
-
-    registry.username = u.u
-    registry.password = u.p
-    registry.email = u.e
 
     // don't want this polluting the configuration
     npm.config.del("_token", "user")

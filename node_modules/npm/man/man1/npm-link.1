@@ -1,4 +1,4 @@
-.TH "NPM\-LINK" "1" "October 2014" "" ""
+.TH "NPM\-LINK" "1" "June 2015" "" ""
 .SH "NAME"
 \fBnpm-link\fR \- Symlink a package folder
 .SH SYNOPSIS
@@ -25,7 +25,7 @@ Note that \fBpackage\-name\fR is taken from \fBpackage\.json\fR,
 not from directory name\.
 .P
 The package name can be optionally prefixed with a scope\. See npm help 7 \fBnpm\-scope\fR\|\.
-The scope must by preceded by an @\-symbol and followed by a slash\.
+The scope must be preceded by an @\-symbol and followed by a slash\.
 .P
 When creating tarballs for \fBnpm publish\fR, the linked packages are
 "snapshotted" to their current state by resolving the symbolic links\.
@@ -45,7 +45,8 @@ npm link redis              # link\-install the package
 .RE
 .P
 Now, any changes to ~/projects/node\-redis will be reflected in
-~/projects/node\-bloggy/node_modules/redis/
+~/projects/node\-bloggy/node_modules/node\-redis/\. Note that the link should
+be to the package name, not the directory name for that package\. 
 .P
 You may also shortcut the two steps in one\.  For example, to do the
 above use\-case in a shorter way:
@@ -62,7 +63,7 @@ The second line is the equivalent of doing:
 .RS 2
 .nf
 (cd \.\./node\-redis; npm link)
-npm link redis
+npm link node\-redis
 .fi
 .RE
 .P

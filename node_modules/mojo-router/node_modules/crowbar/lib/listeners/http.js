@@ -6,7 +6,7 @@ module.exports = function (router) {
   function onHashChange (newHash) {
 
     // make sure any hash stuff isn't included
-    router.redirect(String(newHash || window.location.pathname).replace(/^#?!?\/?(.*)/,"/$1"), function (err) {
+    router.redirect(String(newHash || window.location.hash).replace(/^#?!?\/?(.*)/,"/$1"), function (err) {
 
       if (err && err.code === "404") {
         router.redirect("404");
