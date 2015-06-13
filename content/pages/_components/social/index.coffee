@@ -7,17 +7,17 @@ class SocialButtonsView extends views.Base
     return unless process.browser
 
     @_loadTwitterFollowers()
-    @_loadGithubInfo()
+    #@_loadGithubInfo()
 
   _loadTwitterFollowers: () ->
-    $.ajax 
+    $.ajax
       dataType: "jsonp",
       url: "https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mojoframework",
       success: (data) =>
         @set "followers", data?[0]?.formatted_followers_count
-    
-  _loadGithubInfo: () ->  
-    $.ajax 
+
+  _loadGithubInfo: () ->
+    $.ajax
       dataType: "jsonp",
       url: "https://api.github.com/repos/mojo-js/mojo.js",
       success: (data) =>

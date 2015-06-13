@@ -1,0 +1,52 @@
+
+{{#layout:"none"}}
+
+  {{#block:"content"}}
+    <div class="overlay">
+
+      <div class="overlay-header">
+        <div class="logo">
+          <img src="/img/mojo-js-transparent.png"></img>
+        </div>
+        <div class="message">
+          MojoJS is a set of tiny libraries for building powerful client-side, and server-side
+          applications
+        </div>
+
+        <ul class="libraries">
+          <li>
+            <a href="http://mesh.mojojs.com">
+              <div class="blurb">
+                Mesh: isomorphic data flow library
+              </div>
+              <div class="screenshot mesh"></div>
+            </a>
+          </li>
+          <li>
+            <a href="http://paperclip.mojojs.com">
+              <div class="blurb">
+                Paperclip: fast immutable virtual DOM library
+              </div>
+              <div class="screenshot paperclip"></div>
+            </a>
+          </li>
+
+          <li class="coming-soon">
+            <div class="blurb">
+              More libraries coming soon
+            </div>
+            <div class="screenshot"></div>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="overlay-footer">
+        All libraries licensed under <a href="http://opensource.org/licenses/MIT">MIT</a>.
+        &copy; Design & code by <a href="http://github.com/crcn">Craig Jefferds</a>
+      </div>
+    </div>
+
+  {{/}}
+{{/}}

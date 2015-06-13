@@ -18,7 +18,7 @@
               component: "download"
             }
           }}
-          
+
           <a class="btn download-button get-started" href="/docs/getting-started/installation">Get Started</a>
       </div>
       <div class="col-md-3"></div>
@@ -41,6 +41,15 @@
     </div>
   {{/}}
   {{#block:"content"}}
+
+    <div class="overlay">
+      <div class="logo">
+      </div>
+      <div class="message">
+        MojoJS 
+      </div>
+    </div>
+
     <div class="social-row">
       <div class="container">
         <div class="row">
@@ -99,7 +108,7 @@
       </div>
     </div>
 
-    
+
 
     <div class="container content">
       <div class="row">

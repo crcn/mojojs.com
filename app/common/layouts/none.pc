@@ -2,15 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="/vendor/rainbow/themes/tomorrow.css" />
-    <script type="text/javascript" src="/app/index.built.js"></script>
-    <script type="text/javascript" src="/vendor/js/mojo.js"></script>
     <link rel="stylesheet" href="/css/app.css" />
-
     <title>Mojo.js - Build beautifully crafted, and powerful applications</title>
 
     <meta property="og:image" content="http://wwww.mojojs.com/img/square-logo.png" />
-    <meta name="Description" content="A non-opinionated, customizable JavaScript framework designed for writing scalable web, mobile, and server-side programs." />
+    <meta name="Description" content="A rich set of libraries for building powerful applications." />
 
   </head>
   <body>
