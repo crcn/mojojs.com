@@ -9,7 +9,7 @@
           <img src="/img/mojo-js-transparent.png"></img>
         </div>
         <div class="message">
-          MojoJS is a set of tiny libraries for building powerful client-side, and server-side
+          MojoJS is a set of tiny libraries for building awesome client-side, and server-side
           applications
         </div>
 
