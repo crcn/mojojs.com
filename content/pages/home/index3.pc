@@ -17,7 +17,7 @@
           <li>
             <a href="http://mesh.mojojs.com">
               <div class="blurb">
-                Mesh: isomorphic data flow library
+                Mesh: data synchronization library
               </div>
               <div class="screenshot mesh"></div>
             </a>
