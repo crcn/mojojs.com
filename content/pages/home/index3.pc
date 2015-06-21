@@ -17,7 +17,7 @@
           <li>
             <a href="http://mesh.mojojs.com">
               <div class="blurb">
-                Mesh: data synchronization library
+                Mesh: streamable data synchronization library
               </div>
               <div class="screenshot mesh"></div>
             </a>
