@@ -1,7 +1,0 @@
-{{
-  properties: {
-    category: "guides"
-  }
-}}
-
-TODO

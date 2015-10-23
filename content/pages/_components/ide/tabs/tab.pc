@@ -1,6 +1,0 @@
-<li data-bind="{{   
-  onClick: setCurrentFile(model),
-  css: {
-    selected: model === currentFile
-  }
-}}">{{model.name}}</li>

@@ -1,7 +1,0 @@
-<div class="tab-pane {{index == 0 ? 'active' : ''}}" id="{{model._id}}">
-  <pre>
-    <code class="{{model.language}}" data-language="{{model.language}}">
-      {{ html: model.content }}
-    </code>
-  </pre>
-</div>

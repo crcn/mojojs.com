@@ -1,1 +1,0 @@
-<a class="btn download-button" data-bind="{{ onClicka: download() }}" href="https://github.com/mojo-js/mojo-starter/archive/master.zip">Download Beta</a>

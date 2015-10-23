@@ -1,1 +1,0 @@
-<li class="{{index == 0 ? 'active' : ''}}"><a href="#{{model._id}}" role="tab" data-toggle="tab">{{model.relpath}}</a></li>

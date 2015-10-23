@@ -1,6 +1,0 @@
-<li>
-  <strong>{{model.browser}}</strong>
-  <ul class="benchmark-results">
-    {{ html: sections.results }}
-  </ul>
-</li>

@@ -1,5 +1,0 @@
-<div class="col-sm-9 docs-content">
-  <div class="docs-inner-content">
-    {{ html: location.docContent }}
-  </div>
-</div>

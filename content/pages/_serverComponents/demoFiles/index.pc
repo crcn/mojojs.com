@@ -1,7 +1,0 @@
-<ul class="nav nav-tabs" role="tablist">
-  {{ html: sections.tabs }}
-</ul>
-
-<div class="tab-content">
-  {{ html: sections.files }}
-</div>

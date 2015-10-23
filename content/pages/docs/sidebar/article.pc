@@ -1,9 +1,0 @@
-<li>
-  <a data-href="docArticle">{{model.name}}</a>
-
-  {{#if:model.properties.length}}
-    <ul class="properties">
-      {{ html: children.properties }}
-    </ul>
-  {{/}}
-</li>

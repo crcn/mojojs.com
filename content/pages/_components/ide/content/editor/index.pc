@@ -1,4 +1,0 @@
-{{#if:!tabs}}
-  {{ html: sections.sidebar }}
-{{/}}
-{{ html: sections.ace }}

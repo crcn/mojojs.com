@@ -1,3 +1,0 @@
-<input type="text" class="form-control" data-bind="{{ model: <~>message }}" />
-
-<h3>{{ message ? message : "Please write a message!" }}</h3>

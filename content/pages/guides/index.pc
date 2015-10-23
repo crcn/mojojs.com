@@ -1,9 +1,0 @@
-{{#layout:"main"}}
-  TODO
-{{/}}
-
-<!-- should be in markdown -->
-<!-- Getting Started -->
-<!-- Views -->
-<!-- Templates -->
-<!-- Models -->

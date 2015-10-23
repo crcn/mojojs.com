@@ -1,9 +1,0 @@
-<!-- 
-  data-binding is explicit in Mojo
-  <~> denotes two-way binding 
-  <~ and ~> denote 1-way binding 
-  ~ tells to ignore data-binding
---> 
-<input type="text" class="form-control" data-bind="{{ model: <~>message }}" />
-
-<h3>{{ message ? message : "Please write a message!" }}</h3>

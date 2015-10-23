@@ -1,8 +1,0 @@
-<div class="box-snippet" data-bind={{
-    style: {
-        top: model.top + 'px',
-        left: model.left + 'px',
-        background: 'rgb(0,0,'+ model.color + ')'
-    }}}>
-    {{model.content}}  
-</div>

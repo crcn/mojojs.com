@@ -1,5 +1,0 @@
-<input type="text" placeholder="What's your name?" class="form-control" data-bind="{{ model: <~>name }}"></input>
-
-{{#if:name}}
-  <h1>Hello {{name}}!</h1>
-{{/}}

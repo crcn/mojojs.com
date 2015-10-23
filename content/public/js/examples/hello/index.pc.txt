@@ -1,6 +1,0 @@
-What's your name? 
-<input type="text" data-bind="{{ model: name }}"></input>
-
-{{#if: name }}
-  <h3>Hello {{name}}!</h3>
-{{/}}

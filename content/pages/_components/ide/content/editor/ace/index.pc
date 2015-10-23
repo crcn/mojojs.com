@@ -1,3 +1,0 @@
-<div class="ide-editor {{ tabs ? 'col-sm-12' : 'col-sm-10'}}">
-  {{ html: content }}
-</div>

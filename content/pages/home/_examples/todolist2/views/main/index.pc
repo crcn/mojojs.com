@@ -1,8 +1,0 @@
-<strong>Collaborative Todos! (open a new browser)</strong>
-
-<input type="text" class="form-control" data-bind="{{ model: <~>newTodoText, onEnter: addNewTodo(newTodoText), focus: true }}"></input>
-<ul>
-  {{ html: sections.todos }}
-</ul>
-
-<input type="submit" data-bind="{{ onClick: clearCompleted() }}" value="clear completed"></input>

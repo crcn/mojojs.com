@@ -1,9 +1,0 @@
-http://ionicframework.com/
-http://brackets.io/?lang=en
-http://www.chartjs.org/
-http://cinemati.co/
-http://famo.us/
-http://www.polymer-project.org/
-http://www.vagrantup.com/
-http://www.consul.io/
-http://foundation.zurb.com/
